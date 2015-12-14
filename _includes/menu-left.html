@@ -1,0 +1,25 @@
+<div class="menu-left">
+
+{% assign menuTitle= site[include.apiTitle] %}
+
+<div class="header-menu">{{menuTitle}}</div>
+{% assign curLevel= 0 %}
+{% assign sortedSitePages= {{ site.pages | sort: 'order'  }} %}
+{% for cpage in sortedSitePages %}
+  {% if cpage.api != {{include.apiTag}} %}
+      {% continue %}
+  {% endif %}
+  {% if cpage.level > curLevel %}
+  {% elsif cpage.level < curLevel %}
+  {% endif %}
+  {% if cpage.url == page.url %}
+      {% assign active= "class='active'" %}
+  {% else %}
+      {% assign active= "" %}
+  {% endif %}
+  {% assign curLevel= cpage.level %}
+    <div class="l{{cpage.level}}">
+      <a href="{{ cpage.url | prepend: site.baseurl }}" {{active}} >{{ cpage.title }}</a>
+    </div>
+{% endfor %}
+</div>

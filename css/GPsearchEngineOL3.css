@@ -1,0 +1,130 @@
+/* SEARCH ENGINE */
+
+#GPsearchEngine {
+  top: 8px;
+  left: 46px;
+}
+
+/* Showing/hiding search engine input */
+
+#GPshowSearchEnginePicto {
+  width: 32px;
+  height: 32px;
+  padding: 3px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+#GPshowSearchEnginePicto:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+#GPshowSearchEngineOpen {
+  width: 26px;
+  height: 26px;
+  background-color: rgba(0,60,136,0.5);
+  background-image: url("../ol3/img/GPsearchEngineOpen.png");
+  border-radius: 2px;
+  transition: border-radius 0.5s ease-out 0s;
+}
+
+#GPshowSearchEnginePicto:hover #GPshowSearchEngineOpen {
+  background-color: rgba(0,60,136,0.7);
+}
+
+/* Simple search input */
+
+#GPsearchInput {
+  height: 32px;
+}
+
+#GPsearchInputReset {
+  background-image: url("../ol3/img/GPsearchEngineClose.png");
+}
+
+/* General panels */
+
+.GPgeocodePanelHeader {
+  height: 32px;
+  padding: 3px;
+  background-color: #9DB1BD;
+}
+
+.GPgeocodePanelTitle {
+  line-height: 26px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  background-color: #366291;
+  color: #FFF;
+} 
+
+.GPgeocodePanelClose,
+#GPadvancedSearchClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.GPgeocodePanelClose {
+  background-image: url("../ol3/img/GPsearchEngineClose.png");
+}
+
+#GPadvancedSearchClose {
+  background-image: url("../ol3/img/GPsearchEngineOpen.png");
+  background-position: -50px 3px;
+}
+
+/* Advanced search picto */
+
+#GPshowAdvancedSearch {
+  width: 32px;
+  height: 32px;
+  padding: 3px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+#GPshowAdvancedSearch:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+#GPshowAdvancedSearchOpen {
+  width: 26px;
+  height: 26px;
+  background-color: rgba(0,60,136,0.5);
+  background-image: url("../ol3/img/GPsearchEngineOpen.png");
+  background-position: -26px 0;
+  border-radius: 2px;
+  transition: border-radius 0.5s ease-out 0s;
+}
+
+#GPshowAdvancedSearch:hover #GPshowAdvancedSearchOpen {
+  background-color: rgba(0,60,136,0.7);
+}
+
+/* Advanced search panel */
+
+#GPadvancedSearchPanel {
+  box-shadow: 0 0 6px #000;
+  border-radius: 4px;
+}
+
+input#GPadvancedSearchSubmit {
+  background-color: #366291;
+}
+
+/* Autocomplete list / geocode results */
+
+#GPautoCompleteList,
+#GPgeocodeResultsList {
+  margin-left: 33px;
+  box-shadow: 0 0 6px #000;
+}
+
+#GPgeocodeResultsList {
+  top: 40px;
+  border-radius: 4px;
+}

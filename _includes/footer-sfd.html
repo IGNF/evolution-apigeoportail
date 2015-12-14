@@ -1,0 +1,8 @@
+<!-- layerSwitcher Stuff -->
+{% if {{include.apiTag}} == "ol3" or {{include.apiTag}} == "leaflet" %}
+<script type="text/javascript" src="{{site.baseurl}}/js/GPlayerSwitcher.js"></script>
+<script type="text/javascript" src="{{site.baseurl}}/js/GPsearchEngine.js"></script>
+<script type="text/javascript" src="{{site.baseurl}}/js/GPmousePosition.js"></script>
+<script type="text/javascript" src="{{site.baseurl}}/js/GPreverseGeocoding.js"></script>
+<script type="text/javascript" src="{{site.baseurl}}/js/GPisochron.js"></script>
+{% endif %}

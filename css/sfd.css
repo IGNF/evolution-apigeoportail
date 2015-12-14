@@ -1,0 +1,209 @@
+body {
+    font-family: Lucida Sans, Lucida Grande, Lucida Sans Unicode, Luxi Sans, sans-serif;
+    color: #333333 ;
+    background: #F7F8F4;
+    font-weight:lighter;
+}
+
+/*
+ * bandeau
+ */
+.bandeau {
+    background: #F7F8F4;
+    background-image: url("../images/entete.png");
+    height : 105px ;
+    width:100%;
+    position: fixed ;
+    top:0;
+    left:0;
+    z-index:2;
+    opacity: 1 ;
+    border-bottom: 2px solid #71777A;
+}
+
+
+.bandeau span{
+    position: fixed;
+    left: 115px;
+    top: 8px;
+    font-family: Open Sans, sans-serif;
+    font-size:38px;
+    color: #71777A;
+}
+
+.logo {
+    position: fixed ;
+    left: 10px;
+    top: 10px;
+    width: 75px;
+    height:80px;
+    z-index:2 ;
+    opacity: 1 ;
+}
+
+
+.nav {
+    float: right;
+    display: inline-block;
+    margin: 70px 1em 2px 1em;
+    font-size:18px;
+    color:#3796AD;
+}
+
+a.nav:hover {
+    color:#71777A;
+}
+
+
+/*
+ * menu-left
+ */
+.menu-left {
+    background: #F7F8F4;
+    height: 100%;
+    left: 0;
+    top: 105px;
+    overflow-y: auto;
+    position: fixed;
+    transition: all 0.3s ease 0s;
+    width: 213px;
+    padding-top:10px;
+    padding-left:10px;
+    border-right: 2px solid #71777A;
+}
+
+.header-menu{
+    margin-top:10px;
+    font-size:22px;
+    color:#71777A;
+    margin-bottom:30px;
+}
+
+
+a {
+    color: #0C77BC;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+.l1 {
+    margin-top:10px;
+}
+
+.l2 {
+    margin-top:8px;
+}
+
+.l3 {
+    margin-top:5px;
+}
+
+.l1 a{
+    font-size:18px;
+    color:#71777A;
+}
+
+.l2 a{
+    font-size:16px;
+    color:#71777A;
+}
+
+.l3 a{
+    font-size:14px;
+    color:black;
+}
+
+.l1 a:hover, .l2 a:hover, .l3 a:hover{
+    color:#3796ad;
+
+}
+
+
+a.active {
+    color:#3796ad;
+}
+/*
+ * content
+ */
+.content {
+    background: #F7F8F4;
+    position: absolute;
+    right: 0;
+    top: 105px ;
+    width: calc(100% - 225px);
+    z-index:0;
+}
+
+.content > p , .content > li , .content > h1, .content > h2, .content > h3, .content > h4 , .content > h5, .content > table , .content > pre {
+    padding-left : 25px;
+    padding-right : 25px;
+}
+
+
+h1{
+    font-size:32px;
+    color:#71777A;
+    /*color:#0C77BC;*/
+    font-weight:lighter;
+    padding-top: 10px;
+
+
+}
+
+h2{
+    font-size:24px;
+    color:#71777A;
+    font-weight:normal;
+    padding-top: 8px;
+}
+
+
+
+h3{
+    font-size:20px;
+    font-weight:lighter;
+    color:#71777A;
+    padding-top: 5px;
+    
+}
+
+
+
+h4{
+    font-size:18px;
+    color:#71777A;
+    font-weight:normal;
+    padding-top: 5px;
+}
+
+
+h5{
+    font-size:16px;
+    font-weight:normal;
+    padding-top: 5px;
+}
+
+
+/*Design de tableaux*/
+
+th{
+    border:1px solid #bebebe;
+    background:#cccbc8;
+    padding: 5px 10px 5px 10px;
+    font-weight:lighter;
+}
+
+td{
+    border-right:1px solid #e9e8e4;
+    border-bottom:1px solid #e9e8e4;
+    padding: 5px 10px 5px 10px;
+    font-weight:lighter;
+}
+
+
+
+
+
+
+
+

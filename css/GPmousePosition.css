@@ -1,0 +1,166 @@
+/* MOUSE POSITION */
+
+#GPmousePosition {
+  position: absolute;
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  font-size: 13px;
+  color: #333333;
+  box-sizing: padding-box;
+}
+
+#GPmousePosition select {
+  border-radius: 3px;
+}
+
+#GPmousePosition input[type="checkbox"] {
+  display: none;
+}
+
+/* Showing/hiding mouse position panel */
+
+#GPshowMousePositionPicto {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#GPshowMousePositionOpen {
+  position: absolute;
+  display: block;
+}
+
+#GPshowMousePosition + label {
+  display: block;
+}
+
+#GPshowMousePosition:checked + label {
+  display: none;
+}
+
+#GPshowMousePosition + label + div {
+  display: none;
+}
+
+#GPshowMousePosition:checked + label + div {
+  display: block;
+}
+
+/* General panels */
+
+#GPmousePositionPanel {
+  width: 200px;
+  background-color: #FFF;
+  overflow: hidden;
+}
+
+.GPmousePositionPanelHeader {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+
+.GPmousePositionPanelTitle {
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+} 
+
+#GPmousePositionPanelClose {
+  position: absolute;
+  cursor: pointer;
+}
+
+/* Basic infos */
+
+#GPmousePositionBasicPanel {
+  padding: 10px 15px;
+}
+
+.GPmousePositionLabel,
+.GPmousePositionCoords {
+  display: inline-block;
+  line-height: 20px;
+}
+
+.GPmousePositionLabel {
+  width: 80px;
+  font-weight: bold;
+}
+
+.GPmousePositionCoords {
+  width: 80px;
+}
+
+/* Showing settings */
+
+.GPshowMousePositionSettingsPicto {
+  position: absolute;
+  top: 79px;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.5s ease-out 0s;
+}
+
+input[type="checkbox"]:checked + .GPshowMousePositionSettingsPicto {
+  transform: rotateX(180deg);
+}
+
+#GPmousePositionSettings {
+  display: block;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease-out 0s, opacity 0.5s ease-out 0s;
+}
+
+#GPmousePosition input[type="checkbox"]:checked + label + #GPmousePositionSettings {
+  max-height: 95px;
+  opacity: 1;
+}
+
+/* Settings */
+
+#GPmousePositionSettings {
+  height: 95px;
+  padding-left: 0 15px;
+  overflow: hidden;
+}
+
+.GPmousePositionSettingsLabel {
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+.GPmousePositionSettingsSelect {
+  display: block;
+  width: 160px;
+  height: 28px;
+  line-height: 28px;
+  margin: auto;
+  margin-top: 5px;
+  padding: 0;
+  padding-left: 5px;
+  border: 1px solid #999;
+  color: #333333;
+}
+
+/* Map center localisation */
+
+#GPmapCenter {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -25px;
+}
+
+#GPmapCenter.GPmapCenterVisible {
+  display: block;
+}

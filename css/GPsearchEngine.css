@@ -1,0 +1,326 @@
+/* SEARCH ENGINE */
+
+#GPsearchEngine {
+  position: absolute;
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  font-size: 13px;
+  color: #333333;
+  box-sizing: padding-box;
+}
+
+#GPsearchEngine input[type='text'], #GPsearchEngine input[type='button'] {
+  -webkit-appearance: none;
+}
+
+#GPshowSearchEngine + label + #GPsearchInput {
+  max-width: 0px;
+}
+
+#GPlayerSwitcher label {
+  display: block;
+}
+
+#GPsearchEngine form {
+  margin-bottom: 0;
+}
+
+/* Showing/hiding search engine input */
+
+#GPshowSearchEngine {
+  display: none;
+}
+
+#GPshowSearchEnginePicto {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  transition: border-radius 0s ease-out 0s;
+  transition-delay: 0.5s;
+  cursor: pointer;
+}
+
+#GPshowSearchEngine:checked + label {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  transition-delay: 0s;
+}
+
+#GPshowSearchEngineOpen {
+  position: absolute;
+  display: block;
+}
+
+#GPshowSearchEngine + label + #GPsearchInput {
+  max-width: 0px;
+  border: none;
+  transition: max-width 0.5s ease-out 0s;
+}
+
+#GPshowSearchEngine:checked + label + #GPsearchInput {
+  max-width: 280px;
+}
+
+#GPshowSearchEngine + label + #GPsearchInput + #GPshowAdvancedSearch {
+  display: none;
+}
+
+#GPshowSearchEngine:checked + label + #GPsearchInput + #GPshowAdvancedSearch {
+  display: inline-block;
+}
+
+#GPautoCompleteList {
+  display: none;
+}
+
+#GPshowSearchEngine:checked + label + #GPsearchInput + #GPautoCompleteList {
+  display: block;
+}
+
+/* Simple search input */
+
+#GPsearchInput {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  left: -3px;
+  width: 280px;
+  overflow: hidden;
+}
+
+#GPsearchInput input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #999;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0;
+  padding-right: 30px;
+  padding-left: 5px;
+  color: #333;
+  font-size: 1.0em;
+}
+
+#GPsearchInput input:disabled {
+  background-color: #DDD;
+  color: #999;
+}
+
+#GPsearchInputReset {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 32px;
+  background-position: -30px 0;
+  cursor: pointer;
+}
+
+/* General panels */
+
+.GPgeocodePanelHeader {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.GPgeocodePanelTitle {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+} 
+
+.GPgeocodePanelClose,
+#GPadvancedSearchClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 32px;
+  cursor: pointer;
+}
+
+#GPadvancedSearchClose {
+  background-repeat: no-repeat;
+}
+
+/* Advanced search picto */
+
+#GPshowAdvancedSearch {
+  box-sizing: border-box;
+  position: relative;
+  transition: border-radius 0s ease-out 0s;
+  transition-delay: 0.5s;
+  cursor: pointer;
+}
+
+#GPshowAdvancedSearchOpen {
+  position: absolute;
+  display: block;
+}
+
+/* Advanced search panel */
+
+#GPadvancedSearchPanel {
+  display: none;
+  width: 280px;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+#GPadvancedSearchForm {
+  box-sizing: border-box;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #FFF;
+}
+
+.GPflexInput {
+  display: flex;
+}
+
+.GPflexInput > * {
+  display: block;
+  box-sizing: border-box;
+  height: 28px;
+  line-height: 26px;
+  border: 1px solid #999;
+  border-radius: 0;
+}
+
+.GPflexInput *:not(:last-child) {
+  border-right:none;
+}
+
+.GPflexInput *:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.GPflexInput *:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+.GPflexInput > *:not(input) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.GPflexInput > input {
+  flex: 1;
+  padding: 0 5px;
+  min-width: 0;
+}
+
+.GPflexInput > select {
+  flex: 1;
+  padding-left: 3px;
+  padding-right: 7px;
+}
+
+.GPflexInput > label {
+  background-color:  #F2F2F2;
+  color: #666666;
+  padding-left: 7px;
+  padding-right: 9px;
+  cursor: pointer;
+}
+
+.GPadvancedSearchCodeLabel,
+.GPadvancedSearchFilterLabel {
+  max-width: 105px;
+}
+
+.GPadvancedSearchCodeLabel,
+.GPadvancedSearchCode,
+ #GPadvancedSearchFilters{
+  margin-top: 15px;
+}
+
+.GPadvancedSearchFilterLabel,
+.GPadvancedSearchFilterInput {
+  margin-bottom: 5px;
+}
+
+input#GPadvancedSearchSubmit {
+  display: block;
+  width: 80px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  height: 28px;
+  line-height: 26px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  color: #FFF;
+  font-weight: bold;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#GPadvancedSearchSubmit:hover {
+  opacity: 1;
+}
+
+/* Autocomplete list / geocode results */
+
+#GPautoCompleteList,
+#GPgeocodeResultsList {
+  display: none;
+  position: absolute;
+  width: 280px;
+}
+
+#GPautoCompleteList,
+#GPgeocodeResults {
+  background-color: #FFF;
+  max-height: 140px;
+}
+
+#GPautoCompleteList {
+  overflow-y: hidden;
+  top: 35px;
+}
+
+#GPgeocodeResultsList {
+  top: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#GPgeocodeResults {
+  overflow-y: auto;
+}
+
+.GPautoCompleteProposal,
+.GPgeocodeResult {
+  box-sizing: border-box;
+  width: 100%;
+  height: 28px;
+  line-height: 16px;
+  padding: 6px 10px;
+  color: #5E5E5E;
+  font-size: 1.0em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  cursor: pointer;
+}
+
+.GPautoCompleteProposal:hover,
+.GPgeocodeResult:hover {
+  color: #000000;
+}
+
+.GPautoCompleteProposal:hover,
+.GPgeocodeResult:hover {
+  background-color: #CEDBEF;
+}

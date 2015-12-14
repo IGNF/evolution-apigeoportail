@@ -1,0 +1,224 @@
+/* REVERSE GEOCODING */
+
+#GPadvancedToolsPanel {
+  position: absolute;
+  top: 100px;
+}
+
+#GPreverseGeocodingPanel input[type='text'], #GPreverseGeocodingPanel input[type='button'] {
+  -webkit-appearance: none;
+}
+
+#GPreverseGeocodingPanel input[type="checkbox"] {
+  display: none;
+}
+
+#GPreverseGeocodingPanel form {
+  margin-bottom: 0;
+}
+
+/* Showing/hiding reverse geocoding panel */
+
+.GPshowAdvancedToolPicto {
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+}
+
+.GPshowAdvancedToolOpen {
+  position: absolute;
+  display: block;
+}
+
+.GPadvancedToolsPanelVisible,
+.GPadvancedToolVisible {
+  display: block;
+}
+
+.GPadvancedToolsPanelHidden,
+.GPadvancedToolHidden {
+  display: none;
+}
+
+/* General panels */
+
+#GPreverseGeocodingPanel {
+  position: absolute;
+  top: 100px;
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  font-size: 13px;
+  color: #333333;
+  box-sizing: padding-box;
+  width: 280px;
+  background-color: #FFF;
+  overflow: hidden;
+}
+
+.GPreverseGeocodingPanelHeader {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+
+.GPreverseGeocodingPanelTitle {
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+} 
+
+#GPreverseGeocodingPanelClose {
+  position: absolute;
+  cursor: pointer;
+}
+
+/* Showing/hiding filters */
+
+#GPshowReverseGeocodingFilters {
+  display: none;
+}
+
+.GPshowReverseGeocodingFiltersPicto {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  display: block;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.5s ease-out 0s;
+}
+
+input[type="checkbox"]:checked + .GPshowReverseGeocodingFiltersPicto {
+  transform: rotateX(180deg);
+}
+
+#GPshowReverseGeocodingFilters + label + #GPreverseGeocodingFilters {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+#GPshowReverseGeocodingFilters:checked + label + #GPreverseGeocodingFilters {
+  display: block;
+  max-height: 500px;
+  opacity: 1;
+  margin-bottom: 10px;
+}
+
+/* Search panel */
+
+#GPreverseGeocodingForm {
+  position: relative;
+  box-sizing: border-box;
+  max-height: 270px;
+  overflow-y: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  background-color: #FFF;
+}
+
+#GPreverseGeocodingFilters {
+  overflow: hidden;
+  margin-top: 15px;
+  transition: max-height 0.5s ease-in-out 0.25s, opacity 0.5s ease-in-out 0.25s, margin 0.3s ease-in-out 0.25s;
+}
+
+.GPreverseGeocodingFiltersLabel {
+  display: block;
+  margin: auto;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.GPflexInput {
+  display: flex;
+}
+
+.GPflexInput > * {
+  display: block;
+  box-sizing: border-box;
+  height: 28px;
+  line-height: 26px;
+  border: 1px solid #999;
+  border-radius: 0;
+}
+
+.GPflexInput *:not(:last-child) {
+  border-right:none;
+}
+
+.GPflexInput *:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.GPflexInput *:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+.GPflexInput > *:not(input) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.GPflexInput > input {
+  flex: 1;
+  padding-left: 0 5px;
+  min-width: 0;
+}
+
+.GPflexInput > select {
+  flex: 1;
+  padding-left: 3px;
+  padding-right: 7px;
+}
+
+.GPflexInput > label {
+  background-color:  #F2F2F2;
+  color: #666666;
+  padding-left: 7px;
+  padding-right: 9px;
+  cursor: pointer;
+}
+
+.GPreverseGeocodingCodeLabel,
+.GPreverseGeocodingFilterLabel {
+  max-width: 105px;
+}
+
+.GPreverseGeocodingCodeLabel,
+.GPreverseGeocodingCode {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.GPreverseGeocodingFilterLabel,
+.GPreverseGeocodingFilterInput {
+  margin-bottom: 5px;
+}
+
+input#GPreverseGeocodingSubmit {
+  display: block;
+  width: 80px;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  height: 28px;
+  line-height: 26px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  color: #FFF;
+  font-weight: bold;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#GPreverseGeocodingSubmit:hover {
+  opacity: 1;
+}

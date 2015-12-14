@@ -1,0 +1,322 @@
+/* ISOCHRON */
+
+#GPadvancedToolsPanel {
+  position: absolute;
+  top: 100px;
+}
+
+#GPisochronPanel input[type='text'], #GPisochronPanel input[type='button'] {
+  -webkit-appearance: none;
+}
+
+#GPisochronPanel input[type="checkbox"] {
+  display: none;
+}
+
+#GPisochronPanel form {
+  margin-bottom: 0;
+}
+
+/* Showing/hiding isochron panel */
+
+.GPshowAdvancedToolPicto {
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+}
+
+.GPshowAdvancedToolOpen {
+  position: absolute;
+  display: block;
+}
+
+.GPadvancedToolsPanelVisible,
+.GPadvancedToolVisible {
+  display: block;
+}
+
+.GPadvancedToolsPanelHidden,
+.GPadvancedToolHidden {
+  display: none;
+}
+
+/* General panels */
+
+#GPisochronPanel {
+  position: absolute;
+  top: 100px;
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  font-size: 13px;
+  color: #333333;
+  box-sizing: padding-box;
+  width: 280px;
+  background-color: #FFF;
+  overflow: hidden;
+}
+
+.GPisochronPanelHeader {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+
+.GPisochronPanelTitle {
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+} 
+
+#GPisochronPanelClose {
+  position: absolute;
+  cursor: pointer;
+}
+
+/* Isochron form */
+
+#GPisochronForm {
+  padding: 15px;
+}
+
+.GPisochronFormMini {
+  max-height: 28px;
+}
+
+.GPflexInput {
+  display: flex;
+}
+
+.GPflexInput > * {
+  display: block;
+  box-sizing: border-box;
+  height: 28px;
+  line-height: 26px;
+  border: 1px solid #999;
+  border-radius: 0;
+}
+
+.GPflexInput *:not(:last-child) {
+  border-right:none;
+}
+
+.GPflexInput *:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.GPflexInput *:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+.GPflexInput > *:not(input) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.GPflexInput > input {
+  flex: 1;
+  padding: 0 5px;
+  min-width: 0;
+}
+
+.GPflexInput > select {
+  flex: 1;
+  padding-left: 3px;
+  padding-right: 7px;
+}
+
+.GPflexInput > label {
+  background-color:  #F2F2F2;
+  color: #666666;
+  padding-left: 7px;
+  padding-right: 9px;
+  cursor: pointer;
+}
+
+.GPisochronOriginVisible {
+  display: block;
+}
+
+.GPisochronOriginHidden {
+  display: none;
+}
+
+.GPisochronOriginPointerImg {
+  width: 28px;
+  background-color: #F2F2F2;
+  cursor: pointer;
+}
+
+#GPisochronOriginPointer + .GPisochronOriginPointerImg {
+  background-position: -1px -1px;
+}
+
+#GPisochronOriginPointer:checked + .GPisochronOriginPointerImg {
+  background-position: -29px -1px;
+}
+
+input#GPisochronSubmit {
+  display: block;
+  width: 80px;
+  margin: auto;
+  margin-top: 5px;
+  height: 28px;
+  line-height: 26px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  color: #FFF;
+  font-weight: bold;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#GPisochronSubmit:hover {
+  opacity: 1;
+}
+
+/* Autocomplete list */
+
+#GPisochronAutoCompleteList {
+  box-sizing: border-box;
+  display: none;
+  position: absolute;
+  width: 250px;
+  max-height: 140px;
+  background-color: #FFF;
+  border: 1px solid #999;
+  border-top: none;
+  font-size: 0.9em;
+  overflow-y: hidden;
+}
+
+.GPisochronAutoCompleteProposal {
+  box-sizing: border-box;
+  width: 100%;
+  height: 28px;
+  line-height: 16px;
+  padding: 6px 10px;
+  color: #5E5E5E;
+  font-size: 1.0em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  cursor: pointer;
+}
+
+.GPisochronAutoCompleteProposal:hover {
+  color: #000000;
+  background-color: #CEDBEF
+}
+
+
+/* Alternative choice */
+
+#GPisochronChoice {
+  display: flex;
+  width: 160px;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.GPisochronChoiceAlt input {
+  display: none;
+}
+
+.GPisochronChoiceAltImg {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: auto;
+  cursor: pointer;
+}
+
+#GPisochronChoiceAltChron + .GPisochronChoiceAltImg {
+  background-position: -56px 0;
+}
+
+#GPisochronChoiceAltChron:checked + .GPisochronChoiceAltImg {
+  background-position: -84px 0;
+}
+
+#GPisochronChoiceAltDist + .GPisochronChoiceAltImg {
+  background-position: -112px 0;
+}
+
+#GPisochronChoiceAltDist:checked + .GPisochronChoiceAltImg {
+  background-position: -140px 0;
+}
+
+.GPisochronChoiceAlt span {
+  cursor: pointer;
+  display:block;
+  color: #999;
+}
+
+.GPisochronValueHidden {
+  display: none;
+}
+
+#GPisochronValueChron,
+#GPisochronValueDist {
+  width: 220px;
+  margin: auto;
+}
+
+/* Mode choice */
+
+#GPisochronModeChoice {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.GPisochronModeLabel {
+  display: block;
+  text-align: center;
+  margin: 5px;
+}
+
+#GPisochronTransportChoice input {
+  display: none;
+}
+
+.GPisochronTransportImg {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+#GPisochronTransportCar + .GPisochronTransportImg {
+  background-position: -168px 0;
+  margin-left: 21px;
+  margin-right: 10px;
+}
+
+#GPisochronTransportCar:checked + .GPisochronTransportImg {
+  background-position: -196px 0;
+}
+
+#GPisochronTransportPedestrian + .GPisochronTransportImg {
+  background-position: -224px 0;
+}
+
+#GPisochronTransportPedestrian:checked + .GPisochronTransportImg {
+  background-position: -252px 0;
+}
+
+#GPisochronDirectionSelect {
+  box-sizing: border-box;
+  display: block;
+  width: 80px;
+  height: 28px;
+  line-height: 26px;
+  margin: auto;
+  border: 1px solid #999;
+  border-radius: 3px;
+  cursor: pointer;
+}
