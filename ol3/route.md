@@ -40,8 +40,287 @@ A venir...
     
 
 <div id="viewerDiv">
-
-<!-- ... -->
+            
+            <div class="ol-zoom">
+                <button class="ol-zoom-in" type="button" title="Zoom in">+</button>
+                <button class="ol-zoom-out" type="button" title="Zoom out">−</button>
+            </div>
+            
+            <!-- ADVANCED TOOLS PANEL -->
+            
+            <div id="GPadvancedToolsPanel" class="GPadvancedToolsPanelVisible">
+                <div id="GPshowRoutePicto" class="GPshowAdvancedToolPicto" title="Ouvrir le calcul d'itinéraire">
+                    <span id="GPshowRouteOpen" class="GPshowAdvancedToolOpen"></span>
+                </div>
+            </div>
+            
+            <!-- ADVANCED TOOLS : ROUTE -->
+            
+            <div id="GProutePanel" class="GPadvancedToolHidden">
+            
+                <div class="GProutePanelHeader">
+                    <div class="GProutePanelTitle">Calcul d'itinéraire</div>
+                    <div id="GProutePanelClose" title="Fermer le panneau"></div>
+                </div>
+                
+                <!-- Formulaire de saisie -->
+                <form id="GProuteForm">
+                    
+                    <!-- Start input -->
+                    <div id="GProutePoint1" class="GProuteStageFlexInput">
+                        <label id="GProuteOriginLabel1" for="GProuteOrigin1">Départ</label>
+                        <input id="GProuteOrigin1" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
+                        <input id="GProuteOriginCoords1" class="GProuteOriginHidden" type="text" disabled />
+                        <input id="GProuteOriginPointer1" type="checkbox" />
+                        <label id="GProuteOriginPointerImg1" class="GProuteOriginPointerImg" for="GProuteOriginPointer1" title="Pointer un lieu sur la carte"></label>
+                    </div>
+                    <!-- Autocomplete list -->
+                    <div id="GProuteAutoCompleteList1" class="GProuteAutoCompleteList">
+                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GProuteAutoCompleteProposal">What else ?</div>
+                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    </div>
+                    
+                    <!-- Stage input -->
+                    <div id="GProutePoint2" class="GProuteStageFlexInputHidden">
+                        <label id="GProuteOriginLabel2" for="GProuteOrigin2">Etape</label>
+                        <input id="GProuteOrigin2" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
+                        <input id="GProuteOriginCoords2" class="GProuteOriginHidden" type="text" disabled />
+                        <input id="GProuteOriginPointer2" type="checkbox" />
+                        <label id="GProuteOriginPointerImg2" class="GProuteOriginPointerImg" for="GProuteOriginPointer2" title="Pointer un lieu sur la carte"></label>
+                        <div id="GProuteStageRemove2" class="GProuteStageRemove" title="Supprimer l'étape"></div>
+                    </div>
+                    <!-- Autocomplete list -->
+                    <div id="GProuteAutoCompleteList2" class="GProuteAutoCompleteList">
+                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GProuteAutoCompleteProposal">What else ?</div>
+                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    </div>
+                    
+                    <!-- Stage input -->
+                    <div id="GProutePoint3" class="GProuteStageFlexInputHidden">
+                        <label id="GProuteOriginLabel3" for="GProuteOrigin3">Etape</label>
+                        <input id="GProuteOrigin3" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
+                        <input id="GProuteOriginCoords3" class="GProuteOriginHidden" type="text" disabled />
+                        <input id="GProuteOriginPointer3" type="checkbox" />
+                        <label id="GProuteOriginPointerImg3" class="GProuteOriginPointerImg" for="GProuteOriginPointer3" title="Pointer un lieu sur la carte"></label>
+                        <div id="GProuteStageRemove3" class="GProuteStageRemove" title="Supprimer l'étape"></div>
+                    </div>
+                    <!-- Autocomplete list -->
+                    <div id="GProuteAutoCompleteList3" class="GProuteAutoCompleteList">
+                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GProuteAutoCompleteProposal">What else ?</div>
+                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    </div>
+                    
+                    <!-- Stage input -->
+                    <div id="GProutePoint4" class="GProuteStageFlexInputHidden">
+                        <label id="GProuteOriginLabel4" for="GProuteOrigin4">Etape</label>
+                        <input id="GProuteOrigin4" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
+                        <input id="GProuteOriginCoords4" class="GProuteOriginHidden" type="text" disabled />
+                        <input id="GProuteOriginPointer4" type="checkbox" />
+                        <label id="GProuteOriginPointerImg4" class="GProuteOriginPointerImg" for="GProuteOriginPointer4" title="Pointer un lieu sur la carte"></label>
+                        <div id="GProuteStageRemove4" class="GProuteStageRemove" title="Supprimer l'étape"></div>
+                    </div>
+                    <!-- Autocomplete list -->
+                    <div id="GProuteAutoCompleteList4" class="GProuteAutoCompleteList">
+                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GProuteAutoCompleteProposal">What else ?</div>
+                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    </div>
+                    
+                    <!-- Stage input -->
+                    <div id="GProutePoint5" class="GProuteStageFlexInputHidden">
+                        <label id="GProuteOriginLabel5" for="GProuteOrigin5">Etape</label>
+                        <input id="GProuteOrigin5" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
+                        <input id="GProuteOriginCoords5" class="GProuteOriginHidden" type="text" disabled />
+                        <input id="GProuteOriginPointer5" type="checkbox" />
+                        <label id="GProuteOriginPointerImg5" class="GProuteOriginPointerImg" for="GProuteOriginPointer5" title="Pointer un lieu sur la carte"></label>
+                        <div id="GProuteStageRemove5" class="GProuteStageRemove" title="Supprimer l'étape"></div>
+                    </div>
+                    <!-- Autocomplete list -->
+                    <div id="GProuteAutoCompleteList5" class="GProuteAutoCompleteList">
+                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GProuteAutoCompleteProposal">What else ?</div>
+                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    </div>
+                    
+                    <!-- Stage input -->
+                    <div id="GProutePoint6" class="GProuteStageFlexInputHidden">
+                        <label id="GProuteOriginLabel6" for="GProuteOrigin6">Etape</label>
+                        <input id="GProuteOrigin6" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
+                        <input id="GProuteOriginCoords6" class="GProuteOriginHidden" type="text" disabled />
+                        <input id="GProuteOriginPointer6" type="checkbox" />
+                        <label id="GProuteOriginPointerImg6" class="GProuteOriginPointerImg" for="GProuteOriginPointer6" title="Pointer un lieu sur la carte"></label>
+                        <div id="GProuteStageRemove6" class="GProuteStageRemove" title="Supprimer l'étape"></div>
+                    </div>
+                    <!-- Autocomplete list -->
+                    <div id="GProuteAutoCompleteList6" class="GProuteAutoCompleteList">
+                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GProuteAutoCompleteProposal">What else ?</div>
+                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    </div>
+                    
+                    <!-- Arrival input -->
+                    <div id="GProutePoint7" class="GProuteStageFlexInput">
+                        <label id="GProuteOriginLabel7" for="GProuteOrigin7">Arrivée</label>
+                        <input id="GProuteOrigin7" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
+                        <input id="GProuteOriginCoords7" class="GProuteOriginHidden" type="text" disabled />
+                        <input id="GProuteOriginPointer7" type="checkbox" />
+                        <label id="GProuteOriginPointerImg7" class="GProuteOriginPointerImg" for="GProuteOriginPointer7" title="Pointer un lieu sur la carte"></label>
+                        <div id="GProuteStageAdd" title="Ajouter une étape"></div>
+                    </div>
+                    <!-- Autocomplete list -->
+                    <div id="GProuteAutoCompleteList7" class="GProuteAutoCompleteList">
+                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GProuteAutoCompleteProposal">What else ?</div>
+                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    </div>
+                    
+                    <!-- Computation modes -->
+                    <div id="GProuteModeChoice">
+                        <div id="GProuteTransportChoice">
+                            <span class="GProuteModeLabel">Mode de transport</span>
+                            <input type="radio" id="GProuteTransportCar" name="GProuteTransport" value="car" checked>
+                            <label class="GProuteTransportImg" for="GProuteTransportCar" title="Voiture"></label>
+                            <input type="radio" id="GProuteTransportPedestrian" name="GProuteTransport" value="pedestrian">
+                            <label class="GProuteTransportImg" for="GProuteTransportPedestrian" title="Piéton"></label>
+                        </div>
+                        <div id="GProuteComputationChoice">
+                            <span class="GProuteModeLabel">Mode de calcul</span>
+                            <select id="GProuteComputationSelect">
+                                <option>Plus rapide</option>
+                                <option>Plus court</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Hidden checkbox + label for showing exclusions -->
+                    <input type="checkbox" id="GPshowRouteExclusions" />
+                    <label for="GPshowRouteExclusions" id="GPshowRouteExclusionsPicto" class="GPshowRouteExclusionsPicto" title="Critères d'exclusion"></label>
+                    <!-- Exclusions -->
+                    <div id="GProuteExclusions">
+                        <span class="GProuteExclusionsLabel">Passages autorisés</span>
+                        <div class="GProuteExclusionsOptions">
+                            <input type="checkbox" id="GProuteExclusionsToll" checked/>
+                            <label for="GProuteExclusionsToll" class="GProuteExclusionsOption">Péages</label>
+                            <input type="checkbox" id="GProuteExclusionsTunnel" checked/>
+                            <label for="GProuteExclusionsTunnel" class="GProuteExclusionsOption">Tunnels</label>
+                            <input type="checkbox" id="GProuteExclusionsBridge" checked/>
+                            <label for="GProuteExclusionsBridge" class="GProuteExclusionsOption">Ponts</label>
+                        </div>
+                    </div>
+                    
+                    <!-- Input button -->
+                    <input type="submit" id="GProuteSubmit" value="Calculer" />
+                    
+                </form>
+                
+                <!-- Fenêtre de résultats -->
+                <div id="GProuteResultsPanel" class="GProuteComponentHidden">
+                    
+                    <!-- Route stages, fillen in JS -->
+                    <div id="GProuteResultsStages"></div>
+                    
+                    <!-- Results -->
+                    <div id="GProuteResults">
+                        <div id="GProuteResultsValues">
+                            <div class="GProuteResultsValue">
+                                <div class="GProuteResultsValueLabel">Distance :</div>
+                                <div id="GProuteResultsValueDist">146 km</div>
+                            </div>
+                            <div class="GProuteResultsValue">
+                                <div class="GProuteResultsValueLabel">Durée :</div>
+                                <div id="GProuteResultsValueTime">1h45</div>
+                            </div>
+                        </div>
+                        <div id="GProuteResultsMode">
+                            <select id="GProuteResultsComputationSelect">
+                                <option>Plus rapide</option>
+                                <option>Plus court</option>
+                            </select>
+                        </div>
+                        <div id="GProuteResultsNew" title="Modifier le calcul"></div>
+                    </div>
+                    
+                    <!-- Details header -->
+                    <div class="GPfakeBorder GPfakeBorderLeft"></div>
+                    <input type="checkbox" id="GProuteResultsShowDetails"></input>
+                    <label for="GProuteResultsShowDetails">Afficher le détail</label>
+                    <label for="GProuteResultsShowDetails">Masquer le détail</label>
+                    <div class="GPfakeBorder"></div>
+                    
+                    <!-- Details -->
+                    <div id="GProuteResultsDetails">
+                        <div class="GProuteResultsDetailsNumber">1.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">2.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">3.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">4.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous. Si vous êtes revenus au départ, pas de bol</div>
+                        <div class="GProuteResultsDetailsNumber">5.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">6.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">7.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">8.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">9.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">10.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">11.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">12.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">13.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">14.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">15.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">16.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">17.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">18.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">19.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">20.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">21.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">22.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">23.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">24.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                        <div class="GProuteResultsDetailsNumber">25.</div>
+                        <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
+                    </div>
+                    
+                </div>
+                
+            </div>
             
 </div>
         

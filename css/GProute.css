@@ -1,0 +1,567 @@
+/* ISOCHRON */
+
+#GPadvancedToolsPanel {
+  position: absolute;
+  top: 100px;
+}
+
+#GProutePanel input[type='text'], #GProutePanel input[type='button'] {
+  -webkit-appearance: none;
+  color: #333333;
+}
+
+#GProutePanel input[type='text']:disabled {
+  background-color: #F2F2F2;
+  color: #666666;
+}
+
+#GProutePanel input[type="checkbox"] {
+  display: none;
+}
+
+#GProutePanel form {
+  margin-bottom: 0;
+}
+
+/* Showing/hiding route panel */
+
+.GPshowAdvancedToolPicto {
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+}
+
+.GPshowAdvancedToolOpen {
+  position: absolute;
+  display: block;
+}
+
+.GPadvancedToolsPanelVisible,
+.GPadvancedToolVisible {
+  display: block;
+}
+
+.GPadvancedToolsPanelHidden,
+.GPadvancedToolHidden {
+  display: none;
+}
+
+/* General panels */
+
+#GProutePanel {
+  position: absolute;
+  top: 100px;
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  font-size: 13px;
+  color: #333333;
+  box-sizing: padding-box;
+  width: 320px;
+  background-color: #FFF;
+}
+
+.GProutePanelHeader {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+
+.GProutePanelTitle {
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+} 
+
+#GProutePanelClose {
+  position: absolute;
+  cursor: pointer;
+}
+
+.GProuteComponentHidden {
+  display: none;
+}
+
+/* Route form */
+
+#GProuteForm {
+  padding: 15px;
+}
+
+.GProuteFormMini {
+  max-height: 28px;
+  overflow: hidden;
+  transform: translateY(-5px);
+}
+
+.GProuteStageFlexInput,
+.GProuteStageFlexInputHidden {
+  display: flex;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out, margin 0.3s ease-out;
+}
+
+.GProuteStageFlexInput {
+  max-height: 28px;
+  opacity: 1;
+}
+
+.GProuteStageFlexInputHidden {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.GProuteStageFlexInput > *,
+.GProuteStageFlexInputHidden > * {
+  display: block;
+  box-sizing: border-box;
+  height: 28px;
+  line-height: 26px;
+  border: 1px solid #999;
+  border-radius: 0;
+}
+
+.GProuteStageFlexInput *:not(:last-child),
+.GProuteStageFlexInputHidden *:not(:last-child) {
+  border-right:none;
+}
+
+.GProuteStageFlexInput *:first-child,
+.GProuteStageFlexInputHidden *:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.GProuteStageFlexInput *:last-child,
+.GProuteStageFlexInputHidden *:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+.GProuteStageFlexInput > *:not(input),
+.GProuteStageFlexInputHidden > *:not(input) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.GProuteStageFlexInput > input,
+.GProuteStageFlexInputHidden > input {
+  flex: 1;
+  padding: 0 5px;
+  min-width: 0;
+}
+
+.GProuteStageFlexInput > select,
+.GProuteStageFlexInputHidden > select {
+  flex: 1;
+  padding-left: 3px;
+  padding-right: 7px;
+}
+
+.GProuteStageFlexInput > label,
+.GProuteStageFlexInputHidden > label {
+  background-color:  #F2F2F2;
+  color: #666666;
+  padding-left: 7px;
+  padding-right: 9px;
+  cursor: pointer;
+}
+
+#GProuteForm > .GProuteStageFlexInput {
+  margin-top: 5px;
+}
+
+#GProuteForm > .GProuteStageFlexInputHidden {
+  margin-top: 0;
+}
+
+#GProuteForm > .GProuteStageFlexInput:first-child {
+  margin-top: 0;
+  transition: none;
+}
+
+#GProuteForm.GProuteFormMini > .GProuteStageFlexInput:first-child {
+  margin-top: 5px;
+}
+
+.GProuteOriginVisible {
+  display: block;
+}
+
+.GProuteOriginHidden {
+  display: none;
+}
+
+label.GProuteOriginPointerImg[id*="GProuteOriginPointerImg"] {
+  width: 28px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-right: 1px solid #999;
+}
+
+input[id*="GProuteOriginPointer"] + .GProuteOriginPointerImg {
+  background-position: -1px -1px;
+}
+
+input[id*="GProuteOriginPointer"]:checked + .GProuteOriginPointerImg {
+  background-position: -29px -1px;
+}
+
+.GProuteStageRemove,
+#GProuteStageAdd {
+  width: 28px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.GProuteFormMini .GProuteStageRemove,
+.GProuteFormMini #GProuteStageAdd {
+  display: none;
+}
+
+.GProuteStageRemove {
+  background-position: -84px 0;
+}
+
+#GProuteStageAdd {
+  background-position: -56px 0;
+}
+
+input#GProuteSubmit {
+  display: block;
+  width: 80px;
+  margin: auto;
+  height: 28px;
+  line-height: 26px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  color: #FFF;
+  font-weight: bold;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-out;
+  cursor: pointer;
+}
+
+#GProuteSubmit:hover {
+  opacity: 1;
+}
+
+/* Autocomplete list */
+
+.GProuteAutoCompleteList {
+  z-index: 2;
+  box-sizing: border-box;
+  display: none;
+  position: absolute;
+  width: 250px;
+  max-height: 140px;
+  background-color: #FFF;
+  border: 1px solid #999;
+  border-top: none;
+  font-size: 0.9em;
+  overflow-y: hidden;
+}
+
+.GProuteAutoCompleteProposal {
+  box-sizing: border-box;
+  width: 100%;
+  height: 28px;
+  line-height: 16px;
+  padding: 6px 10px;
+  color: #5E5E5E;
+  font-size: 1.0em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  cursor: pointer;
+}
+
+.GProuteAutoCompleteProposal:hover {
+  color: #000000;
+  background-color: #CEDBEF
+}
+
+/* Mode choice */
+
+#GProuteModeChoice {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+}
+
+.GProuteModeLabel {
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#GProuteTransportChoice input {
+  display: none;
+}
+
+.GProuteTransportImg {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+#GProuteTransportCar + .GProuteTransportImg {
+  background-position: -112px 0;
+  margin-left: 21px;
+  margin-right: 10px;
+}
+
+#GProuteTransportCar:checked + .GProuteTransportImg {
+  background-position: -140px 0;
+}
+
+#GProuteTransportPedestrian + .GProuteTransportImg {
+  background-position: -168px 0;
+}
+
+#GProuteTransportPedestrian:checked + .GProuteTransportImg {
+  background-position: -196px 0;
+}
+
+#GProuteComputationSelect {
+  box-sizing: border-box;
+  display: block;
+  width: 100px;
+  height: 28px;
+  line-height: 26px;
+  padding-left: 3px;
+  margin: auto;
+  border: 1px solid #999;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Showing/hiding exclusions */
+
+#GPshowRouteExclusions {
+  display: none;
+}
+
+.GPshowRouteExclusionsPicto {
+  position: absolute;
+  top: 185px;
+  right: 0;
+  display: block;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.5s ease-out 0s;
+}
+
+input[type="checkbox"]:checked + .GPshowRouteExclusionsPicto {
+  transform: rotateX(180deg);
+}
+
+#GPshowRouteExclusions + label + #GProuteExclusions {
+  max-height: 0;
+  opacity: 0;
+  margin-bottom: 0;
+}
+
+#GPshowRouteExclusions:checked + label + #GProuteExclusions {
+  display: block;
+  max-height: 60px;
+  opacity: 1;
+  margin-bottom: 15px;
+}
+
+/* Exclusions */
+
+#GProuteExclusions {
+  transition: max-height 0.5s ease-in-out 0.25s, opacity 0.5s ease-in-out 0.25s, margin 0.3s ease-in-out 0.25s;
+  overflow: hidden;
+}
+
+.GProuteExclusionsLabel {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.GProuteExclusionsOptions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.GProuteExclusionsOption {
+  display: block;
+  box-sizing: border-box;
+  height: 28px;
+  line-height: 26px;
+  color: #A77;
+  background-color: #FEE;
+  background-repeat: no-repeat;
+  padding-left: 28px;
+  padding-right: 5px;
+  border: 1px solid #A77;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input:checked + .GProuteExclusionsOption {
+  background-color: #EFE;
+  background-position: 0 -28px;
+  color: #797;
+  border: 1px solid #797;
+}
+
+/* Result panel */
+
+#GProuteResultsPanel {
+  padding: 15px;
+}
+
+.GProuteResultStage {
+  display: flex;
+}
+
+#GProuteResultsStages {
+  margin-bottom: 15px;
+}
+
+.GProuteResultStageLabel,
+.GProuteResultStageValue,
+.GProuteResultsValueLabel,
+#GProuteResultsValueDist,
+#GProuteResultsValueTime {
+  display: inline-block;
+  line-height: 18px;
+}
+
+.GProuteResultStageLabel,
+.GProuteResultsValueLabel {
+  color: #666;
+}
+
+.GProuteResultStageLabel {
+  width: 60px;
+}
+
+.GProuteResultsValueLabel {
+  width: 65px;
+}
+
+.GProuteResultStageValue {
+  flex: 1;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#GProuteResultsValueDist,
+#GProuteResultsValueTime {
+  width: 60px;
+  font-weight: bold;
+}
+
+#GProuteResults {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+select#GProuteResultsComputationSelect {
+  box-sizing: border-box;
+  display: block;
+  width: 100px;
+  height: 28px;
+  padding-left: 3px;
+  line-height: 26px;
+  margin: auto;
+  border: 1px solid #999;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#GProuteResultsNew {
+  width: 28px;
+  height: 28px;
+  border-radius: 3px;
+  opacity: 0.8;
+  background-position: -224px 0;
+  transition: opacity 0.2s ease-out;
+  cursor: pointer;
+}
+
+#GProuteResultsNew:hover {
+  opacity: 1;
+}
+
+/* Results details header */
+
+.GPfakeBorder {
+  display: inline-block;
+  height: 14px;
+  width: 60px;
+  border-bottom: 1px solid #999;
+}
+
+.GPfakeBorderLeft {
+  margin-left:15px;
+}
+
+#GProuteResultsShowDetails + label,
+#GProuteResultsShowDetails + label + label {
+  width: 130px;
+  line-height: 28px;
+  vertical-align: top;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+
+#GProuteResultsShowDetails + label,
+#GProuteResultsShowDetails:checked + label + label {
+  display: inline-block;
+}
+
+#GProuteResultsShowDetails:checked + label,
+#GProuteResultsShowDetails + label + label {
+  display: none;
+}
+
+#GProuteResultsShowDetails + label + label + div + #GProuteResultsDetails {
+  max-height: 0;
+  opacity: 0;
+}
+
+#GProuteResultsShowDetails:checked + label + label + div + #GProuteResultsDetails {
+  max-height: 200px;
+  opacity: 1;
+}
+
+#GProuteResultsDetails {
+  overflow-y: auto;
+  transition: max-height 0.5s ease-in-out 0.25s, opacity 0.5s ease-in-out 0.25s;
+}
+
+.GProuteResultsDetailsNumber,
+.GProuteResultsDetailsInstruction {
+  display: inline-block;
+  margin-top: 4px;
+  line-height: 16px;
+  color: #666;
+}
+
+.GProuteResultsDetailsNumber {
+  font-weight: bold;
+  width: 22px;
+  text-align: right;
+  vertical-align: top;
+}
+
+.GProuteResultsDetailsInstruction {
+  box-sizing: border-box;
+  width: calc(100% - 30px);
+  padding-left: 5px;
+}
