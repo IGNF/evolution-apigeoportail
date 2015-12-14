@@ -6,11 +6,11 @@ order: 000000
 api: leaflet
 ---
 
-# Plugin Géoportail pour Leaflet
+# Extension Géoportail pour Leaflet
 
 ## Présentation
 
-Le plugin Géoportail pour Leaflet définit des classes et composants à utiliser avec Leaflet permettant de faciliter l'accès aux ressources délivrées par le Géoportail avec cette bibliothèque.
+L'extension Géoportail pour Leaflet définit des classes et composants à utiliser avec Leaflet permettant de faciliter l'accès aux ressources délivrées par le Géoportail avec cette bibliothèque.
 
 ## Fonctionnalités proposées
 
