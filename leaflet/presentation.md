@@ -14,7 +14,7 @@ L'extension Géoportail pour Leaflet définit des classes et composants à utili
 
 ## Fonctionnalités proposées
 
-Les fonctionnalités suivantes sont proposées par cette extension sont les suivantes :
+Les fonctionnalités proposées par cette extension sont les suivantes :
 
 ### Affichage simple des couches WMTS et WMS Géoportail
 

@@ -6,7 +6,7 @@ order: 030100
 api: services
 ---
 
-## Gp.protocols : Protocoles d'accès
+# Gp.protocols : Protocoles d'accès
 
 Les webservices de la plateforme Géoportail sont, par définition, accessibles via le protocole HTTP.
 

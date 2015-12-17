@@ -6,31 +6,31 @@ order: 030211
 api: services
 ---
 
-## Service WCTS : connaître le domaine de validité d'un Système de coordonnées.
+# Service WCTS : connaître le domaine de validité d'un Système de coordonnées.
 
 Il s'agit de proposer une couche logicielle permettant d'utiliser l'opération getValidityArea du service de transformations de coordonnées du Géoportail.
 
-### Cas d'utilisation
+## Cas d'utilisation
 
 L'utilisateur invoque le service WCTS pour connaître le domaine de validité d'un système de coordonnées dont il fournit l'identifiant. Il reçoit en retour les coordonnées de l'emprise géographique (rectangle englobant) du système de coordonnées.
 
-### Mise en oeuvre
+## Mise en oeuvre
 
 L'utilisation se fera par l'appel d'une fonction statique :
 
 > Gp.services.getSrsValidityArea(options)
 
-#### Description
+### Description
 
 La fonction prend en paramètre d'entrée un objet dont les propriétés peuvent prendre les valeurs suivantes (en plus des [propriétés générales décrites précédemment](./dd_services.html#commonParams)) :
 
-#### Paramètres de l'objet options en entrée de la fonction srsValidityArea
+### Paramètres de l'objet options en entrée de la fonction srsValidityArea
 
 Paramètre | Type | Opt. | Valeur
 - |-|-|-|
 identifier | String | Obligatoire identifiant du système de coordonnées, compréhensible par le service (la liste des identifiants supportés est disponible à l'aide de l'opération DescribeProcess sur le processus GetValidityArea (http://wxs.ign.fr/CLEF/geoportail/wps?Service=WPS&Request=DescribeProcess&Version=1.0.0&Identifier=GetValidityArea )
 
-#### Paramètres de la fonction onSuccess
+### Paramètres de la fonction onSuccess
 
 La fonction onSuccess prend en paramètre un objet ayant les propriétés suivantes :
 
@@ -38,7 +38,7 @@ Paramètre | Type | Valeur
 - |-|-|-|
 bbox | array(Float) | Objet contenant les coordonnées, exprimées longitudes, latitudes (EPSG:4326) du rectangle englobant décrivant la zone de validité, dans l'ordre suivant : [lonMin, latMin, lonMax, latMax].
 
-#### Paramètres de la fonction onFailure
+### Paramètres de la fonction onFailure
 
 La fonction onFailure prend en paramètre un objet error avec les propriétés suivantes :
 
@@ -50,9 +50,9 @@ message | string | Message d'erreur. Il peut s'agir de celui renvoyé par le ser
 
 
 
-#### Exemples d'utilisation
+## Exemples d'utilisation
 
-#### Exemple 1
+### Exemple 1
 
 Récupération du domaine de validité d'un SRS, et utilisation des fonctions de rappel.
 

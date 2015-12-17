@@ -5,21 +5,21 @@ level: 2
 order: 030300
 api: ahn
 ---
-## Interaction avec la carte
+# Interaction avec la carte
 
 Le Kit de développement (ou "API Haut Niveau" dans ce document) doit permettre à l'utilisateur d'intéragir avec les éléments de la fenêtre cartographique. Cette fonctionnalité sera disponible une fois la carte initialisée à l'aide de fonctions permettant d'agir sur la carte et d'événements permettant connaitre l'état de la carte en fonction des actions de l'internaute.
 
-### Cas d'utilisation
+## Cas d'utilisation
 
 L'utilisateur est un développeur qui souhaite proposer une fenêtre cartographique au sein d'une page web.
 
 Une fois la carte chargée, le développeur peut vouloir donner à l'utilisateur la possibilité de modifier la carte grâce à des formulaires, des boutons etc.
 
-### Mise en oeuvre
+## Mise en oeuvre
 
 L'utilisation se fera par l'exploitation des méthodes de l'objet Gp.Map retourné par la fonction de chargement Gp.Map.load().
 
-#### Objet : Gp.Map
+### Objet : Gp.Map
 
 Cet objet est renvoyé par la fonction [Gp.Map.load()](./dd_configuration-carte.html#gpMapLoad).
 
@@ -54,7 +54,7 @@ modifyControls(controls:[ControlOptions](dd_configuration-carte.html#controlsOpt
 forget(event : String ; do : Function) | - | Annule l'association du traitement "do" à l'événement "event".
 
 
-#### <a name="evenements"></a>Evénements
+### <a name="evenements"></a>Evénements
 
 [La méthode listen de l'objet Gp.Map](#gpMapListen) permet de s'abonner à divers événements transmis par l'API HAut Niveau. Chaque événement est accompagné d'un ensemble de propriétés passées en paramètre de la fonction d'écoute.
 

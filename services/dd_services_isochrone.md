@@ -6,15 +6,15 @@ order: 030207
 api: services
 ---
 
-## Calcul d'isochrones / isodistances
+# Calcul d'isochrones / isodistances
 
 Il s'agit de proposer une couche logicielle permettant d'utiliser le service de calcul d'isochrones / isodistances du Géoportail[^7]. Elle permet à l'utilisateur de passer ses paramètres en entrée du service et d'en récupérer la géométrie de la courbe calculée et ses caractéristiques dans une structure JSON en retour.
 
-### Cas d'utilisation
+## Cas d'utilisation
 
 L'utilisateur est un développeur qui souhaite mettre en oeuvre un formulaire permettant de saisir un point de départ des paramètres afin de déterminer une courbe ischrone ou isodistance à partir du service de calcul d'itinéraires du Géoportail. Il souhaite afficher cette courbe avec une API cartographique du marché.
 
-### Mise en oeuvre
+## Mise en oeuvre
 
 L'invocation du service se fait via l'appel d'une fonction statique :
 
@@ -36,7 +36,7 @@ smoothing | Boolean | Optionnel | Indique si la géométrie résultante doit êt
 holes | Boolean | Optionnel | Indique si la géométrie résultante (surface) doit être retournée avec des trous (« true »). Par défaut, la valeur « false » est appliquée.
 
 
-#### Paramètres de la fonction onSuccess
+### Paramètres de la fonction onSuccess
 
 La fonction onSuccess prend en paramètre un objet IsoCurveResponse, ayant les propriétés suivantes :
 
@@ -50,9 +50,9 @@ time | Float | Durée utilisée pour le calcul dans le cas d'une isochrone (nul 
 distance | Float | Distance utilisée pour le calcul dans le cas d'une isodistance (nul dans le cas d'une isochrone)
 geometry | geoJSON | Géométrie de la courbe calculée.
 
-### Exemples d'utilisation
+## Exemples d'utilisation
 
-#### Exemple 1
+### Exemple 1
 
 Calcul d'isochrone à partir d'un point donné et affichage avec OpenLayers 3.
 

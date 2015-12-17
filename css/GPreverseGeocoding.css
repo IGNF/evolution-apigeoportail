@@ -7,6 +7,7 @@
 
 #GPreverseGeocodingPanel input[type='text'], #GPreverseGeocodingPanel input[type='button'] {
   -webkit-appearance: none;
+  color: #333333;
 }
 
 #GPreverseGeocodingPanel input[type="checkbox"] {
@@ -15,6 +16,10 @@
 
 #GPreverseGeocodingPanel form {
   margin-bottom: 0;
+}
+
+#GPreverseGeocodingPanel * {
+  box-sizing: border-box;
 }
 
 /* Showing/hiding reverse geocoding panel */
@@ -55,7 +60,6 @@
 }
 
 .GPreverseGeocodingPanelHeader {
-  box-sizing: border-box;
   position: relative;
   width: 100%;
 }
@@ -110,7 +114,6 @@ input[type="checkbox"]:checked + .GPshowReverseGeocodingFiltersPicto {
 
 #GPreverseGeocodingForm {
   position: relative;
-  box-sizing: border-box;
   max-height: 270px;
   overflow-y: auto;
   padding-left: 15px;
@@ -139,7 +142,6 @@ input[type="checkbox"]:checked + .GPshowReverseGeocodingFiltersPicto {
 
 .GPflexInput > * {
   display: block;
-  box-sizing: border-box;
   height: 28px;
   line-height: 26px;
   border: 1px solid #999;

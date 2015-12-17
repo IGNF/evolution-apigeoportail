@@ -14,7 +14,7 @@ L'extension Géoportail pour OpenLayers 3 définit des classes et composants à 
 
 ## Fonctionnalités proposées
 
-Les fonctionnalités suivantes sont proposées par cette extension sont les suivantes :
+Les fonctionnalités proposées par cette extension sont les suivantes :
 
 ### Affichage simple des couches WMTS et WMS Géoportail
 

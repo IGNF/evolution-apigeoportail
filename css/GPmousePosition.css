@@ -16,6 +16,10 @@
   display: none;
 }
 
+#GPmousePosition * {
+  box-sizing: border-box;
+}
+
 /* Showing/hiding mouse position panel */
 
 #GPshowMousePositionPicto {
@@ -55,7 +59,6 @@
 }
 
 .GPmousePositionPanelHeader {
-  box-sizing: border-box;
   position: relative;
   width: 100%;
 }

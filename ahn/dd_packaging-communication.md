@@ -6,19 +6,16 @@ order: 030100
 api: ahn
 ---
 
-## Packaging
+# Packaging
 
 Le Kit de développement (ou "API Haut Niveau" dans ce document) est disponible sous la forme d'un fichier Javascript disponible pour chaque bibliothèque cartographique supportée.
 
 Ce fichier embarque les codes :
 
-- de l'API Service,
-
-- de la bibliothèque cartographique sous-jacente
-
-- de l'extension Géoportail correspondant à la bibliothèque choisie
-
-- de toutes les fonctionnalités de l'API Haut Niveau décrites dans ce document.
+* de l'API Service,
+* de la bibliothèque cartographique sous-jacente
+* de l'extension Géoportail correspondant à la bibliothèque choisie
+* de toutes les fonctionnalités de l'API Haut Niveau décrites dans ce document.
 
 L'API Haut Niveau se charge de faire appel au script de la librairie sous-jacente en fonction du nom du ou des packages AHN chargés. Si le développeur souhaite utiliser une autre version de la bibliothèque, le chargement de celle-ci reste à sa charge et l'API Haut Niveau ne fait pas l'appel à la bibliothèque sous-jacente.
 
@@ -27,9 +24,8 @@ L'API Haut Niveau se charge de faire appel au script de la librairie sous-jacent
 
 Le développeur, utilisateur de l'API Haut Niveau, doit intégrer dans sa page :
 
-- le script de l'API Haut Niveau pour la librairie choisie par le développeur.
-
-- la librairie cartographique qui embarque toutes les fonctionnalités cartographiques de base.
+* le script de l'API Haut Niveau pour la librairie choisie par le développeur.
+* la librairie cartographique qui embarque toutes les fonctionnalités cartographiques de base.
 
 Il utilise la fonction Gp.Map.load() pour initialiser la carte avec les paramètres qu'il souhaite.
 

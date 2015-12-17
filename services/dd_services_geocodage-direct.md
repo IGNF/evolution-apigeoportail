@@ -6,15 +6,15 @@ order: 030202
 api: services
 ---
 
-## Géocodage Direct
+# Géocodage Direct
 
 Il s'agit de proposer une couche logicielle permettant l'utilisation du service de géocodage du Géoportail[^4]. Cette couche logicielle devra envoyer une requête correctement construite au serveur de géocodage selon des paramètres passés par le développeur et, parser la réponse du serveur, pour présenter au développeur les résultats.
 
-### Cas d'utilisation
+## Cas d'utilisation
 
 L'utilisateur est un développeur qui souhaite géocoder un ou plusieurs localisants. Il peut rechercher l'emplacement d'un toponyme, d'une adresse, d'une parcelle cadastrale et filtrer cette recherche en fonction d'attributs ou de contraintes géographiques. Il peut utiliser plusieurs méthodes et protocoles pour faire cette recherche. La réponse du serveur, après avoir été analysée et structurée, lui sera communiquée pour qu'il puisse ensuite effectuer le traitement qu'il souhaite.
 
-### Mise en oeuvre
+## Mise en oeuvre
 
 L'utilisation se fera par l'appel de la fonction statique :
 
@@ -30,14 +30,14 @@ maximumResponses | Number | optionnel | Nombre de réponses maximal que l'on sou
 returnFreeForm | Boolean | optionnel | Indique si l'on souhaite en réponse un localisant concaténée plutôt que structuré. Pas de valeur par défaut. Si le serveur consulté est celui du Géoportail, la valeur par défaut sera donc celle du service : 'false'.
 srs | String | optionnel | Système de coordonnées dans lequel les paramètres géographiques en entrée et la réponse du service sont exprimés. Pas de valeur par défaut. Si le serveur consulté est celui du Géoportail, la valeur par défaut sera donc celle du service : 'EPSG:4326'. 
 
-#### Propriétés de l'objet location
+### Propriétés de l'objet location
 
 Propriété | Type | Valeur
 -|-|-|
 [propriétés du localisant] | String | Propriété du localisant recherché sous la forme d'un couple clé/valeur à définir selon les possibilités du serveur. Le service de géocodage du Géoportail permet de faire des recherches structurées avec les propriétés : "number", "street", "postalCode" et "city",
 
 
-#### Propriétés de l'objet filterOptions
+### Propriétés de l'objet filterOptions
 
 Propriété | Type | Valeur
 -|-|-|
@@ -45,7 +45,7 @@ bbox | Object | Emprise dans laquelle on souhaite effectuer la recherche. Les pr
 type | Array(String) | Type de l'objet recherché. Le service de géocodage du Géoportail permet de rechercher des 'PostionOfInterest' pour des toponymes, des 'StreetAddress' pour des adresses postales et/ou des 'CadastralParcel' pour des parcelles cadastrales. D'autres types pourront être rajoutés selon l'évolution du service. Par défaut, type = ['StreetAddress'].
 [propriétés du filtre] | String | Critère supplémentaire pour filtrer la recherche sous la forme d'un couple clé/valeur à définir selon les possibilités du serveur ajouté à la requête. Le service de géocodage du Géoportail permet de filtrer tous les résultats avec les propriétés : "municipality", "insee", "department", "accuracy" et "matchType". Il permet aussi de filtrer les adresses postales avec les propriétés : "number", "street", "postalCode","quality", "ID", "ID_TR", et "territory". Il permet de filtrer les toponymes avec les propriétés : "importance", "nature", "postalCode" et "territory". Enfin, il permet de filtrer les parcelles cadastrales avec les propriétés : "sheet", "section", et "absorbedcity". Pas de valeur par défaut.
 
-#### Propriétés de l'objet bbox
+### Propriétés de l'objet bbox
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
@@ -54,7 +54,7 @@ right |Float | obligatoire | Abscisse du côté droit de la BBOX.
 top | Float | obligatoire | Ordonnée supérieure de la BBOX.
 bottom | Float | obligatoire | Ordonnée inférieure de la BBOX.
 
-#### Paramètres de la fonction onSuccess()
+### Paramètres de la fonction onSuccess()
 
 La fonction onSuccess() prend en paramètre un objet GeocodeResponse ayant les propriétés suivantes:
 
@@ -62,7 +62,7 @@ Propriété | Type | Valeur
 -|-|-|
 locations | Array({DirectGeocodedLocation}) | Liste des résultats géolocalisés. Chaque objet DirectGeocodedLocation du tableau correspond à un résultat, dont les propriétés sont décrites ci-dessous.
 
-#### Propriétés des objets DirectGeocodedLocation du tableau locations
+### Propriétés des objets DirectGeocodedLocation du tableau locations
 
 Propriété | Type | Valeur
 -|-|-|
@@ -73,14 +73,14 @@ type | String | Type du résultat de géocodage retourné (lieu, parcelle cadast
 placeAttributes | Object | Les attributs du résultat de géocodage retourné. Les attributs possibles de cet objet dépendent du type de résultat (renseigné dans l'attribut "type" de ce même objet). La liste de ces attributs est détaillée ci-dessous (propriétés générales ET spécifiques).
 
 
-#### Propriétés générales de placeAttributes 
+### Propriétés générales de placeAttributes 
 
 Propriété | Type | Valeur
 -|-|-|
 municipality | String | Municipalité du résultat.
 freeform | String | Nom de l'adresse, du toponyme, de la limite administrative ou de la parcelle dans le cas où une forme déstructurée a été demandée.
 
-#### Propriétés de placeAttributes spécifiques aux adresses postales (quand type = "StreetAddress")
+### Propriétés de placeAttributes spécifiques aux adresses postales (quand type = "StreetAddress")
 
 Propriété | Type | Valeur
 -|-|-|
@@ -97,7 +97,7 @@ department | String | Département de l'adresse
 insee | String | Code INSEE de l'adresse
 
 
-#### Propriétés de placeAttributes spécifiques aux toponymes (quand type = "PositionOfInterest")
+### Propriétés de placeAttributes spécifiques aux toponymes (quand type = "PositionOfInterest")
 
 Propriété | Type | Valeur
 -|-|-|
@@ -111,7 +111,7 @@ department | String | Département du toponyme
 insee | String | Code INSEE du toponyme
 
 
-#### Propriétés de placeAttributes spécifiques aux parcelles cadastrales (quand type = "CadastralParcel")
+### Propriétés de placeAttributes spécifiques aux parcelles cadastrales (quand type = "CadastralParcel")
 
 Propriété | Type | Valeur
 -|-|-|
@@ -127,7 +127,7 @@ department | String | Département de la parcelle
 insee | String | Code INSEE de la parcelle
 
 
-#### Propriétés de placeAttributes spécifiques aux limites administratives (quand type = "Administratif")
+### Propriétés de placeAttributes spécifiques aux limites administratives (quand type = "Administratif")
 
 Propriété | Type | Valeur
 -|-|-|
@@ -141,7 +141,7 @@ municipality | String | Nom de l'unité administrative
 
 Les propriétés listées ci-dessus sont celles fournies par le service de géocodage du Géoportail. Dans le cas de consultations d'un autre service, d'autres propriétés peuvent être retournées.
 
-#### Paramètres de la fonction onFailure()
+### Paramètres de la fonction onFailure()
 
 La fonction onFailure() prend en paramètre un objet ayant les propriétés suivantes:
 
@@ -150,9 +150,9 @@ Propriété | Type | Valeur
 status | Number | Code HTTP de retour du serveur.
 message | String | Message de retour du serveur.
 
-### Exemples d'utilisations
+## Exemples d'utilisations
 
-#### Exemple 1
+### Exemple 1
 
 Recherche des coordonnées d'un localisant sur le serveur de géocodage du Géoportail
 
@@ -172,7 +172,7 @@ Gp.services.geocode({
 }) ;
 ```
 
-#### Exemple 2
+### Exemple 2
 
 Recherche structurée des coordonnées d'un localisant. Limite aux 5 premiers résultats. Adresses reçues en texte libre.
 
@@ -196,7 +196,7 @@ Gp.services.geocode({
 }) ;
 ```
 
-#### Exemple 3
+### Exemple 3
 
 Recherche d'adresses ou toponymes avec un filtre attributaire la limitant au département des Bouches-du-Rhône.
 
@@ -215,7 +215,7 @@ Gp.services.geocode({
 }) ;
 ```
 
-#### Exemple 4
+### Exemple 4
 
 Recherche d'une parcelle cadastrale avec un filtre géographique exprimée en Lambert 93 (EPSG:2154).
 
@@ -239,7 +239,7 @@ Gp.services.geocode({
 }) ;
 ```
 
-#### Exemple 5
+### Exemple 5
 
 Interrogation en mode AJAX (protocole XHR) et utilisation d'un proxy.
 
@@ -256,7 +256,7 @@ Gp.services.geocode({
 }) ;
 ```
 
-#### Exemple 6
+### Exemple 6
 
 Envoi d'une requête en POST. Utilisation d'un proxy.
 
@@ -272,7 +272,7 @@ Gp.services.geocode({
 }) ;
 ```
 
-#### Exemple 7
+### Exemple 7
 
 Utilisation d'une autre URL pour le serveur de Géocodage.
 

@@ -6,9 +6,9 @@ order: 030301
 api: ahn
 ---
 
-## Exemples d'intéractions
+# Exemples d'intéractions
 
-### Evenement centerChanged
+## Evenement centerChanged
 
 Réception des coordonnées du centre après déplacement de la carte
 
@@ -25,7 +25,7 @@ gpMap.listen( "centerChanged", function(coords){
 ```
 
 
-### Méthode addLayers
+## Méthode addLayers
 
 Rajout dynamique de couches
 

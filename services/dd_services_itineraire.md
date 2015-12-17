@@ -6,15 +6,15 @@ order: 030206
 api: services
 ---
 
-## Calcul d'itinéraires
+# Calcul d'itinéraires
 
 Il s'agit de proposer une couche logicielle permettant d'utiliser le service de calcul d'itinéraires du Géoportail[^6]. Elle permet à l'utilisateur de passer ses paramètres en entrée du service et d'en récupérer l'itinéraire et les instructions dans une structure JSON en retour.
 
-### Cas d'utilisation
+## Cas d'utilisation
 
 L'utilisateur est un développeur qui souhaite mettre en oeuvre un formulaire permettant de saisir des points de départ et d'arrivée et de déterminer un itinéraire à partir du service de calcul d'itinéraires du Géoportail. Il souhaite pouvoir afficher la géométrie de l'itinéraire avec une API cartographique du marché.
 
-### Mise en oeuvre
+## Mise en oeuvre
 
 L'invocation du service se fait via l'appel d'une fonction statique
 
@@ -37,7 +37,7 @@ api | String | Optionnel | Manière d'accéder au service : 'REST' (via l'API RE
 outputFormat | string | Conditionnel | Le format de la réponse du service : 'xml' ou 'json'. Ce paramètre déterminera l'extension '.xml' ou '.json' du service dans le cas de l'API REST. Nécessaire si serverUrl est renseigné, et qu'on souhaite passer par l'API REST, pour connaître le format dans lequel sera fournie la réponse (pour son traitement). Non nécessaire pour la norme OLS. Par défaut, ce paramètre vaut 'json'.
 srs | String | Optionnel | Système de coordonnées dans lequel les paramètres géographiques en entrée et la réponse du service sont exprimés. Pas de valeur par défaut. Si le serveur consulté est celui du Géoportail, la valeur par défaut sera donc celle du service : 'EPSG:4326'.
 
-#### Paramètres de la fonction onSuccess
+### Paramètres de la fonction onSuccess
 
 La fonction onSuccess prend un objet JSON en entrée, ayant les propriétés suivantes :
 
@@ -49,7 +49,7 @@ bbox | bbox | Emprise (rectangle englobant) de l'itinéraire.
 routeGeometry | geoJSON | Géométrie de l'itinéraire.
 routeInstructions | Array(Object) | Liste des instructions le long de l'itinéraire. Les propriétés d'un objet d'instructions esont décrites dans le tableau suivant.
 
-#### Propriétés des instructions
+### Propriétés des instructions
 
 Propriété | Type | Valeur
 - |-|-|
@@ -60,9 +60,9 @@ instruction | String | Texte de l'instruction (traduction du code + nom de la ru
 bbox | bbox | Emprise (rectangle englobant) de l'instruction. La présence de cette propriété est déterminée par le paramètre provideBbox de la requête.
 geometry | geoJSON | Géometrie de l'instruction. La présence de cette propriété est déterminée par le paramètre provideGeometry de la requête.
 
-### Exemples d'utilisation
+## Exemples d'utilisation
 
-#### Exemple 1
+### Exemple 1
 
 Calcul d'itinéraire entre deux points donnés et affichage avec OpenLayers 3.
 

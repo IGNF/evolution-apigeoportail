@@ -6,7 +6,7 @@ order: 030101
 api: services
 ---
 
-## Accès en mode AJAX
+# Accès en mode AJAX
 
 Il s'agit de proposer une couche logicielle permettant la mise en oeuvre du mode AJAX (XHR) pour l'invocation des services de la plateforme Géoportail grâce aux navigateurs usuels.
 
@@ -14,13 +14,13 @@ Cette couche logicielle devra instancier la requête en fonction des paramètres
 
 L'utilisation du protocole XHR se fera toujours en mode asynchrone : les appels aux services en mode AJAX ne bloqueront pas le déroulement de l'application.
 
-### Cas d'utilisation
+## Cas d'utilisation
 
 L'utilisateur est un développeur qui souhaite invoquer un service de la plateforme Géoportail en HTTP GET ou POST avec des paramètres d'appel au service et en traiter la réponse au moyen d'une fonction de rappel.
 
 Il doit fournir les paramètres nécessaires à l'invocation du service et la fonction de traitement de la réponse lorsque celle-ci arrive. La couche XHR se chargera simplement d'invoquer le service en mode AJAX et d'appeler la fonction de rappel lors de la réception du résultat. Elle offrira aussi une possibilité de traitement en cas de non réponse du service (timeOut) au bout d'un laps de temps paramétrable.
 
-### Mise en oeuvre
+## Mise en oeuvre
 
 L'utilisation se fera par l'appel d'une fonction statique :
 
@@ -45,7 +45,7 @@ timeOut | Entier positif | optionnel | Nombre de ms au bout duquel on considère
 **onResponse** | Fonction | **Obligatoire** | Fonction qui sera appelée lors de la réception des résultats du service.  Elle prend en paramètre la réponse du service sous la forme d'une chaîne de caractères.
 onTimeOut | Fonction | optionnel | Fonction qui sera appelée en cas de non réponse du service.  Le temps au bout duquel on considère que le service n'a pas répondu est déterminé  par le paramètre timeOut. Par défaut, une fonction timeOut, notifiant dans la console le timeOut sur le service sera appelée.
 
-#### Exemples d'utilisation
+## Exemples d'utilisation
 
 Requête en POST sur le service de géocodage du Géoportail. Utilisation d'un proxy pour contourner les problèmes de cross-domain.
 

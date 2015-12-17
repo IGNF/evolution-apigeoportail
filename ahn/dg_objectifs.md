@@ -21,7 +21,6 @@ Pour des cas d'utilisation avancés, elle doit aussi permettre d'accéder aux ob
 L'API Haut Niveau propose un ensemble de classes et de fonctions permettant :
 
 
-- d'intégrer, en une ligne de code, une fenêtre cartographique initialisée par différents paramètres (centre, couches, outils, évènements etc)
-
-- d'intéragir avec cette carte une fois celle-ci chargée au sein de la page web.
+* d'intégrer, en une ligne de code, une fenêtre cartographique initialisée par différents paramètres (centre, couches, outils, évènements etc)
+* d'intéragir avec cette carte une fois celle-ci chargée au sein de la page web.
 

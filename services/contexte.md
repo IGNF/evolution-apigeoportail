@@ -6,7 +6,7 @@ order: 010000
 api: services
 ---
 
-## Contexte
+# Contexte
 
 
 La version 3 de l'API Géoportail doit se décliner selon une offre logicielle à trois niveaux :

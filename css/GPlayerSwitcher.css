@@ -18,6 +18,10 @@
   -webkit-user-drag: element;
 }
 
+#GPlayerSwitcher * {
+  box-sizing: border-box;
+}
+
 /* Manage opening of the components through hiden checkboxes */
 
 #GPlayerSwitcher input[type="checkbox"] {
@@ -159,7 +163,6 @@ input[type="checkbox"]:checked + .GPlayerVisibility {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  box-sizing: border-box;
   padding-left: 4px;
   cursor: move;
 }
@@ -337,7 +340,6 @@ input[type="checkbox"]:checked + .GPshowLayerAdvancedTools {
 }
 
 #GPlayerInfoContent {
-  box-sizing: border-box;
   position: relative;
   width: 280px;
   max-height: 200px;

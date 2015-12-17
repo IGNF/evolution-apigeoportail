@@ -6,17 +6,17 @@ order: 030102
 api: services
 ---
 
-## Accès en mode JSONP
+# Accès en mode JSONP
 
 Il s'agit de proposer une couche logicielle permettant la mise en oeuvre du protocole JSONP pour l'invocation des services de la plateforme qui le supportent. Cette couche logicielle devra écrire la balise <script> ayant comme valeur pour l'attibut href, l'URL du service contenant les paramètres fournis et y rajouter, **si nécessaire**, le paramètre permettant l'activation du filtre au niveau de la plateforme Géoportail (callback=xxx).
 
-### Cas d'utilisation
+## Cas d'utilisation
 
 L'utilisateur est un développeur qui souhaite invoquer un service de la plateforme Géoportail en HTTP GET avec des paramètres d'appel au service et en traiter la réponse au moyen d'une fonction qui a été au préalable écrite.
 
 Il doit fournir les paramètres nécessaires à l'invocation du service et la fonction de traitement de la réponse lorsque celle-ci arrive. La couche JSONP se chargera simplement d'appeler cette fonction lors de la réception du résultat. Elle offrira aussi une possibilité de traitement en cas de non réponse du service (timeOut) au bout d'un laps de temps paramétrable.
 
-### Mise en oeuvre
+## Mise en oeuvre
 
 L'utilisation se fera par l'appel d'une fonction statique :
 
@@ -29,7 +29,7 @@ Elle permet de lier l'appel du service à deux fonctions de rappel fournies par 
 * onResponse(result) : appelée lors de la réception des résultats avec pour paramètre le résultat du service encapsulé dans sa coquille JSON ;
 * onTimeOut() : appelée en cas de non réponse du service au bout d'un temps déterminé via le paramètre timeout.
 
-#### Paramètres
+### Paramètres
 
 Paramètre | Type | Opt. | Valeur
 -|-|-|-|
@@ -39,9 +39,9 @@ callbackName | String | optionnel | Valeur du paramètre callback à rajouter su
 onResponse | fonction | Conditionnel | Nom de la fonction qui sera appelée lors de la réception des résultats du service. Ce paramètre sera ignoré si l'URL contient déjà le paramètre callback. La fonction de rappel appelée sera alors celle ayant pour nom la valeur de ce paramètre.
 onTimeOut | fonction | optionnel | Nom de la fonction qui sera appelée en cas de non réponse du service. Le temps au bout duquel on considère que le service n'a pas répondu est déterminé par le paramètre timeOut. Par défaut, une fonction timeOut, notifiant dans la console le timeOut sur le service sera appelée. 
 
-### Exemples d'utilisation
+## Exemples d'utilisation
 
-#### Exemple 1
+### Exemple 1
 
 Envoi d'une requête de géocodage en GET et JSONP. L'ajout du paramètre output=json dans l'URL entraine l'encapsulation de la réponse du service dans une « coquille » JSON.
 
@@ -64,7 +64,7 @@ Gp.protocols.JSONP({
 }) ;
 ```
 
-#### Exemple 2
+### Exemple 2
 
 Envoi d'une requête d'altimétrie en GET et JSONP.
 

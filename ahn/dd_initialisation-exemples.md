@@ -6,9 +6,9 @@ order: 030201
 api: ahn
 ---
 
-## Exemples d'initialisations
+# Exemples d'initialisations
 
-### Centrage par adresse
+## Centrage par adresse
 
 Affichage d'une carte utilisant les fonds associés à la clef CLEF_API et centrée sur une adresse donnée dans une <div> d'identifiant 'geoportalMap'.
 
@@ -20,7 +20,7 @@ Gp.Map.load(
 ) ;
 ```
 
-### Centrage par coordonnées
+## Centrage par coordonnées
 
 Affichage d'une carte utilisant les fonds associés à la clef CLEF_API et centrée sur un point donné dans une <div> d'identifiant 'geoportalMap'.
 
@@ -38,7 +38,7 @@ Gp.Map.load(
 ```
 
 
-### Centrage par géolocalisation 
+## Centrage par géolocalisation 
 
 Affichage d'une carte centrée en fonction de l'IP et zoomée au niveau 10. Si l'utilisateur refuse la géolocalisation par IP, le développeur prévoit de centrer la carte sur une position sexagésimale.
 
@@ -61,7 +61,7 @@ Gp.Map.load(
 ```
 
 
-### Utilisation d'un marker
+## Utilisation d'un marker
 
 Affichage d'une carte centrée sur une adresse et zoomée au niveau 10 avec une puce centrale présentant donnant quelques informations au clic . Personnalisation de la puce.
 
@@ -92,7 +92,7 @@ Gp.Map.load(
 ```
 
 
-### Interception des événements liés à la carte
+## Interception des événements liés à la carte
 
 Evénement lié à la géolocalisation.
 
@@ -110,7 +110,7 @@ Gp.Map.load(
 ```
 
 
-### Gestion des couches Géoportail
+## Gestion des couches Géoportail
 
 Affichage d'une carte avec seulement la couche "Photographies aériennes" du Géoportail.
 
@@ -128,10 +128,10 @@ Gp.Map.load(
 ```
 
 
-### Affichage de couches métiers 
+## Affichage de couches métiers 
 
 
-#### WMS
+### WMS
 
 Affichage d'un flux WMS superposé à la couche "Photographies aériennes" du Géoportail.
 
@@ -159,7 +159,7 @@ Gp.Map.load({
 }) ;
 ```
 
-#### GPX
+### GPX
 
 Affichage d'une couche GPX et utilisation des paramètres relatifs aux échelles d'affichage et des logos.
 
@@ -199,7 +199,7 @@ Gp.Map.load({
 ```
 
 
-#### KML
+### KML
 
 Affichage d'un fichier KML. Utilisation de paramètres relatifs au chargement des couches vecteur.
 
@@ -230,7 +230,7 @@ Gp.Map.load(
 ) ;
 ```
 
-### Paramétrage des outils
+## Paramétrage des outils
 
 Gestion de l'affichage du LayerSwitcher dans une div différente.
 
@@ -252,7 +252,7 @@ Gp.Map.load(
 ) ;
 ```
 
-### Outils de croquis
+## Outils de croquis
 
 Utilisation des outils de croquis et association à une couche de dessin.
 

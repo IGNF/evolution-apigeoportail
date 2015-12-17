@@ -6,7 +6,7 @@ order: 030300
 api: services
 ---
 
-## Gp.formats : Gestion des formats relatifs aux services
+# Gp.formats : Gestion des formats relatifs aux services
 
 Les services de la plateforme Géoportail exposent selon les cas plusieurs interfaces pour exprimer les requêtes et formuler les réponses.
 

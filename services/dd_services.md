@@ -6,11 +6,11 @@ order: 030200
 api: services
 ---
 
-## Gp.services : Accès aux services de la plateforme Géoportail
+# Gp.services : Accès aux services de la plateforme Géoportail
 
 On traite ici de la couche logicielle qui gère l'accès aux services de la plateforme Géoportail qui rentent dans la couverture fonctionnelle de ce document.
 
-### Principe Général
+## Principe Général
 
 L'API Géoportail « Services » offre pour chaque service une ou plusieurs fonctions qui permettent d'émettre des réquêtes, de réceptionner les réponses afin de pouvoir les exploiter.
 
@@ -54,7 +54,7 @@ Paramètre | Type | Opt. | Valeur
 - |-|-|-|
 propriété | ... | ... | ...
 
-#### Exemples d'utilisation
+## Exemples d'utilisation
 
 **Exemple 1 :** invocation classique d'un service avec une clef API :
 

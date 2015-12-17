@@ -6,11 +6,11 @@ order: 030201
 api: services
 ---
 
-## Accès au service d'autoconfiguration
+# Accès au service d'autoconfiguration
 
 Il s'agit de proposer une couche logicielle permettant d'utiliser le service d'auto-configuration des API dont le principe est expliqué en Annexes. Cette couche logicielle devra envoyer une requête au service d'auto-configuration, avec les paramètres éventuellement fournis, puis parser la réponse du service, pour finalement construire une variable globale contenant les informations utiles pour l'utilisation de l'API (configuration des services, informations sur les couches, etc.).
 
-### Cas d'utilisation
+## Cas d'utilisation
 
 L'utilisateur est un développeur web qui souhaite initialiser sa fenêtre cartographique, et a donc besoin d'informations sur les couches et services Géoportail disponibles avec sa clé de contrat API (paramètres des couches, territoires, pyramides d'images, etc), sur les paramètres de configuration par défaut (configuration de la carte, territoires, couches par défaut), ou autres informations renvoyées par le service d'auto-configuration.
 
@@ -18,7 +18,7 @@ L'utilisateur peut fournir des paramètres optionnels, comme sa ou ses clés de 
 
 En retour, sauf si une des clés fournies est invalide, il récupère un objet JSON contenant les informations utiles à l'utilisation de l'API ou des services Géoportail.
 
-### Mise en oeuvre
+## Mise en oeuvre
 
 L'utilisation se fera par l'appel de la fonction statique :
 
@@ -34,13 +34,13 @@ Paramètre | Type | Opt. | Valeur
 - |-|-|-|
 layerId | String | Optionnel | Le nom de l'agrégat (couche) dont on veut connaître les informations détaillées. La présence de cette propriété implique l'utilisation de la deuxième opération du service pour accéder aux informations d'une couche aggrégée. L'usage est d'appeler tout d'abord le service d'autoconf "classique" pour cette clé de contrat (cf. exemple 1), de sorte à récupérer l'autoconfiguration complète, sous la forme d'une variable Gp.Config, à laquelle seront ensuite ajoutées les informations de la couche agrégée. Si aucun appel à l'autoconf n'a été préalablement effectué, la variable Gp.Config en sortie ne contiendra que les information de la couche agrégée layerId.
 
-#### Paramètres de la fonction onSuccess
+### Paramètres de la fonction onSuccess
 
 Paramètre | Type | Opt. | Valeur
 - |-|-|-|
 Gp.Config | Object | Obligatoire | Il s'agit de la variable globale contenant les informations utiles récupérées via le service d'auto-configuration. Sa structure est détaillée ci-après.
 
-#### Paramètres de la fonction onFailure
+### Paramètres de la fonction onFailure
 
 La fonction onConfFailure prend en paramètre un objet contenant les propriétés suivantes :
 
@@ -49,7 +49,7 @@ Paramètre | Type | Opt. | Valeur
 status | Number | obligatoire | Code HTTP de retour du serveur, ou -1 (par exemple) si on est en timeout. (S'il vaut 200, c'est que l'erreur provient de la lecture des paramètres de la réponse.)
 message | String | obligatoire | Message de retour du serveur, ou notification de timeOut, ou encore de l'API en cas de problème d'interprétation des résultats.
 
-#### Résultat en sortie
+### Résultat en sortie
 
 Le résultat est une variable globale Gp.Config, qui est un objet contenant les informations utiles
 renvoyées par l'auto-configuration, et dont la structure est la suivante :
@@ -171,7 +171,7 @@ Gp.Config
 
 Les tableaux ci-dessous détaillent les différentes propriétés de cet objet.
 
-#### Propriétés de l'objet Gp.Config
+### Propriétés de l'objet Gp.Config
 
 Propriété | Type | Opt. | Valeur
 - |-|-|-|
@@ -181,7 +181,7 @@ territories | Object | Obligatoire | Objet ayant pour propriétés les identifia
 tileMatrixSets | Object | Optionnel | Objet ayant pour propriétés les identifiants des TileMatrixSets disponibles.
 services | Object | Obligatoire | Objet ayant pour propriétés les identifiants des services disponibles.
 
-#### Propriétés de l'objet generalOptions
+### Propriétés de l'objet generalOptions
 
 Propriété | Type | Opt. | Valeur
 - |-|-|-|
@@ -191,7 +191,7 @@ defaultGMLGFIStyle | String | Obligatoire | URL pointant vers la feuille de styl
 theme | String | Obligatoire | Thème par défaut
 wgs84Resolutions | Array({float}) | Obligatoire | Les résolutions en WGS84. Peuvent être utiles par ex. car les BBOX et centres des territoires sont exprimés en coordonnées géographiques.
 
-#### Propriétés des différentes couches de l'objet layers
+### Propriétés des différentes couches de l'objet layers
 
 L'objet LAYERS a pour propriétés l'ensemble des identifiants des ressources disponibles, par exemple : « GEOGRAPHICALGRIDSYSTEMS.MAPS$GEOPORTAIL:OGC:WMTS ». 
 Pour chacune d'elles, les propriétés associées sont détaillées ci-dessous :
@@ -223,7 +223,7 @@ styles | Array({object}) | Optionnel | Informations concernant les styles associ
 serviceParams | Object | Optionnel | Service associé à la couche (OpenLS, WFS, WMTS)
 wmtsOptions | Object | Optionnel | Options spécifiques aux couches WMTS
 
-#### Propriétés de l'objet territories
+### Propriétés de l'objet territories
 
 L'objet TERRITORIES a pour propriétés l'ensemble des identifiants des territoires disponibles, par exemple 'FXX'. Pour chaque territoire, les propriétés sont détaillées ci-dessous :
 
@@ -237,7 +237,7 @@ geoCenter | Object({lon,lat}) | Obligatoire | Objet contenant la latitude et lon
 defaultOptions | Object | Obligatoire | Les niveaux de zoom utilisés par défaut pour ce territoire. La liste des propriétés est détaillée plus loin.
 defaultLayers | Array({string}) | Obligatoire | Tableau contenant les identifiants des couches associées par défaut à ce territoire (par exemple,GEOGRAPHICALGRIDSYSTEMS.MAPS$GEOPORT AIL:OGC:WMTS).
 
-#### Propriétés de l'objet tileMatrixSets
+### Propriétés de l'objet tileMatrixSets
 
 L'objet TILEMATRIXSETS a pour propriétés l'ensemble des identifiants des TMS disponibles, par exemple 'PM'. Pour chaque TMS, les propriétés sont détaillées ci-dessous :
 
@@ -248,7 +248,7 @@ nativeResolutions | Array({float}) | Obligatoire | Tableau contenant les résolu
 matrixIds | Array({String}) | Obligatoire | Tableau contenant les identifiants des différents niveaux de matrice (détaillés dans les objets tileMatrices)
 tileMatrices | Array({object}) | Obligatoire | Tableau contenant les informations des niveaux de la pyramide (tileMatrix), sous forme d'objets de type TileMatrix. La liste des propriétés de ces objets est détaillée plus loin.
 
-#### Propriétés de l'objet services
+### Propriétés de l'objet services
 
 L'objet SERVICES a pour propriétés l'ensemble des services disponibles, par exemple 'OGC:WMTS'. Pour chaque service, les propriétés sont détaillées ci-dessous :
 
@@ -258,7 +258,7 @@ title | String | Obligatoire | Titre du service (par exemple 'Point altimetrique
 serverUrl | String | Obligatoire | URL du serveur associé à ce service (par exemple 'http://wxs.ign.fr/geoportail/ols')
 version | String | Obligatoire | Version du service (par exemple 2.0.0)
 
-#### Propriétés de l'objet serviceParams (de l'objet Layers)
+### Propriétés de l'objet serviceParams (de l'objet Layers)
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
@@ -266,7 +266,7 @@ id | String | Optionnel | Identifiant du service (OGC:WMTS, OGC:OPENLS;ReverseGe
 serviceUrl | Array({string}) | Optionnel | Tableau contenant les URL du service (avec la ou les clé(s) de contrat associées à la couche)
 version | String | Optionnel | Version du service
 
-#### Propriétés des objets du tableau constraints (de l'objet Layers ou Layers.originators), et de l'objet globalConstraint (de l'objet Layers)
+### Propriétés des objets du tableau constraints (de l'objet Layers ou Layers.originators), et de l'objet globalConstraint (de l'objet Layers)
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
@@ -276,14 +276,14 @@ minScaleDenominator | Number | Optionnel | Dénominateur d'échelle minimum
 maxScaleDenominator | Number | Optionnel | Dénominateur d'échelle maximum
 temporalExtent | Array({String}) | Optionnel | Etendue temporelle : [minT, maxT], où minT et maxT sont les dates correspondant aux extrémités de l'étendue temporelle, sous forme de chaîne de caractères.
 
-#### Propriétés des objets du tableau metadata (de l'objet Layers)
+### Propriétés des objets du tableau metadata (de l'objet Layers)
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
 format | String | Obligatoire | Format du fichier de métadonnées (généralement XML).
 url | String | Obligatoire | URL du fichier de métadonnées
 
-#### Propriétés des objets du tableau styles (de l'objet Layers) 
+### Propriétés des objets du tableau styles (de l'objet Layers) 
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
@@ -291,7 +291,7 @@ name | String | Obligatoire | Identifiant du style (par exemple 'normal' ou 'bdp
 title | String | Obligatoire | Titre décrivant un peu plus le style.
 current | Boolean | Optionnel | Vaut true si le style actuel est sélectionné, false sinon.
 
-#### Propriétés des objets du tableau legends (de l'objet Layers)
+### Propriétés des objets du tableau legends (de l'objet Layers)
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
@@ -299,7 +299,7 @@ format | String | Obligatoire | Format de la légende. /!\ Vaut toujours 'format
 url | String | Obligatoire | URL du fichier de légende
 minScale | Number | Obligatoire | Dénominateur de l'échelle maximum à laquelle la légende est disponible.
 
-#### Propriétés des objets du tableau originators (de l'objet Layers)
+### Propriétés des objets du tableau originators (de l'objet Layers)
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
@@ -309,21 +309,21 @@ logo | String | Obligatoire | Url du logo du propriétaire des données
 url | String | Obligatoire | URL du propriétaire des données (par exemple, http://www.ign.fr) 
 constraints | Array({Object}) | Obligatoire | Informations concernant des contraintes associées à l'originator : notamment les emprises géographiques et échelles correspondantes aux données couvertes (la liste des propriétés est détaillée plus loin).
 
-#### Propriétés des objets du tableau thematics (de l'objet Layers)
+### Propriétés des objets du tableau thematics (de l'objet Layers)
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
 inspire | Boolean | Obligatoire | Vaut true si c'est une thématique Inspire, false si c'est une thématique autre.
 name | String | Obligatoire | Intitulé de la thématique.
 
-#### Propriétés des objets du tableau formats (de l'objet Layers)
+### Propriétés des objets du tableau formats (de l'objet Layers)
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
 current | Boolean | Optionnel | Vaut true si c'est le format actuel sélectionné, false sinon.
 name | String | Obligatoire | Nom du format des données (par exemple, 'image/png').
 
-#### Propriétés de l'objet dimensions (de l'objet Layers) 
+### Propriétés de l'objet dimensions (de l'objet Layers) 
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
@@ -333,14 +333,14 @@ visibilityMode | String | Optionnel | Exemple : 'resolution', 'distance'
 noDataValue | String | Optionnel | Exemple : 'FFFFFF'
 geometricType | String | Optionnel | Type de géométrie (uniquement pour les couches WFS)
 
-#### Propriétés de l'objet wmtsOptions (de l'objet Layers)
+### Propriétés de l'objet wmtsOptions (de l'objet Layers)
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
 tileMatrixSetLink | String | Optionnel | Identifiant du TileMatrixSet associé à la couche (défini dans Gp.Config.tileMatrixSets)
 tileMatrixSetLimits | Object | Optionnel | Objet contenant les limites des niveaux du tileMatrixSet (chaque clé de l'objet étant un identifiant de tileMatrix et la valeur étant un objet TileMatrixLimit, dont les propriétés sont définies ci-dessous)
 
-#### Propriétés de l'objet tileMatrixSetLimits (de l'objet Layers.wmtsOptions)
+### Propriétés de l'objet tileMatrixSetLimits (de l'objet Layers.wmtsOptions)
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
@@ -349,7 +349,7 @@ maxTileRow | Number | Optionnel | Index de ligne maximum valide pour le niveau d
 minTileCol | Number | Optionnel | Index de colonne minimum valide pour le niveau de pyramide pour une couche donnée. Compris entre 0 et maxTileCol.
 maxTileCol | Number | Optionnel | Index de colonne maximum valide pour le niveau de pyramide pour une couche donnée.
 
-#### Propriétés de l'objet defaultOptions (de l'objet Territories)
+### Propriétés de l'objet defaultOptions (de l'objet Territories)
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
@@ -357,7 +357,7 @@ defaultResolution | Number | Obligatoire | La résolution par défaut spécifié
 minScaleDenominator | Number | Obligatoire | Le dénominateur d'échelle maximal par défaut spécifié pour ce territoire.
 maxScaleDenominator | Number | Obligatoire | Le dénominateur d'échelle minimal par défaut spécifié pour ce territoire.
 
-#### Propriétés des objets du tableau TileMatrices (de l'objet TileMatrixSets)
+### Propriétés des objets du tableau TileMatrices (de l'objet TileMatrixSets)
 
 Chaque élément de TileMatrices a pour propriétés l'ensemble des identifiants d'un niveau de matrice (généralement de 0 à 21). Pour chaque niveau, les propriétés sont détaillées ci-dessous :
 
@@ -371,7 +371,7 @@ tileHeight | Number | Obligatoire | Hauteur des tuiles, en pixels (généralemen
 tileWidth | Number | Obligatoire | Largeur des tuiles, en pixels (généralement 256)
 topLeftCorner | Array({float}) | Obligatoire | Coordonnées d'origine des tuiles (coin « en haut à gauche »), dans la projection du TileMatrixSet : [x, y].
 
-#### Quelques remarques
+### Quelques remarques
 
 *Plusieurs clés*
 
@@ -396,9 +396,9 @@ En revanche, pour les paramètres featureNS et geometryName, on les laissera vid
 * geometryName = 'the_geom' ou 'geom'
 
 
-### Exemples d'utilisation : Utilisation de la fonction getConfig()
+## Exemples d'utilisation : Utilisation de la fonction getConfig()
 
-#### Exemple 1
+### Exemple 1
 
 Première opération de l'autoconf avec une clef ; utilisation des différentes fonctions de rappel.
 
@@ -420,7 +420,7 @@ Gp.services.getConfig({
 
 L'objet **config** de la fonction onConfLoaded correspond à la variable globale Gp.Config. On peut alors visualiser notamment les différentes ressources auxquelles on a accès avec sa clé dans l'objet config.layers.
 
-#### Exemple 2
+### Exemple 2
 
 getConfig avec plusieurs clefs.
 
@@ -438,7 +438,7 @@ Gp.services.getConfig({
 
 Pour visualiser rapidement les ressources disponibles pour chacune des clés, on peut visualiser l'objet Gp.Config.generalOptions.apiKeys, qui liste pour chaque clé les identifiants des couches disponibles.
 
-#### Exemple 3 
+### Exemple 3 
 
 Utilisation du paramètre layerId (deuxième opération de l'autoconf).
 
@@ -479,7 +479,7 @@ On peut alors visualiser le nom des couches composant la couche agrégée dans l
 
 > config.layers["GEOGRAPHICALGRIDSYSTEMS.MAPS.3D$GEOPORTAIL:OGC:WMTS@aggregate"].aggregationOptions.aggregatedLayers[].
 
-#### Exemple 4
+### Exemple 4
 
 Autoconf chargée localement.
 
@@ -492,7 +492,7 @@ Gp.services.getConfig(
 ) ;
 ```
 
-#### Exemple 5
+### Exemple 5
 
 Autoconf en GET sans passer par le protocole JSONP. Utilisation d'un proxy.
 
@@ -510,7 +510,7 @@ Gp.services.getConfig(
 
 Le résultat est le même : l'ensemble des informations associées à son contrat sont présentes dans la variable Gp.Config.
 
-#### Exemple 6
+### Exemple 6
 
 Autoconf en POST. Utilisation d'un proxy.
 
@@ -526,9 +526,9 @@ Gp.services.getConfig({
 }) ;
 ```
 
-### Exploitation des résultats avec OpenLayers 3
+## Exploitation des résultats avec OpenLayers 3
 
-#### Exemple 1
+### Exemple 1
 
 Affichage d'une couche Géoportail WMTS avec OpenLayers 3 et les informations issues de l'autoconfiguration.
 
@@ -574,7 +574,7 @@ function initMap(config){
 }
 ```
 
-#### Exemple 2
+### Exemple 2
 
 Affichage d'une couche WMS Géoportail avec OpenLayers 3 et les données de l'autoconfiguration. (GEOGRAPHICALGRIDSYSTEMS.MAPS$GEOPORTAIL:OGC:WMS)
 
