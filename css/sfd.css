@@ -10,10 +10,6 @@ html {
   background-repeat: no-repeat;
 }
 
-img {
-  max-width: 100%;
-}
-
 .olTileImage {
   max-width: initial;
 }
@@ -211,6 +207,10 @@ header h1 {
 
 .pageIndex section {
   margin: 20px 10px;
+}
+
+.page img {
+  max-width: 100%;
 }
 
 /* INDEX CALL TO ACTION */
