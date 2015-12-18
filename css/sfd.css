@@ -14,6 +14,10 @@ img {
   max-width: 100%;
 }
 
+.olTileImage {
+  max-width: initial;
+}
+
 a {
   text-decoration: none;
   transition: color 0.3s ease, background-color 0.3s ease;
@@ -184,7 +188,7 @@ header h1 {
   }
   
   .menu-horiz ul li a {
-    background-color: initial;
+    background-color: transparent;
     border: none;
   }
   
@@ -312,6 +316,7 @@ header h1 {
 }
 
 #backgroundMap {
+  z-index: 0;
   position: absolute;
   top: 0;
   left: 0;

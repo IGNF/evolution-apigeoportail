@@ -1,0 +1,2394 @@
+/* About min-, max- width, height :
+ * http://forum.alsacreations.com/faq/faq-81-Min-width-max-width-min-height-et-max-height-sur-Internet-Explorer.html
+ * Links order definition must be: :link, :visited, :hover, :active
+ * About CSS compatibility :
+ * http://jadavey.net/PACS_CSS/Samples/
+ */
+a, div, img, table, span {
+  margin:0px;
+  border:0px;
+  padding:0px;
+}
+
+img {
+    max-width: initial !important;
+}
+
+/* Overloaded OpenLayers : */
+.olControlLoadingPanel {
+  background-image:url("img/loading.gif");
+  background-position:center;
+  background-repeat:no-repeat;
+  width:52px;
+  height:52px;
+  position:relative;
+  display:none;
+}
+.olControlNoSelect {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.olControlSelect {
+  -moz-user-select: normal;
+  -khtml-user-select: normal;
+  -webkit-user-select: normal;
+  -ms-user-select: normal;
+}
+.olControlWMSGetFeatureInfo {
+}
+.olControlWMSGetFeatureInfoItemActive {
+  background-image:url("img/picto_getfeatureinfo.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  float:right;
+  position:relative;
+  left:0;
+  top:0;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlWMSGetFeatureInfoItemInactive {
+  background-image:url("img/picto_getfeatureinfo.png");
+  background-repeat:no-repeat;
+  float:right;
+  position:relative;
+  left:0;
+  top:0;
+  width:23px;
+  height:23px;
+  display:none;
+  cursor:pointer;
+}
+.olControlDragPanItemActive {
+  background-image:url("img/picto_drag.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.olControlDragPanItemInactive {
+  background-image:url("img/picto_drag.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.olControlZoomOutItemActive {
+  background-image:url("img/picto_zoomOut.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.olControlZoomOutItemInactive {
+  background-image:url("img/picto_zoomOut.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.olLayerGeoRSSClose {
+  color:#336699;
+  font-size:0.9em;
+  position:absolute;
+  right:0px;
+  cursor:pointer;
+}
+.olLayerGeoRSSTitle {
+  font-size:0.9em;
+  font-weight:bold;
+}
+.link {
+}
+.olLayerGeoRSSDescription {
+  font-size:0.8em;
+}
+.olLayerGeoRSSOriginator {
+  float:left;
+  margin-top:10px;
+  font-style:italic;
+  font-size:0.5em;
+}
+.olPopupCloseBox {
+  background:url("img/ico_win_close.gif") no-repeat;
+  cursor:pointer;
+}
+.olControlNavigationHistory {
+  float:left;
+  position:relative;
+  left:0;
+  top:0;
+  background-image:none;
+  height:23px;
+  width:23px;
+  background-color:transparent;
+  border:0px none;
+}
+.olControlNavigationHistoryPreviousItemActive {
+  background-image:url("img/picto_previous.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.olControlNavigationHistoryPreviousItemInactive {
+  background-image:url("img/picto_previous.png");
+  background-repeat:no-repeat;
+  background-position: 0px 0px;
+  cursor:normal;
+}
+.olControlNavigationHistoryNextItemActive {
+  background-image:url("img/picto_next.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.olControlNavigationHistoryNextItemInactive {
+  background-image:url("img/picto_next.png");
+  background-repeat:no-repeat;
+  background-position: 0px 0px;
+  cursor:normal;
+}
+/* Geoportal.Viewer : */
+.gpMainMap {
+  width:100%;
+  height:100%;
+  margin:auto;
+}
+/* only for Geoportal.Viewer.Simple : */
+.gpMainMapCellSimple {
+  margin:0px;
+  padding:0px;
+  height:100%;/* FF: ok, IE, opera: ko */
+}
+/* for other Geoportal.Viewer ... */
+.gpMainMapCell {
+  border:2px solid #464646;
+  margin:0px;
+  padding:0px;
+  height:100%;/* FF: ok, IE, opera: ko */
+}
+.gpInfoCell {
+  margin:0px;
+  padding:0px;
+  border:0px;
+  text-align:center;
+}
+div.gpMap {
+  position:relative;
+  overflow:hidden;
+  background-color:#EEEEEE;
+  text-align:left !important;/* prevent OL Feature to be badly displayed */
+  width:100%;
+  height:100%;
+  cursor:crosshair;
+}
+/* tries to prevent img style with margin!=0 leading in bad tiles displaying: */
+div.gpMap img {
+  border:0px;
+  padding:0px;
+  margin:0px;
+}
+div.olLayerDiv img {
+  border:0px!important;
+  padding:0px!important;
+  margin:0px!important;
+}
+/* Geoportal.Control : */
+.gpAttName {
+  padding:2px;
+  background-color:#336699;
+  color:#FFFFFF;
+  font-weight:bold;
+}
+.gpAttValue {
+  padding:2px;
+}
+/* Geoportal.Control.ToolBox : */
+.gpControlToolBox {
+  background-color:#3c3c3c;
+  color:#C8C8C8;
+  right:0px;
+  top:0px;
+}
+.gpZoomBarClass {
+  border-top:1px solid #464646;
+  float:left;
+  height:140px;
+  width:100%;
+  margin:0px 0px 0px 0px;
+  padding-left:3px;
+  padding-top:3px;
+}
+.gpToolBoxContent {
+  float:left;
+  width:72px;
+  background-color:#2d2d2d;
+  text-align:left;
+  border:2px solid #2d2d2d;
+}
+.gpToolBoxContentContainer {
+   border:1px solid #3c3c3c;
+}
+.gpToolBoxClass {
+  border:2px solid #2d2d2d;
+  color:#3c3c3c;
+  cursor:default;
+  float:left;
+  font-weight:normal;
+  width:74px;
+}
+.gpToolBoxUsersControlsContainer {
+}
+/* Geoportal.Control.NavToolbar : */
+.gpControlNavToolbar {
+  float:left;
+  position:relative;
+  height:27px;
+  width:100%;
+}
+.gpControlNavToolbar div {
+  display:block;
+  float:left;
+  width:23px;
+  height:23px;
+  position:relative;
+  left:1%;
+  top:0px;
+}
+.olControlNavigationItemActive {
+  background-image:url("img/picto_drag.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.olControlNavigationItemInactive {
+  background-image:url("img/picto_drag.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.olControlZoomBoxItemActive {
+  background-image:url("img/picto_zoomSel.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.olControlZoomBoxItemInactive {
+  background-image:url("img/picto_zoomSel.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.olControlZoomToMaxExtentItemActive {
+  background-image:url("img/picto_zoomToMapExtent.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.olControlZoomToMaxExtentItemInactive {
+  background-image:url("img/picto_zoomToMapExtent.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+/* Geoportal.Control.MeasureToolbar : */
+.gpControlMeasureToolbar {
+  float:left;
+  position:relative;
+  padding-bottom: 4px;
+  width:100%;
+}
+.gpControlMeasureToolbar div {
+  display:block;
+  float:left;
+  width:23px;
+  height:23px;
+  position:relative;
+  left:1%;
+  top:0px;
+}
+.olControlMeasurePathItemActive {
+  background-image:url("img/picto_measure_length.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.olControlMeasurePathItemInactive {
+  background-image:url("img/picto_measure_length.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.olControlMeasurePolygonItemActive {
+  background-image:url("img/picto_measure_area.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.olControlMeasurePolygonItemInactive {
+  background-image:url("img/picto_measure_area.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.gpControlMeasureToolbarResult {
+  float:left;
+  position:relative;
+  min-height:35px;
+  height:auto !important;/*IE ignores this*/
+  width:100%;
+  border-top:1px solid #3C3C3C;
+  background:#373737;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#e1e1e1;
+  font-size:0.7em;
+  display:none;
+}
+.gpControlMeasureAzimuthItemActive {
+  background-image:url("img/picto_azimuth.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.gpControlMeasureAzimuthItemInactive {
+  background-image:url("img/picto_azimuth.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.gpControlMeasureAzimuthAzimuthInput {
+  color:#000;
+}
+.gpControlMeasureElevationItemActive {
+  background-image:url("img/picto_elevation.png");
+  background-repeat:no-repeat;
+  background-position: -23px, 0px;
+  cursor:pointer;
+}
+.gpControlMeasureElevationItemInactive {
+  background-image:url("img/picto_elevation.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.gpControlMeasureElevationPathItemActive {
+  background-image:url("img/picto_elevation_path.png");
+  background-repeat:no-repeat;
+  background-position: -23px, 0px;
+  cursor:pointer;
+}
+.gpControlMeasureElevationPathItemInactive {
+  background-image:url("img/picto_elevation_path.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+/* Geoportal.Control.Floating : */
+.gpControlFloating {
+  float:left;
+  position:absolute;
+  top:10%;
+  left:10%;
+  border:2px solid #2D2D2D;
+  background-color:#373737;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:0.8em;
+  width:auto;
+  cursor:default;
+}
+.gpControlFloating .gpControlFloatingHead {
+  background-color:#2D2D2D;
+  border-bottom: 2px solid #464646;
+  color:#E1E1E1;
+  cursor:pointer;
+}
+.gpControlFloating .gpControlFloatingHead span {
+  font-weight:bold;
+  padding:0px 0px 0px 1em;
+}
+.gpControlFloating .gpControlFloatingHeadBtns {
+  float:right;
+  cursor:default;
+  padding:2px 2px 0 0;
+}
+.gpControlFloating .gpControlFloatingHeadBtns .gpControlFloatingHeadBtnsClose {
+  width:11px;
+  height:11px;
+  cursor:pointer;
+  background-image: url("img/ico_floatwin_close.gif");
+}
+.gpControlFloating .gpControlFloatingBody {
+  margin:2px;
+  color:#b9b9b9;
+  height:100%;
+  overflow-x:hidden;
+  padding-left:5px;
+  padding-right:5px;
+}
+.gpControlFloating .gpControlFloatingBody form {
+  max-height:380px;
+  overflow-x:hidden;
+  overflow-y:auto;
+  margin:0px;
+}
+.gpControlFloating .gpControlFloatingBody label,
+.gpControlFloating .gpControlFloatingBody input,
+.gpControlFloating .gpControlFloatingBody textarea,
+.gpControlFloating .gpControlFloatingBody select {
+  font-size:1.00em;
+  white-space:nowrap;
+}
+.gpControlFloating .gpControlFloatingBody input[type="button"][disabled] {
+  background:#b9b9b9 none repeat scroll 0% 50%;
+ /* border:1px solid #666666;*/
+  color:#e1e1e1;
+  cursor:default;
+  font-size:0.70em;
+  font-weight:bold;
+  margin:2px;
+  vertical-align:bottom;
+}
+.gpControlFloating .gpControlFloatingBody input[type="button"] {
+  background:#464646 none repeat scroll 0% 50%;
+  border:1px solid #2d2d2d;
+  color:#e1e1e1;
+  cursor:pointer;
+  font-size:0.70em;
+  font-weight:bold;
+  margin:2px;
+  vertical-align:bottom;
+}
+.gpControlFloating .gpControlFloatingBody input[type="button"]:hover {
+  background:#595E61 none repeat scroll 0% 50%;
+}
+.gpControlFloating .gpControlFloatingBody input[type="button"][disabled]:hover {
+  background:#CCCCCC none repeat scroll 0% 50%;
+}
+.gpControlFloating .gpControlFloatingBody input[type="image"] {
+  background-color:#FFCC00;
+  border:1px outset #666666;
+  margin:2px;
+  vertical-align:bottom;
+}
+.gpControlFloating .gpControlFloatingBody textarea {
+  overflow:scroll;
+}
+/* Handles : */
+.gpControlFloatingHndl {
+    position:absolute;
+    width:5px;
+    height:5px;
+    font-size:1px;
+}
+.gpControlFloatingHndl-tl {
+    border-left:6px solid #b9b9b9;
+    border-top:6px solid #b9b9b9;
+    height:12px;
+    width:12px;
+    top:-8px;
+    left:-8px;
+    cursor:nw-resize;
+}
+.gpControlFloatingHndl-tm {
+    border-top:6px solid #b9b9b9;
+    width:18px;
+    top:-8px;
+    left:50%;
+    margin-left:-4px;
+    cursor:n-resize;
+}
+.gpControlFloatingHndl-tr {
+    border-right:6px solid #b9b9b9;
+    border-top:6px solid #b9b9b9;
+    height:12px;
+    width:12px;
+    top:-8px;
+    right:-8px;
+    cursor:ne-resize;
+}
+.gpControlFloatingHndl-ml {
+    border-left:6px solid #b9b9b9;
+    height:18px;
+    top:50%;
+    margin-top:-4px;
+    left:-8px;
+    cursor:w-resize;
+}
+.gpControlFloatingHndl-mr {
+    border-right:6px solid #b9b9b9;
+    height:18px;
+    top:50%;
+    margin-top:-4px;
+    right:-8px;
+    cursor:e-resize;
+}
+.gpControlFloatingHndl-bl {
+    border-bottom:6px solid #b9b9b9;
+    border-left:6px solid #b9b9b9;
+    height:12px;
+    width:12px;
+    bottom:-8px;
+    left:-8px;
+    cursor:sw-resize;
+}
+.gpControlFloatingHndl-bm {
+    border-bottom:6px solid #b9b9b9;
+    width:18px;
+    bottom:-8px;
+    left:50%;
+    margin-left:-4px;
+    cursor:s-resize;
+}
+.gpControlFloatingHndl-br {
+    border-bottom:6px solid #b9b9b9;
+    border-right:6px solid #b9b9b9;
+    height:12px;
+    width:12px;
+    bottom:-8px;
+    right:-8px;
+    cursor:se-resize;
+}
+/* Geoportal.Control.SearchToolbar : */
+.gpControlSearchToolbar {
+  float:left;
+  position:relative;
+  padding-bottom: 4px;
+  width:100%;
+}
+.gpControlSearchToolbar div {
+  display:block;
+  float:left;
+  width:23px;
+  height:23px;
+  position:relative;
+  left:1%;
+  top:0px;
+}
+/* Geoportal.Control.LocationUtilityService.* : */
+.gpControlSearchToolbar .gpControlLocationUtilityServiceGeocode {
+}
+.gpControlSearchToolbar .gpControlLocationUtilityServiceGeocodeItemActive {
+  background-image:url("img/picto_search.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.gpControlSearchToolbar .gpControlLocationUtilityServiceGeocodeItemInactive {
+  background-image:url("img/picto_search.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.gpControlSearchToolbar .gpControlLocationUtilityServiceCadastralParcelItemActive {
+  background-image:url("img/picto_cadastral_search.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.gpControlSearchToolbar .gpControlLocationUtilityServiceCadastralParcelItemInactive {
+  background-image:url("img/picto_cadastral_search.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.gpControlSearchToolbar .gpControlLocationUtilityServiceGeodeticFixedPointItemActive {
+  background-image:url("img/picto_geodetic_search.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.gpControlSearchToolbar .gpControlLocationUtilityServiceGeodeticFixedPointItemInactive {
+  background-image:url("img/picto_geodetic_search.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.gpControlLocationUtilityServiceGeocodeButton {
+}
+.gpControlLocationUtilityServiceGeocodeImageButton {
+  display: inline-block;
+  width:16px;
+  height:16px;
+  background-image: url('img/loading.gif');
+  background-size: 16px 16px;
+  border: none !important;
+  margin: 0;
+  padding: 0;
+}
+.gpControlLocationUtilityServiceGeocodeResults {
+  background:#FFFFFF none repeat scroll 0%;
+  border:1px solid;
+  font-size:0.75em;
+  max-height:80px;
+  margin:10px 0px 0px;
+  overflow:auto;
+  text-align:left;
+  color:#000000;
+}
+.gpControlSearchToolbar .gpControlLocationUtilityServiceReverseGeocode {
+}
+.gpControlSearchToolbar .gpControlLocationUtilityServiceReverseGeocodeItemActive {
+  background-image:url("img/picto_reversesearch.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.gpControlSearchToolbar .gpControlLocationUtilityServiceReverseGeocodeItemInactive {
+  background-image:url("img/picto_reversesearch.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.gpControlLocationUtilityServiceReverseGeocodeButton {
+}
+.gpControlLocationUtilityServiceReverseGeocodeImageButton {
+  display: inline-block;
+  width:16px;
+  height:16px;
+  background-image: url('img/loading.gif');
+  background-size: 16px 16px;
+  border: none !important;
+  margin: 0;
+  padding: 0;
+}
+.gpControlLocationUtilityServiceReverseGeocodeResults {
+  background:#FFFFFF none repeat scroll 0%;
+  border:1px solid;
+  font-size:0.75em;
+  max-height:80px;
+  margin:10px 0px 0px 0px;
+  overflow:auto;
+  text-align:left;
+  color:#000000;
+}
+.gpControlSearchToolbar .gpControlLocationUtilityServiceGeoNames {
+}
+.gpControlSearchToolbar .gpControlLocationUtilityServiceGeoNamesItemActive {
+  background-image:url("img/picto_geonamessearch.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.gpControlSearchToolbar .gpControlLocationUtilityServiceGeoNamesItemInactive {
+  background-image:url("img/picto_geonamessearch.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.gpControlLocationUtilityServiceGeoNamesButton {
+}
+.gpControlLocationUtilityServiceGeoNamesImageButton {
+  display: inline-block;
+  width:16px;
+  height:16px;
+  background-image: url('img/loading.gif');
+  background-size: 16px 16px;
+  border: none !important;
+  margin: 0;
+  padding: 0;
+}
+.gpControlLocationUtilityServiceGeoNamesResults {
+  background:#FFFFFF none repeat scroll 0%;
+  border:1px solid;
+  font-size:0.80em;
+  max-height:80px;
+  margin:10px 0px 0px 0px;
+  overflow:auto;
+  text-align:left;
+  color:#000000;
+}
+.gpGeocodeAutoCompleteList {
+  background:#FFFFFF none repeat scroll 0%;
+  border:1px solid;
+  font-size:0.80em;
+  color:#000000;
+  z-index:1000;
+  padding:0;
+  position:absolute;
+  font-family:Arial,Helvetica,sans-serif;
+}
+.gpGeocodeAutoCompleteProposal{
+}
+.gpGeocodeAutoCompleteProposalHighlighted{
+  background-color: #595E61;
+}
+span.gpFormSmall {
+  font-size:0.55em;
+  padding-left:2em;
+}
+div.gpPages {
+  text-align:center;
+}
+div.gpLUSResult {
+  clear:both;
+  font-size:1.00em;
+  background-color:#FFFFFF;
+}
+div.gpLUSResultAlternate {
+  clear:both;
+  font-size:1.00em;
+  background-color:#CCCCCC;
+}
+div.gpGeocodeMatchCode {
+  margin:1px 5px 1px 1px;
+  display:inline;
+  width:1em;
+  height:1em;
+}
+div.gpGeocodeMatchCodeAccuracy075to100 {
+  margin:1px 5px 1px 1px;
+  background-color:#CCFF00;
+  display:inline;
+  width:1em;
+  height:1em;
+}
+div.gpGeocodeMatchCodeAccuracy050to075 {
+  margin:1px 5px 1px 1px;
+  background-color:#CCCC00;
+  display:inline;
+  width:1em;
+  height:1em;
+}
+div.gpGeocodeMatchCodeAccuracy025to050 {
+  margin:1px 5px 1px 1px;
+  background-color:#FFCC00;
+  display:inline;
+  width:1em;
+  height:1em;
+}
+div.gpGeocodeMatchCodeAccuracy000to025 {
+  margin:1px 5px 1px 1px;
+  background-color:#FF6600;
+  display:inline;
+  width:1em;
+  height:1em;
+}
+img.gpGeocodeMatchCodeMatchType {
+  width:1.00em;
+  height:1.00em;
+}
+/* Geoportal.Control.CSW : */
+.gpControlSearchToolbar .gpControlCSW {
+}
+.gpControlSearchToolbar .gpControlCSWItemActive {
+  background-image:url("img/picto_cswsearch.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.gpControlSearchToolbar .gpControlCSWItemInactive {
+  background-image:url("img/picto_cswsearch.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.gpControlCSWRadioGroup {
+  font-size:0.75em;
+}
+.gpControlCSWRadioGroup legend {
+}
+.gpControlCSWButton {
+}
+.gpControlCSWImageButton {
+  display: inline-block;
+  width:16px;
+  height:16px;
+  background-image: url('img/loading.gif');
+  background-size: 16px 16px;
+  border: none !important;
+  margin: 0;
+  padding: 0;
+}
+.gpControlCSWResults {
+  background:#FFFFFF none repeat scroll 0%;
+  border:1px solid;
+  font-size:0.75em;
+  max-height:200px;
+  margin:10px 0px 0px;
+  overflow:auto;
+  text-align:left;
+  color:#000000;
+}
+div.gpCSWResult {
+  clear:both;
+  font-size:1.00em;
+  background-color:#FFFFFF;
+}
+div.gpCSWResultAlternate {
+  clear:both;
+  font-size:1.00em;
+  background-color:#CCCCCC;
+}
+.gpControlCSWBBOX {
+  height:200px;
+  margin:10px;
+}
+/* Geoportal.Control.LayerToolbar : */
+.gpControlLayerToolbar {
+  float:left;
+  position:relative;
+  height:27px;
+  width:100%;
+}
+.gpControlLayerToolbar div {
+  display:block;
+  float:left;
+  width:23px;
+  height:23px;
+  position:relative;
+  left:1%;
+  top:0px;
+}
+/* Geoportal.Control.AddVectorLayer : */
+.gpControlLayerToolbar .gpControlAddVectorLayer {
+}
+.gpControlLayerToolbar .gpControlAddVectorLayerItemActive {
+  background-image:url("img/picto_addvectorlayer.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.gpControlLayerToolbar .gpControlAddVectorLayerItemInactive {
+  background-image:url("img/picto_addvectorlayer.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.gpControlAddVectorLayerButton {
+}
+.gpControlAddVectorLayerImageButton {
+  display: inline-block;
+  width:16px;
+  height:16px;
+  background-image: url('img/loading.gif');
+  background-size: 16px 16px;
+  border: none !important;
+  margin: 0;
+  padding: 0;
+}
+.gpControlAddVectorLayerResults {
+  float:left;
+  background:#FFFFFF none repeat scroll 0%;
+  border:1px solid;
+  font-size:0.75em;
+  max-height:80px;
+  margin:10px 0px 0px;
+  overflow:auto;
+  text-align:left;
+  color:#000000;
+  width:99%;
+}
+div.gpWFSCapsFeatureTypesResult {
+  font-size:1.2em;
+  background-color:#FFFFFF;
+}
+div.gpWFSCapsFeatureTypesResultAlternate {
+  font-size:1.2em;
+  background-color:#CCCCCC;
+}
+/* Geoportal.Control.AddImageLayer : */
+.gpControlLayerToolbar .gpControlAddImageLayer {
+}
+.gpControlLayerToolbar .gpControlAddImageLayerItemActive {
+  background-image:url("img/picto_addimagelayer.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.gpControlLayerToolbar .gpControlAddImageLayerItemInactive {
+  background-image:url("img/picto_addimagelayer.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+}
+.gpControlAddImageLayerButton {
+}
+.gpControlAddImageLayerImageButton {
+  display: inline-block;
+  width:16px;
+  height:16px;
+  background-image: url('img/loading.gif');
+  background-size: 16px 16px;
+  border: none !important;
+  margin: 0;
+  padding: 0;
+}
+.gpControlAddImageLayerResults {
+  float:left;
+  background:#FFFFFF none repeat scroll 0%;
+  border:1px solid;
+  font-size:0.75em;
+  max-height:80px;
+  margin:10px 0px 0px;
+  overflow:auto;
+  text-align:left;
+  color:#000000;
+  width:99%;
+}
+div.gpWMSCapsLayersResult {
+  font-size:1.2em;
+  background-color:#FFFFFF;
+}
+div.gpWMSCapsLayersResultAlternate {
+  font-size:1.2em;
+  background-color:#CCCCCC;
+}
+/* Geoportal.Control.ZoomBar : */
+.nameScale {
+  float:left;
+  width:35px;
+  height:100%;
+  left:5px;
+  top:5px;
+}
+.nameScale div {
+  display:block;
+  float:right;
+  width:100%;
+  font:9px Verdana,sans-serif;
+  text-align:right;
+  margin-bottom:12px;
+  cursor:pointer;
+  color:#969696;
+}
+.sliderZoomBar {
+  background-image:url("img/bg_zoom.gif");
+  background-repeat:no-repeat;
+  position:relative;
+  cursor:pointer;
+}
+/* Geoportal.Popup : */
+.gpPopup {
+  background-color:#FFFFFF;
+  overflow:inherit;
+}
+.gpPopup * {
+  font-size:1.0em;
+}
+.gpPopup a.close {
+  background:url("img/close.gif") no-repeat top left;
+  position:absolute;
+  top:10px;
+  right:28px;
+  font-size:1px;
+  width:14px;
+  height:14px;
+}
+.gpPopup a.close:hover {
+  background:url("img/close-hover.gif") no-repeat top left;
+}
+.gpPopup .gpPopupContent {
+  padding:1px;
+  margin:0px;
+}
+.gpPopupCloseBox {
+  background:url(img/ico_win_close.gif) no-repeat;
+  cursor:pointer;
+}
+.gpPopup .gpPopupContent .gpPopupHead {
+  background-color:#CCCCFF;
+  color:#006699;
+  font-size:1.0em;
+  font-weight:bold;
+  line-height:1.6em;
+}
+.gpPopup .gpPopupContent .gpPopupBody {
+  font-size:0.80em;
+}
+.gpPopup .gpPopupContent .gpPopupBody h2 {
+  font-size:small;
+  text-align:center;
+  padding:2px 0px 2px 0px;
+  margin:0px 6px 0px 6px;
+  text-transform:capitalize;
+}
+.gpPopup .gpPopupContent .gpPopupBody table {
+  border-collapse:collapse;
+  overflow:auto;
+}
+.gpPopup .gpPopupContent .gpPopupBody table td {
+  padding:4px;
+  border:1px solid #CCCCCC;
+}
+.gpPopup .gpPopupContent .gpPopupBody a:link,
+.gpPopup .gpPopupContent .gpPopupBody a:visited {
+  text-decoration:none;
+}
+.gpPopup .gpPopupContent .gpPopupBody a:hover {
+  text-decoration:underline;
+}
+.gpPopup .gpPopupContent .gpPopupBody img {
+}
+span.gpPopupLabelCenter {
+  font-size:0.7em;
+  font-weight:bold;
+}
+span.gpPopupDescriptionCenter {
+  font-size:0.8em;
+}
+a.gpLink:link, a.gpLink:visited {
+  text-decoration:none;
+}
+a.gpLink:hover {
+  text-decoration:underline;
+}
+.gpKML {
+}
+.gpGPX {
+}
+.gpGML {
+}
+.gpGeoRSS {
+}
+.gpGeoRSSOriginator {
+  float:left;
+  font-size:0.8em;
+  font-style:italic;
+  margin-top:10px;
+}
+/* Geoportal.Control.Information : */
+.gpControlInformation {
+  float:left;
+  position:relative;
+  background-color:#2D2D2D;
+  border-color:#2D2D2D;
+  border-top:2px solid #464646;
+  width:100%;
+  height:44px;
+  margin:0px auto;
+  text-align:left;
+  overflow:hidden;
+  bottom:0px;
+  cursor:pointer;
+}
+.gpControlInformationMinimized {
+  float:left;
+  position:relative;
+  background-color:transparent;
+  border:0px solid transparent;
+  width:100%;
+  height:44px;
+  margin:0px;
+  bottom:0px;
+  text-align:left;
+  overflow:hidden;
+  cursor:crosshair;
+}
+.gpControlInformationMini {
+  background-image:url("img/minimized-up.png");
+  background-position:0% 0%;
+  background-repeat:no-repeat;
+  position:absolute;
+  float:left;
+  left:50%;
+  bottom:0px;
+  width:18px;
+  height:18px;
+  cursor:pointer;
+}
+/* Geoportal.Control.GraphicScale : */
+.gpControlGraphicScale {
+  bottom: 1.4em;
+  right: 1.4em;
+  font-family:Verdana,Arial,Helvetica;
+  font-size:0.7em;
+  color:#646464;
+  background-color: rgba(255,255,255,0.8);
+  display: table;
+}
+
+.gpControlGraphicScaleText1 {
+  margin-left:5px;
+  margin-top:3px;
+}
+.gpControlGraphicScaleText2 {
+  float:right;
+  margin-right:5px;
+  margin-top:3px;
+}
+.gpControlGraphicScaleLegend {
+  margin-left:5px;
+  margin-right:5px;
+  overflow:hidden;
+}
+.gpControlGraphicScaleFullBlock {
+  float:left;
+  background-color:#B9B9B9;
+  font-size:1px;
+  height:5px;
+  line-height:0px;
+  white-space:nowrap;
+  margin-bottom:5px;
+}
+.gpControlGraphicScaleEmptyBlock {
+  float:left;
+  background-color:#505050;
+  height:5px;
+  white-space:nowrap;
+  font-size:1px;
+  line-height:0px;
+  margin-bottom:5px;
+}
+/* Geoportal.Control.Projections : */
+.gpControlProjections {
+  float:left;
+  position:absolute;
+  left:35%;
+  top:2px;
+  font-size:0.65em;
+}
+.gpSelectProjections {
+  float:left;
+  position:relative;
+  top:0px;
+  left:0px;
+  background-color:#373737;
+  border:thin solid #282828;
+  color:#e1e1e1;
+  margin:0px;
+  padding:0px;
+  overflow:hidden;
+  font-size:1.00em;
+}
+.gpSelectProjections option {
+  border:0px;
+  padding:0px;
+  margin:0px;
+  font-size:1.00em;
+}
+/* Geoportal.Control.MousePosition : */
+.gpControlMousePosition {
+  float:left;
+  position:absolute;
+  left:20%;
+  top:55%;
+  font-family:sans-serif,"Courier New",Courier,Monospace;
+  font-size:0.70em;
+  white-space:nowrap;
+  color:#ffffff;
+}
+.gpSmallPositions {
+  font-size:0.50em;
+}
+.gpLong, .gpLat, .gpZone {
+  border:0px none;
+  margin:0px;
+  padding:0px;
+  background-color:#373737;
+  font-weight:normal;
+  font-size:1.00em;
+  text-align:right;
+  color:#969696;
+}
+.gpSelectUnits {
+  position:relative;
+  top:0px;
+  left:2%;
+  background-color:#373737;
+  border:thin solid #282828;
+  margin:0px;
+  padding:0px;
+  overflow:hidden;
+  font-size:1.00em;
+  color:#E1E1E1;
+}
+.gpSelectUnits option {
+  border:0px;
+  padding:0px;
+  margin:0px;
+}
+/* Geoportal.Control.Copyright : */
+.gpControlCopyright {
+  float:right;
+  position:absolute;
+  top:0%;
+  right:0%;
+  margin:0px 5px 0px 0px;
+  width:auto;
+  font-size:0.65em;
+  color:#969696;
+}
+/* Geoportal.Control.LayerSwitcher : */
+.gpControlLayerSwitcher {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:168px;
+  border:2px solid #2D2D2D;
+  background-color:#0F0F0F;
+}
+.gpCLSContainer {
+  background-color:#464646;
+  border:1px solid #464646;
+}
+.gpMainDivClass {
+  top:0px;
+  right:0px;
+  cursor:default;
+  background-color:#FFFFFF;
+  color:#595E61;
+  font-size:0.75em;
+  font-weight:normal;
+  text-align:left;
+}
+.gpLayersClass {
+  font-family:Arial,Helvetica,sans-serif;
+}
+.gpControlLabelClass {
+  font-family:Arial,Helvetica,sans-serif;
+  color:#e1e1e1;
+  border-bottom:1px solid #2d2d2d;
+  margin:1px;
+  background:#2d2d2d;
+  padding:2px 0px 2px 0px;
+  font-weight:bold;
+  font-size:11px;
+  cursor: pointer;
+  text-align: center;
+}
+.gpGroupDivClass {
+  position:relative;
+  font-size:90%;
+  margin:0px 0px 0px 0px;
+  width:100%;
+  max-height:212px;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+.gpLayerDivClass {
+  float:left;
+  position:relative;
+  top:0px;
+  left:0px;
+  border:1px solid #2d2d2d;
+  background-color:#373737;
+  width:98.5%;
+  min-height:27px;
+  height:auto !important;/* IE ignores auto ... */
+  margin:1px;
+}
+.gpLayerDivClassAlternate {
+  float:left;
+  position:relative;
+  top:0px;
+  left:0px;
+  border:1px solid #2d2d2d;
+  background-color:#2d2d2d;
+  width:98%;
+  min-height:27px;
+  height:auto !important;/* IE ignores auto ... */
+  margin:1px;
+}
+.gpLayerDivClassActive {
+  font-weight: bold;
+}
+.gpLayerNameGroupDivClass {
+  clear:both;
+  float:left;
+  position:relative;
+  top:0px;
+  left:0px;
+  height:27px;
+  width:100%;
+}
+.gpLayerVisibilityClass {
+  margin-left:2%;
+  margin-top:2%;
+  cursor:pointer;
+}
+.gpLayerSpanClass,
+.gpLayerSpanClassNotInRange {
+  display: inline-block;
+  margin-left:2%;
+  margin-top: 7px;
+  vertical-align:baseline;
+  width:65%;
+  white-space:nowrap;
+  color:#f1960b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gpControlLayerCatalogLayerDivClass {
+  position:absolute;
+  left:25px;
+  margin-top:7px;
+  width:80%;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.gpLayerSpanClassNotInRange {
+  color:#ADADAD;
+}
+.gpLayerAbstractDivClass {
+  font-size:1.0em;
+  width:100%;
+}
+.gpLayerLegendsDivClass {
+  width:100%;
+}
+.gpLayerUrlsDivClass {
+  margin:2px;
+  font-size:1.0em;
+  width:100%;
+}
+.gpLayerMetadataUrlsDivClass {
+  width:100%;
+}
+.gpLayerDataURLClass {
+  border:2px outset #FFFFFF;
+  width:98%;
+  display:-moz-inline-box;
+  display:inline-block;
+  cursor:pointer;
+  font-weight:bold;
+}
+.gpLayerMetadataURLClass {
+  border:2px outset #FFFFFF;
+  width:98%;
+  display:-moz-inline-box;
+  display:inline-block;
+  cursor:pointer;
+  font-weight:bold;
+}
+.gpButtonsChangeOrderClass {
+  position:absolute;
+  height:20px;
+  right:3%;
+  top:4px;
+  width:7px;
+}
+.gpButtonDown {
+  position:absolute;
+  background-image:url("img/fl_couche_B.gif");
+  background-repeat:no-repeat;
+  width:7px;
+  height:7px;
+  margin:0px;
+  padding:0px;
+  top:50%;
+  cursor:pointer;
+}
+.gpButtonDownDeactive {
+  position:absolute;
+  background-image:url("img/fl_couche_B_no.gif");
+  background-repeat:no-repeat;
+  width:7px;
+  height:7px;
+  top:50%;
+  cursor:default;
+}
+.gpButtonUp {
+  position:absolute;
+  background-image:url("img/fl_couche_H.gif");
+  background-repeat:no-repeat;
+  width:7px;
+  height:7px;
+  cursor:pointer;
+}
+.gpButtonUpDeactive {
+  position:absolute;
+  background-image:url("img/fl_couche_H_no.gif");
+  background-repeat:no-repeat;
+  width:7px;
+  height:7px;
+  cursor:default;
+}
+.gpButtonAdd {
+  float: left;
+  top: 2px;
+  background-image: url("img/list-add-4.png");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 2px;
+}
+.gpButtonAddDeactive {
+  float: left;
+  background-image: url("img/list-add-4-off.png");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  cursor: default;
+  margin-top: 5px;
+  margin-left: 2px;
+}
+.gpButtonRemove {
+  float: left;
+  background-image: url("img/list-remove-4.png");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  cursor: default;
+  margin-top: 5px;
+  margin-left: 2px;
+}
+.gpButtonRemoveDeactive {
+  float: left;
+  background-image: url("img/list-remove-4-off.png");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  cursor: default;
+  margin-top: 5px;
+  margin-left: 2px;
+}
+.gpButtonRemove + .gpControlLayerCatalogLayerDivClass {
+  color: #f1960b;
+}
+.gpButtonAdd + .gpControlLayerCatalogLayerDivClass {
+  color: #999999;
+}
+/* Geoportal.Control.Loading : */
+.gpControlLoading {
+  background-image:url("img/loading25x25.gif");
+  background-repeat:no-repeat;
+  float:right;
+  position:absolute;
+  top:-1px;
+  right:14px;
+  width:25px;
+  height:25px;
+  display:none;
+}
+/* Geoportal.Control.PanelToggle : */
+.gpControlPanelToggle {
+}
+.gpControlPanelToggleItemActive {
+  background-image:url("img/picto_options.png");
+  background-repeat:no-repeat;
+  background-position: -18px 0px;
+  position:absolute;
+  float:right;
+  right:15px;
+  top:-25px;
+  height:20px;
+  width:20px;
+  cursor:pointer;
+  overflow:hidden;/* IE hack */
+}
+.gpControlPanelToggleItemInactive {
+  background-image:url("img/picto_options.png");
+  background-repeat:no-repeat;
+  background-position: 0px 0px;
+  position:absolute;
+  float:right;
+  right:15px;
+  top:-25px;
+  height:20px;
+  width:20px;
+  cursor:pointer;
+  overflow:hidden;/* IE hack */
+}
+/* Geoportal.Control.RemoveLayer : */
+.gpControlRemoveLayer {
+}
+.gpControlRemoveLayerNoneItemActive {
+  cursor:default;
+  position:relative;
+  float:left;
+  left:0%;
+  top:0%;
+  width:0px;
+  height:23px;
+  margin-right:23px;
+}
+.gpControlRemoveLayerNoneItemInactive {
+  cursor:default;
+  position:relative;
+  float:left;
+  left:0%;
+  top:0%;
+  width:0px;
+  height:23px;
+  margin-right:23px;
+  display:none;
+}
+.gpControlRemoveLayerItemActive {
+  background-image:url("img/picto_layerDrop.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+  float:left;
+  position:relative;
+  left:0%;
+  top:0%;
+  width:23px;
+  height:23px;
+}
+.gpControlRemoveLayerItemInactive {
+  background-image:url("img/picto_layerDrop.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+  position:relative;
+  float:left;
+  left:0%;
+  top:0%;
+  width:23px;
+  height:23px;
+}
+/* Geoportal.Control.SliderBase : */
+.gpControlSliderBaseHandle {
+  cursor:pointer;
+  cursor:url("img/roam.png") 8 8;
+  cursor:grab;
+}
+.gpControlSliderBaseHandleDown {
+  cursor:move;
+  cursor:url("img/roaming.png") 8 8;
+  cursor:grabbing;
+}
+.gpControlLayerOpacityTrackSliderClass .gpControlSliderBaseHandle,
+.gpControlLayerOpacityTrackSliderClass .gpControlSliderBaseHandleDown {
+  background-image: url('img/cursor.gif');
+}
+.gpZoomBarClass .gpControlSliderBaseHandle,
+.gpZoomBarClass .gpControlSliderBaseHandleDown {
+  background-image: url('img/zoom_curseur.gif');
+}
+/* Geoportal.Control.LayerOpacitySlider : */
+.gpControlLayerOpacitySlider {
+}
+/* Geoportal.Control.LayerOpacity : */
+.gpControlLayerOpacity {
+}
+.gpControlLayerOpacityItemActive {
+  background-color:transparent;
+  float:left;
+  position:relative;
+  top:0%;
+  left:0%;
+  width:75px;
+  height:20px;
+}
+.gpControlLayerOpacityItemInactive {
+  background-color:transparent;
+  float:left;
+  position:relative;
+  top:0%;
+  left:0%;
+  width:75px;
+  height:20px;
+}
+.gpControlLayerOpacityTrackSliderClass {
+  float:left;
+  position:absolute;
+  left:0px;
+  top:0px;
+}
+.gpControlLayerOpacityOpacityClass {
+  float:left;
+  position:absolute;
+  left:75%;
+  top:10%;
+  width:auto;
+  font-size:0.85em;
+}
+/* Geoportal.Control.ZoomToLayerMaxExtent : */
+.gpControlZoomToLayerMaxExtent {
+}
+.gpControlZoomToLayerMaxExtentNoneItemActive {
+  cursor:default;
+  position:relative;
+  float:right;
+  left:0%;
+  top:0%;
+  width:23px;
+  height:23px;
+}
+.gpControlZoomToLayerMaxExtentNoneItemInactive {
+  cursor:default;
+  position:relative;
+  float:right;
+  left:0%;
+  top:0%;
+  width:23px;
+  height:23px;
+  display:none;
+}
+.gpControlZoomToLayerMaxExtentItemActive {
+  background-image:url("img/picto_zoomToExtent.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+  position:relative;
+  float:right;
+  left:0%;
+  top:0%;
+  width:23px;
+  height:23px;
+}
+.gpControlZoomToLayerMaxExtentItemInactive {
+  background-image:url("img/picto_zoomToExtent.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+  position:relative;
+  float:right;
+  left:0%;
+  top:0%;
+  width:23px;
+  height:23px;
+}
+/* Geoportal.Control.BasicLayerToolbar : */
+.gpControlBasicLayerToolbar {
+  clear:both;
+  float:left;
+  position:relative;
+  top:0px;
+  left:0px;
+  min-height:1px;
+  height:auto !important;/* IE */
+  height:1px;/* IE */
+  width:100%;
+}
+/* Geoportal.Control.EditingToolbar : */
+.gpControlEditingToolbar  {
+  float:left;
+  width:98%;
+  height:23px;
+}
+.olControlDrawFeaturePointItemActive {
+  background-image:url("img/picto_drawPoint.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlDrawFeaturePointItemInactive {
+  background-image:url("img/picto_drawPoint.png");
+  background-repeat:no-repeat;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlDrawFeaturePointItemDisabled {
+  background-image:url("img/picto_drawPoint.png");
+  background-position: -46px 0px;
+}
+.olControlDrawFeaturePathItemActive {
+  background-image:url("img/picto_drawLine.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlDrawFeaturePathItemInactive {
+  background-image:url("img/picto_drawLine.png");
+  background-repeat:no-repeat;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlDrawFeaturePathItemDisabled {
+  background-image:url("img/picto_drawLine.png");
+  background-position: -46px 0px;
+}
+.olControlDrawFeaturePolygonItemActive {
+  background-image:url("img/picto_drawPolygon.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlDrawFeaturePolygonItemInactive {
+  background-image:url("img/picto_drawPolygon.png");
+  background-repeat:no-repeat;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlDrawFeaturePolygonItemDisabled {
+  background-image:url("img/picto_drawPolygon.png");
+  background-position: -46px 0px;
+}
+.olControlDrawFeatureRegularPolygonItemActive {
+  background-image:url("img/picto_drawSquare.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlDrawFeatureRegularPolygonItemInactive {
+  background-image:url("img/picto_drawSquare.png");
+  background-repeat:no-repeat;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlDragFeatureItemActive {
+  background-image:url("img/picto_moveFeature.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlDragFeatureItemInactive {
+  background-image:url("img/picto_moveFeature.png");
+  background-repeat:no-repeat;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlDragFeatureItemDisabled {
+  background-image:url("img/picto_moveFeature.png");
+  background-position: -46px 0px;
+}
+.olControlModifyFeatureItemActive {
+  background-image:url("img/picto_modifyFeature.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlModifyFeatureItemInactive {
+  background-image:url("img/picto_modifyFeature.png");
+  background-repeat:no-repeat;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlModifyFeatureItemDisabled {
+  background-image:url("img/picto_modifyFeature.png");
+  background-position: -46px 0px;
+}
+.gpControlDeleteFeatureItemActive {
+  background-image:url("img/picto_deleteFeature.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.gpControlDeleteFeatureItemInactive {
+  background-image:url("img/picto_deleteFeature.png");
+  background-repeat:no-repeat;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.gpControlDeleteFeatureItemDisabled {
+  background-image:url("img/picto_deleteFeature.png");
+  background-position: -46px 0px;
+}
+.olControlSelectFeatureItemActive {
+  background-image:url("img/picto_selectFeature.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlSelectFeatureItemInactive {
+  background-image:url("img/picto_selectFeature.png");
+  background-repeat:no-repeat;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.olControlSelectFeatureItemDisabled {
+  background-image:url("img/picto_selectFeature.png");
+  background-position: -46px 0px;
+}
+/* Geoportal.Control.Logo : */
+.gpControlPermanentLogo {
+  position:absolute;
+  width: 95px;
+  height: 20px;
+  bottom:0px;
+  margin:0px 0px 21px 4px;
+  z-index:10000 !important;
+  background-image:url("img/logo_gp.gif");
+  opacity:0.75;
+  filter:alpha(opacity=75);
+}
+.gpControlPermanentLogo a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.gpControlLogo {
+  position:absolute;
+  right:0px;
+  bottom:0px;
+  float:right;
+  margin:0px 4px 5px 0px;
+  z-index:9999 !important;
+}
+.gpControlLogo div {
+  display:block;
+  float:left;
+  margin:0px 0px 0px 3px;
+  white-space:nowrap;
+}
+.gpControlLogo img {
+  opacity:0.75;
+  filter:alpha(opacity=75);
+}
+.gpControlTermsOfService {
+  position:absolute;
+  bottom:0px;
+  margin:0px 0px 4px 4px;
+  opacity:0.75;
+  filter:alpha(opacity=75);
+  z-index:10000 !important;
+}
+.gpControlTermsOfService a {
+  color:#000000;
+  line-height:0px;
+  white-space:nowrap;
+  font-size:10px;
+  line-height:10px;
+  font-family:Arial,Helvetica,sans-serif;
+  text-decoration:none;
+}
+.gpControlTermsOfService a:link, .gpControlTermsOfService a:visited {
+  text-decoration:none;
+}
+.gpControlTermsOfService a:hover {
+  text-decoration:none;
+  color:#FFFFFF;
+}
+.gpControlPrintMap {
+}
+.gpControlPrintMapItemActive {
+  background-image:url("img/picto_print.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.gpControlPrintMapItemInactive {
+  background-image:url("img/picto_print.png");
+  background-repeat:no-repeat;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.gpControlPrintMapDOM {
+}
+.gpControlPrintMapDOMItemActive {
+  background-image:url("img/picto_print.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.gpControlPrintMapDOMItemInactive {
+  background-image:url("img/picto_print.png");
+  background-repeat:no-repeat;
+  float:left;
+  width:23px;
+  height:23px;
+  cursor:pointer;
+}
+.gpControlAddAttributeToLayer {
+}
+.gpControlAddAttributeToLayerItemActive {
+  background-image:url("img/picto_addatt.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+  float:left;
+  position:relative;
+  left:0%;
+  top:0%;
+  width:23px;
+  height:23px;
+}
+.gpControlAddAttributeToLayerItemInactive {
+  background-image:url("img/picto_addatt.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+  position:relative;
+  float:left;
+  left:0%;
+  top:0%;
+  width:23px;
+  height:23px;
+  display:none;
+}
+.gpControlAddAttributeToLayerItemDisabled {
+  background-image:url("img/picto_addatt.png");
+  background-position: -46px 0px;
+}
+.gpControlLayerStyling {
+}
+.gpControlLayerStylingItemActive {
+  background-image:url("img/picto_palette.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+  float:left;
+  position:relative;
+  left:0%;
+  top:0%;
+  width:23px;
+  height:23px;
+}
+.gpControlLayerStylingItemInactive {
+  background-image:url("img/picto_palette.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+  position:relative;
+  float:left;
+  left:0%;
+  top:0%;
+  width:23px;
+  height:23px;
+  display:none;
+}
+.gpControlLayerStylingItemDisabled {
+  background-image:url("img/picto_palette.png");
+  background-repeat:no-repeat;
+  background-position: -46px 0px;
+  position:relative;
+  float:left;
+  left:0%;
+  top:0%;
+  width:23px;
+  height:23px;
+}
+.gpControlLayerStyling-color {
+  position:absolute;
+  width:130px;
+  height:98px;
+  background-color:#FFFFFF;/*#99CCFF;*/
+  border:4px solid #336699;
+}
+.gpControlLayerStyling-color div {
+  float:left;
+  margin:0px;
+  width:48px;
+  height:48px;
+}
+.gpControlLayerStyling-color div#__color__greyscales__ {
+  width:34px;
+  height:96px;
+}
+.gpControlLayerStyling-color div div {
+  height:10px;
+  width:10px;
+  margin:1px;
+  cursor:pointer;
+}
+.gpControlLayerStyling-strokeWidth {
+  width:60px;
+  font-size: 0.8em;
+  text-align:left;
+}
+.gpControlLayerStyling-strokeWidth-0 {
+  width:100%;
+  background-color:white;
+  background-position:center center;
+  background-repeat:repeat-x;
+  color: transparent;
+}
+.gpControlLayerStyling-strokeWidth-1 {
+  background-image:url(img/solid1px.gif);
+}
+.gpControlLayerStyling-strokeWidth-2 {
+  background-image:url(img/solid2px.gif);
+}
+.gpControlLayerStyling-strokeWidth-3 {
+  background-image:url(img/solid3px.gif);
+}
+.gpControlLayerStyling-strokeWidth-4 {
+  background-image:url(img/solid4px.gif);
+}
+.gpControlLayerStyling-strokeWidth-5 {
+  background-image:url(img/solid5px.gif);
+}
+.gpControlLayerStyling-strokeWidth-6 {
+  background-image:url(img/solid6px.gif);
+}
+.gpControlLayerStyling-strokeWidth-7 {
+  background-image:url(img/solid7px.gif);
+}
+.gpControlLayerStyling-strokeWidth-8 {
+  background-image:url(img/solid8px.gif);
+}
+.gpControlLayerStyling-strokeWidth-9 {
+  background-image:url(img/solid9px.gif);
+}
+.gpControlLayerStyling-pointRadius {
+  width:60px;
+  font-size: 0.8em;
+  text-align:left;
+}
+.gpControlLayerStyling-pointRadius-0 {
+  width:100%;
+  background-color:white;
+  background-position:center center;
+  background-repeat:no-repeat;
+  text-align:left;
+  color: transparent;
+}
+.gpControlLayerStyling-pointRadius-1 {
+  background-image:url(img/dot1px.gif);
+}
+.gpControlLayerStyling-pointRadius-2 {
+  background-image:url(img/dot2px.gif);
+}
+.gpControlLayerStyling-pointRadius-3 {
+  background-image:url(img/dot3px.gif);
+}
+.gpControlLayerStyling-pointRadius-4 {
+  background-image:url(img/dot4px.gif);
+}
+.gpControlLayerStyling-pointRadius-5 {
+  background-image:url(img/dot5px.gif);
+}
+.gpControlLayerStyling-pointRadius-6 {
+  background-image:url(img/dot6px.gif);
+}
+.gpControlLayerStyling-pointRadius-7 {
+  background-image:url(img/dot7px.gif);
+}
+.gpControlLayerStyling-pointRadius-8 {
+  background-image:url(img/dot8px.gif);
+}
+.gpControlLayerStyling-pointRadius-9 {
+  background-image:url(img/dot9px.gif);
+}
+.gpControlLayerStyling-strokeDashstyle {
+  width:110px;
+  font-size: 0.8em;
+  text-align:left;
+}
+.gpControlLayerStyling-strokeDashstyle-0 {
+  width:100%;
+  background-color:white;
+  background-position:center center;
+  background-repeat:repeat-x;
+  text-align:left;
+  color: transparent;
+}
+.gpControlLayerStyling-strokeDashstyle-solid {
+  background-image:url("img/line-solid.gif");
+}
+.gpControlLayerStyling-strokeDashstyle-dot {
+  background-image:url("img/line-dot.gif");
+}
+.gpControlLayerStyling-strokeDashstyle-dash {
+  background-image:url("img/line-dash.gif");
+}
+.gpControlLayerStyling-strokeDashstyle-dashdot {
+  background-image:url("img/line-dashdot.gif");
+}
+.gpControlLayerStyling-strokeDashstyle-longdash {
+  background-image:url("img/line-longdash.gif");
+}
+.gpControlLayerStyling-strokeDashstyle-longdashdot {
+  background-image:url("img/line-longdashdot.gif");
+}
+.gpControlLayerStyling-rotation {
+  position:absolute;
+  width:105px;
+  height:105px;
+  background-color:#FFFFFF;/*#99CCFF;*/
+  border:4px solid #336699;
+}
+.gpControlLayerStyling-rotation div {
+  background-image:url("img/clockPoint.gif");
+  background-repeat:repeat-x;
+  background-position:center center;
+  background-attachment:scroll;
+  background-color:transparent;
+  position:absolute;
+  cursor:pointer;
+  height:8px;
+  width:8px;
+}
+.gpControlLayerStyling-rotation div:hover {
+  background-image:url("img/clockPointHover.gif");
+  border:0px none;
+}
+.gpControlSaveLayer {
+}
+.gpControlSaveLayerItemActive {
+  background-image:url("img/picto_save.png");
+  background-repeat:no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+  float:left;
+  position:relative;
+  left:0%;
+  top:0%;
+  width:23px;
+  height:23px;
+}
+.gpControlSaveLayerItemInactive {
+  background-image:url("img/picto_save.png");
+  background-repeat:no-repeat;
+  cursor:pointer;
+  position:relative;
+  float:left;
+  left:0%;
+  top:0%;
+  width:23px;
+  height:23px;
+  display:none;
+}
+.gpControlSaveLayerItemDisabled {
+  background-image:url("img/picto_save.png");
+  background-position: -46px 0px;
+}
+.gpControlOverviewMap {
+  float:left;
+  position:relative;
+  top:0px;
+  right:0px;
+  margin-top:1px;
+}
+.gpControlOverviewMapContainer {
+  position:absolute;
+  bottom:0px;
+  right:0px;
+}
+.gpControlOverviewMapElement {
+  padding: 0px;
+  background-color:#FFFFFF;
+  border:1px solid #606060;
+  -moz-border-radius:0px;
+  -webkit-border-radius:0px;
+  border-radius:0px;
+}
+.gpControlOverviewMapMinimizeButton {
+  right:0px;
+  bottom:80px;
+  cursor:pointer;
+}
+.gpControlOverviewMapMaximizeButton {
+  right:0px;
+  bottom:80px;
+  cursor:pointer;
+}
+.gpControlOverviewMapExtentRectangle {
+  overflow:hidden;
+  background-image:url("img/blank.gif");
+  cursor:move;
+  border:2px dotted red;
+}
+.gpControlOverviewMapRectReplacement {
+  overflow:hidden;
+  cursor:move;
+  background-image:url("img/overview_replacement.gif");
+  background-repeat:no-repeat;
+  background-position:center;
+}
+/* Geoportal.Control.TerritorySelector:*/
+.gpControlTerritorySelector {
+}
+.gpControlTerritorySelectorLabel {
+  background:none repeat scroll 0 0 #2D2D2D;
+  border:1px solid #595E61;
+  color:#FFFFFF;
+  cursor:pointer;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:11px;
+  font-weight:bold;
+  padding:2px 0;
+  text-align:center;
+  display:none;
+}
+.gpControlTerritorySelectorContainer {
+}
+.gpControlTerritorySelector select {
+  font-size:0.80em;
+}
+.gpControlTerritorySelector option {
+}
+.gpControlTerritorySelector ul {
+  font-size:0.90em;
+  list-style:none;
+  text-align:left;
+  padding-left:10px;
+  height:100px;
+  overflow:auto;
+  margin:0px;
+}
+.gpControlTerritorySelector ul li {
+  color:#000000;
+  font-weight:bold;
+}
+.gpControlTerritorySelector ul li a,
+.gpControlTerritorySelector ul li a:link,
+.gpControlTerritorySelector ul li a:visited,
+.gpControlTerritorySelector ul li a:hover {
+  color:#000000;
+  text-decoration:none;
+  font-weight:normal;
+  font-style:italic;
+}
+/* Geoportal.Control.DrawingToolbar:*/
+.gpControlDrawingToolbar {
+  border : none;
+  width : auto;
+  background-color: #2D2D2D;
+  border: 2px solid #464646;
+  top: 0px;
+  left: 200px;
+}
+.gpControlDrawingToolbar div {
+  cursor: pointer;
+  width: 23px;
+  height: 23px;
+  float:left;
+  background-repeat:no-repeat;
+}
+.gpControlDrawingToolbar .gpControlAddVectorLayerItemActive {
+  background-image:url("img/picto_addvectorlayer.png");
+  background-position: -23px 0px;
+  cursor:pointer;
+}
+.gpControlDrawingToolbar .gpControlAddVectorLayerItemInactive {
+  background-image:url("img/picto_addvectorlayer.png");
+  cursor:pointer;
+}
+.gpControlDrawingToolbar .gpControlAddVectorLayerItemDisabled {
+  background-image:url("img/picto_addvectorlayer.png");
+  background-position: -46px 0px;
+}
+.gpDeleteVector{
+  background-image:url("img/picto_deleteFeature.png");
+}
+.gpStyleVector {
+  background-image:url("img/picto_palette.png");
+}
+.gpColorbox{
+  height:1em;
+  width:3em;
+  border: 1px solid #666666;
+}
+.gpNumberFieldPopup{
+  width:4em;
+}
+.gpControlDrawingToolbar-color{
+  display:none;
+  position: absolute;
+  height:130px;
+  width:161px;
+  background-color:#FFFFFF;/*#99CCFF;*/
+  border:4px solid #336699;
+}
+.gpControlDrawingToolbar-color div div{
+  height:13px;
+  width: 13px;
+  margin:1px;
+}
+.gpControlDrawingToolbar-color div {
+  float:left;
+  margin:0px;
+  width:60px;
+  height:60px;
+}
+.gpControlDrawingToolbar-color div#__color__greyscales__ {
+  width:40px;
+  height:96px;
+}
+.gpControlLayerStyling-rotation{
+  z-index:9999;
+  left:70px;
+  top:85px;
+}
+.gpControlPanPanel {
+  top: 10px;
+  left: 5px;
+}
+.gpControlPanPanel div {
+  background-image: url("img/pan-panel.png");
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+  position: absolute;
+}
+.gpControlPanPanel .olControlPanNorthItemInactive {
+  top: 0px;
+  left: 9px;
+  background-position: 0px 0px;
+}
+.gpControlPanPanel .olControlPanSouthItemInactive {
+  top: 36px;
+  left: 9px;
+  background-position: 18px 0px;
+}
+.gpControlPanPanel .olControlPanWestItemInactive {
+  position: absolute;
+  top: 18px;
+  left: 0px;
+  background-position: 0px 18px;
+}
+.gpControlPanPanel .olControlPanEastItemInactive {
+  top: 18px;
+  left: 18px;
+  background-position: 18px 18px;
+}
+.olControlDrawFeatureTextItemActive {
+  background-image: url("img/picto_font.png");
+  background-repeat: no-repeat;
+  background-position: -23px 0px;
+  cursor:pointer;
+  float: left;
+  height: 23px;
+  width: 23px;
+}
+.olControlDrawFeatureTextItemInactive {
+  background-image: url("img/picto_font.png");
+  background-repeat: no-repeat;
+  cursor: pointer;
+  float: left;
+  height: 23px;
+  width: 23px;
+}
+.olControlDrawFeatureTextItemDisabled {
+  background-image: url("img/picto_font.png");
+  background-position: -46px 0px;
+}
+.gpControlLayerCatalog {
+  width : 168px;
+  top: 250px;
+  left: 0px;
+  border: 1px solid white;
+}
+.gpControlLayerCatalog input[type="text"] {
+  width: 140px;
+}
+.gpControlLayerCatalogFilterButtons {
+  height: 20px;
+  background-color:#595E61;
+}
+.gpControlLayerCatalog input[type="button"] {
+  background:#FFCC00 none repeat scroll 0% 50%;
+  border:1px solid #666666;
+  color:#000000;
+  cursor:pointer;
+  font-size:0.79em;
+  font-weight:bold;
+  margin:2px;
+  vertical-align:bottom;
+}
+.gpControlLayerCatalog input[type="button"]:hover {
+  background:#595E61 none repeat scroll 0% 50%;
+}
+.gpControlLayerCatalogFilterForm {
+  background-color: #595E61;
+  color:#FFFFFF;
+}
+/* disable print */
+@media print {body{display:none;}}
+/* dummy div to check css loaded : DO NOT REMOVE */
+.gpViewerDefault {
+  width:50px;
+  height:50px;
+}

@@ -16,10 +16,20 @@ window.onload = function() {
 			viewerClass: Geoportal.Viewer.Simple,
 			layers: ['GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD','ORTHOIMAGERY.ORTHOPHOTOS'],
 			layersOptions: {'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD':{visibility:true,opacity:0.3},'ORTHOIMAGERY.ORTHOPHOTOS':{opacity:0.5}},
-			overlays:{}
+			overlays:{},
+			geormUrl: './js/Geoportal/autoconf.js'
 		}
 	);
 };
+
+/**
+ * If IE<11, static background map
+ */ 
+var UAString = navigator.userAgent;
+if (UAString.indexOf('Trident') !== -1 && UAString.indexOf("rv:11") === -1)
+{
+    document.getElementById('backgroundMap').style.zIndex = '-1';
+}
 
 /**
  * Index scrolling
