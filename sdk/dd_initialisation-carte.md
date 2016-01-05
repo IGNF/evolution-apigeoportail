@@ -19,87 +19,34 @@ Le Kit de développement (ou SDK) permet au développeur d'initialiser une fenê
     
 * d'outils qu'il souhaite proposer à l'internaute parmi une liste prédéfinie :
 
-	* **pan** : Ensemble de 4 boutons de déplacement vers l'est, le nord, l'ouest ou le sud. 
-    
-        Le développeur peut paramétrer le décalage en pixels résultant d'un clic sur un des boutons.
-    
-	* **zoomBox** : Bouton de l'outil de zoom sur une emprise. Si le bouton est enfoncé, le cliquerglisser sur la carte permet à l'internaute de dessiner une emprise. A la fin du clic, la carte est repositionnée (zoom et centre) sur l'emprise dessinée.
-    
-	* **zoomBar** : Barre de zoom qui présente tous les niveaux de zoom de la carte sous la forme d'un slider. L'internaute s'en sert pour zoomer ou dézoomer la carte.
-    
-	* **orientation** : Outil d'orientation de la carte. L'internaute, avec une combinaison clavier, peut faire tourner la carte. 
-    
-        Le développeur peut paramétrer la disparition du bouton lorsque la carte est parfaitement orienté au nord.
-
-	* **camera** : Outil de gestion de la caméra (uniquement 3d). L'internaute s'en sert pour orienter la caméra.
-    
-	* **layerSwitcher** : Outil de gestion des couches. Cette fenêtre permet de gérer l'opacité, l'ordre, la visibilité des couches. Mais aussi de consulter la description, la légende et les métadonnées de chaque couche.
-
-        Par défaut, l'outil est ouvert au chargement de la carte.
-
-	* **length** : Bouton de l'outil de mesure de distances. Si le bouton est enfoncé, les clics sur la carte permettent de dessiner une polyligne. A la fin de la saisie, la longueur totale est affichée.
-
-        Le développeur peut paramétrer l'unité et la précision du résultat. Il peut aussi indiquer vouloir un résultat qui prend en compte la courbure du géoïde.
-    
-	* **area** : Bouton de l'outil de mesure de surfaces. Si le bouton est enfoncé, les clics sur la carte permettent de dessiner un polygone. A la fin de la saisie, l'aire totale est affichée.
-    
-        Le développeur peut paramétrer l'unité et la précision du résultat. Il peut aussi indiquer vouloir un résultat qui prend en compte la courbure du géoïde.
-    
-	* **azimuth** : Bouton de l'outil de mesure d'azimut. Si le bouton est enfoncé, les clics sur la carte permettent de dessiner une droite. A la fin de la saisie, l'azimut est affichée.
-
-        Le développeur peut paramétrer l'unité et la précision du résultat.
-    
-	* **elevation** : Bouton de l'outil de mesure de l'altitude. Si le bouton est enfoncé, un clic sur la carte permettent d'afficher l'altitude en ce point.
-    
-	* **elevationPath** : Bouton de l'outil de mesure de profil d'altitude. Si le bouton est enfoncé, les clics sur la carte permettent de dessiner une polyligne. A la fin de la saisie, le profil altimétrique est calculé.
-
-        Le développeur peut paramétrer le nombres de points qui constituent le profil altimétrique.
-
-	* **geocoding** : Bouton de l'outil de géocodage. Si le bouton est enfoncé, une fenêtre contenant le formulaire de géocodage s'ouvre. 
-    
-        Le développeur peut indiquer sur quelles ressources le géocodage sera lancé, le nombre maximal de réponses souhaité. Il peut aussi choisir d'utiliser ou non le service d'autocomplétion pour aider l'internaute dans la saisie. Enfin, il peut configurer l'affichage de puces sur les positions résultantes de la recherche.
-
-	* **reverseGeocoding** : Bouton de l'outil de géocodage inverse. Si le bouton est enfoncé, une fenêtre contenant le formulaire de géocodage inverse s'ouvre. 
-    
-        Le développeur peut indiquer sur quelles ressources le géocodage sera lancé, le nombre maximal de réponses souhaité. Il peut aussi choisir d'utiliser ou non le service d'autocomplétion pour aider l'internaute dans la saisie. Enfin, il peut configurer l'affichage de puces sur les positions résultantes de la recherche.
-
-	* **serviceLayerImport** : Bouton de l'outil d'ajout de couches en provenance d'un service. Si le bouton est enfoncé, une fenêtre contenant le formulaire d'import s'ouvre. Une fois complété et validé, la couche WMS, WMTS, WFS, OSM ou GeoRSS est ajoutée à la carte.
-
-        Le développeur peut indiquer la liste des formats importables.
-    
-	* **staticLayerImport** : Bouton de l'outil d'ajout de couches en provenance d'un service. Si le bouton est enfoncé, une fenêtre contenant le formulaire d'import s'ouvre. Une fois complété et validé, la couche KML, GPX, GeoJSON ou de dessin est ajoutée à la carte.
-
-        Le développeur peut indiquer la liste des formats importables.
-    
-	* **drawing** : Barre d'outils pour les couches de dessin. Elle contient l'outil de dessin d'une géométrie (drawFeature), l'outil de déplacement d'une géométrie dessinée (dragFeature), l'outil d'édition d'une géométrie dessinée (modifyFeature), l'outil de suppression d'une géométrie dessinée (deleteFeature), l'outil d'ajout d'attributs (attributesFeature), l'outil de modification du style de la couche (stylesFeature), l'outil d'export (saveFeatures).
-
-        Le développeur peut configurer les outils constituants la barre d'outil de dessin et indiquer les couches de données éditables.
-    
-	* **graphicScale** : Barre d'échelle. La longueur de la barre et la distance qu'elle représente dans la réalité renseignment l'internaute sur l'échelle courante de la carte.
-
-        Le développeur peut paramétrer la longueur minimale et l'unité de la barre d'échelle.
-
-	* **mousePosition** : Coordonnées de la souris. Le texte renseigne l'internaute sur les coordonnées courantes de la souris.
-    
-        Le développeur peut indiquer la projection d'affichage des coordonnées de la souris.
-    
-	* **overview** : Carte d'ensemble. Cette mini-carte permet à l'internaute de se situer plus facilement.
-
-        Le développeur peut configurerla liste des couches constituant la mini-carte et les informations de zooms de celles-ci.
-    
-	* **fullScreen** : Bouton de l'outil de plein écran. Au clic sur le bouton, la fenêtre cartographique passe en mode plein écran.
-
-	* **graticule** : Grille des méridiens et parallèles s'affichant au dessus des couches de la carte pour aider l'internaute à se situer.
-    
-        Le développeur peut indiquer les intervalles de la grille en degrés.
-
-	* **logo** : Logo des fournisseurs des couches visibles de la carte. Le survol des images affiche un texte. Le clic sur l'image permet d'être dirigé vers le site internet du fournisseur de données. Cet outil est toujours actif.
-
-        Le développeur peut modifier la taille par défaut des images.
+Nom de l'outil | Description | Utilisation
+------------ | ------------- | -------------
+ **pan** | Ensemble de 4 boutons de déplacement vers l'est, le nord, l'ouest ou le sud. | Le développeur peut paramétrer le décalage en pixels résultant d'un clic sur un des boutons.
+**zoomBox** | Bouton de l'outil de zoom sur une emprise. Si le bouton est enfoncé, le cliquerglisser sur la carte permet à l'internaute de dessiner une emprise. | A la fin du clic, la carte est repositionnée (zoom et centre) sur l'emprise dessinée.
+**zoomBar** | Barre de zoom qui présente tous les niveaux de zoom de la carte sous la forme d'un slider. | L'internaute s'en sert pour zoomer ou dézoomer la carte.
+**orientation** | Outil d'orientation de la carte. | L'internaute, avec une combinaison clavier, peut faire tourner la carte. Le développeur peut paramétrer la disparition du bouton lorsque la carte est parfaitement orienté au nord.
+**camera** | Outil de gestion de la caméra (uniquement 3D). | L'internaute s'en sert pour orienter la caméra.
+**layerSwitcher** | Outil de gestion des couches. Cette fenêtre permet de gérer l'opacité, l'ordre, la visibilité des couches. Mais aussi de consulter la description, la légende et les métadonnées de chaque couche. | Par défaut, l'outil est ouvert au chargement de la carte.
+**length** | Bouton de l'outil de mesure de distances. Si le bouton est enfoncé, les clics sur la carte permettent de dessiner une polyligne. A la fin de la saisie, la longueur totale est affichée. | Le développeur peut paramétrer l'unité et la précision du résultat. Il peut aussi indiquer vouloir un résultat qui prend en compte la courbure du géoïde.
+**area** | Bouton de l'outil de mesure de surfaces. Si le bouton est enfoncé, les clics sur la carte permettent de dessiner un polygone. A la fin de la saisie, l'aire totale est affichée. | Le développeur peut paramétrer l'unité et la précision du résultat. Il peut aussi indiquer vouloir un résultat qui prend en compte la courbure du géoïde.
+**azimuth** | Bouton de l'outil de mesure d'azimut. Si le bouton est enfoncé, les clics sur la carte permettent de dessiner une droite. A la fin de la saisie, l'azimut est affichée. | Le développeur peut paramétrer l'unité et la précision du résultat.
+**elevation** | Bouton de l'outil de mesure de l'altitude. Si le bouton est enfoncé, un clic sur la carte permettent d'afficher l'altitude en ce point.
+**elevationPath** | Bouton de l'outil de mesure de profil d'altitude. Si le bouton est enfoncé, les clics sur la carte permettent de dessiner une polyligne. A la fin de la saisie, le profil altimétrique est calculé. | Le développeur peut paramétrer le nombres de points qui constituent le profil altimétrique.
+**geocoding** | Bouton de l'outil de géocodage. Si le bouton est enfoncé, une fenêtre contenant le formulaire de géocodage s'ouvre. | Le développeur peut indiquer sur quelles ressources le géocodage sera lancé, le nombre maximal de réponses souhaité. Il peut aussi choisir d'utiliser ou non le service d'autocomplétion pour aider l'internaute dans la saisie. Enfin, il peut configurer l'affichage de puces sur les positions résultantes de la recherche.
+**reverseGeocoding** | Bouton de l'outil de géocodage inverse. Si le bouton est enfoncé, une fenêtre contenant le formulaire de géocodage inverse s'ouvre. | Le développeur peut indiquer sur quelles ressources le géocodage sera lancé, le nombre maximal de réponses souhaité. Il peut aussi choisir d'utiliser ou non le service d'autocomplétion pour aider l'internaute dans la saisie. Enfin, il peut configurer l'affichage de puces sur les positions résultantes de la recherche.
+**serviceLayerImport** | Bouton de l'outil d'ajout de couches en provenance d'un service. Si le bouton est enfoncé, une fenêtre contenant le formulaire d'import s'ouvre. Une fois complété et validé, la couche WMS, WMTS, WFS, OSM ou GeoRSS est ajoutée à la carte. | Le développeur peut indiquer la liste des formats importables.
+**staticLayerImport** | Bouton de l'outil d'ajout de couches en provenance d'un service. Si le bouton est enfoncé, une fenêtre contenant le formulaire d'import s'ouvre. Une fois complété et validé, la couche KML, GPX, GeoJSON ou de dessin est ajoutée à la carte. | Le développeur peut indiquer la liste des formats importables.
+**drawing** | Barre d'outils pour les couches de dessin. Elle contient l'outil de dessin d'une géométrie (drawFeature), l'outil de déplacement d'une géométrie dessinée (dragFeature), l'outil d'édition d'une géométrie dessinée (modifyFeature), l'outil de suppression d'une géométrie dessinée (deleteFeature), l'outil d'ajout d'attributs (attributesFeature), l'outil de modification du style de la couche (stylesFeature), l'outil d'export (saveFeatures). | Le développeur peut configurer les outils constituants la barre d'outil de dessin et indiquer les couches de données éditables.
+**graphicScale** | Barre d'échelle. La longueur de la barre et la distance qu'elle représente dans la réalité renseignment l'internaute sur l'échelle courante de la carte. | Le développeur peut paramétrer la longueur minimale et l'unité de la barre d'échelle.
+**mousePosition** | Coordonnées de la souris. Le texte renseigne l'internaute sur les coordonnées courantes de la souris. | Le développeur peut indiquer la projection d'affichage des coordonnées de la souris.
+**overview** | Carte d'ensemble. Cette mini-carte permet à l'internaute de se situer plus facilement. | Le développeur peut configurerla liste des couches constituant la mini-carte et les informations de zooms de celles-ci.
+**fullScreen** | Bouton de l'outil de plein écran. Au clic sur le bouton, la fenêtre cartographique passe en mode plein écran.
+**graticule** | Grille des méridiens et parallèles s'affichant au dessus des couches de la carte pour aider l'internaute à se situer. | Le développeur peut indiquer les intervalles de la grille en degrés.
+**logo** | Logo des fournisseurs des couches visibles de la carte. Le survol des images affiche un texte. Le clic sur l'image permet d'être dirigé vers le site internet du fournisseur de données. Cet outil est toujours actif. | Le développeur peut modifier la taille par défaut des images.
         
-Ces outils ne sont pas implémentés par l'AHN mais par la biblitohèque sous jacente.Si ce n'est pas le cas, il ne sont pas intégrés.
+Ces outils ne sont pas implémentés par le SDK mais par la bibliothèque sous jacente. Si la bibliothèque ne propose pas les outils, ils ne sont pas intégrés.
 
-Le paramétrage proposé par l'API Haut niveau est un paramétarge minimal. S'il n'est pas géré par l'outil sous jacent il est ignoré. Si l'outil propose un paramétrage plus avancé, celui-ci sera accessible uniquement via la bibliothèque sous-jacente.
+Le paramétrage proposé par le SDK est un paramétrage minimal. S'il n'est pas géré par l'outil sous jacent il est ignoré. Si l'outil propose un paramétrage plus avancé, celui-ci sera accessible uniquement via la bibliothèque sous-jacente.
 
 Le développeur peut paramétrer, pour chacun de ces outils, leur position, leur aspect et leur activation/desactivation au chargement de la carte.
 
