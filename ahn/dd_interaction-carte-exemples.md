@@ -6,7 +6,7 @@ order: 030301
 api: ahn
 ---
 
-# Exemples d'intéractions
+# Exemples d'interactions
 
 ## Evenement centerChanged
 
