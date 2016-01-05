@@ -9,12 +9,15 @@ api: services
 # Contexte
 
 
-La version 3 de l'API Géoportail doit se décliner selon une offre logicielle à trois niveaux :
+Les API Géoportail facilitent la mise en œuvre des ressources du Géoportail dans un site internet.
 
-1. Un premier niveau qui couvre l'accès aux référentiels Géoportail et prend en charge l'accès aux services spécifiques de la plateforme Géoportail indépendamment de toute bibliothèque cartographique.
+Elles évoluent à partir du 1er janvier 2016 pour mieux répondre à vos besoins. Utiliser les ressources du Géoportail dans vos développements web sera désormais encore plus simple. Pour mieux répondre à vos attentes, les API Géoportail (JavaScript et Flash) seront remplacées par : 
 
-2. Un second niveau qui intègre le premier et propose des intégrations des services de la platforme Géoportail (spécifiques ou standards) dans les bibliothèques du marché via leurs mécanismes propres d'extension. Des lots de composants graphiques peuvent être aussi proposés pour chacune des bibliothèques supportées, déclinés selon une identité visuelle commune.
+1. deux extensions Géoportail pour les bibliothèques cartographiques Leaflet et OpenLayers 3
+Chaque extension facilite l’intégration des ressources du Géoportail à l’aide de fonctions simples et d’un ensemble de widgets permettant d’interagir avec les ressources telles que le géocodage ou le service d’altimétrie. 
 
-3. Un troisième niveau (Kit de développement ou « haut niveau ») qui intègre les deux niveaux précédents et offre une solution « clef en main » d'intégration d'une carte dans une page web en s'appuyant sur une ou plusieurs bibliothèques du marché prises sur étagère.
+2. un kit de développement JavaScript, solution simple pour intégrer facilement une carte dynamique sur son propre site web. 
 
-Le Kit "Services" (appelé aussi API Géoportail « Services » dans ce document), objet de ces spécifications, a pour but la mise en oeuvre du premier niveau.
+3. Une bibliothèque d’accès JavaScript, ensemble de fonctions JavaScript paramétrables et documentées pour manipuler les ressources du Géoportail, à utiliser en complément d’une solution cartographique de son choix. En savoir plus sur la bibliothèque d’accès
+
+
