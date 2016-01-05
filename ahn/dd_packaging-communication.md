@@ -8,7 +8,7 @@ api: ahn
 
 # Packaging
 
-Le Kit de développement (ou SDK) est disponible sous la forme d'un fichier JavaScript disponible pour chacune des bibliothèque cartographiques supportée.
+Le Kit de développement (ou SDK) est disponible sous la forme d'un fichier JavaScript disponible pour chacune des bibliothèques cartographiques supportées (Leaflet ou Openlayers).
 
 Ce fichier embarque les codes :
 
