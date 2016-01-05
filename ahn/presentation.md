@@ -8,20 +8,29 @@ api: ahn
 
 # Kit de développement
 
+## Contexte
+
+Ce Kit de développement est proposé par l'IGN dans le cadre de la refonte des outils mis à disposition pour faciliter l'utilisation des ressources du Géoportail dans des développements web.
+
 ## Présentation
 
-Le "Kit de développement" est une intégration tout-en-un d'OpenLayers 3 et de son extensions Géoportail avec une interface de programmation légère permettant d’intégrer simplement une carte utilisant les ressources du Géoportail dans un site web et de réagir aux intéractions des internautes.
+Le "Kit de développement" est une intégration tout-en-un d'OpenLayers 3 et de son extension Géoportail avec une interface de programmation légère permettant d'ajouter simplement une carte utilisant les ressources du Géoportail dans un site web et de réagir aux interactions des internautes.
 
-Elle s'adresse à des gestionnaires de site internet non initiés à l'utilisation de bibliothèques cartographiques et désireux de proposer une cartographie dynamique utilisant les fonds IGN sur leur site et faisant appel à des fonctionnalités simples :
+Elle s'adresse à des gestionnaires de site internet non initiés à l'utilisation de bibliothèques cartographiques et désireux de proposer rapidement une cartographie dynamique utilisant les fonds IGN sur leur site et faisant appel à des fonctionnalités simples :
 
 * positionnement de la carte (centrage, orientation, niveau de zoom)
 * composition de la carte (choix et assemblage du fond cartographique)
-* mise à disposition d'outils d'intéraction avec la carte aux internautes
-* gestion de l'intéraction de l'internaute avec la carte (événements)
+* mise à disposition d'outils d'interaction avec la carte aux internautes
+* gestion de l'interaction de l'internaute avec la carte (événements)
 
 Le détail de ces fonctionnalités est donné dans la [page sur la couverture fonctionnelle de cette API](dg_couverture-fonctionnelle.html).
 
-## Exemples d'utilisations
+## Les prérequis pour utiliser ce Kit de développement
+
+_NB_ : L'utilisation de ce Kit de développement nécessite l'obtention d'une clé API. Cette clé API s'obtient sur le site [professionnels.ign.fr](http://professionnels.ign.fr/api-web). Elle est nécessaire pour avoir accès aux ressources du Géoportail, telles que l'affichage d'une couche ou l'utilisation du service de géocodage pour centrer la carte sur l'adresse fournie par l'internaute.
+
+
+## Exemple d'utilisation
 
 ### Intégration d'une carte dans une page web
 
@@ -62,6 +71,5 @@ window.onload = function(){
 </script>
 ```
 
-_NB_ : La fourniture d'une clef API obtenue sur le site [professionnels.ign.fr](http://professionnels.ign.fr/api-web) est nécessaire pour avoir accès à l'affichage de cette couche et à l'utilisation du service de Géocodage pour le centrage selon l'adresse fournie.
 
 
