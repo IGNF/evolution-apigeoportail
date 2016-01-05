@@ -7,17 +7,17 @@ api: ahn
 ---
 # Interaction avec la carte
 
-Le Kit de développement (ou "API Haut Niveau" dans ce document) doit permettre à l'utilisateur d'intéragir avec les éléments de la fenêtre cartographique. Cette fonctionnalité sera disponible une fois la carte initialisée à l'aide de fonctions permettant d'agir sur la carte et d'événements permettant connaitre l'état de la carte en fonction des actions de l'internaute.
+Le Kit de développement (ou SDK) permet à l'utilisateur d'interagir avec les éléments de la fenêtre cartographique. Cette fonctionnalité est disponible une fois la carte initialisée, à l'aide de fonctions permettant d'agir sur la carte et d'évènements permettant connaitre l'état de la carte en fonction des actions de l'internaute.
 
 ## Cas d'utilisation
 
-L'utilisateur est un développeur qui souhaite proposer une fenêtre cartographique au sein d'une page web.
+L'utilisateur souhaite proposer une fenêtre cartographique au sein d'une page web.
 
 Une fois la carte chargée, le développeur peut vouloir donner à l'utilisateur la possibilité de modifier la carte grâce à des formulaires, des boutons etc.
 
 ## Mise en oeuvre
 
-L'utilisation se fera par l'exploitation des méthodes de l'objet Gp.Map retourné par la fonction de chargement Gp.Map.load().
+L'utilisation se fait par l'exploitation des méthodes de l'objet Gp.Map retourné par la fonction de chargement Gp.Map.load().
 
 ### Objet : Gp.Map
 
