@@ -10,7 +10,7 @@ api: ahn
 
 ## Centrage par adresse
 
-Affichage d'une carte utilisant les fonds associés à la clef CLEF_API et centrée sur une adresse donnée dans une <div> d'identifiant 'geoportalMap'.
+Affichage d'une carte utilisant les fonds associés à la clé CLE_API et centrée sur une adresse donnée dans une <div> d'identifiant 'geoportalMap'.
 
 ```
 Gp.Map.load(
@@ -22,7 +22,7 @@ Gp.Map.load(
 
 ## Centrage par coordonnées
 
-Affichage d'une carte utilisant les fonds associés à la clef CLEF_API et centrée sur un point donné dans une <div> d'identifiant 'geoportalMap'.
+Affichage d'une carte utilisant les fonds associés à la clé CLE_API et centrée sur un point donné dans une <div> d'identifiant 'geoportalMap'.
 
 ```
 Gp.Map.load(
