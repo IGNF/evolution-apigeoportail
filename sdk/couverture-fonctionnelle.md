@@ -6,7 +6,7 @@ order: 000200
 api: ahn
 ---
 
-# Fonctions proposées
+# Fonctions proposées par le SDK
 
 Le Kit de développement (ou "SDK" dans ce document) permet de créer une carte interactive aux fonctionnalités de base indépendamment de la bibliothèque cartographique sous-jacente.
 
