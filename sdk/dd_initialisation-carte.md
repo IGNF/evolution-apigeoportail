@@ -2,20 +2,20 @@
 layout: ahn
 title: Initialisation de la carte
 level: 2
-order: 030200
+order: 020100
 api: ahn
 ---
 
 # Initialisation de la carte
 
-Le kit de développement (ou "API Haut Niveau" dans ce document) doit permettre au développeur d'initialiser une fenêtre cartographique en fonction :
+Le Kit de développement (ou SDK) permet au développeur d'initialiser une fenêtre cartographique en fonction :
 
-* des possibilités que lui offre son contrat API,
+* des possibilités que lui offre sa clé API,
 * d'éléments de positionnement (zoom, centre etc)
 * des couches qu'il souhaite afficher :
 
 	* **couches Géoportail** : Données fournies par l'infrastructure du Géoportail.
-	* **couches métiers** : Données personnelles fournies par un autre service (WMS, WMTS, WFS, GeoRSS etc) ou dans un fichier statique (KML, GPX, etc).
+	* **couches métiers** : Données personnelles fournies par un autre webservice (WMS, WMTS, WFS, GeoRSS etc) ou dans un fichier statique (KML, GPX, etc).
     
 * d'outils qu'il souhaite proposer à l'internaute parmi une liste prédéfinie :
 
@@ -107,16 +107,15 @@ Enfin, d'autres outils, invisibles, peuvent aussi être configurés. Le dévelop
 
 ## Cas d'utilisation
 
-L'utilisateur est un développeur qui souhaite proposer une fenêtre cartographique au sein d'une page
-web.
+L'utilisateur souhaite proposer une fenêtre cartographique au sein d'une page web.
 
 Il peut vouloir afficher, centrer la carte par différents moyens (coordonnées, géocodage, etc), afficher des couches Géoportail, des couches personnelles de différents formats (KML, GpX, WMS etc), ajouter des outils (de navigation, de dessin, de mesures etc)...
 
-L'API doit rendre compte de l'état de chargement de la fenêtre cartographique.
+L'API peut rendre compte de l'état de chargement de la fenêtre cartographique.
 
 ## <a name="gpMapLoad"></a>Mise en oeuvre
 
-L'utilisation se fera par l'appel d'une fonction statique.
+L'utilisation se fait par l'appel d'une fonction statique.
 
 ``` javascript
 Gp.Map.load(apiKey:String, div:String, MapOptions:Object) ;
@@ -124,7 +123,7 @@ Gp.Map.load(apiKey:String, div:String, MapOptions:Object) ;
 
 Cette fonction initialise une fenêtre cartographique au sein d'un élément HTML.
 
-Dans le cas où l'option n'a aucun sens pour la bibliothèque choisie, l'API Haut-Niveau doit ignorer le paramètre. Par exemple, si le développeur indique vouloir ajouter un outil à la carte alors que ni la bibliothèque choisie ni son plugin Géoportail ne proposent cet outil, la carte sera correctement chargée dans la bibliothèque demandée mais sans l'outil en question.
+Dans le cas où l'option n'a aucun sens pour la bibliothèque choisie, le SDK ignore le paramètre. Par exemple, si le développeur indique vouloir ajouter un outil à la carte alors que ni la bibliothèque choisie ni son plugin Géoportail ne proposent cet outil, la carte sera correctement chargée dans la bibliothèque demandée mais sans l'outil en question.
 
 ### Paramètres de la fonction Gp.Map.load()
 

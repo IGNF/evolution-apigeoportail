@@ -2,11 +2,11 @@
 layout: ahn
 title: Couverture fonctionnelle
 level: 2
-order: 020200
+order: 000200
 api: ahn
 ---
 
-# Fonctions proposées
+# Fonctions proposées par le SDK
 
 Le Kit de développement (ou "SDK" dans ce document) permet de créer une carte interactive aux fonctionnalités de base indépendamment de la bibliothèque cartographique sous-jacente.
 
@@ -35,7 +35,7 @@ Le Kit de développement permet d'ajouter à la carte les outils d'interaction a
 Il peut rajouter les outils classiques fournis par la librairie (navigation, outils de mesure etc) ainsi que ceux fournis par l'extension Géoportail (géocodage, altimétrie etc).
 
 
-## Intéractions avec les éléments de la carte
+## Interactions avec les éléments de la carte
 
 Le Kit de développement permet d'agir en fonction de certains évènements remontés :
 

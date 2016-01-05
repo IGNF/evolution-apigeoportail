@@ -2,11 +2,11 @@
 layout: ahn
 title: Cas d'utilisations
 level: 2
-order: 020100
+order: 000100
 api: ahn
 ---
 
-# Quelles utilisations pour ce Kit de développement ?
+# Quand utiliser ce SDK ?
 
 ## Pour faire une carte de situation
 
