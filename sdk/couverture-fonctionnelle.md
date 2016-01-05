@@ -35,7 +35,7 @@ Le Kit de développement permet d'ajouter à la carte les outils d'interaction a
 Il peut rajouter les outils classiques fournis par la librairie (navigation, outils de mesure etc) ainsi que ceux fournis par l'extension Géoportail (géocodage, altimétrie etc).
 
 
-## Intéractions avec les éléments de la carte
+## Interactions avec les éléments de la carte
 
 Le Kit de développement permet d'agir en fonction de certains évènements remontés :
 
