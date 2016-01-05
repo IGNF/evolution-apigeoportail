@@ -6,7 +6,7 @@ order: 020100
 api: ahn
 ---
 
-# Quelles utilisations pour ce Kit de développement ?
+# Quand utiliser ce SDK ?
 
 ## Pour faire une carte de situation
 
