@@ -8,6 +8,8 @@ api: ahn
 
 # Description détaillée
 
+Cette partie définit les fonctionnalités à venir du Kit de Développement.
+
 ## Principes du Kit de développement
 
 Cette bibliothèque, à fort niveau d'abstraction, est conçue pour être accessible à des développeurs occasionnels peu à l'aise en programmation web ou peu familiers avec les notions de cartographie web. Elle doit permettre, pour des cas d'utilisation simples, de faire abstraction de la bibliothèque cartographique sous-jacente.

@@ -12,7 +12,7 @@ On traite ici de la couche logicielle qui gère l'accès aux services de la plat
 
 ## Principe Général
 
-L'API Géoportail « Services » offre pour chaque service une ou plusieurs fonctions qui permettent d'émettre des réquêtes, de réceptionner les réponses afin de pouvoir les exploiter.
+La Bibliothèque d'accès aux ressources du Géoportail offre pour chaque service une ou plusieurs fonctions qui permettent d'émettre des réquêtes, de réceptionner les réponses afin de pouvoir les exploiter.
 
 Pour un service donné, l'utilisation de l'API se fera au travers d'une fonction statique dédiée ayant la signature globale suivante :
 

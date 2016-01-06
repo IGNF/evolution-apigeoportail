@@ -8,12 +8,29 @@ api: services
 
 # Description générale
 
-## Objectifs de l'API Géoportail Services
+## Objectifs de la Bibiliothèque d'accès
 
-L'API Géoportail Services est une brique logicielle mise à disposition des développeurs pour leur faciliter l'accès aux services de la plateforme Géoportail. Pour cela, elle propose un ensemble de classes et fonctions permettant :
+La Bibliothèque d'accès est une brique logicielle mise à disposition des développeurs pour leur faciliter l'accès aux services de la plateforme Géoportail. Pour cela, elle propose un ensemble de classes et fonctions permettant :
 
 * d'accéder aux définitions et paramétrages des webs services de la plateforme Géoportail ainsi qu'aux ressources accessibles depuis une clef d'accès à la plateforme.
 * d'utiliser les webservices spécifiques de la plateforme en faisant abstraction des protocoles de dialogue.
+
+
+## Couverture Fonctionnelle
+
+La Bibliothèque d'accès doit permettre d'encapsuler l'accès aux webservices suivants de la plateforme :
+
+* Autoconfiguration
+* Géocodage
+* Autocomplétion
+* Calcul d'itinéraire et d'isochrones / isodistances
+* Services d'altimétrie et de calcul de profils altimétriques
+* Transformations de coordonnées (en projet)
+
+Au travers de l'accès au service d'autoconfiguration, la Bibliothèque d'accès permet de consulter les droits relatifs à une clef (Ressources disponibles) et de disposer des paramètres nécessaires pour exploiter ces ressources avec des outils logiciels tiers. 
+
+Elle doit permettre aussi de prendre en charge les différents protocoles d'interrogation des services offerts par la plateforme Géoportail.
+
 
 ## Cas d'utilisation
 
@@ -27,7 +44,7 @@ Il a besoin de connaître le paramétrage à appliquer pour afficher ces couches
 
 Le service d'autoconfiguration de la plateforme Géoportail permet d'obtenir ces informations.
 
-L'API Géoportail Services doit permettre d'invoquer simplement ce service, d'analyser la réponse de façon à proposer les informations lues de façon simple, intuitive et exploitable.
+La Bibilothèque d'accès doit permettre d'invoquer simplement ce service, d'analyser la réponse de façon à proposer les informations lues de façon simple, intuitive et exploitable.
 
 ### Mise en oeuvre d'un formulaire de recherche, de calcul d'itinéraire
 
@@ -37,7 +54,7 @@ L'internaute saisit, avec l'aide du service d'autocomplétion, des adresses ou t
 
 Les services de Géocodage, d'autocomplétion et de calcul d'itinéraire sont sollicités.
 
-L'API Géoportail Services doit permettre de faire intéragir simplement le formulaire avec ces services en formalisant et envoyant les requêtes OpenLS ou d'autocomplétion correspondantes à la saisie, puis en analysant les réponses de façon à en restituer le contenu de façon simple, intuitive et exploitable.
+La Bibliothèque d'accès doit permettre de faire intéragir simplement le formulaire avec ces services en formalisant et envoyant les requêtes OpenLS ou d'autocomplétion correspondantes à la saisie, puis en analysant les réponses de façon à en restituer le contenu de façon simple, intuitive et exploitable.
 
 ### Accès aux services d'altimétrie et de calcul de profil
 
@@ -45,7 +62,7 @@ Un développeur souhaite pouvoir déterminer les altitudes en un ou plusieurs po
 
 Les services d'altimétrie et de calcul de profil de la plateforme Géoportail sont sollicités.
 
-L'API Géoportail Services doit permettre de formaliser et d'envoyer les requêtes à ces services puis d'en analyser les réponses de façon à en restituer le contenu de façon simple, intuitive et exploitable.
+La Bibliothèque d'accès doit permettre de formaliser et d'envoyer les requêtes à ces services puis d'en analyser les réponses de façon à en restituer le contenu de façon simple, intuitive et exploitable.
 
 ### Transformations de coordonnées en utilisant le service et les registres IGN
 
@@ -53,21 +70,7 @@ Un développeur souhaite transformer des lots de coordonnées pour son applicati
 
 Le service WCTS de la plateforme Géoportail est sollicité.
 
-L'API Géoportail Services doit permettre de formaliser et d'envoyer les requêtes de transformation à ce service puis de récupérer les coordonnées transformées, de façon simple, intuitive et exploitable.
+La Bibliothèque d'accès doit permettre de formaliser et d'envoyer les requêtes de transformation à ce service puis de récupérer les coordonnées transformées, de façon simple, intuitive et exploitable.
 
-## Couverture Fonctionnelle
-
-L'API Géoportail Services doit permettre d'encapsuler l'accès aux webservices suivants de la plateforme :
-
-* Autoconfiguration
-* Géocodage
-* Autocomplétion
-* Calcul d'itinéraire et d'isochrones / isodistances
-* Services d'altimétrie et de calcul de profils altimétriques
-* Transformations de coordonnées
-
-Au travers de l'accès au service d'autoconfiguration, l'API Géoportail Services permet de consulter les droits relatifs à une clef (Ressources disponibles) et de disposer des paramètres nécessaires pour exploiter ces ressources avec des outils logiciels tiers. 
-
-Elle doit permettre aussi de prendre en charge les différents protocoles d'interrogation des services offerts par la plateforme Géoportail.
 
 

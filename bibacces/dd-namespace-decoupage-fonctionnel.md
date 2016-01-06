@@ -8,13 +8,15 @@ api: services
 
 # Description détaillée
 
+Cette partie définit les fonctionnalités à venir de la bibliothèque d'accès aux ressources du Géoportail.
+
 ## Namespace
 
-Le namespace lié à l'API Géoportail Services est « Gp ».
+Le namespace lié à la Bibliothèque d'accès aux ressources du Géoportail est « Gp ».
 
 ## Découpage fonctionnel
 
-L'API Géoportail Services se décompose en trois blocs fonctionnels :
+La Bibliothèque d'accès aux ressources du Géoportail se décompose en trois blocs fonctionnels :
 
 * un bloc de gestion des protocoles d'accès aux services, accessible derrière le package « Gp.protocols » ;
 * un bloc de gestion de l'accès aux services (interrogation des services), regroupé dans le package « Gp.services » ;

@@ -1,6 +1,6 @@
 ---
 layout: ahn
-title: Description détaillée
+title: FAQ
 level: 1
 order: 030000
 api: ahn
