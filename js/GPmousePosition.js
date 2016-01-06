@@ -14,37 +14,6 @@ if (userAgent.indexOf('msie')!== -1 || userAgent.indexOf('trident')!==-1) {
 	isDesktop = true;
 }
 
-// Link panel close / visibility checkbox
-document.getElementById('GPmousePositionPanelClose').addEventListener('click', function() {
-   document.getElementById('GPshowMousePositionPicto').click();
-});
-
-// Show map center localisation if panel opened and tactile support
-document.getElementById('GPshowMousePositionPicto').addEventListener('click', function() {
-    var mapCenterClass = '';
-    if (!document.getElementById('GPshowMousePosition').checked && !isDesktop) {
-        mapCenterClass = 'GPmapCenterVisible'
-    }
-    document.getElementById('GPmapCenter').className = mapCenterClass;
-});
-
-/*
- * Calling coords update when moving cursor
- */
-if (isDesktop) {
-    // Desktop : detect mouse move
-    document.getElementById('viewerDiv').addEventListener('mousemove', function(evt) {
-        var mousePos = {
-            x: evt.clientX,
-            y: evt.clientY
-        }
-        displayCoords(mousePos);
-    });
-} else {
-    // Tactile : detect map move
-    // TODO : brancher le déclenchement de displayCoords(null) par l'évènement de mouvement de la carte
-}
-
 /**
  * Function displaying coordinates and altitude from cursor position (desktop) or map center (tactile)
  */
@@ -76,12 +45,48 @@ function displayCoords(mousePos) {
     }
 }
 
-// Updating display when changing coords system
-document.getElementById('GPmousePositionProjectionSystem').addEventListener('change', function() {
-   // TODO : à remplir 
-});
+// Test for mouse position plugin existence 
+if (document.getElementById('GPmousePositionPanel')) {
+	
+	// Link panel close / visibility checkbox
+	document.getElementById('GPmousePositionPanelClose').addEventListener('click', function() {
+	   document.getElementById('GPshowMousePositionPicto').click();
+	});
+	
+	// Show map center localisation if panel opened and tactile support
+	document.getElementById('GPshowMousePositionPicto').addEventListener('click', function() {
+	    var mapCenterClass = '';
+	    if (!document.getElementById('GPshowMousePosition').checked && !isDesktop) {
+	        mapCenterClass = 'GPmapCenterVisible'
+	    }
+	    document.getElementById('GPmapCenter').className = mapCenterClass;
+	});
+	
+	/*
+	 * Calling coords update when moving cursor
+	 */
+	if (isDesktop) {
+	    // Desktop : detect mouse move
+	    document.getElementById('viewerDiv').addEventListener('mousemove', function(evt) {
+	        var mousePos = {
+	            x: evt.clientX,
+	            y: evt.clientY
+	        }
+	        displayCoords(mousePos);
+	    });
+	} else {
+	    // Tactile : detect map move
+	    // TODO : brancher le déclenchement de displayCoords(null) par l'évènement de mouvement de la carte
+	}
+	
+	// Updating display when changing coords system
+	document.getElementById('GPmousePositionProjectionSystem').addEventListener('change', function() {
+	   // TODO : à remplir 
+	});
+	
+	// Updating display when changing coords units
+	document.getElementById('GPmousePositionProjectionUnits').addEventListener('change', function() {
+	   // TODO : à remplir 
+	});
 
-// Updating display when changing coords units
-document.getElementById('GPmousePositionProjectionUnits').addEventListener('change', function() {
-   // TODO : à remplir 
-});
+}

@@ -36,43 +36,47 @@ function openLayerInfo() {
     
 }
 
-// Apply informations opening mechanism on layerInfo buttons
-var layers = document.getElementsByClassName('GPlayerInfo');
-for (var i=0;i<layers.length;i++) {
-    layers[i].addEventListener('click',openLayerInfo);
+// Test for layer switcher plugin existence
+if (document.getElementById('GPlayerSwitcher')) {
+	
+	// Apply informations opening mechanism on layerInfo buttons
+	var layers = document.getElementsByClassName('GPlayerInfo');
+	for (var i=0;i<layers.length;i++) {
+	    layers[i].addEventListener('click',openLayerInfo);
+	}
+	
+	// Close layerInfo panel
+	document.getElementById('GPlayerInfoClose').addEventListener('click', function() {
+	    document.getElementById('GPlayerInfoPanel').className = 'GPlayerInfoPanelClosed';
+	    var layers = document.getElementsByClassName('GPlayerInfoOpened');
+	    for (var i=0;i<layers.length;i++) {
+	        layers[i].className = 'GPlayerInfo';
+	    }
+	});
+	
+	// Reset layers info when minimizing the layerSwitcher
+	document.getElementById('GPshowLayersListPicto').addEventListener('click', function() {
+	   if (document.getElementById('GPshowLayersList').checked) {
+	        var layers = document.getElementsByClassName('GPlayerInfoOpened');
+	        for (var i=0;i<layers.length;i++) {
+	            layers[i].className = 'GPlayerInfo';
+	        }
+	        document.getElementById('GPlayerInfoPanel').className = 'GPlayerInfoPanelClosed';
+	   }
+	});
+	
+	////////////////////////
+	// LAYERS DRAG AND DROP
+	////////////////////////
+	
+	var layersList = document.getElementById('GPlayersList');
+	Sortable.create(layersList,{
+	    handle: '.GPlayerName',
+	    ghostClass: 'GPghostLayer',
+	    animation: 200,
+	    onEnd: function() {
+	        // TODO : reordering the layers of the Javascript map object depending on new HTML order
+	    }
+	});
+
 }
-
-
-// Close layerInfo panel
-document.getElementById('GPlayerInfoClose').addEventListener('click', function() {
-    document.getElementById('GPlayerInfoPanel').className = 'GPlayerInfoPanelClosed';
-    var layers = document.getElementsByClassName('GPlayerInfoOpened');
-    for (var i=0;i<layers.length;i++) {
-        layers[i].className = 'GPlayerInfo';
-    }
-});
-
-// Reset layers info when minimizing the layerSwitcher
-document.getElementById('GPshowLayersListPicto').addEventListener('click', function() {
-   if (document.getElementById('GPshowLayersList').checked) {
-        var layers = document.getElementsByClassName('GPlayerInfoOpened');
-        for (var i=0;i<layers.length;i++) {
-            layers[i].className = 'GPlayerInfo';
-        }
-        document.getElementById('GPlayerInfoPanel').className = 'GPlayerInfoPanelClosed';
-   }
-});
-
-////////////////////////
-// LAYERS DRAG AND DROP
-////////////////////////
-
-var layersList = document.getElementById('GPlayersList');
-Sortable.create(layersList,{
-    handle: '.GPlayerName',
-    ghostClass: 'GPghostLayer',
-    animation: 200,
-    onEnd: function() {
-        // TODO : reordering the layers of the Javascript map object depending on new HTML order
-    }
-});
