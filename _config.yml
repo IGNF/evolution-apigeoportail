@@ -9,7 +9,7 @@ collections: null
 # Varaibles
 title: "Evolution API Géoportail"
 apiServices: "Bibliothèque d'accès"
-apiServicesShort: "Ressources"
+apiServicesShort: "Bibliothèque d'accès"
 extensions: "Extensions Géoportail"
 extensionsShort: "Extensions"
 extensionOL3: "Extension Géoportail pour OpenLayers 3"
@@ -45,9 +45,9 @@ markdown:    kramdown
 excerpt_separator: "\n\n"
 
 # Serving
-# detach:  false
-#port:    4000
-#host:    127.0.0.1
+detach:  false
+port:    4000
+host:    127.0.0.1
 baseurl: "/evolution-apigeoportail" # does not include hostname
 # baseurl: ".." # does not include hostname
 
