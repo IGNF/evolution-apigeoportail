@@ -28,7 +28,7 @@ Chaque extension facilite l’intégration des ressources du Géoportail à l’
 [En savoir plus sur le kit de développement](./ahn/presentation.html).
 
 
-* **Une bibilothèque d'accès**, ensemble de fonctions Javascript paramétrables et documentées pour manipuler les ressources du Géoportail, à utiliser en complément d’une solution cartographique de son choix.
+* **une bibilothèque d'accès**, ensemble de fonctions Javascript paramétrables et documentées pour manipuler les ressources du Géoportail, à utiliser en complément d’une solution cartographique de son choix.
 
 [En savoir plus sur la bibliothèque d'accès](./services/presentation.html).
 
@@ -42,7 +42,7 @@ L’API continuera à fonctionner tant que les navigateurs resteront compatibles
 * Le support de l’API Flash sera arrêté fin mars 2016.
 
 
-Au-delà de ces dates, vos sites devront être mis à jour pour continuer à fonctionner.
+Au-delà de ces dates, vos sites *devront être mis à jour* pour que leur accès aux ressources du Géoportail soit garanti.
 L’IGN assurera un support pour vous aider dans cette transition.
 
 *Si vous utilisez actuellement les ressources du Géoportail sans passer par les API Géoportail, aucune action particulière de votre part ne sera nécessaire.*
@@ -50,9 +50,16 @@ L’IGN assurera un support pour vous aider dans cette transition.
 ## Calendrier des étapes
 
 
-* **Premier trimestre 2016** : Mise à disposition de la bibliothèque d'accès et des extensions.
+* **Premier trimestre 2016** : 
 
-* **Deuxième trimestre 2016** : Mise à disposition du kit de développement. 
+    - Mise à disposition de la **bibliothèque d'accès** et des **extensions**.
+    - *Arrêt du support de l'API Flash*
 
+* **Deuxième trimestre 2016** : 
 
+    - Mise à disposition du **kit de développement**. 
+
+* **Troisième trimestre 2017** : 
+
+    - *Arrêt de la maintenance de l'API Géoportail Javascript.*
 
