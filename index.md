@@ -39,10 +39,10 @@ Chaque extension facilite l’intégration des ressources du Géoportail à l’
 
 L’API continuera à fonctionner tant que les navigateurs resteront compatibles avec les technologies utilisées.
 
-* Le support de l’API Flash sera arrêté fin mars 2016.
+* Le support de l’API Flash sera arrêté **fin mars 2016**.
 
 
-Au-delà de ces dates, vos sites *devront être mis à jour* pour que leur accès aux ressources du Géoportail soit garanti.
+Au-delà de ces dates, vos sites **devront être mis à jour** pour que leur accès aux ressources du Géoportail soit garanti.
 L’IGN assurera un support pour vous aider dans cette transition.
 
 *Si vous utilisez actuellement les ressources du Géoportail sans passer par les API Géoportail, aucune action particulière de votre part ne sera nécessaire.*
