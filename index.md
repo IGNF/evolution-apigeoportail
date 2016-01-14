@@ -52,12 +52,12 @@ L’IGN assurera un support pour vous aider dans cette transition.
 
 * **Premier trimestre 2016** : 
 
-    - Mise à disposition de la **bibliothèque d'accès** et des **extensions**.
+    - Mise à disposition de la **bibliothèque d'accès**.
     - *Arrêt du support de l'API Flash*
 
 * **Deuxième trimestre 2016** : 
 
-    - Mise à disposition du **kit de développement**. 
+    - Mise à disposition des **extensions** et du **kit de développement**. 
 
 * **Troisième trimestre 2017** : 
 
