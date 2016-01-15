@@ -30,7 +30,7 @@ Chaque extension facilite l’intégration des ressources du Géoportail à l’
 
 * **une bibilothèque d'accès**, ensemble de fonctions Javascript paramétrables et documentées pour manipuler les ressources du Géoportail, à utiliser en complément d’une solution cartographique de son choix.
 
-[En savoir plus sur la bibliothèque d'accès](./bibaccess/presentation.html).
+[En savoir plus sur la bibliothèque d'accès](./bibacces/presentation.html).
 
 
 ## Pour les utilisateurs des API Géoportail existantes
