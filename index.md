@@ -25,12 +25,12 @@ Chaque extension facilite l’intégration des ressources du Géoportail à l’
 
 * **un kit de développement Javascript**, solution simple pour intégrer facilement une carte dynamique sur son propre site web. 
 
-[En savoir plus sur le kit de développement](./ahn/presentation.html).
+[En savoir plus sur le kit de développement](./sdk/presentation.html).
 
 
 * **une bibilothèque d'accès**, ensemble de fonctions Javascript paramétrables et documentées pour manipuler les ressources du Géoportail, à utiliser en complément d’une solution cartographique de son choix.
 
-[En savoir plus sur la bibliothèque d'accès](./services/presentation.html).
+[En savoir plus sur la bibliothèque d'accès](./bibaccess/presentation.html).
 
 
 ## Pour les utilisateurs des API Géoportail existantes
