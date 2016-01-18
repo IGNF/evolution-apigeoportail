@@ -1,11 +1,8 @@
 /* LAYER SWITCHER */
 
 #GPlayerSwitcher {
-  position: absolute;
-  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
   font-size: 11px;
-  color: #333333;
-  box-sizing: padding-box;
+  overflow: visible;
 }
 
 #GPlayerSwitcher [draggable] {
@@ -18,15 +15,7 @@
   -webkit-user-drag: element;
 }
 
-#GPlayerSwitcher * {
-  box-sizing: border-box;
-}
-
 /* Manage opening of the components through hiden checkboxes */
-
-#GPlayerSwitcher input[type="checkbox"] {
-  display: none;
-}
 
 #GPlayerSwitcher input[type="checkbox"] + div,
 #GPlayerSwitcher input[type="checkbox"] + label + div {
@@ -78,11 +67,7 @@
 #GPlayersList {
   position: relative;
   width: 180px;
-  background-color: #FFF;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  box-shadow: 0 1px 5px #000;
+  border-bottom-right-radius: 0;
   opacity: 0;
   overflow: auto;
   transition: max-height 0.5s ease-out 0s, opacity 0.5s ease-out 0.25s;
@@ -116,7 +101,6 @@
 }
 
 .GPlayerVisibility,
-.GPshowLayerAdvancedTools,
 .GPlayerInfo,
 .GPlayerInfoOpened,
 .GPlayerRemove {
@@ -127,7 +111,6 @@
 
 .GPlayerVisibility,
 .GPlayerName,
-.GPshowLayerAdvancedTools,
 .GPlayerInfo,
 .GPlayerInfoOpened,
 .GPlayerRemove,
@@ -174,13 +157,9 @@ input[type="checkbox"]:checked + .GPlayerVisibility {
 /* Showing layer advanced tools */
 
 .GPshowLayerAdvancedTools {
+  top: 0;
   right: 0;
   background-position: -112px 0;
-  transition: transform 0.5s ease-out 0s;
-}
-
-input[type="checkbox"]:checked + .GPshowLayerAdvancedTools {
-  transform: rotateX(180deg);
 }
 
 .GPlayerAdvancedTools {
@@ -328,7 +307,6 @@ input[type="checkbox"]:checked + .GPshowLayerAdvancedTools {
   overflow-y: hidden;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #FFF;
 }
 
 .GPlayerInfoPanelOpened {
@@ -405,7 +383,7 @@ input[type="checkbox"]:checked + .GPshowLayerAdvancedTools {
 
 .GPlayerInfoLink:hover,
 .GPlayerInfoPopup:hover {
-  color: #333333;
+  color: #333;
 }
 
 .GPlayerInfoLink a,

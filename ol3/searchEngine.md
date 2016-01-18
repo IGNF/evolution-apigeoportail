@@ -2,7 +2,7 @@
 layout: ol3
 title: Moteur de Recherche
 level: 2
-order: 000002
+order: 000500
 api: ol3
 ---
 
@@ -34,11 +34,13 @@ La saisie de localisants peut s'accompagner d'un mode d'autocomplétion s'appuya
             
             <!-- SEARCH ENGINE -->
             
-            <div id="GPsearchEngine">
+            <div id="GPsearchEngine" class="GPwidget">
                 
                 <!-- Hidden checkbox for minimizing/maximizing -->
                 <input type="checkbox" id="GPshowSearchEngine" />
-                <label for="GPshowSearchEngine" id="GPshowSearchEnginePicto" title="Afficher/masquer la recherche par lieux"><span id="GPshowSearchEngineOpen"></span></label>
+                <label for="GPshowSearchEngine" id="GPshowSearchEnginePicto" class="GPshowAdvancedToolPicto" title="Afficher/masquer la recherche par lieux">
+                    <span id="GPshowSearchEngineOpen" class="GPshowAdvancedToolOpen"></span>
+                </label>
                 
                 <!-- Simple search input -->
                 <form id="GPsearchInput">
@@ -47,11 +49,13 @@ La saisie de localisants peut s'accompagner d'un mode d'autocomplétion s'appuya
                 </form>
                 
                 <!-- Advanced search panel -->
-                <div id="GPshowAdvancedSearch" title="Ouvrir la recherche avancée"><span id="GPshowAdvancedSearchOpen"></span></div>
-                <div id="GPadvancedSearchPanel">
-                    <div class="GPgeocodePanelHeader">
-                        <div class="GPgeocodePanelTitle">Recherche avancée</div>
-                        <div id="GPadvancedSearchClose" title="Fermer la recherche avancée"></div>
+                <div id="GPshowAdvancedSearch" class="GPshowAdvancedToolPicto" title="Ouvrir la recherche avancée">
+                    <span id="GPshowAdvancedSearchOpen" class="GPshowAdvancedToolOpen"></span>
+                </div>
+                <div id="GPadvancedSearchPanel" class="GPpanel">
+                    <div class="GPpanelHeader">
+                        <div class="GPpanelTitle">Recherche avancée</div>
+                        <div id="GPadvancedSearchClose" class="GPpanelClose" title="Fermer la recherche avancée"></div>
                     </div>
                     <form id="GPadvancedSearchForm">
                         <div class="GPflexInput">
@@ -64,6 +68,7 @@ La saisie de localisants peut s'accompagner d'un mode d'autocomplétion s'appuya
                         </div>
                         <!-- Search filters -->
                         <div id="GPadvancedSearchFilters">
+                            <!-- Research filters are filled in Javascript depending on developer choice -->
                             <div class="GPflexInput">
                                 <label for="GPadvancedSearchFilter1" class="GPadvancedSearchFilterLabel">Rue</label>
                                 <input type="text" id="GPadvancedSearchFilter1" class="GPadvancedSearchFilterInput" />
@@ -77,12 +82,13 @@ La saisie de localisants peut s'accompagner d'un mode d'autocomplétion s'appuya
                                 <input type="text" id="GPadvancedSearchFilter3" class="GPadvancedSearchFilterInput" />
                             </div>
                         </div>
-                        <input type="submit" id="GPadvancedSearchSubmit" value="Chercher" />
+                        <input type="submit" id="GPadvancedSearchSubmit" class="GPinputSubmit" value="Chercher" />
                     </form>
                 </div>
                 
                 <!-- Autocomplete list -->
-                <div id="GPautoCompleteList">
+                <div id="GPautoCompleteList" class="GPautoCompleteList">
+                    <!-- Proposals are dynamically filled in Javascript by autocomplete service -->
                     <div class="GPautoCompleteProposal">17000 La Rochelle</div>
                     <div class="GPautoCompleteProposal">94165 Saint Mandé</div>
                     <div class="GPautoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
@@ -91,27 +97,28 @@ La saisie de localisants peut s'accompagner d'un mode d'autocomplétion s'appuya
                 </div>
                 
                 <!-- Geocoding results list -->
-                <div id="GPgeocodeResultsList">
-                    <div class="GPgeocodePanelHeader">
-                        <div class="GPgeocodePanelTitle">Résultats de la recherche</div>
-                        <div class="GPgeocodePanelClose" id="GPgeocodeResultsClose" title="Fermer la fenêtre de résultats"></div>
+                <div id="GPgeocodeResultsList" class="GPpanel">
+                    <div class="GPpanelHeader">
+                        <div class="GPpanelTitle">Résultats de la recherche</div>
+                        <div class="GPpanelClose" id="GPgeocodeResultsClose" title="Fermer la fenêtre de résultats"></div>
                     </div>
                     <div id="GPgeocodeResults">
-                        <div class="GPgeocodeResult">17000 La Rochelle</div>
-                        <div class="GPgeocodeResult">94165 Saint Mandé</div>
-                        <div class="GPgeocodeResult">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
-                        <div class="GPgeocodeResult">What else ?</div>
-                        <div class="GPgeocodeResult">Result example</div>
-                        <div class="GPgeocodeResult">Result example</div>
-                        <div class="GPgeocodeResult">Result example</div>
-                        <div class="GPgeocodeResult">Result example</div>
-                        <div class="GPgeocodeResult">Result example</div>
-                        <div class="GPgeocodeResult">Result example</div>
-                        <div class="GPgeocodeResult">Result example</div>
-                        <div class="GPgeocodeResult">Result example</div>
-                        <div class="GPgeocodeResult">Result example</div>
-                        <div class="GPgeocodeResult">Result example</div>
-                        <div class="GPgeocodeResult">Result example</div>
+                        <!-- Results are dynamically filled in Javascript by geocoding service -->
+                        <div class="GPautoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GPautoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GPautoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GPautoCompleteProposal">What else ?</div>
+                        <div class="GPautoCompleteProposal">Result example</div>
+                        <div class="GPautoCompleteProposal">Result example</div>
+                        <div class="GPautoCompleteProposal">Result example</div>
+                        <div class="GPautoCompleteProposal">Result example</div>
+                        <div class="GPautoCompleteProposal">Result example</div>
+                        <div class="GPautoCompleteProposal">Result example</div>
+                        <div class="GPautoCompleteProposal">Result example</div>
+                        <div class="GPautoCompleteProposal">Result example</div>
+                        <div class="GPautoCompleteProposal">Result example</div>
+                        <div class="GPautoCompleteProposal">Result example</div>
+                        <div class="GPautoCompleteProposal">Result example</div>
                     </div>
                 </div>
                 

@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css">
 	{% if {{include.apiTag}} == "ol3" or {{include.apiTag}} == "leaflet" %}
 	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/viewer.css" />
+	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GPgeneralWidget.css" />
 	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GPlayerSwitcher.css" />
 	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GPsearchEngine.css" />
 	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GPmousePosition.css" />
@@ -18,6 +19,7 @@
 	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GProute.css" />
 	{% endif %}
 	{% if {{include.apiTag}} == "ol3" %}
+	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GPgeneralWidgetOL3.css" />
 	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GPlayerSwitcherOL3.css" />
 	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GPsearchEngineOL3.css" />
 	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GPmousePositionOL3.css" />
@@ -25,6 +27,7 @@
 	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GPisochronOL3.css" />
 	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GProuteOL3.css" />
 	{% elsif {{include.apiTag}} == "leaflet" %}
+	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GPgeneralWidgetLeaflet.css" />
 	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GPlayerSwitcherLeaflet.css" />
 	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GPsearchEngineLeaflet.css" />
 	<link rel="stylesheet" media="screen" href="{{site.baseurl}}/css/GPmousePositionLeaflet.css" />

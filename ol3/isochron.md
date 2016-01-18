@@ -2,7 +2,7 @@
 layout: ol3
 title: Calcul d'isochrones
 level: 2
-order: 000006
+order: 000701
 api: ol3
 ---
 
@@ -53,11 +53,11 @@ A venir...
             
             <!-- ADVANCED TOOLS : ISOCHRON -->
             
-            <div id="GPisochronPanel" class="GPadvancedToolHidden">
+            <div id="GPisochronPanel" class="GPwidget GPpanel GPadvancedToolHidden">
             
-                <div class="GPisochronPanelHeader">
-                    <div class="GPisochronPanelTitle">Calcul d'isochrone</div>
-                    <div id="GPisochronPanelClose" title="Fermer le panneau"></div>
+                <div class="GPpanelHeader">
+                    <div class="GPpanelTitle">Calcul d'isochrone</div>
+                    <div id="GPisochronPanelClose" class="GPpanelClose" title="Fermer le panneau"></div>
                 </div>
                 
                 <form id="GPisochronForm">
@@ -72,12 +72,13 @@ A venir...
                     </div>
                     
                     <!-- Autocomplete list -->
-                    <div id="GPisochronAutoCompleteList">
-                        <div class="GPisochronAutoCompleteProposal">17000 La Rochelle</div>
-                        <div class="GPisochronAutoCompleteProposal">94165 Saint Mandé</div>
-                        <div class="GPisochronAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
-                        <div class="GPisochronAutoCompleteProposal">What else ?</div>
-                        <div class="GPisochronAutoCompleteProposal">Last and surely least</div>
+                    <div id="GPisochronAutoCompleteList" class="GPadvancedAutoCompleteList">
+                        <!-- Proposals are dynamically filled in Javascript by autocomplete service -->
+                        <div class="GPautoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GPautoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GPautoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GPautoCompleteProposal">What else ?</div>
+                        <div class="GPautoCompleteProposal">Last and surely least</div>
                     </div>
                     
                     <!-- Choice isochron / isodistance -->
@@ -121,7 +122,7 @@ A venir...
                         </div>
                         <div id="GPisochronDirectionChoice">
                             <span class="GPisochronModeLabel">Sens de parcours</span>
-                            <select id="GPisochronDirectionSelect">
+                            <select id="GPisochronDirectionSelect" class="GPinputSelect">
                                 <option>Départ</option>
                                 <option>Arrivée</option>
                             </select>
@@ -129,11 +130,11 @@ A venir...
                     </div>
                     
                     <!-- Input button -->
-                    <input type="submit" id="GPisochronSubmit" value="Calculer" />
+                    <input type="submit" id="GPisochronSubmit" class="GPinputSubmit" value="Calculer" />
                     
                 </form>
                 
             </div>
-        
+            
 </div>
         

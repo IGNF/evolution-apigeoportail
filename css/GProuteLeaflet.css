@@ -6,22 +6,8 @@
 
 /* Showing/hiding route panel */
 
-.GPshowAdvancedToolPicto {
-  width: 30px;
-  height: 30px;
-  box-shadow: 0 1px 5px #000;
-  background-color: #FFF;
-  border-radius: 5px;
+#GPshowRoutePicto {
   margin-bottom: 10px;
-}
-
-.GPshowAdvancedToolPicto:hover {
-  background-color: #F4F4F4;
-}
-
-.GPshowAdvancedToolOpen {
-  width: 100%;
-  height: 100%;
 }
 
 #GPshowRouteOpen {
@@ -32,47 +18,19 @@
 
 #GProutePanel {
   left: 10px;
-  box-shadow: 0 1px 5px #000;
-  border-radius: 5px;
 }
-
-.GProutePanelHeader {
-  height: 32px;
-}
-
-.GProutePanelTitle {
-  box-sizing: border-box;
-  width: calc(100% - 60px);
-  margin: auto;
-  line-height: 32px;
-  color: #C77A04;
-  border-bottom: 1px solid #C77A04;
-} 
 
 #GProutePanelClose {
-  top: 0;
-  right: 0;
-  width: 30px;
-  height: 32px;
   background-image: url("../leaflet/img/GProuteOpen.png");
-  background-position: -30px 1px;
 }
 
 /* Route form */
-
-input#GProuteSubmit {
-  background-color: #C77A04;
-}
 
 .GProuteOriginPointerImg,
 .GProuteStageRemove,
 #GProuteStageAdd,
 .GProuteTransportImg {
   background-image: url("../leaflet/img/GProuteOptions.png");
-}
-
-.GPshowRouteExclusionsPicto {
-  background-image: url("../leaflet/img/GProuteExclusions.png");
 }
 
 .GProuteExclusionsOption {

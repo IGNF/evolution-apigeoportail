@@ -10,19 +10,10 @@
 #GPshowLayersListPicto {
   width: 36px;
   height: 36px;
-  background-color: #FFF;
-  border-radius: 5px;
-  box-shadow: 0 1px 5px #000;
-}
-
-#GPshowLayersListPicto:hover {
-  background-color: #F4F4F4;
 }
 
 #GPshowLayersListOpen,
 #GPshowLayersListClose {
-  width: 100%;
-  height: 100%;
   background-image: url("../leaflet/img/GPshowLayersList.png");
 }
 
@@ -71,8 +62,6 @@
 
 #GPlayerInfoPanel {
   right: 190px;
-  border-radius: 5px;
-  box-shadow: 0 1px 5px #000;
 }
 
 #GPlayerInfoTitle {

@@ -1,37 +1,9 @@
 /* MOUSE POSITION */
 
-#GPmousePosition {
-  position: absolute;
-  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
-  font-size: 13px;
-  color: #333333;
-  box-sizing: padding-box;
-}
-
-#GPmousePosition select {
-  border-radius: 3px;
-}
-
-#GPmousePosition input[type="checkbox"] {
-  display: none;
-}
-
-#GPmousePosition * {
-  box-sizing: border-box;
-}
-
 /* Showing/hiding mouse position panel */
 
 #GPshowMousePositionPicto {
-  box-sizing: border-box;
-  position: relative;
   display: inline-block;
-  cursor: pointer;
-}
-
-#GPshowMousePositionOpen {
-  position: absolute;
-  display: block;
 }
 
 #GPshowMousePosition + label {
@@ -54,24 +26,7 @@
 
 #GPmousePositionPanel {
   width: 200px;
-  background-color: #FFF;
   overflow: hidden;
-}
-
-.GPmousePositionPanelHeader {
-  position: relative;
-  width: 100%;
-}
-
-.GPmousePositionPanelTitle {
-  height: 100%;
-  text-align: center;
-  font-weight: bold;
-} 
-
-#GPmousePositionPanelClose {
-  position: absolute;
-  cursor: pointer;
 }
 
 /* Basic infos */
@@ -98,17 +53,8 @@
 /* Showing settings */
 
 .GPshowMousePositionSettingsPicto {
-  position: absolute;
   top: 79px;
   right: 0;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  transition: transform 0.5s ease-out 0s;
-}
-
-input[type="checkbox"]:checked + .GPshowMousePositionSettingsPicto {
-  transform: rotateX(180deg);
 }
 
 #GPmousePositionSettings {
@@ -139,16 +85,8 @@ input[type="checkbox"]:checked + .GPshowMousePositionSettingsPicto {
 }
 
 .GPmousePositionSettingsSelect {
-  display: block;
   width: 160px;
-  height: 28px;
-  line-height: 28px;
-  margin: auto;
   margin-top: 5px;
-  padding: 0;
-  padding-left: 5px;
-  border: 1px solid #999;
-  color: #333333;
 }
 
 /* Map center localisation */

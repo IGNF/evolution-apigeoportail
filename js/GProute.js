@@ -1,28 +1,44 @@
-// Test for route plugin existence 
+/*
+ * Test for route plugin existence
+ */
 if (document.getElementById('GProutePanel')) {
 	
-	//Close results details by default
+	/*
+     * Close results details by default*
+     * Default exclusions picto position
+     */
 	document.getElementById('GProuteResultsShowDetails').checked = false;
+    document.getElementById('GPshowRouteExclusionsPicto').style.top = '185px';
 	
-	// Open route panel
+	/*
+     * Open route panel
+     */
 	document.getElementById('GPshowRoutePicto').addEventListener('click', function() {
 	    document.getElementById('GPadvancedToolsPanel').className = 'GPadvancedToolsPanelHidden';
-	    document.getElementById('GProutePanel').className = 'GPadvancedToolVisible';
+	    document.getElementById('GProutePanel').className = 'GPwidget GPpanel GPadvancedToolVisible';
 	});
 	
-	// Close route panel
+	/*
+     * Close route panel
+     */
 	document.getElementById('GProutePanelClose').addEventListener('click', function() {
-	    document.getElementById('GProutePanel').className = 'GPadvancedToolHidden';
+	    document.getElementById('GProutePanel').className = 'GPwidget GPpanel GPadvancedToolHidden';
 	    document.getElementById('GPadvancedToolsPanel').className = 'GPadvancedToolsPanelVisible';
 	});
 	
-	// Managing stages options together
+	/*
+     * Managing stages options together
+     */
 	for (var i=1;i<8;i++) {
 	    
-	    // Clear potential residual coordinates
+	    /*
+         * Clear potential residual coordinates
+         */
 	    document.getElementById('GProuteOriginCoords'+i).value = '';
 	    
-	    // Manage autocomplete lists appearance
+	    /*
+         * Manage autocomplete lists appearance when filling the address inputs
+         */
 	    document.getElementById('GProuteOrigin'+i).addEventListener('keyup', function(e) {
 	        var charCode = e.which || e.keyCode;
 	        if (charCode === 13 || charCode === 10) {
@@ -39,8 +55,17 @@ if (document.getElementById('GProutePanel')) {
 	        var i = this.id.charAt(this.id.length-1);
 	        document.getElementById('GProuteAutoCompleteList'+i).style.display = 'none';
 	    });
+        
+        /*
+         * TODO brancher le moteur d'autocomplétion sur les inputs adresses avec tous leurs comportements par défauts :
+         *  - remplir l'input au choix d'une proposition
+         *  - centrer la carte
+         *  - placer un pointeur sur la carte
+         */
 	    
-	    // Click on map pointers
+	    /*
+         * Click on map pointers => toggle to coords pointing mode
+         */
 	    document.getElementById('GProuteOriginPointerImg'+i).addEventListener('click', function(evt) {
 	        evt.preventDefault();
 	        evt.stopPropagation();
@@ -80,7 +105,9 @@ if (document.getElementById('GProutePanel')) {
 	        }
 	    });
 	    
-	    // Click on input labels
+	    /*
+         * Click on address labels => toggle to address input mode
+         */
 	    document.getElementById('GProuteOriginLabel'+i).addEventListener('click', function() {
 	        var i = this.id.charAt(this.id.length-1);
 	        document.getElementById('GProuteOriginCoords'+i).value = '';
@@ -93,27 +120,34 @@ if (document.getElementById('GProutePanel')) {
 	        document.getElementById('GProuteOriginCoords'+i).className = 'GProuteOriginHidden';
 	    });
 	    
-	    // Removing stages
+	    /*
+         * Removing stages
+         */
 	    if (i!=1 && i!=7) {
 	        document.getElementById('GProuteStageRemove'+i).addEventListener('click', function() {
 	            var i = this.id.charAt(this.id.length-1);
-	            document.getElementById('GProutePoint'+i).className = 'GProuteStageFlexInputHidden';
+	            document.getElementById('GProutePoint'+i).className = 'GPflexInput GProuteStageFlexInputHidden';
 	            document.getElementById('GProuteOrigin'+i).value = '';
 	            document.getElementById('GProuteOrigin'+i).className = 'GProuteOriginVisible';
 	            document.getElementById('GProuteOriginCoords'+i).value = '';
 	            document.getElementById('GProuteOriginCoords'+i).className = 'GProuteOriginHidden';
 	            document.getElementById('GProuteStageAdd').style.display = 'flex';
+                // Moving up exclusions picto
+                var exclusionsPictoTop = document.getElementById('GPshowRouteExclusionsPicto').style.top;
+                document.getElementById('GPshowRouteExclusionsPicto').style.top = (parseInt(exclusionsPictoTop)-33).toString()+'px';
 	        });
 	    }
 	
 	}
 	
-	// Add stage
+	/*
+     * Adding stages
+     */
 	document.getElementById('GProuteStageAdd').addEventListener('click', function() {
 	    var lastStage = 1;
 	    var nbStages = 0;
 	    for (var i=2;i<7;i++) {
-	        if (document.getElementById('GProutePoint'+i).className == 'GProuteStageFlexInputHidden') {
+	        if (document.getElementById('GProutePoint'+i).className == 'GPflexInput GProuteStageFlexInputHidden') {
 	            if (lastStage==1) {
 	                lastStage = i;
 	            }
@@ -123,14 +157,20 @@ if (document.getElementById('GProutePanel')) {
 	        
 	    }
 	    if (lastStage<7) {
-	        document.getElementById('GProutePoint'+lastStage).className = 'GProuteStageFlexInput';
+	        document.getElementById('GProutePoint'+lastStage).className = 'GPflexInput GProuteStageFlexInput';
+            // Moving down exclusions picto
+            var exclusionsPictoTop = document.getElementById('GPshowRouteExclusionsPicto').style.top;
+            document.getElementById('GPshowRouteExclusionsPicto').style.top = (parseInt(exclusionsPictoTop)+33).toString()+'px';
 	    }
 	    if (nbStages==4) {
 	        document.getElementById('GProuteStageAdd').style.display = 'none';
 	    }
 	});
 	
-	// Manage map pointing => TODO adapter à une vraie map JS
+	/*
+     * Manage map pointing to get coords
+     * TODO adapter à une vraie map JS
+     */
 	document.getElementById('viewerDiv').addEventListener('click', function(evt) {
 	    for (var i=1;i<8;i++) {
 	       if (document.getElementById('GProuteOriginPointer'+i).checked) {
@@ -145,26 +185,26 @@ if (document.getElementById('GProutePanel')) {
 	    }
 	});
 	
-	// Submit the route search
+	/*
+     * Submit the route search
+     * TODO à compléter pour l'appel au service et la propagation des résultats
+     */
 	document.forms['GProuteForm'].addEventListener('submit', function(e) {
 	    
 	    e.preventDefault();
 	    
+        // Must have at least two origin points
 	    if ((document.getElementById('GProuteOrigin1').value=='' &&
 	        document.getElementById('GProuteOriginCoords1').value=='') ||
 	        (document.getElementById('GProuteOrigin7').value=='' &&
 	        document.getElementById('GProuteOriginCoords7').value=='')) {
-	        return;
+	        return false;
 	    }
-	    
-	    // Display results components
-	    document.getElementById('GProuteForm').className = 'GProuteComponentHidden';
-	    document.getElementById('GProuteResultsPanel').className = '';
 	    
 	    // Send stages to results panel
 	    document.getElementById('GProuteResultsStages').innerHTML = '';
 	    for (var i=1;i<8;i++)  {
-	        if (document.getElementById('GProutePoint'+i).className == 'GProuteStageFlexInput') {
+	        if (document.getElementById('GProutePoint'+i).className == 'GPflexInput GProuteStageFlexInput') {
 	            var resultStage = document.createElement('div');
 	            resultStage.className  ='GProuteResultStage';
 	            var resultStageLabel = document.createElement('div');
@@ -189,20 +229,30 @@ if (document.getElementById('GProutePanel')) {
 	    // Send computation mode
 	    document.getElementById('GProuteResultsComputationSelect').selectedIndex = document.getElementById('GProuteComputationSelect').selectedIndex;
 	    
-	    // TODO lancer la requête et récupérer les résultats
+	    // TODO lancer la requête => callback : récupérer les résultats et les afficher
 	    
+        // Display results components => TODO à passer en callback de la requête
+	    document.getElementById('GProuteForm').className = 'GProuteComponentHidden';
+	    document.getElementById('GProuteResultsPanel').className = '';
+        
 	    return false;
+        
 	});
 	
-	// Back to interface from results
+	/*
+     * Back to interface from results
+     */
 	document.getElementById('GProuteResultsNew').addEventListener('click', function() {
 	    document.getElementById('GProuteResultsPanel').className = 'GProuteComponentHidden';
 	    document.getElementById('GProuteForm').className = '';
 	});
 	
-	// Relaunch computation from results when changing mode (fastest/shortest)
+	/*
+     * Relaunch computation from results when changing mode (fastest/shortest)
+     * TODO à compléter pour l'appel au service et la propagation des résultats
+     */
 	document.getElementById('GProuteResultsComputationSelect').addEventListener('change', function() {
-	    // TODO relancer la requête et récupérer les résultats
+	    // TODO relancer la requête => callback : récupérer les résultats et les afficher
 	})
 
 }

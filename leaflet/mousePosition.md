@@ -2,7 +2,7 @@
 layout: leaflet
 title: Coordonnées de la souris
 level: 2
-order: 000003
+order: 000702
 api: leaflet
 ---
 
@@ -36,20 +36,23 @@ A venir...
             
             <!-- MOUSE POSITION -->
             
-            <div id="GPmousePosition">
+            <div id="GPmousePosition" class="GPwidget">
                 
                 <!-- Hidden checkbox for minimizing/maximizing -->
                 <input type="checkbox" id="GPshowMousePosition" />
-                <label for="GPshowMousePosition" id="GPshowMousePositionPicto" title="Afficher les coordonnées du curseur"><span id="GPshowMousePositionOpen"></span></label>
+                <label for="GPshowMousePosition" id="GPshowMousePositionPicto" class="GPshowAdvancedToolPicto" title="Afficher les coordonnées du curseur">
+                    <span id="GPshowMousePositionOpen" class="GPshowAdvancedToolOpen"></span>
+                </label>
                 
                 <!-- Mouse position panel -->
-                <div id="GPmousePositionPanel">
-                    <div class="GPmousePositionPanelHeader">
-                        <div class="GPmousePositionPanelTitle">Coordonnées</div>
-                        <div id="GPmousePositionPanelClose" title="Fermer le panneau"></div>
+                <div id="GPmousePositionPanel" class="GPpanel">
+                    <div class="GPpanelHeader">
+                        <div class="GPpanelTitle">Coordonnées</div>
+                        <div id="GPmousePositionPanelClose" class="GPpanelClose" title="Fermer le panneau"></div>
                     </div>
                     <!-- Basic infos : coordinates & altitude -->
                     <div id="GPmousePositionBasicPanel">
+                        <!-- Values are updated in Javascript when moving curosr/map -->
                         <span class="GPmousePositionLabel">Latitude : </span>
                         <span class="GPmousePositionCoords" id="GPmousePositionLat">0.00</span>
                         <span class="GPmousePositionLabel">Longitude : </span>
@@ -62,17 +65,19 @@ A venir...
                     </div>
                     <!-- Hidden checkbox + label for showing settings -->
                     <input type="checkbox" id="GPshowMousePositionSettings" />
-                    <label for="GPshowMousePositionSettings" id="GPshowMousePositionSettingsPicto" class="GPshowMousePositionSettingsPicto" title="Réglages"></label>
+                    <label for="GPshowMousePositionSettings" id="GPshowMousePositionSettingsPicto" class="GPshowMoreOptions GPshowMousePositionSettingsPicto" title="Réglages"></label>
                     <!-- Settings : projection system -->
                     <div id="GPmousePositionSettings">
                         <span class="GPmousePositionSettingsLabel">Système de référence</span>
-                        <select id="GPmousePositionProjectionSystem" class="GPmousePositionSettingsSelect">
+                        <select id="GPmousePositionProjectionSystem" class="GPinputSelect GPmousePositionSettingsSelect">
+                            <!-- Options below are examples, it will be defined later -->
                             <option>Géographique</option>
                             <option>Mercator</option>
                             <option>Lambert 93</option>
                             <option>Lambert II étendu</option>
                         </select>
-                        <select id="GPmousePositionProjectionUnits" class="GPmousePositionSettingsSelect">
+                        <select id="GPmousePositionProjectionUnits" class="GPinputSelect GPmousePositionSettingsSelect">
+                            <!-- Options below are supposed to update dynamically when changing projection system -->
                             <option>degrés décimaux</option>
                             <option>degrés sexagésimaux</option>
                             <option>radians</option>

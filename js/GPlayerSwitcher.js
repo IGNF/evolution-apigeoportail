@@ -1,28 +1,47 @@
-////////////////////////
-// OPACITY SLIDER
-////////////////////////
-
 /**
- * Function changing the written value of layer opacity when slider is moving
+ * Function called when visibility button is clicked
+ *   - changes layer visibility (TODO)
  */
-function changeOpacityValue(elt) {
+function GPchangeLayerVisibility(elt) {
     var layerId = elt.id.substring(elt.id.indexOf('_')+1);
-    document.getElementById('GPopacityValue_'+layerId).innerHTML = elt.value;
+    // TODO changer la visibilité du layer de la map JS
 }
 
-////////////////////////
-// LAYER INFORMATIONS
-////////////////////////
+/**
+ * Function called when opacity slider is moving :
+ *   - changes the written value of layer opacity
+ *   - changes layer opacity (TODO)
+ */
+function GPchangeLayerOpacity(elt) {
+    var layerId = elt.id.substring(elt.id.indexOf('_')+1);
+    document.getElementById('GPopacityValue_'+layerId).innerHTML = elt.value;
+    // TODO changer l'opacité du layer de la map JS
+}
 
 /**
- * Function managing the layerInfo panel visibility when checking the buttons
+ * Function called when drop button is clicked
+ *   - removes layer from layer switcher
+ *   - removes layer from map (TODO)
  */
-function openLayerInfo() {
+function GPdropLayer(elt) {
+    var layerId = elt.id.substring(elt.id.indexOf('_')+1);
+    document.getElementById('GPlayersList').removeChild(document.getElementById('GPlayerSwitcher_'+layerId));
+    // TODO supprimer le layer de la map JS
+}
+
+/**
+ * Function when layer info button is clicked :
+ *   - opens/closes the panel depending on the current state
+ *   - update content from layer (TODO)
+ */
+function GPopenLayerInfo(elt) {
+    
+    var layerId = elt.id.substring(elt.id.indexOf('_')+1);
     
     // Close layer info panel
-    if (this.className=='GPlayerInfoOpened') {
-        this.className = 'GPlayerInfo';
-        document.getElementById('GPlayerInfoPanel').className = 'GPlayerInfoPanelClosed';
+    if (elt.className=='GPlayerInfoOpened') {
+        elt.className = 'GPlayerInfo';
+        document.getElementById('GPlayerInfoPanel').className = 'GPpanel GPlayerInfoPanelClosed';
         return;
     }
     
@@ -31,21 +50,20 @@ function openLayerInfo() {
     for (var i=0;i<layers.length;i++) {
         layers[i].className = 'GPlayerInfo';
     }
-    this.className = 'GPlayerInfoOpened';
-    document.getElementById('GPlayerInfoPanel').className = 'GPlayerInfoPanelOpened';
+    elt.className = 'GPlayerInfoOpened';
+    document.getElementById('GPlayerInfoPanel').className = 'GPpanel GPlayerInfoPanelOpened';
+    // TODO récupérer les infos associées au layer pour mettre à jour dynamiquement le contenu du panel d'infos
     
 }
 
-// Test for layer switcher plugin existence
+/*
+ * Test for layer switcher plugin existence
+ */
 if (document.getElementById('GPlayerSwitcher')) {
 	
-	// Apply informations opening mechanism on layerInfo buttons
-	var layers = document.getElementsByClassName('GPlayerInfo');
-	for (var i=0;i<layers.length;i++) {
-	    layers[i].addEventListener('click',openLayerInfo);
-	}
-	
-	// Close layerInfo panel
+	/*
+     * Close layerInfo panel
+     */
 	document.getElementById('GPlayerInfoClose').addEventListener('click', function() {
 	    document.getElementById('GPlayerInfoPanel').className = 'GPlayerInfoPanelClosed';
 	    var layers = document.getElementsByClassName('GPlayerInfoOpened');
@@ -54,7 +72,9 @@ if (document.getElementById('GPlayerSwitcher')) {
 	    }
 	});
 	
-	// Reset layers info when minimizing the layerSwitcher
+	/*
+     * Reset layers info when minimizing the layerSwitcher
+     */
 	document.getElementById('GPshowLayersListPicto').addEventListener('click', function() {
 	   if (document.getElementById('GPshowLayersList').checked) {
 	        var layers = document.getElementsByClassName('GPlayerInfoOpened');
@@ -65,17 +85,17 @@ if (document.getElementById('GPlayerSwitcher')) {
 	   }
 	});
 	
-	////////////////////////
-	// LAYERS DRAG AND DROP
-	////////////////////////
-	
+	/*
+     * Layers drag and drop
+     * TODO répercuter l'évènement sur la map JS
+     */
 	var layersList = document.getElementById('GPlayersList');
 	Sortable.create(layersList,{
 	    handle: '.GPlayerName',
 	    ghostClass: 'GPghostLayer',
 	    animation: 200,
 	    onEnd: function() {
-	        // TODO : reordering the layers of the Javascript map object depending on new HTML order
+	        // TODO réordonner les layers de la map JS en fonction du nouvel ordre HTML du layerSwitcher
 	    }
 	});
 

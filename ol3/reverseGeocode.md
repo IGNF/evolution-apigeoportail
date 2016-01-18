@@ -2,7 +2,7 @@
 layout: ol3
 title: Geocodage inverse
 level: 2
-order: 000004
+order: 000600
 api: ol3
 ---
 
@@ -46,10 +46,10 @@ A venir...
             
             <!-- ADVANCED TOOLS : REVERSE GEOCODING -->
             
-            <div id="GPreverseGeocodingPanel" class="GPadvancedToolHidden">
-                <div class="GPreverseGeocodingPanelHeader">
-                    <div class="GPreverseGeocodingPanelTitle">Recherche inverse</div>
-                    <div id="GPreverseGeocodingPanelClose" title="Fermer le panneau"></div>
+            <div id="GPreverseGeocodingPanel" class="GPwidget GPpanel GPadvancedToolHidden">
+                <div class="GPpanelHeader">
+                    <div class="GPpanelTitle">Recherche inverse</div>
+                    <div id="GPreverseGeocodingPanelClose" class="GPpanelClose" title="Fermer le panneau"></div>
                 </div>
                 <form id="GPreverseGeocodingForm">
                     <div class="GPflexInput">
@@ -70,10 +70,11 @@ A venir...
                     </div>
                     <!-- Hidden checkbox + label for showing filters -->
                     <input type="checkbox" id="GPshowReverseGeocodingFilters" />
-                    <label for="GPshowReverseGeocodingFilters" id="GPshowReverseGeocodingFiltersPicto" class="GPshowReverseGeocodingFiltersPicto" title="Filtres"></label>
+                    <label for="GPshowReverseGeocodingFilters" id="GPshowReverseGeocodingFiltersPicto" class="GPshowMoreOptions GPshowReverseGeocodingFiltersPicto" title="Filtres"></label>
                     <!-- Search filters -->
                     <div id="GPreverseGeocodingFilters">
                         <span class="GPreverseGeocodingFiltersLabel">Filtres de recherche</span>
+                        <!-- Research filters are filled in Javascript depending on developer choice -->
                         <div class="GPflexInput">
                             <label for="GPreverseGeocodingFilter1" class="GPreverseGeocodingFilterLabel">Rue</label>
                             <input type="text" id="GPreverseGeocodingFilter1" class="GPreverseGeocodingFilterInput" />
@@ -87,7 +88,7 @@ A venir...
                             <input type="text" id="GPreverseGeocodingFilter3" class="GPreverseGeocodingFilterInput" />
                         </div>
                     </div>
-                    <input type="submit" id="GPreverseGeocodingSubmit" value="Chercher" />
+                    <input type="submit" id="GPreverseGeocodingSubmit" class="GPinputSubmit" value="Chercher" />
                 </form>
             </div>
             

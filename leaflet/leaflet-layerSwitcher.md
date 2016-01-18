@@ -2,7 +2,7 @@
 layout: leaflet
 title: Layer Switcher
 level: 2
-order: 000001
+order: 000400
 api: leaflet
 ---
 
@@ -30,15 +30,16 @@ Leaflet gère des controles (L.Control) dont on peut préciser le positionnement
             
             <!-- LAYERSWITCHER -->
             
-            <div id="GPlayerSwitcher">
+            <div id="GPlayerSwitcher" class="GPwidget">
                 
                 <!-- Hidden checkbox for minimizing/maximizing -->
                 <input type="checkbox" id="GPshowLayersList" />
                 
                 <!-- Layers list -->
-                <div id="GPlayersList">
+                <div id="GPlayersList" class="GPpanel">
                     
                     <!-- Layer entry in layer list -->
+                    <!-- Every item is marked with layerID, which is defined at layer import -->
                     <div id="GPlayerSwitcher_IDLayer1" class="GPlayerSwitcher_layer outOfRange">
                         <!-- Basic toolbar : visibility / layer name -->
                         <div id="GPbasicTools_IDLayer1" class="GPlayerBasicTools">
@@ -48,56 +49,69 @@ Leaflet gère des controles (L.Control) dont on peut préciser le positionnement
                         </div>
                         <!-- Hidden checkbox + label for showing advanced toolbar -->
                         <input type="checkbox" id="GPshowAdvancedTools_IDLayer1" />
-                        <label for="GPshowAdvancedTools_IDLayer1" id="GPshowAdvancedToolsPicto_IDLayer1" class="GPshowLayerAdvancedTools" title="Plus d'outils"></label>
+                        <label for="GPshowAdvancedTools_IDLayer1" id="GPshowAdvancedToolsPicto_IDLayer1" class="GPshowMoreOptions GPshowLayerAdvancedTools" title="Plus d'outils"></label>
                         <!-- Advanced toolbar : layer info / opacity slider / opacity value / removal -->
                         <div id="GPadvancedTools_IDLayer1" class="GPlayerAdvancedTools">
-                            <div id="GPinfo_IDLayer1" class="GPlayerInfo" title="Informations/légende"></div>
-                            <div id="GPopacity_IDLayer1" class="GPlayerOpacity" title="Opacité"><input id="GPopacityRange_IDLayer1" type="range" value="100" oninput="changeOpacityValue(this);" onchange="changeOpacityValue(this);" /></div>
+                            <div id="GPinfo_IDLayer1" class="GPlayerInfo" title="Informations/légende" onclick="GPopenLayerInfo(this);"></div>
+                            <div id="GPopacity_IDLayer1" class="GPlayerOpacity" title="Opacité"><input id="GPopacityRange_IDLayer1" type="range" value="100" oninput="GPchangeLayerOpacity(this);" onchange="GPchangeLayerOpacity(this);" /></div>
                             <div class="GPlayerOpacityValue" id="GPopacityValueDiv_IDLayer1"><span id="GPopacityValue_IDLayer1">100</span>%</div>
-                            <div id="GPremove_IDLayer1" class="GPlayerRemove" title="Supprimer la couche"></div>
+                            <div id="GPremove_IDLayer1" class="GPlayerRemove" title="Supprimer la couche" onclick="GPdropLayer(this);"></div>
                         </div>
                     </div>
                     
+                    <!-- Layer entry in layer list -->
+                    <!-- Every item is marked with layerID, which is defined at layer import -->
                     <div id="GPlayerSwitcher_IDLayer2" class="GPlayerSwitcher_layer">
+                    <!-- Basic toolbar : visibility / layer name -->
                         <div id="GPbasicTools_IDLayer2" class="GPlayerBasicTools">
                             <input type="checkbox" id="GPvisibility_IDLayer2" checked />
                             <label for="GPvisibility_IDLayer2" id="GPvisibilityPicto_IDLayer2" class="GPlayerVisibility" title="Afficher/masquer la couche"></label>
                             <span id="GPname_IDLayer2" class="GPlayerName" title="Quartiers prioritaires de la ville">Cartes IGN</span>
                         </div>
+                        <!-- Hidden checkbox + label for showing advanced toolbar -->
                         <input type="checkbox" id="GPshowAdvancedTools_IDLayer2" />
-                        <label for="GPshowAdvancedTools_IDLayer2" id="GPshowAdvancedToolsPicto_IDLayer2" class="GPshowLayerAdvancedTools" title="Plus d'outils"></label>
+                        <label for="GPshowAdvancedTools_IDLayer2" id="GPshowAdvancedToolsPicto_IDLayer2" class="GPshowMoreOptions GPshowLayerAdvancedTools" title="Plus d'outils"></label>
+                        <!-- Advanced toolbar : layer info / opacity slider / opacity value / removal -->
                         <div id="GPadvancedTools_IDLayer2" class="GPlayerAdvancedTools">
-                            <div id="GPinfo_IDLayer2" class="GPlayerInfo" title="Informations/légende"></div>
-                            <div id="GPopacity_IDLayer2" class="GPlayerOpacity" title="Opacité"><input id="GPopacityRange_IDLayer2" type="range" value="100" oninput="changeOpacityValue(this);" onchange="changeOpacityValue(this);" /></div>
+                            <div id="GPinfo_IDLayer2" class="GPlayerInfo" title="Informations/légende" onclick="GPopenLayerInfo(this);"></div>
+                            <div id="GPopacity_IDLayer2" class="GPlayerOpacity" title="Opacité"><input id="GPopacityRange_IDLayer2" type="range" value="100" oninput="GPchangeLayerOpacity(this);" onchange="GPchangeLayerOpacity(this);" /></div>
                             <div class="GPlayerOpacityValue" id="GPopacityValueDiv_IDLayer2"><span id="GPopacityValue_IDLayer2">100</span>%</div>
-                            <div id="GPremove_IDLayer2" class="GPlayerRemove" title="Supprimer la couche"></div>
+                            <div id="GPremove_IDLayer2" class="GPlayerRemove" title="Supprimer la couche" onclick="GPdropLayer(this);"></div>
                         </div>
                     </div>
                     
+                    <!-- Layer entry in layer list -->
+                    <!-- Every item is marked with layerID, which is defined at layer import -->
                     <div id="GPlayerSwitcher_IDLayer3" class="GPlayerSwitcher_layer">
+                    <!-- Basic toolbar : visibility / layer name -->
                         <div id="GPbasicTools_IDLayer3" class="GPlayerBasicTools">
                             <input type="checkbox" id="GPvisibility_IDLayer3" checked />
                             <label for="GPvisibility_IDLayer3" id="GPvisibilityPicto_IDLayer3" class="GPlayerVisibility" title="Afficher/masquer la couche"></label>
                             <span id="GPname_IDLayer3" class="GPlayerName" title="Quartiers prioritaires de la ville">Photographies aériennes</span>
                         </div>
+                        <!-- Hidden checkbox + label for showing advanced toolbar -->
                         <input type="checkbox" id="GPshowAdvancedTools_IDLayer3" />
-                        <label for="GPshowAdvancedTools_IDLayer3" id="GPshowAdvancedToolsPicto_IDLayer3" class="GPshowLayerAdvancedTools" title="Plus d'outils"></label>
+                        <label for="GPshowAdvancedTools_IDLayer3" id="GPshowAdvancedToolsPicto_IDLayer3" class="GPshowMoreOptions GPshowLayerAdvancedTools" title="Plus d'outils"></label>
+                        <!-- Advanced toolbar : layer info / opacity slider / opacity value / removal -->
                         <div id="GPadvancedTools_IDLayer3" class="GPlayerAdvancedTools">
-                            <div id="GPinfo_IDLayer3" class="GPlayerInfo" title="Informations/légende"></div>
-                            <div id="GPopacity_IDLayer3" class="GPlayerOpacity" title="Opacité"><input id="GPopacityRange_IDLayer3" type="range" value="100" oninput="changeOpacityValue(this);" onchange="changeOpacityValue(this);" /></div>
+                            <div id="GPinfo_IDLayer3" class="GPlayerInfo" title="Informations/légende" onclick="GPopenLayerInfo(this);"></div>
+                            <div id="GPopacity_IDLayer3" class="GPlayerOpacity" title="Opacité"><input id="GPopacityRange_IDLayer3" type="range" value="100" oninput="GPchangeLayerOpacity(this);" onchange="GPchangeLayerOpacity(this);" /></div>
                             <div class="GPlayerOpacityValue" id="GPopacityValueDiv_IDLayer3"><span id="GPopacityValue_IDLayer3">100</span>%</div>
-                            <div id="GPremove_IDLayer3" class="GPlayerRemove" title="Supprimer la couche"></div>
+                            <div id="GPremove_IDLayer3" class="GPlayerRemove" title="Supprimer la couche" onclick="GPdropLayer(this);"></div>
                         </div>
                     </div>
                     
                 </div>
                 
                 <!-- Label for minimizing/maximizing -->
-                <label id="GPshowLayersListPicto" for="GPshowLayersList" title="Afficher/masquer le gestionnaire de couches"><span id="GPshowLayersListOpen"></span><span id="GPshowLayersListClose"></span></label>
+                <label id="GPshowLayersListPicto" class="GPshowAdvancedToolPicto" for="GPshowLayersList" title="Afficher/masquer le gestionnaire de couches">
+                    <span id="GPshowLayersListOpen" class="GPshowAdvancedToolOpen"></span><span id="GPshowLayersListClose"></span>
+                </label>
                 
-                <!-- Panel for layer informations : title / description / metadata / legend - to be filled in Javascript -->
-                <div id="GPlayerInfoPanel" class="GPlayerInfoPanelClosed">
+                <!-- Panel for layer informations : title / description / metadata / legend -->
+                <div id="GPlayerInfoPanel" class="GPpanel GPlayerInfoPanelClosed">
                     <div id="GPlayerInfoContent">
+                        <!-- Content has to be filled in Javascript via function GPopenLayerInfo -->
                         <div id="GPlayerInfoTitle">Photographies aériennes</div>
                         <div id="GPlayerInfoQuicklook" title="Afficher un aperçu de la couche"></div>
                         <div id="GPlayerInfoClose" title="Fermer la fenêtre"></div>

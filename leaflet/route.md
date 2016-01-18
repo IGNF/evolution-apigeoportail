@@ -2,7 +2,7 @@
 layout: leaflet
 title: Calcul d'itinéraire
 level: 2
-order: 000005
+order: 000700
 api: leaflet
 ---
 
@@ -56,18 +56,17 @@ A venir...
             
             <!-- ADVANCED TOOLS : ROUTE -->
             
-            <div id="GProutePanel" class="GPadvancedToolHidden">
+            <div id="GProutePanel" class="GPwidget GPpanel GPadvancedToolHidden">
             
-                <div class="GProutePanelHeader">
-                    <div class="GProutePanelTitle">Calcul d'itinéraire</div>
-                    <div id="GProutePanelClose" title="Fermer le panneau"></div>
+                <div class="GPpanelHeader">
+                    <div class="GPpanelTitle">Calcul d'itinéraire</div>
+                    <div id="GProutePanelClose" class="GPpanelClose" title="Fermer le panneau"></div>
                 </div>
                 
-                <!-- Formulaire de saisie -->
                 <form id="GProuteForm">
                     
                     <!-- Start input -->
-                    <div id="GProutePoint1" class="GProuteStageFlexInput">
+                    <div id="GProutePoint1" class="GPflexInput GProuteStageFlexInput">
                         <label id="GProuteOriginLabel1" for="GProuteOrigin1">Départ</label>
                         <input id="GProuteOrigin1" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
                         <input id="GProuteOriginCoords1" class="GProuteOriginHidden" type="text" disabled />
@@ -75,16 +74,17 @@ A venir...
                         <label id="GProuteOriginPointerImg1" class="GProuteOriginPointerImg" for="GProuteOriginPointer1" title="Pointer un lieu sur la carte"></label>
                     </div>
                     <!-- Autocomplete list -->
-                    <div id="GProuteAutoCompleteList1" class="GProuteAutoCompleteList">
-                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
-                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
-                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
-                        <div class="GProuteAutoCompleteProposal">What else ?</div>
-                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    <div id="GProuteAutoCompleteList1" class="GPadvancedAutoCompleteList">
+                        <!-- Proposals are dynamically filled in Javascript by autocomplete service -->
+                        <div class="GPautoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GPautoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GPautoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GPautoCompleteProposal">What else ?</div>
+                        <div class="GPautoCompleteProposal">Last and surely least</div>
                     </div>
                     
                     <!-- Stage input -->
-                    <div id="GProutePoint2" class="GProuteStageFlexInputHidden">
+                    <div id="GProutePoint2" class="GPflexInput GProuteStageFlexInputHidden">
                         <label id="GProuteOriginLabel2" for="GProuteOrigin2">Etape</label>
                         <input id="GProuteOrigin2" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
                         <input id="GProuteOriginCoords2" class="GProuteOriginHidden" type="text" disabled />
@@ -93,16 +93,17 @@ A venir...
                         <div id="GProuteStageRemove2" class="GProuteStageRemove" title="Supprimer l'étape"></div>
                     </div>
                     <!-- Autocomplete list -->
-                    <div id="GProuteAutoCompleteList2" class="GProuteAutoCompleteList">
-                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
-                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
-                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
-                        <div class="GProuteAutoCompleteProposal">What else ?</div>
-                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    <div id="GProuteAutoCompleteList2" class="GPadvancedAutoCompleteList">
+                        <!-- Proposals are dynamically filled in Javascript by autocomplete service -->
+                        <div class="GPautoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GPautoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GPautoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GPautoCompleteProposal">What else ?</div>
+                        <div class="GPautoCompleteProposal">Last and surely least</div>
                     </div>
                     
                     <!-- Stage input -->
-                    <div id="GProutePoint3" class="GProuteStageFlexInputHidden">
+                    <div id="GProutePoint3" class="GPflexInput GProuteStageFlexInputHidden">
                         <label id="GProuteOriginLabel3" for="GProuteOrigin3">Etape</label>
                         <input id="GProuteOrigin3" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
                         <input id="GProuteOriginCoords3" class="GProuteOriginHidden" type="text" disabled />
@@ -111,16 +112,17 @@ A venir...
                         <div id="GProuteStageRemove3" class="GProuteStageRemove" title="Supprimer l'étape"></div>
                     </div>
                     <!-- Autocomplete list -->
-                    <div id="GProuteAutoCompleteList3" class="GProuteAutoCompleteList">
-                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
-                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
-                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
-                        <div class="GProuteAutoCompleteProposal">What else ?</div>
-                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    <div id="GProuteAutoCompleteList3" class="GPadvancedAutoCompleteList">
+                        <!-- Proposals are dynamically filled in Javascript by autocomplete service -->
+                        <div class="GPautoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GPautoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GPautoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GPautoCompleteProposal">What else ?</div>
+                        <div class="GPautoCompleteProposal">Last and surely least</div>
                     </div>
                     
                     <!-- Stage input -->
-                    <div id="GProutePoint4" class="GProuteStageFlexInputHidden">
+                    <div id="GProutePoint4" class="GPflexInput GProuteStageFlexInputHidden">
                         <label id="GProuteOriginLabel4" for="GProuteOrigin4">Etape</label>
                         <input id="GProuteOrigin4" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
                         <input id="GProuteOriginCoords4" class="GProuteOriginHidden" type="text" disabled />
@@ -129,16 +131,17 @@ A venir...
                         <div id="GProuteStageRemove4" class="GProuteStageRemove" title="Supprimer l'étape"></div>
                     </div>
                     <!-- Autocomplete list -->
-                    <div id="GProuteAutoCompleteList4" class="GProuteAutoCompleteList">
-                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
-                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
-                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
-                        <div class="GProuteAutoCompleteProposal">What else ?</div>
-                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    <div id="GProuteAutoCompleteList4" class="GPadvancedAutoCompleteList">
+                        <!-- Proposals are dynamically filled in Javascript by autocomplete service -->
+                        <div class="GPautoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GPautoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GPautoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GPautoCompleteProposal">What else ?</div>
+                        <div class="GPautoCompleteProposal">Last and surely least</div>
                     </div>
                     
                     <!-- Stage input -->
-                    <div id="GProutePoint5" class="GProuteStageFlexInputHidden">
+                    <div id="GProutePoint5" class="GPflexInput GProuteStageFlexInputHidden">
                         <label id="GProuteOriginLabel5" for="GProuteOrigin5">Etape</label>
                         <input id="GProuteOrigin5" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
                         <input id="GProuteOriginCoords5" class="GProuteOriginHidden" type="text" disabled />
@@ -147,16 +150,17 @@ A venir...
                         <div id="GProuteStageRemove5" class="GProuteStageRemove" title="Supprimer l'étape"></div>
                     </div>
                     <!-- Autocomplete list -->
-                    <div id="GProuteAutoCompleteList5" class="GProuteAutoCompleteList">
-                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
-                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
-                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
-                        <div class="GProuteAutoCompleteProposal">What else ?</div>
-                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    <div id="GProuteAutoCompleteList5" class="GPadvancedAutoCompleteList">
+                        <!-- Proposals are dynamically filled in Javascript by autocomplete service -->
+                        <div class="GPautoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GPautoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GPautoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GPautoCompleteProposal">What else ?</div>
+                        <div class="GPautoCompleteProposal">Last and surely least</div>
                     </div>
                     
                     <!-- Stage input -->
-                    <div id="GProutePoint6" class="GProuteStageFlexInputHidden">
+                    <div id="GProutePoint6" class="GPflexInput GProuteStageFlexInputHidden">
                         <label id="GProuteOriginLabel6" for="GProuteOrigin6">Etape</label>
                         <input id="GProuteOrigin6" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
                         <input id="GProuteOriginCoords6" class="GProuteOriginHidden" type="text" disabled />
@@ -165,16 +169,17 @@ A venir...
                         <div id="GProuteStageRemove6" class="GProuteStageRemove" title="Supprimer l'étape"></div>
                     </div>
                     <!-- Autocomplete list -->
-                    <div id="GProuteAutoCompleteList6" class="GProuteAutoCompleteList">
-                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
-                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
-                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
-                        <div class="GProuteAutoCompleteProposal">What else ?</div>
-                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    <div id="GProuteAutoCompleteList6" class="GPadvancedAutoCompleteList">
+                        <!-- Proposals are dynamically filled in Javascript by autocomplete service -->
+                        <div class="GPautoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GPautoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GPautoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GPautoCompleteProposal">What else ?</div>
+                        <div class="GPautoCompleteProposal">Last and surely least</div>
                     </div>
                     
                     <!-- Arrival input -->
-                    <div id="GProutePoint7" class="GProuteStageFlexInput">
+                    <div id="GProutePoint7" class="GPflexInput GProuteStageFlexInput">
                         <label id="GProuteOriginLabel7" for="GProuteOrigin7">Arrivée</label>
                         <input id="GProuteOrigin7" class="GProuteOriginVisible" type="text" placeholder="Saisir une adresse" />
                         <input id="GProuteOriginCoords7" class="GProuteOriginHidden" type="text" disabled />
@@ -183,12 +188,13 @@ A venir...
                         <div id="GProuteStageAdd" title="Ajouter une étape"></div>
                     </div>
                     <!-- Autocomplete list -->
-                    <div id="GProuteAutoCompleteList7" class="GProuteAutoCompleteList">
-                        <div class="GProuteAutoCompleteProposal">17000 La Rochelle</div>
-                        <div class="GProuteAutoCompleteProposal">94165 Saint Mandé</div>
-                        <div class="GProuteAutoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
-                        <div class="GProuteAutoCompleteProposal">What else ?</div>
-                        <div class="GProuteAutoCompleteProposal">Last and surely least</div>
+                    <div id="GProuteAutoCompleteList7" class="GPadvancedAutoCompleteList">
+                        <!-- Proposals are dynamically filled in Javascript by autocomplete service -->
+                        <div class="GPautoCompleteProposal">17000 La Rochelle</div>
+                        <div class="GPautoCompleteProposal">94165 Saint Mandé</div>
+                        <div class="GPautoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                        <div class="GPautoCompleteProposal">What else ?</div>
+                        <div class="GPautoCompleteProposal">Last and surely least</div>
                     </div>
                     
                     <!-- Computation modes -->
@@ -202,7 +208,7 @@ A venir...
                         </div>
                         <div id="GProuteComputationChoice">
                             <span class="GProuteModeLabel">Mode de calcul</span>
-                            <select id="GProuteComputationSelect">
+                            <select id="GProuteComputationSelect" class="GPinputSelect">
                                 <option>Plus rapide</option>
                                 <option>Plus court</option>
                             </select>
@@ -211,7 +217,7 @@ A venir...
                     
                     <!-- Hidden checkbox + label for showing exclusions -->
                     <input type="checkbox" id="GPshowRouteExclusions" />
-                    <label for="GPshowRouteExclusions" id="GPshowRouteExclusionsPicto" class="GPshowRouteExclusionsPicto" title="Critères d'exclusion"></label>
+                    <label for="GPshowRouteExclusions" id="GPshowRouteExclusionsPicto" class="GPshowMoreOptions GPshowRouteExclusionsPicto" title="Exclusions"></label>
                     <!-- Exclusions -->
                     <div id="GProuteExclusions">
                         <span class="GProuteExclusionsLabel">Passages autorisés</span>
@@ -226,19 +232,20 @@ A venir...
                     </div>
                     
                     <!-- Input button -->
-                    <input type="submit" id="GProuteSubmit" value="Calculer" />
+                    <input type="submit" id="GProuteSubmit" class="GPinputSubmit" value="Calculer" />
                     
                 </form>
                 
                 <!-- Fenêtre de résultats -->
                 <div id="GProuteResultsPanel" class="GProuteComponentHidden">
                     
-                    <!-- Route stages, fillen in JS -->
+                    <!-- Route stages are dynamically filled in Javascript from computation panel -->
                     <div id="GProuteResultsStages"></div>
                     
                     <!-- Results -->
                     <div id="GProuteResults">
                         <div id="GProuteResultsValues">
+                            <!-- Route results are dynamically filled in Javascript by route service -->
                             <div class="GProuteResultsValue">
                                 <div class="GProuteResultsValueLabel">Distance :</div>
                                 <div id="GProuteResultsValueDist">146 km</div>
@@ -249,7 +256,7 @@ A venir...
                             </div>
                         </div>
                         <div id="GProuteResultsMode">
-                            <select id="GProuteResultsComputationSelect">
+                            <select id="GProuteResultsComputationSelect" class="GPinputSelect">
                                 <option>Plus rapide</option>
                                 <option>Plus court</option>
                             </select>
@@ -266,6 +273,7 @@ A venir...
                     
                     <!-- Details -->
                     <div id="GProuteResultsDetails">
+                        <!-- Route results details are dynamically filled in Javascript by route service -->
                         <div class="GProuteResultsDetailsNumber">1.</div>
                         <div class="GProuteResultsDetailsInstruction">Tournez à droite puis démerdez-vous</div>
                         <div class="GProuteResultsDetailsNumber">2.</div>
