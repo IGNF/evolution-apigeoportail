@@ -151,7 +151,7 @@ input[id*="GProuteOriginPointer"]:checked + .GProuteOriginPointerImg {
 .GPshowRouteExclusionsPicto {
   top: 185px;
   right: 0;
-  transition: top 0.3s ease-out 0s;
+  transition: transform 0.5s ease-out 0s, top 0.3s ease-out 0s;
 }
 
 #GPshowRouteExclusions + label + #GProuteExclusions {

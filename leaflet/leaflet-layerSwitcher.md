@@ -115,7 +115,7 @@ Leaflet gère des controles (L.Control) dont on peut préciser le positionnement
                         <div id="GPlayerInfoTitle">Photographies aériennes</div>
                         <div id="GPlayerInfoQuicklook" title="Afficher un aperçu de la couche"></div>
                         <div id="GPlayerInfoClose" title="Fermer la fenêtre"></div>
-                        <div id="GPlayerInfoDescription">Les photos aériennes sont un super moyen de connaître un territoire. Bon, en vrai, c'est surtout pour triper en allant chercher votre maison et regarder si votre voisin a une piscine.</div>
+                        <div id="GPlayerInfoDescription">Les photos aériennes sont un excellent moyen de connaître un territoire, d'en comprendre l'aménagement, les enjeux, les évolutions. Elles sont réalisées par l'IGN et régulièrement actualisées.</div>
                         <div id="GPlayerInfoMetadata">
                             <div class="GPlayerInfoSubtitle">Métadonnées</div>
                             <div class="GPlayerInfoLink"><a href="#">http://www.monsite.fr/metadata1</a></div>
