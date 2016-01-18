@@ -1,10 +1,11 @@
----
+--
+deprecie: pas a implementer pour le moment
 layout: services
 title: Transformation de coordonnées
 level: 3
 order: 030210
 api: services
----
+--
 
 # Service WCTS : transformer des coordonnées
 

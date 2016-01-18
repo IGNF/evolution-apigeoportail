@@ -1,10 +1,11 @@
----
+--
+deprecie: pas implemente pour le moment
 layout: services
 title: Domaine de validité d'un système de coordonnées
 level: 3
 order: 030211
 api: services
----
+--
 
 # Service WCTS : connaître le domaine de validité d'un Système de coordonnées.
 
