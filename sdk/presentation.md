@@ -23,7 +23,7 @@ Elle s'adresse à des gestionnaires de site internet non initiés à l'utilisati
 * mise à disposition d'outils d'interaction avec la carte aux internautes
 * gestion de l'interaction de l'internaute avec la carte (événements)
 
-Le détail de ces fonctionnalités est donné dans la [page sur la couverture fonctionnelle de cette API](dg_couverture-fonctionnelle.html).
+Le détail de ces fonctionnalités est donné dans la [page sur la couverture fonctionnelle de cette API](pg_couverture-fonctionnelle.html).
 
 ## Les prérequis pour utiliser ce Kit de développement
 
