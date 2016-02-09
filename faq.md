@@ -8,6 +8,13 @@ api: faq
 
 # Foire Aux Questions
 
+[Questions sur les nouveaux éléments](#APIv3)
+
+[Questions sur les APIS actuelles et sur la transition](#APIv2)
+
+[Obtenir de l'aide](#help)
+
+
 
 <a id="APIv3"/>
 
@@ -16,13 +23,29 @@ api: faq
 
 ### Quand arriveront les nouveaux éléments promis ?
 
-### Comment savoir serai-je averti de l'arrivée des nouveaux éléments ?
+La bibliothèque d'accès arrivera au **premier trimestre 2016**.
+
+Les extensions pour Leaflet et OpenLayers 3 arriveront au **deuxième trimestre 2016**.
+
+Le SDK arrivera au **deuxième trimestre 2016**.
+
+### Comment serai-je averti de l'arrivée des nouveaux éléments ?
+
+Chaque mise à disposition d'un nouvel élément sera annoncée :
+
+* sur le [blog du site api.ign.fr](http://api.ign.fr/blog).
+
+* sur la [disucussion dédiée du forum developpez.net](http://www.developpez.net/forums/d1531763/applications/sig-systeme-d-information-geographique/ign-api-geoportail/mise-place-d-api-v3/) où vous pouvez aussi poser des questions.
+
+* En suivant le compte [Twitter du Géoportail](https://twitter.com/geoportail)
+
 
 ### Quelle est la licence d'utilisation des éléments proposées ?
 
 
 
-### Recommendez vous Leaflet ou OpenLayers 3 ?
+
+### Recommendez vous Leaflet ou OpenLayers ?
 
 
 ### Comment choisir entre les différents éléments à utiliser ?
@@ -64,8 +87,10 @@ api: faq
 
 ### Vous n'avez pas parlé de votre API 3D ? Qu'en est-il ?
 
+<a id="help"/>
 
 ### A qui peut-on s'adresser pour avoir de l'aide ?
 
 
+### Ma question n'est pas dans cette FAQ. Où puis-je la poser ?
 
