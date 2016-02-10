@@ -33,6 +33,7 @@ Le SDK arrivera au **deuxième trimestre 2016**.
 
 Chaque mise à disposition d'un nouvel élément sera annoncée :
 
+
 * sur le [blog du site api.ign.fr](http://api.ign.fr/blog).
 
 * sur la [disucussion dédiée du forum developpez.net](http://www.developpez.net/forums/d1531763/applications/sig-systeme-d-information-geographique/ign-api-geoportail/mise-place-d-api-v3/) où vous pouvez aussi poser des questions.
@@ -142,6 +143,6 @@ L'API 3D est liée au plugin VirtualGéo pour le Géoportail. Ce dernier est aus
 
 ### Ma question n'est pas dans cette FAQ. Où puis-je la poser ?
 
-Vous pouvez poser vos question sur la [discussion dédiée du forum des développeurs](http://www.developpez.net/forums/d1531763/applications/sig-systeme-d-information-geographique/ign-api-geoportail/mise-place-d-api-v3/). Vous pouvez aussi envoyer vos questions par mail au [SAV IGN](mailto:contact.api@ign.fr) ou directement à votre chargé de clientelle si vous en avez un.
+Vous pouvez poser vos question sur la [discussion dédiée du forum des développeurs](http://www.developpez.net/forums/d1531763/applications/sig-systeme-d-information-geographique/ign-api-geoportail/mise-place-d-api-v3/). Vous pouvez aussi envoyer vos questions par mail au SAV IGN [contact.api@ign.fr](mailto:contact.api@ign.fr) ou directement à votre chargé de clientelle si vous en avez un.
 
 
