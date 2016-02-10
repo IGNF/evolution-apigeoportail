@@ -138,6 +138,8 @@ L'API 3D est liée au plugin VirtualGéo pour le Géoportail. Ce dernier est aus
 
 <a id="help"/>
 
+## Obtenir de l'aide
+
 ### Ma question n'est pas dans cette FAQ. Où puis-je la poser ?
 
 Vous pouvez poser vos question sur la [discussion dédiée du forum des développeurs](http://www.developpez.net/forums/d1531763/applications/sig-systeme-d-information-geographique/ign-api-geoportail/mise-place-d-api-v3/). Vous pouvez aussi envoyer vos questions par mail au [SAV IGN](mailto:contact.api@ign.fr) ou directement à votre chargé de clientelle si vous en avez un.
