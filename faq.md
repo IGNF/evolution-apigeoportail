@@ -10,7 +10,9 @@ api: faq
 
 [Questions sur les nouveaux éléments](#APIv3)
 
-[Questions sur les APIS actuelles et sur la transition](#APIv2)
+[Questions sur les APIS actuelles : dépréciation](#APIv2-deprecated)
+
+[Questions sur le passage des APIS actuelles vers les nouveaux éléments](#APIv2-migration)
 
 [Obtenir de l'aide](#help)
 
@@ -68,9 +70,9 @@ Les extensions évolueront si nécessaire de façon à être compatibles avec le
 
 
 
-<a id="APIv2"/>
+<a id="APIv2-deprecated"/>
 
-## Questions sur les APIs actuelles et sur la transition
+## Questions sur les APIs actuelles : dépréciation
 
 ### Pourquoi arrêtez vous les API Géoportail actuelles ?
 
@@ -81,18 +83,6 @@ Ce changement est du aux évolutions du web :
 * l'API Géoportail Javascript repose sur le projet open source **OpenLayers 2** 
 qui a arrêté d'évoluer depuis 3 ans au profit du projet **OpenLayers 3** qui en est une ré-écriture complète sans compatibilité d'interface. Il fallait donc entreprendre une refonte majeure de notre API pour pouvoir suivre ces évolutions et rester compatible avec les évolutions des navigateurs.
 
-
-### Comment savoir si on utilise l'API Javascript actuelle dans mon application ?
-
-Si votre application charge un fichier GeoportalExtended.js, GeoportalMin.js ou Geoportal.js ou GeoportalMobile.js alors vous utilisez sans doute l'API Géoportail Javascript.
-
-Si vous avez accès au code de votre application (même chargé dans une page web), et que vous voyez l'utilisation de fonctions ou classes dont le nom commence par "Geoportal...", alors vous utilisez l'API Géoportail Javascript.
-
- 
-
-### Comment savoir si j'utilise l'API Flash actuelle dans mon application ?
-
-Si votre application nécessite qu'un plugin Flash soit chargé dans votre navigateur pour fonctionner, alors il y a des chances que vous utilisiez l'API Géoportail Flash.
 
 
 ### Mon application utilise le Géoportail. Que se passera-t-il après le 30 juin 2017 ?
@@ -115,14 +105,26 @@ Non. A partir du troisième trimestre 2017, l'IGN n'assurera plus la garantie de
 Les risques de dysfonctionnement peuvent venir de l'évolution des navigateurs : une montée de version d'un navigateur (Firefox, Chrome, Edge, ...) peut entrainer l'arrêt du support d'une fonctionnalité utilisée par l'API Géoportail. Dans ce cas là rien ne sera proposé par l'IGN si votre appplication utilise encore les API Géoportail actuelles au-delà des dates annoncées.
 
 
-### Peut-on se passer de l'API Géoportail ?
+<a id="APIv2-migration"/>
 
-Oui. Vous pouvez toujours développer une application utilisant directement les ressources du Géoportail en vous passant de l'API Géoportail ou des nouveaux éléments proposés. Ces derniers ont pour but d'en faciliter l'accès.
+## Questions sur le passage des APIS actuelles vers les nouveaux éléments
 
 
 ### Devra-t-on changer de clef API ou prendre un nouveau contrat avec les nouveaux éléments ?
 
 Non. La contractualisation de l'accès au ressources du Géoportail est indépendante de l'utilisation ou non des API Géoportail actuelles ou des nouveaux éléments proposés.
+
+### Comment savoir si on utilise l'API Javascript actuelle dans mon application ?
+
+Si votre application charge un fichier GeoportalExtended.js, GeoportalMin.js ou Geoportal.js ou GeoportalMobile.js alors vous utilisez sans doute l'API Géoportail Javascript.
+
+Si vous avez accès au code de votre application (même chargé dans une page web), et que vous voyez l'utilisation de fonctions ou classes dont le nom commence par "Geoportal...", alors vous utilisez l'API Géoportail Javascript.
+
+ 
+
+### Comment savoir si j'utilise l'API Flash actuelle dans mon application ?
+
+Si votre application nécessite qu'un plugin Flash soit chargé dans votre navigateur pour fonctionner, alors il y a des chances que vous utilisiez l'API Géoportail Flash.
 
 
 ### Si je veux utiliser les nouveaux éléments devrai-je ré-écrire toute mon application ? 
@@ -131,10 +133,27 @@ Si vous utilisez l'API Géoportail Javascript, non : il faudra seulement réécr
 
 Si vous utilisez l'API Géoportail Flash, oui car il s'agit d'un changement complet de contexte de développement (passer du Flash au javascript).
 
+### Est-ce que vous proposerez des "passerelles" pour passer de l'API Javascript actuelle vers les nouveaux éléments ?
+
+Lorsque le kit de développement sortira, nous proposerons des documentations permettant d'aider à passer de l'ancienne interface à la nouvelle. Dans l'esprit : "vous utilisez telle fonctionnalité de l'ancienne API : voici comment faire avec le kit de développement".
+
+
+### Quels temps cela prendra-t-il de passer de l'API Javascript actuelle aux nouveaux éléments ?
+
+Cela dépend de la complexité de votre application par rapport à l'utilisation qui est faite de l'API Géoportail. Plus vous utilisez de fonctionnalités de l'ancienne API plus de temps il faudra pour les faire basculer sur les fonctionnalités équivalente des nouveaux éléments.
+
+### Peut-on se passer de l'API Géoportail ?
+
+Oui. Vous pouvez toujours développer une application utilisant directement les ressources du Géoportail en vous passant de l'API Géoportail ou des nouveaux éléments proposés. Ces derniers ont pour but d'en faciliter l'accès.
+
 
 ### Vous n'avez pas parlé de votre API 3D ? Qu'en est-il ?
 
-L'API 3D est liée au plugin VirtualGéo pour le Géoportail. Ce dernier est aussi voué à l'obsolescence du fait du support de moins en moins assumé de ce type de plugins par les navigateurs (il n'est déjà plus supporté sous Chrome comme nous l'avions annoncé [sur le blog du site api](http://api.ign.fr/article/427/le-plugin-3d-du-geoportail-sera-bientot-incompatible-avec-google-chrome)).
+L'API 3D est liée au plugin VirtualGéo pour le Géoportail. Ce dernier est aussi voué à l'obsolescence du fait du support de moins en moins assumé de ce type de plugins par les navigateurs (il n'est déjà plus supporté sous Chrome comme nous l'avions annoncé [sur le blog du site api](http://api.ign.fr/article/427/le-plugin-3d-du-geoportail-sera-bientot-incompatible-avec-google-chrome)). 
+
+En parralèle, l'IGN mène des travaux sur des solutions 3D (notamment les projets [iTowns](https://github.com/iTowns/itowns/) et [iTowns2](https://github.com/iTowns/itowns2/) en partenariat avec [Oslandia](http://oslandia.com/)) reposant sur des technologies sans plugin qui pourront servir de base à une visualisation 3D pour le Géoportail. 
+
+Certains clients OpenSource permettent déjà d'afficher les données images servies par la plateforme Géoportail, comme le populaire [CesiumJS](http://cesiumjs.org/).
 
 
 <a id="help"/>
