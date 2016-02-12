@@ -27,7 +27,7 @@ La bibliothèque d'accès arrivera au **premier trimestre 2016**.
 
 Les extensions pour Leaflet et OpenLayers 3 arriveront au **deuxième trimestre 2016**.
 
-Le SDK arrivera au **deuxième trimestre 2016**.
+Le kit de développement arrivera au **deuxième trimestre 2016**.
 
 ### Comment serai-je averti de l'arrivée des nouveaux éléments ?
 
@@ -43,7 +43,7 @@ Chaque mise à disposition d'un nouvel élément sera annoncée :
 
 ### Quelle est la licence d'utilisation des éléments proposées ?
 
-Les différents éléments proposés (bibliothèque d'accès, extensions et SDK) seront proposés sous [licence OpenSource CECILL-B](http://www.cecill.info/licences/Licence_CeCILL-B_V1-fr.html) qui autorise toute ré-utilsation dans un cadre privé ou public, sans aucune contrainte, si ce n'est de citation. Il s'agit d'une adapatation à la législation française des licences de type BSD, Apache, MIT ou autres du même style.
+Les différents éléments proposés (bibliothèque d'accès, extensions et kit de développement) seront proposés sous [licence OpenSource CECILL-B](http://www.cecill.info/licences/Licence_CeCILL-B_V1-fr.html) qui autorise toute ré-utilsation dans un cadre privé ou public, sans aucune contrainte, si ce n'est de citation. Il s'agit d'une adapatation à la législation française des licences de type BSD, Apache, MIT ou autres du même style.
 
 
 ### Recommendez vous Leaflet ou OpenLayers 3 ?
@@ -55,11 +55,11 @@ Les extensions Géoportail proposées vous permettront, quelque soit votre choix
 
 ### Comment choisir entre les différents éléments à utiliser ?
 
-Si vous utilisez déjà ou êtes familiers avec Leaflet ou OpenLayers 3, ne changez rien, vous pouvez utiliser les extensions correspondantes en complément de ces bilbilothèques.
+Si vous utilisez déjà ou êtes familiers avec Leaflet ou OpenLayers 3, ne changez rien, vous pouvez utiliser les extensions correspondantes en complément de ces bibliothèques.
 
-Si vous utilisez ou êtes familiers avec une autre biliothèque cartographique, la bibliothèque d'accès peut vous permettre d'accéder plus facilement aux ressources du Géoportail.
+Si vous utilisez ou êtes familiers avec une autre bibliothèque cartographique, la bibliothèque d'accès peut vous permettre d'accéder plus facilement aux ressources du Géoportail.
 
-Si vous n'êtes familiers avec aucune bbiliothèque cartographique et que vous souhaitez utiliser les ressources du Géoportail, le kit de développement vous offre uen solution tout en un intégrant OpenLayers 3 et son extension. 
+Si vous n'êtes familiers avec aucune bibliothèque cartographique et que vous souhaitez utiliser les ressources du Géoportail, le kit de développement vous offre uen solution tout en un intégrant OpenLayers 3 et son extension. 
 
 
 ### Que se passera-t-il quand OpenLayers ou Leaflet évolueront ?
