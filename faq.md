@@ -1,10 +1,10 @@
---
+---
 layout: faq
 title: Foire Aux Questions
 level: 1
 order: 000000
 api: faq
---
+---
 
 # Foire Aux Questions
 

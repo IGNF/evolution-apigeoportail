@@ -18,6 +18,8 @@ extensionLeaflet: "Extension Géoportail pour Leaflet"
 extensionLeafletShort: "Extension Leaflet"
 ahn: "Kit de développement Javascript"
 ahnShort: "SDK"
+faq: "Foire aux questions"
+faqShort: "FAQ"
 
 
 # Handling Reading

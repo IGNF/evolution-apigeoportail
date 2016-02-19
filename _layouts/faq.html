@@ -1,0 +1,20 @@
+---
+layout: faq
+---
+<!doctype html>
+<html>
+	{% include header-sfd.html %}
+	<body>
+		{% include bandeau.html %}
+		<div class="page">
+			<input type="checkbox" id="showLeftMenu" checked/>
+			{% include menu-left-faq.html apiTag="faq" apiTitle="faqShort" %}
+			<section class="content">
+				<label class="openLeftMenu" for="showLeftMenu" title="Ouvrir le menu latéral"></label>
+				{{ content }}
+			</section>
+		</div>
+		{% include piedPage.html %}
+		{% include footer-sfd.html %}
+	</body>
+</html>
