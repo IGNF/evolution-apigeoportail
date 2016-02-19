@@ -99,11 +99,11 @@ zoom | Integer \| Float | optionnel | Niveau de zoom (entre 0 et 21) ou la réso
 maxZoom | Integer | optionnel | Niveau de zoom au dela duquel l'utilisateur ne peut plus zoomer dans la carte. Par défaut, 21.
 minZoom | Integer | optionnel | Niveau de zoom au dela duquel l'utilisateur ne peut plus dézoomer dans la carte. Par défaut, 0.
 [markerOptions](#markerOptions) | Object | optionnel | Cet objet permet de paramétrer une puce au centre de la carte. Les propriétés possibles ont décrites ci-après.
-library | String | optionnel | Bibliothèque cartographique utilisée avec l'API Géoportail. Cette propriété prend en valeur les noms des bibliothèques supportées (par exemple, on peut envisager 'Openlayers', 'Leaflet', '3d'). Par défaut, si une seule bibliothèque n'est chargée, c'est elle qui est utilisée. Si plusieurs librairies sont chargées, il faut définir un ordre de priorité.
+library | String | optionnel | Bibliothèque cartographique utilisée avec l'API Géoportail. Cette propriété prend en valeur les noms des bibliothèques supportées (par exemple, on peut envisager 'ol3', 'Leaflet', '3d'). Par défaut, si une seule bibliothèque n'est chargée, c'est elle qui est utilisée. Si plusieurs librairies sont chargées, il faut définir un ordre de priorité.
 proxyUrl | String | optionnel | Url du proxy (avec ?url= à la fin) permettant de contourner les problèmes de cross-domain.
 noProxyDomains | Array(String) | optionnel | Liste des domaines pour lesquels aucun proxy n'est utilisé. Inutile si le paramètre proxyUrl n'est pas utilisé.
-reloadAutoconf | Boolean | optionnel | Indique si le service d'autoconfiguration est réinterrogé pour le chargement de la carte. Sinon, le résultat de l'autoconf précédent est réutilisé (s'il existe). Par défaut, true.
-autoconfUrl | String | optionnel | Url du fichier d'autoconfiguration à utiliser. Pour accélérer le chargement de la carte, il peut être intéressant de spécifier l'url vers un fichier de configuration statique. Par défaut, il s'agit du serveur d'autoconfiguration du Géoportail : http://wxs.ign.fr/CLEAPI/conf?.
+reloadAutoconf | Boolean | optionnel | Indique si le service d'autoconfiguration est réinterrogé pour le chargement de la carte. Sinon, le résultat de l'autoconf précédent est réutilisé (s'il existe). Par défaut, false.
+autoconfUrl | String | optionnel | Url du fichier d'autoconfiguration à utiliser. Pour accélérer le chargement de la carte, il peut être intéressant de spécifier l'url vers un fichier de configuration statique. Si une autoconfUrl est précisé, reloadAutoconf n'est pas pris en compte et l'autoconfiguration sera forcément rechardée. Par défaut, il s'agit du serveur d'autoconfiguration du Géoportail : http://wxs.ign.fr/CLEAPI/conf?.
 [layersOptions](#layersOptions) | Object | optionnel | Liste des couches à ajouter à la carte. Les propriétés possibles de cet objet sont décrites ci-après. Par défaut, c'est la couche 'ORTHOIMAGERY.ORTHOPHOTOS' du Géoportail qui est affichée. Si la clé API ne contient pas cette couche, toutes les couches de la clé sont affichées dans à la carte.
 [controlsOptions](#controlsOptions) | Object | optionnel | Liste des outils à ajouter à la carte. Les propriétés possibles de cet objet sont décrites ci-après. Par défaut, les controles activés lorsqu'ils sont ceux de déplacements, de zoom et de sélection (à la souris et au clavier) et l'outil d'affichage des logos.
 [mapEventsOptions](#mapEventsOptions) | Object | optionnel  | Intéraction avec la carte. Les propriétés possibles pour cet objet sont décrites ci-dessous.
@@ -117,11 +117,10 @@ Propriété | Type | Valeur
 -|-|-|
 title | String | Titre de la popup s'ouvrant au clic sur la puce centrale. Le titre peut contenir du langage HTML. Par défaut, le titre est "Coordonnées : " traduit dans la langue de la fenêtre de visualisation.
 description | String | La description de la popup s'ouvrant au clic sur la puce centrale. La description peut contenir du langage HTML. Par défaut, la description de la popup contient les coordonnées du centre de la carte (dans la projection courante).
-iconUrl | String | Url de l'image de l'icône. Par défaut, ???.
-iconWidth | Integer | Largeur de l'image de l'icône en pixels. Par défaut, la largeur de l'image est conservée.
-iconHeight | Integer | Hauteur de l'image de l'icône en pixels. Par défaut, la hauteur de l'image est conservée.
-iconXOffset | Integer | Décalage de l'image sur l'axe horizontal en pixels. Par défaut, 0.
-iconYOffset | Integer | Décalage de l'image sur l'axe vertical en pixels. Par défaut, 0. 
+iconUrl | String | Url de l'image de l'icône.
+iconScale | Integer | Rapport à appliquer à la taille de l'image de l'icône en pixels. Par défaut, 1.
+iconXAnchor | Integer | Décalage de l'image sur l'axe horizontal. Par défaut, 0.
+iconYAnchor | Integer | Décalage de l'image sur l'axe vertical. Par défaut, 0. 
 rotation | Integer | Rotation de l'image en degrés dans le sens des aiguilles d'une montre autour du centre de l'image (ou d'un autre point indiqué par les offsets sur x et sur y). Par défaut, 0.
 
 <a name="layersOptions"></a>
@@ -153,15 +152,14 @@ maxZoom | Integer | optionnel | Si le zoom courant est supérieur à cet entier,
 name | String | optionnel | Nom de la couche dans le LayerSwitcher. Par défaut, "".
 **url** | String | **obligatoire** | Url du fichier ou du service pour accéder à la ressource originators Array(Object) optionnel Logos des fournisseurs de données qui s'affichent lorsque la couche est visible et que l'outil 'logo'" est ajouté à la carte. Les propriétés possibles de cet objet sont décrites ci-dessous. 
 [originators](#originators) | Array(Object) | optionnel | Logos des fournisseurs de données qui s'affichent lorsque la couche est visible et que l'outil 'logo'" est ajouté à la carte. Les propriétés possibles de cet objet sont décrites ci-dessous. 
-**Propriétés propres aux couches KML, GPX, GeoRSS et GeoJSON** | | |
-maxFeatures | Integer | optionnel | Nombre maximal de géométries à ajouter à la carte. Par défaut, 'null' (la valeur est fixée par la librairie cartographique).
-extractAttributes | Boolean | optionnel | Indique si les attributs sont récupérés (en plus de la géométrie). Par défaut, true. 
+**Propriétés propres aux couches KML** | | |
+extractStyles | Boolean | optionnel | Indique si les styles sont récupérés (en plus de la géométrie). Par défaut, true. 
 **Propriétés propres aux couches WMS** | | | 
 **layers** | Array(String) | **obligatoire** | Liste des noms des couches (dans le GetCapabilities) à ajouter .
 version | String | optionnel | Numéro de version du service 
-stylesName | Array(String) | optionnel | Noms des styles des couches. Par défaut, 'null'. Les couches seront affichées dans le style par défaut géré par le service.
-outputFormat | String | optionnel | Formats de l'image de sortie. Cette propriété peut prendre différentes valeurs selon ce que propose le service (voir le GetCapabilities) : 'image/png', 'image/gif','image/jpeg','image/wbmp','image/tif f' etc. Par défaut, 'image/jpeg'.
-backgroundColor | String | optionnel | Couleur RVB en hexadécimal pour le fond de la couche ou 'transparent'. Par défaut, 'transparent'.
+stylesName | Array(String) | optionnel | Noms des styles des couches. Pas de valeur par défaut. Les couches seront affichées dans le style par défaut géré par le service.
+outputFormat | String | optionnel | Formats de l'image de sortie. Cette propriété peut prendre différentes valeurs selon ce que propose le service (voir le GetCapabilities) : 'image/png', 'image/gif','image/jpeg','image/wbmp','image/tif f' etc. Pas de valeur par défaut. Les couches seront affichées dans le format par défaut géré par le service.
+backgroundColor | String | optionnel | Couleur RVB en hexadécimal pour le fond de la couche ou 'transparent'. Pas de valeur par défaut. Les couches seront affichées avec la couleur de fond par défaut géré par le service.
 sld | String | optionnel | URL vers un fichier sld pour définir un style personnel pour les couches.
 **Propriétés propres aux couches WMTS** | | |
 **layer** | String | **obligatoire** | Nom (dans le GetCapabilities) de la couche à ajouter .
@@ -169,12 +167,12 @@ sld | String | optionnel | URL vers un fichier sld pour définir un style person
 **topLeftCorner** | Object({x:Float,y:Float}) | **obligatoire** | Origine de la couche.
 **resolutions** | Array(Float) | **obligatoire** | Liste des résolutions de la couche.
 **matrixIds** | Array(String) | **obligatoire** | Listes des identifiants des niveaux de zoom.
-version | String | optionnel | Numéro de version du service.
-outputFormat | String | optionnel | Formats de l'image de sortie. Cette propriété peut prendre différentes valeurs selon ce que propose le service (voir le GetCapabilities) : 'image/png', 'image/gif','image/jpeg','image/wbmp','image/tif f' etc. Par défaut, 'image/jpeg'.
-styleName | String | optionnel | Nom du style de la couche. 
+version | String | optionnel | Numéro de version du service. Par défaut, "1.0.0".
+**outputFormat** | String | **obligatoire** | Formats de l'image de sortie. Cette propriété peut prendre différentes valeurs selon ce que propose le service (voir le GetCapabilities) : 'image/png', 'image/gif','image/jpeg','image/wbmp','image/tif f' etc.
+**styleName** | String | **obligatoire** | Nom du style de la couche. 
 **Propriétés propres aux couches WFS** | | |
 **typeNames** | String | **obligatoire** | Nom (dans le GetCapabilities) des géométries à afficher. 
-version | String | optionnel | Numéro de version du service
+version | String | optionnel | Numéro de version du service. Par défaut, "2.0.0".
 outputFormat | String | optionnel | Formats de sortie. Cette propriété peut prendre différentes valeurs selon ce que propose le service (voir le GetCapabilities) : text/xml, text/plain, or application/x-gzip;subtype=text/xml etc. Par défaut, 'text/xml'.
 maxFeatures | Integer | optionnel | Nombre maximal de géométries à ajouter à la carte. Par défaut, 'null' (la valeur est fixée par la librairie cartographique).
 sld | String | optionnel | Fichier sld (uniquement pour WMS et WFS)
@@ -264,9 +262,9 @@ displayProjection | String | optionnel | Projection dans laquelle sont exprimée
 layers | Array(String) | optionnel | Liste des identifiants des couches à afficher dans la vue d'ensemble. Par défaut, toutes les couches Géoportail sont affichées.
 minZoom | Integer | optionnel | Si le zoom courant de la mini-carte est inférieur à cet entier, la mini carte reste à ce niveau de zoom. Par défaut, on utilisera le minZoom de la carte.
 maxZoom | Integer | optionnel | Si le zoom courant de la mini-carte est supérieur à cet entier, la mini carte reste à ce niveau de zoom. Par défaut, on utilisera le minZoom de la carte.
-deltaZoom | Integer | optionnel | Différence entre le zoom de la carte et le niveau de zoom de la mini-carte. Par défaut, ???.
+deltaZoom | Integer | optionnel | Différence entre le zoom de la carte et le niveau de zoom de la mini-carte.
 **Propriétés de l'outil Graticule** | | |
-intervals | Array(Float) | optionnel | Liste des intervalles de la grille en degrés. Par défaut, ???
+intervals | Array(Float) | optionnel | Liste des intervalles de la grille en degrés.
 **Propriétés de l'outil Logo** | | |
 logoSize | Integer | optionnel | Taille (hauteur et largeur) en pixels des logos. La taille ne peut-être inférieure à 30. Par défaut, 50.
 
