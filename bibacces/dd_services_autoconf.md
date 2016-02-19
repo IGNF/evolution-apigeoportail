@@ -22,7 +22,7 @@ En retour, sauf si une des clés fournies est invalide, il récupère un objet J
 
 L'utilisation se fera par l'appel de la fonction statique :
 
-> Gp.services.getConfig(options)
+> Gp.Services.getConfig(options)
 
 Dans un premier temps, cette fonction envoie une requête HTTP au service d'auto-configuration, via le protocole JSONP ou Ajax, avec les éventuels paramètres fournis par l'utilisateur (clé(s) et identifiant d'un agrégat), et en spécifiant une fonction de callback.
 
@@ -403,7 +403,7 @@ En revanche, pour les paramètres featureNS et geometryName, on les laissera vid
 Première opération de l'autoconf avec une clef ; utilisation des différentes fonctions de rappel.
 
 ``` javascript
-Gp.services.getConfig({
+Gp.Services.getConfig({
 	apiKey: 'CLE_API',
 	onSuccess: function(config){
 		console.log("Succès de la lecture de l'auto-configuration");
@@ -425,7 +425,7 @@ L'objet **config** de la fonction onConfLoaded correspond à la variable globale
 getConfig avec plusieurs clefs.
 
 ``` javascript
-Gp.services.getConfig({
+Gp.Services.getConfig({
 	apiKey: [
 		'CLE_1',
 		'CLE_2'
@@ -469,7 +469,7 @@ function onConfig (config) {
 	})
 };
 
-Gp.services.getConfig({
+Gp.Services.getConfig({
 	apiKey: 'CLE_API',
 	onSuccess: onConfig
 });
@@ -484,7 +484,7 @@ On peut alors visualiser le nom des couches composant la couche agrégée dans l
 Autoconf chargée localement.
 
 ``` javascript
-Gp.services.getConfig(
+Gp.Services.getConfig(
 	serverUrl: "autoconf.js",
 	onSuccess: function(config){
 		console.log(config);
@@ -497,7 +497,7 @@ Gp.services.getConfig(
 Autoconf en GET sans passer par le protocole JSONP. Utilisation d'un proxy.
 
 ``` javascript
-Gp.services.getConfig(
+Gp.Services.getConfig(
 	apiKey: 'CLE_API',
 	onSuccess: function(config){
 		console.log(config);
@@ -515,7 +515,7 @@ Le résultat est le même : l'ensemble des informations associées à son contra
 Autoconf en POST. Utilisation d'un proxy.
 
 ``` javascript
-Gp.services.getConfig({
+Gp.Services.getConfig({
 	apiKey: 'CLE_API',
 	onSuccess: function(config){
 		console.log(config);
@@ -534,7 +534,7 @@ Affichage d'une couche Géoportail WMTS avec OpenLayers 3 et les informations is
 
 ``` javascript
 var map = null;
-Gp.services.getConfig({
+Gp.Services.getConfig({
 	apiKey: 'CLE_API',
 	// la fin de chargement de l'autoconf declenche l'affichage de la carte
 	onSuccess: initMap
@@ -580,7 +580,7 @@ Affichage d'une couche WMS Géoportail avec OpenLayers 3 et les données de l'au
 
 ``` javascript
 var map = null;
-Gp.services.getConfig({
+Gp.Services.getConfig({
 	apiKey: 'CLE_API',
 	// la fin de chargement de l'autoconf déclenche l'affichage de la carte
 	onSuccess : initMap

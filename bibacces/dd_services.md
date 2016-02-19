@@ -6,7 +6,7 @@ order: 030200
 api: services
 ---
 
-# Gp.services : Accès aux services de la plateforme Géoportail
+# Gp.Services : Accès aux services de la plateforme Géoportail
 
 On traite ici de la couche logicielle qui gère l'accès aux services de la plateforme Géoportail qui rentent dans la couverture fonctionnelle de ce document.
 
@@ -16,7 +16,7 @@ La Bibliothèque d'accès aux ressources du Géoportail offre pour chaque servic
 
 Pour un service donné, l'utilisation de l'API se fera au travers d'une fonction statique dédiée ayant la signature globale suivante :
 
-> Gp.services.serviceOperation(options) ;
+> Gp.Services.serviceOperation(options) ;
 
 Où :
 
@@ -59,13 +59,12 @@ propriété | ... | ... | ...
 **Exemple 1 :** invocation classique d'un service avec une clef API :
 
 ```
-Gp.services.serviceOperation({
-apiKey : 'CLEF_API',
-onSuccess : function(response) {
-// exploitation de la reponse...
-console.log(response) ;
-(...)
-}
+Gp.Services.serviceOperation({
+    apiKey : 'CLEF_API',
+    onSuccess : function(response) {
+        // exploitation de la reponse...
+        (...)
+    }
 }) ;
 ```
 

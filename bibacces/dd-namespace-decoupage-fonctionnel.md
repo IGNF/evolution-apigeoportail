@@ -19,7 +19,7 @@ Le namespace lié à la Bibliothèque d'accès aux ressources du Géoportail est
 La Bibliothèque d'accès aux ressources du Géoportail se décompose en trois blocs fonctionnels :
 
 * un bloc de gestion des protocoles d'accès aux services, accessible derrière le package « Gp.protocols » ;
-* un bloc de gestion de l'accès aux services (interrogation des services), regroupé dans le package « Gp.services » ;
+* un bloc de gestion de l'accès aux services (interrogation des services), regroupé dans le package « Gp.Services » ;
 * un bloc de gestion des formats relatifs aux services (exploitation des réponses brutes des services pour les restituer dans les formats offerts par l'API), disponible derrière le package « Gp.formats ».
 
 Les dépendances entre ces blocs sont les suivantes :

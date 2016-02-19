@@ -19,7 +19,7 @@ Le cas d'utilisation classique est le champ de saisie texte d'un moteur de reche
 
 L'utilisation se fera par l'appel de la fonction statique.
 
-> Gp.services.autocomplete(autocompleteOptions)
+> Gp.Services.autocomplete(autocompleteOptions)
 
 La fonction prend en paramètre d'entrée un objet dont les propriétés peuvent prendre les valeurs suivantes (en plus des [propriétés générales décrites précédemment](./dd_services.html#commonParams)) :
 
@@ -87,7 +87,7 @@ message | String | Message de retour du serveur.
 Demande de suggestions d'adresses commencant par "rue pasteur, Sai" .
 
 ``` javascript
-Gp.services.autocomplete({
+Gp.Services.autocomplete({
 	apiKey:"CLEF_API",
 	text : "rue pasteur, Sai",
 	onSuccess : function(autocompleteResponse){
@@ -105,7 +105,7 @@ Gp.services.autocomplete({
 Demande de suggestions d'adresses ou de toponymes commençant par "rue pasteur, Sai". Restriction de la recherche sur le département 94. Limitation du nombre de réponses.
 
 ``` javascript
-Gp.services.autocomplete ({
+Gp.Services.autocomplete ({
 	apiKey:"CLEF_API",
 	text : "rue pasteur, Sai",
 	filterOptions:{
@@ -124,7 +124,7 @@ Gp.services.autocomplete ({
 Utilisation du service d'autocompletion sur une autre URL.
 
 ``` javascript
-Gp.services.geocode({
+Gp.Services.geocode({
 	text : "rue pasteur, Saint-Man",
 	serverUrl : "http://autre.url/CLEF_API/geoportail/ols/apis/completion"
 	

@@ -1,11 +1,11 @@
---
-deprecie: pas a implementer pour le moment
+---
 layout: services
 title: Transformation de coordonnées
 level: 3
 order: 030210
 api: services
---
+published: false
+---
 
 # Service WCTS : transformer des coordonnées
 
@@ -19,7 +19,7 @@ L'utilisateur invoque le service WCTS pour transformer les coordonnées d'une li
 
 L'utilisation se fera par l'appel d'une fonction statique :
 
-> Gp.services.transformCoordinates(options)
+> Gp.Services.transformCoordinates(options)
 
 ### Description
 
@@ -60,7 +60,7 @@ Transformation des coordonnées d'une liste de points. Utilisation des fonctions
 
 
 ``` javascript
-Gp.services.transformCoordinates ({
+Gp.Services.transformCoordinates ({
 	apiKey: 'CLE_API',
 	sourceCRS:'EPSG:4326',
 	targetCRS:'IGNF:LAMB93',

@@ -1,11 +1,11 @@
---
-deprecie: pas implemente pour le moment
+---
 layout: services
 title: Domaine de validité d'un système de coordonnées
 level: 3
 order: 030211
 api: services
---
+published: false
+---
 
 # Service WCTS : connaître le domaine de validité d'un Système de coordonnées.
 
@@ -19,7 +19,7 @@ L'utilisateur invoque le service WCTS pour connaître le domaine de validité d'
 
 L'utilisation se fera par l'appel d'une fonction statique :
 
-> Gp.services.getSrsValidityArea(options)
+> Gp.Services.getSrsValidityArea(options)
 
 ### Description
 
@@ -58,7 +58,7 @@ message | string | Message d'erreur. Il peut s'agir de celui renvoyé par le ser
 Récupération du domaine de validité d'un SRS, et utilisation des fonctions de rappel.
 
 ``` javascript
-Gp.services.getSrsValidityArea ({
+Gp.Services.getSrsValidityArea ({
 	apiKey: 'CLE_API',
 	identifier:'IGNF:LAMB93',
 	onSuccess: function(validityArea){

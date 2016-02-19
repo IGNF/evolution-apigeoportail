@@ -18,7 +18,7 @@ L'utilisateur est un développeur qui souhaite géocoder un ou plusieurs localis
 
 L'utilisation se fera par l'appel de la fonction statique :
 
-> Gp.services.geocode(geocodeOptions)
+> Gp.Services.geocode(geocodeOptions)
 
 La fonction prend en paramètre d'entrée un objet dont les propriétés peuvent prendre les valeurs suivantes (en plus des [propriétés générales décrites précédemment](./dd_services.html#commonParams)) :
 
@@ -43,7 +43,7 @@ Propriété | Type | Valeur
 -|-|-|
 bbox | Object | Emprise dans laquelle on souhaite effectuer la recherche. Les propriétés possibles de cet objet sont décrites ci-après. Pas de valeur par défaut.
 type | Array(String) | Type de l'objet recherché. Le service de géocodage du Géoportail permet de rechercher des 'PostionOfInterest' pour des toponymes, des 'StreetAddress' pour des adresses postales et/ou des 'CadastralParcel' pour des parcelles cadastrales. D'autres types pourront être rajoutés selon l'évolution du service. Par défaut, type = ['StreetAddress'].
-[propriétés du filtre] | String | Critère supplémentaire pour filtrer la recherche sous la forme d'un couple clé/valeur à définir selon les possibilités du serveur ajouté à la requête. Le service de géocodage du Géoportail permet de filtrer tous les résultats avec les propriétés : "municipality", "insee", "department", "accuracy" et "matchType". Il permet aussi de filtrer les adresses postales avec les propriétés : "number", "street", "postalCode","quality", "ID", "ID_TR", et "territory". Il permet de filtrer les toponymes avec les propriétés : "importance", "nature", "postalCode" et "territory". Enfin, il permet de filtrer les parcelles cadastrales avec les propriétés : "sheet", "section", et "absorbedcity". Pas de valeur par défaut.
+[propriétés du filtre] | String | Critère supplémentaire pour filtrer la recherche sous la forme d'un couple clé/valeur à définir selon les possibilités du serveur ajouté à la requête. Le service de géocodage du Géoportail permet de filtrer tous les résultats avec les propriétés : "municipality", "insee" et "department". Il permet aussi de filtrer les adresses postales avec les propriétés : "quality", "ID", "ID_TR", et "territory". Il permet de filtrer les toponymes avec les propriétés : "importance", "nature", et "territory". Enfin, il permet de filtrer les parcelles cadastrales avec les propriétés : "sheet", "section", et "absorbedcity". Pas de valeur par défaut.
 
 ### Propriétés de l'objet bbox
 
@@ -91,7 +91,7 @@ number | String | Numéro de l'adresse (avec répétiteur s'il y a lieu) .
 postalCode | String | Code postal de l'adresse.
 quality | String | Indicateur de qualité du géocodage (pour plus d'infos http://api.ign.fr/tech-docs-js/fr/developpeur/search.html)
 street | String | Nom de la rue dans laquelle se trouve l'adresse.
-territoire | String | Code du territoire français où se situe l'adresse
+territory | String | Code du territoire français où se situe l'adresse
 commune | String | Ville de l'adresse
 department | String | Département de l'adresse
 insee | String | Code INSEE de l'adresse
@@ -105,7 +105,7 @@ bbox | Object{left, right, top, bottom} | Emprise du toponyme dans le système d
 importance | Number | Importance du toponyme.
 nature | String | Nature du toponyme.
 postalCode | String | Code postal du toponyme.
-territoire | String | Code du territoire français où se situe le toponyme.
+territory | String | Code du territoire français où se situe le toponyme.
 commune | String | Ville du toponyme
 department | String | Département du toponyme
 insee | String | Code INSEE du toponyme
@@ -158,7 +158,7 @@ Recherche des coordonnées d'un localisant sur le serveur de géocodage du Géop
 
 
 ``` javascript
-Gp.services.geocode({
+Gp.Services.geocode({
 	apiKey:"CLEF_API",
 	location : "rue pasteur, Saint-Mandé",
 	onSuccess : function(geocodedLocations){
@@ -177,7 +177,7 @@ Gp.services.geocode({
 Recherche structurée des coordonnées d'un localisant. Limite aux 5 premiers résultats. Adresses reçues en texte libre.
 
 ``` javascript
-Gp.services.geocode({
+Gp.Services.geocode({
     apiKey:"CLEF_API",
     location : {
         street:"rue pasteur",
@@ -202,7 +202,7 @@ Recherche d'adresses ou toponymes avec un filtre attributaire la limitant au dé
 
 
 ``` javascript
-Gp.services.geocode({
+Gp.Services.geocode({
 	apiKey:"CLEF_API",
 	location : "rey arles",
 	filterOptions : {
@@ -220,7 +220,7 @@ Gp.services.geocode({
 Recherche d'une parcelle cadastrale avec un filtre géographique exprimée en Lambert 93 (EPSG:2154).
 
 ``` javascript
-Gp.services.geocode({
+Gp.Services.geocode({
 	apiKey:"CLEF_API",
 	location : "000BO01297",
 	srs : "EPSG:2154",
@@ -244,7 +244,7 @@ Gp.services.geocode({
 Interrogation en mode AJAX (protocole XHR) et utilisation d'un proxy.
 
 ``` javascript
-Gp.services.geocode({
+Gp.Services.geocode({
 	apiKey:"CLEF_API",
 	location : "rue pasteur, Saint-Mandé",
 	httpMethod : "GET",
@@ -261,7 +261,7 @@ Gp.services.geocode({
 Envoi d'une requête en POST. Utilisation d'un proxy.
 
 ``` javascript
-Gp.services.geocode({
+Gp.Services.geocode({
 	apiKey:"CLEF_API",
 	location : "rue pasteur, Saint-Mandé",
 	httpMethod : "POST",
@@ -277,7 +277,7 @@ Gp.services.geocode({
 Utilisation d'une autre URL pour le serveur de Géocodage.
 
 ``` javascript
-Gp.services.geocode({
+Gp.Services.geocode({
         location : "rue pasteur, Saint-Mandé",
         serverUrl : "http://pp-gpp3-wxs-ignfr.
         aw.atosorigin.com/CLEF_API/geoportail/ols",

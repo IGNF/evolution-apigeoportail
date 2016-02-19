@@ -23,4 +23,4 @@ L'API Géoportail « Services » offrira donc les outils permettant de dialoguer
 
 [^3]: cf. http://en.wikipedia.org/wiki/JSONP
 
-**Remarque :** Les utilisateurs de l'API Géoportail Services auront rarement besoin d'utiliser directement les outils exposés ici. Ces derniers ont surtout pour vocation à être exploités par la couche supérieure exposée dans le package Gp.services.
+**Remarque :** Les utilisateurs de l'API Géoportail Services auront rarement besoin d'utiliser directement les outils exposés ici. Ces derniers ont surtout pour vocation à être exploités par la couche supérieure exposée dans le package Gp.Services.

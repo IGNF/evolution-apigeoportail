@@ -18,7 +18,7 @@ L'utilisateur est un développeur qui souhaite mettre en oeuvre un formulaire pe
 
 L'invocation du service se fait via l'appel d'une fonction statique
 
-> Gp.services.route(routeOptions)
+> Gp.Services.route(routeOptions)
 
 La fonction prend en paramètre d'entrée un objet dont les propriétés peuvent prendre les valeurs suivantes (en plus des [propriétés générales décrites précédemment](./dd_services.html#commonParams)) :
 
@@ -68,7 +68,7 @@ Calcul d'itinéraire entre deux points donnés et affichage avec OpenLayers 3.
 
 
 ``` javascript
-Gp.services.route({
+Gp.Services.route({
 	apiKey :'CLEF_API',
 	startPoint : {
 		x : 2.25,

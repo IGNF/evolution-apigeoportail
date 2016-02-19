@@ -18,7 +18,7 @@ Il peut rechercher un toponyme et/ou une adresse à proximité d'une position. I
 
 L'utilisation se fera par l'appel de la fonction statique.
 
-> Gp.services.reverseGeocode(reverseGeocodeOptions)
+> Gp.Services.reverseGeocode(reverseGeocodeOptions)
 
 La fonction prend en paramètre d'entrée un objet dont les propriétés peuvent prendre les valeurs suivantes (en plus des [propriétés générales décrites précédemment](./dd_services.html#commonParams)) :
 
@@ -91,7 +91,7 @@ number | String | Numéro de l'adresse (avec répétiteur s'il y a lieu) .
 postalCode | String | Code postal de l'adresse.
 quality | String | Indicateur de qualité du géocodage (pour plus d'infos http://api.ign.fr/tech-docs-js/fr/developpeur/search.html)
 street | String | Nom de la rue dans laquelle se trouve l'adresse.
-territoire | String | Code du territoire français où se situe l'adresse
+territory | String | Code du territoire français où se situe l'adresse
 commune | String | Ville de l'adresse
 department | String | Département de l'adresse
 insee | String | Code INSEE de l'adresse
@@ -104,7 +104,7 @@ bbox | Array(Object) | Emprise du toponyme dans le système de coordonnées dema
 importance | Number | Importance du toponyme.
 nature | String | Nature du toponyme.
 postalCode | String | Code postal du toponyme.
-territoire | String | Code du territoire français où se situe le toponyme.
+territory | String | Code du territoire français où se situe le toponyme.
 commune | String | Ville du toponyme.
 department | String | Département du toponyme.
 insee | String | Code INSEE du toponyme
@@ -154,7 +154,7 @@ Recherche d'adresses proches d'un point.
 
 
 ``` javascript
-Gp.services.reverseGeocode({
+Gp.Services.reverseGeocode({
 	apiKey:"CLEF_API",
 	position : {
 		x : 43,6779842,
@@ -174,7 +174,7 @@ Gp.services.reverseGeocode({
 Recherche d'adresses proches d'un point. Limitation aux 5 premiers résultats. Adresses exprimées en texte libre.
 
 ``` javascript
-Gp.services.reverseGeocode ({
+Gp.Services.reverseGeocode ({
 	apiKey:"CLEF_API",
 	position : {
 		x : 43,6779842,
@@ -193,7 +193,7 @@ Gp.services.reverseGeocode ({
 Recherche d'adresses ou toponymes proches d'un point.
 
 ``` javascript
-Gp.services.reverseGeocode ({
+Gp.Services.reverseGeocode ({
 	apiKey:"CLEF_API",
 	position : {
 		x : 43,6779842,
@@ -213,7 +213,7 @@ Gp.services.reverseGeocode ({
 Recherche de parcelles proches d'un point dans une zone de recherche rectangulaire exprimée en Lambert 93.
 
 ``` javascript
-Gp.services.reverseGeocode ({
+Gp.Services.reverseGeocode ({
 	apiKey:"CLEF_API",
 	position : {
 		x : 755394,

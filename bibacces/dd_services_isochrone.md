@@ -57,7 +57,7 @@ geometry | geoJSON | Géométrie de la courbe calculée.
 Calcul d'isochrone à partir d'un point donné et affichage avec OpenLayers 3.
 
 ``` javascript
-Gp.services.isoCurve({
+Gp.Services.isoCurve({
 	apiKey :'CLEF_API',
 	position : {
 		x : 2.25,

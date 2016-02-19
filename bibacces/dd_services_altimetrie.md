@@ -18,7 +18,7 @@ L'utilisateur est un développeur web qui souhaite intégrer une fonctionnalité
 
 L'utilisation se fera par l'appel d'une seule fonction statique :
 
-> Gp.services.getAltitude(altitudeOptions)
+> Gp.Services.getAltitude(altitudeOptions)
 
 On propose une seule fonction, qui gère les deux fonctionnalités du service (calcul d'altitudes simples : Elevation, ou avec échantillonnage : ElevationLine). La présence d'un paramètre « sampling », indiquant un pas d'échantillonnage ainsi que la présence de deux points minimum dans la requête, déclenchera la demande de calcul avec échantillonnage au service.
 
@@ -73,7 +73,7 @@ message | string | Message d'erreur. Il peut s'agir de celui renvoyé par le ser
 Récupération de l'altitude d'un point à partir de ses coordonnées, et utilisation des fonctions de rappel.
 
 ``` javascript
-Gp.services.getAltitude({
+Gp.Services.getAltitude({
 	apiKey: 'CLE_API',
 	positions:[
 		{x:0.2367,y:48.0551}
@@ -93,7 +93,7 @@ Gp.services.getAltitude({
 Récupération des altitudes seulement d'une série de points. 
 
 ``` javascript
-Gp.services.getAltitude({
+Gp.Services.getAltitude({
 	apiKey: 'CLE_API',
 	positions:[
 		{x:0.2367,y:48.0551}, {x:1.2099,y:47.3354},
@@ -111,7 +111,7 @@ Gp.services.getAltitude({
 Récupération d'un profil altimétrique de 20 points, à partir de 5 points en entrée.
 
 ``` javascript
-Gp.services.getAltitude({
+Gp.Services.getAltitude({
 	apiKey: 'CLE_API',
 	positions:[
 		{x:0.2367,y:48.0551}, {x:1.2099,y:47.3354},
@@ -130,7 +130,7 @@ Gp.services.getAltitude({
 Accès au service en POST, via la norme WPS, et spécification d'un proxy.
 
 ``` javascript
-Gp.services.getAltitude({
+Gp.Services.getAltitude({
 	apiKey: 'CLE_API',
 	positions:[
 		{x:0.2367,y:48.0551}, {x:1.2099,y:47.3354},
@@ -152,7 +152,7 @@ Utilisation d'une autre URL de serveur, en WPS
 
 
 ``` javascript
-Gp.services.getAltitude({
+Gp.Services.getAltitude({
 	serverUrl:'http://wxs.ign.fr/CLE_ALTI/alti/wps?service=WPS&version=1.0.0',
 	positions:[
 		{x:0.2367,y:48.0551}
@@ -169,7 +169,7 @@ Utilisation d'une autre URL de serveur, en REST
 
 
 ``` javascript
-Gp.services.getAltitude({
+Gp.Services.getAltitude({
 	serverUrl: 'http://wxs.ign.fr/CLE_API/alti/rest/Elevation.xml',
 	outputFormat:'xml',
 	positions:[

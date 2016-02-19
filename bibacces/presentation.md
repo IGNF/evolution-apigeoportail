@@ -31,11 +31,11 @@ Une fois en possession d'une clef d'accès, l'accès aux ressources se fera simp
 ### Connaitre la position d'une adresse
 
 
-L'appel suivant de la fonction "Gp.services.geocode" permet d'obtenir la position géographique de l'adresse du 73 avenue de Paris à Saint-Mandé.
+L'appel suivant de la fonction "Gp.Services.geocode" permet d'obtenir la position géographique de l'adresse du 73 avenue de Paris à Saint-Mandé.
 
 
 ``` javascript
-Gp.services.geocode({
+Gp.Services.geocode({
     apiKey:"CLEF_D_ACCES",
     location : "73 avenue de Paris, Saint-Mandé",
         // la fonction suivante sera appelée à la réception de la réponse 
@@ -60,7 +60,7 @@ var map= new ol.Map({
 }) ;
 
 // centrage sur le 73 avenue de Paris
-Gp.services.geocode({
+Gp.Services.geocode({
     apiKey:"CLEF_D_ACCES",
     location : "73 avenue de Paris, Saint-Mandé",
         // la fonction suivante sera appelée à la réception de la réponse 
@@ -81,11 +81,11 @@ Gp.services.geocode({
 
 ### Obtenir l'altitude en un point
 
-L'appel suivant de la fonction "Gp.services.getAltitude" permet d'obtenir l'altitude aux coordonnées indiquées en longitude, latitude (x:0.2367 , y:48.0551).
+L'appel suivant de la fonction "Gp.Services.getAltitude" permet d'obtenir l'altitude aux coordonnées indiquées en longitude, latitude (x:0.2367 , y:48.0551).
 
 
 ``` javascript
-Gp.services.getAltitude({
+Gp.Services.getAltitude({
     apiKey: "CLE_D_ACCES",
     positions:[
         {x:0.2367,y:48.0551}
@@ -102,10 +102,10 @@ Gp.services.getAltitude({
 
 ### Configurer l'affichage des couches dans une bibliothèque cartographique.
 
-L'appel suivant à la fonction "Gp.services.getConfig" permet d'obtenir les informations d'accès et de paramétrage relatifs à la clef d'accès passée en paramètres.
+L'appel suivant à la fonction "Gp.Services.getConfig" permet d'obtenir les informations d'accès et de paramétrage relatifs à la clef d'accès passée en paramètres.
 
 ``` javascript
-Gp.services.getConfig({
+Gp.Services.getConfig({
     apiKey : "CLE_D_ACCES"
     // la fonction suivante sera appelée à la réception de la réponse 
     // du service.
