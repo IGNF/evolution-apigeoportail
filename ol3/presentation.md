@@ -16,9 +16,15 @@ L'extension Géoportail pour OpenLayers 3 définit des classes et composants à 
 
 Les fonctionnalités proposées par cette extension sont les suivantes :
 
+<!--
+### Chargement de la configuration associée à votre clé de contrat
+
+Insérez simplement votre clé de contrat API (prise sur [professionnels.ign.fr](http://professionnels.ign.fr/api-web) ) dans la balise de chargement de l'extension OL3, pour charger la configuration associée. [En savoir plus sur cette fonctionnalité](./ol3-autoconf.html)
+-->
+
 ### Affichage simple des couches WMTS et WMS Géoportail
 
-A partir du simple nom de la couche (par exemple : ORTHOIMAGERY.ORTHOPHOTOS) et de votre clef API (prise sur [professionnels.ign.fr](http://professionnels.ign.fr/api-web) ), vous pouvez créer une carte OpenLayers 3 utilisant la couche Géoportail de votre choix comme fond de carte.
+A partir du simple nom de la couche (par exemple : ORTHOIMAGERY.ORTHOPHOTOS) et de votre clef API (prise sur [professionnels.ign.fr](http://professionnels.ign.fr/api-web) ), vous pouvez créer une carte OpenLayers 3 utilisant la couche Géoportail de votre choix comme fond de carte. [En savoir plus sur l'ajout de couches WMTS](./ol3-WMTS.html) et [WMS](./ol3-WMS.html).
 
 ### Widget de gestion de l'empilement des couches
 
@@ -44,6 +50,10 @@ Utilisez le service de calcul d'isochrones / isodistances proposé par la platef
 ### Affichage de l'altitude en un point
 
 En plus des coordonnées x et y de la souris sur une carte OpenLayers 3, obtenez l'altitude à l'aide du service altimétrique proposé par la plateforme Géoportail. [En savoir plus sur le widget](./mousePosition.html).
+
+### Affichage des logos associés à une couche Géoportail
+
+Ajoutez à une carte OpenLayers 3 un composant permettant d'afficher les logos des producteur des données d'une couche Géoportail, en se basant sur la configuration de cette couche. [En savoir plus sur le widget](./ol3-originators.html).
 
 <!--
 ### Prise en charge du format GeoRSS
