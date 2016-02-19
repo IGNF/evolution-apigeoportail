@@ -61,7 +61,7 @@ Si vous utilisez déjà ou êtes familiers avec Leaflet ou OpenLayers 3, ne chan
 
 Si vous utilisez ou êtes familiers avec une autre bibliothèque cartographique, la bibliothèque d'accès peut vous permettre d'accéder plus facilement aux ressources du Géoportail.
 
-Si vous n'êtes familiers avec aucune bibliothèque cartographique et que vous souhaitez utiliser les ressources du Géoportail, le kit de développement vous offre uen solution tout en un intégrant OpenLayers 3 et son extension. 
+Si vous n'êtes familiers avec aucune bibliothèque cartographique et que vous souhaitez utiliser les ressources du Géoportail, le kit de développement vous offre une solution tout en un intégrant OpenLayers 3 et son extension. 
 
 
 ### Que se passera-t-il quand OpenLayers ou Leaflet évolueront ?
@@ -80,27 +80,27 @@ Ce changement est du aux évolutions du web :
 
 * l'API Géoportail Flash devient obsolète de fait avec l'abandon progressif de la technologie Flash par les navigateurs
 
-* l'API Géoportail Javascript repose sur le projet open source **OpenLayers 2** 
+* l'API Géoportail JavaScript repose sur le projet open source **OpenLayers 2** 
 qui a arrêté d'évoluer depuis 3 ans au profit du projet **OpenLayers 3** qui en est une ré-écriture complète sans compatibilité d'interface. Il fallait donc entreprendre une refonte majeure de notre API pour pouvoir suivre ces évolutions et rester compatible avec les évolutions des navigateurs.
 
 
 
 ### Mon application utilise le Géoportail. Que se passera-t-il après le 30 juin 2017 ?
 
-Rien de spécial. Les données seront toujours diffusées selon les mêmes services web et le code de l'API Géoportail Javascript actuelle continuera de fonctionner comme avant. Seulement, l'IGN n'assurera plus la garantie de fonctionnement de ce code. 
+Rien de spécial. Les données seront toujours diffusées selon les mêmes services web et le code de l'API Géoportail JavaScript actuelle continuera de fonctionner comme avant. Seulement, l'IGN n'assurera plus la garantie de fonctionnement de ce code. 
 
 Concrètement : Les équipes de support de l'IGN ne proposeront pas de patchs correctifs ni d'analyses particulières sur des applications utilisant encore les API Géoportail actuelles.  
 
 ### Peut-on rester sur la configuration actuelle sans être impacté ?
 
-Oui. La seule différence est qu'à partir du troisième trimestre 2017, l'IGN n'assurera plus la garantie de fonctionnement du code de l'API Géoportail javascript actuelle. Pour des applications utilisant l'API Géoportail Flash, l'arrêt de garantie prendra effet dès le deuxième trimestre 2016.
+Oui. La seule différence est qu'à partir du troisième trimestre 2017, l'IGN n'assurera plus la garantie de fonctionnement du code de l'API Géoportail JavaScript actuelle. Pour des applications utilisant l'API Géoportail Flash, l'arrêt de garantie prendra effet dès le deuxième trimestre 2016.
 
 Concrètement : Les équipes de support de l'IGN ne proposeront pas de patchs correctifs ni d'analyses particulières sur des applications utilisant encore les API Géoportail actuelles à partir des dates annoncées.
 
 
 ### Est-ce que l'API actuelle arrêtera de fonctionner ?
 
-Non. A partir du troisième trimestre 2017, l'IGN n'assurera plus la garantie de fonctionnement du code de l'API Géoportail javascript actuelle. Pour des applications utilisant l'API Géoportail Flash, l'arrêt de garantie prendra effet dès le deuxième trimestre 2016.
+Non. A partir du troisième trimestre 2017, l'IGN n'assurera plus la garantie de fonctionnement du code de l'API Géoportail JavaScript actuelle. Pour des applications utilisant l'API Géoportail Flash, l'arrêt de garantie prendra effet dès le deuxième trimestre 2016.
 
 Les risques de dysfonctionnement peuvent venir de l'évolution des navigateurs : une montée de version d'un navigateur (Firefox, Chrome, Edge, ...) peut entrainer l'arrêt du support d'une fonctionnalité utilisée par l'API Géoportail. Dans ce cas là rien ne sera proposé par l'IGN si votre appplication utilise encore les API Géoportail actuelles au-delà des dates annoncées.
 
@@ -114,11 +114,11 @@ Les risques de dysfonctionnement peuvent venir de l'évolution des navigateurs :
 
 Non. La contractualisation de l'accès au ressources du Géoportail est indépendante de l'utilisation ou non des API Géoportail actuelles ou des nouveaux éléments proposés.
 
-### Comment savoir si on utilise l'API Javascript actuelle dans mon application ?
+### Comment savoir si on utilise l'API JavaScript actuelle dans mon application ?
 
-Si votre application charge un fichier GeoportalExtended.js, GeoportalMin.js ou Geoportal.js ou GeoportalMobile.js alors vous utilisez sans doute l'API Géoportail Javascript.
+Si votre application charge un fichier GeoportalExtended.js, GeoportalMin.js ou Geoportal.js ou GeoportalMobile.js alors vous utilisez sans doute l'API Géoportail JavaScript.
 
-Si vous avez accès au code de votre application (même chargé dans une page web), et que vous voyez l'utilisation de fonctions ou classes dont le nom commence par "Geoportal...", alors vous utilisez l'API Géoportail Javascript.
+Si vous avez accès au code de votre application (même chargé dans une page web), et que vous voyez l'utilisation de fonctions ou classes dont le nom commence par "Geoportal...", alors vous utilisez l'API Géoportail JavaScript.
 
  
 
@@ -129,16 +129,16 @@ Si votre application nécessite qu'un plugin Flash soit chargé dans votre navig
 
 ### Si je veux utiliser les nouveaux éléments devrai-je ré-écrire toute mon application ? 
 
-Si vous utilisez l'API Géoportail Javascript, non : il faudra seulement réécrire la partie qui intéragit avec la carte de l'API Géoportail.
+Si vous utilisez l'API Géoportail JavaScript, non : il faudra seulement réécrire la partie qui intéragit avec la carte de l'API Géoportail.
 
-Si vous utilisez l'API Géoportail Flash, oui car il s'agit d'un changement complet de contexte de développement (passer du Flash au javascript).
+Si vous utilisez l'API Géoportail Flash, oui car il s'agit d'un changement complet de contexte de développement (passer du Flash au JavaScript).
 
-### Est-ce que vous proposerez des "passerelles" pour passer de l'API Javascript actuelle vers les nouveaux éléments ?
+### Est-ce que vous proposerez des "passerelles" pour passer de l'API JavaScript actuelle vers les nouveaux éléments ?
 
 Lorsque le kit de développement sortira, nous proposerons des documentations permettant d'aider à passer de l'ancienne interface à la nouvelle. Dans l'esprit : "vous utilisez telle fonctionnalité de l'ancienne API : voici comment faire avec le kit de développement".
 
 
-### Quels temps cela prendra-t-il de passer de l'API Javascript actuelle aux nouveaux éléments ?
+### Quels temps cela prendra-t-il de passer de l'API JavaScript actuelle aux nouveaux éléments ?
 
 Cela dépend de la complexité de votre application par rapport à l'utilisation qui est faite de l'API Géoportail. Plus vous utilisez de fonctionnalités de l'ancienne API plus de temps il faudra pour les faire basculer sur les fonctionnalités équivalente des nouveaux éléments.
 
@@ -162,6 +162,6 @@ Certains clients OpenSource permettent déjà d'afficher les données images ser
 
 ### Ma question n'est pas dans cette FAQ. Où puis-je la poser ?
 
-Vous pouvez poser vos question sur la [discussion dédiée du forum des développeurs](http://www.developpez.net/forums/d1531763/applications/sig-systeme-d-information-geographique/ign-api-geoportail/mise-place-d-api-v3/). Vous pouvez aussi envoyer vos questions par mail au SAV IGN [contact.api@ign.fr](mailto:contact.api@ign.fr) ou directement à votre chargé de clientelle si vous en avez un.
+Vous pouvez poser vos question sur la [discussion dédiée du forum des développeurs](http://www.developpez.net/forums/d1531763/applications/sig-systeme-d-information-geographique/ign-api-geoportail/mise-place-d-api-v3/). Vous pouvez aussi envoyer vos questions par mail au SAV IGN [contact.api@ign.fr](mailto:contact.api@ign.fr) ou directement à votre chargé de clientèle si vous en avez un.
 
 
