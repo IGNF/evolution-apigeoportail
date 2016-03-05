@@ -25,14 +25,14 @@ C'est la méthode que nous vous conseillons, car elle est plus simple à mettre 
 L'extension OL3 propose de récupérer, lors du chargement de la page, la configuration associée à la clé de contrat de l'utilisateur. Pour cela, il lui suffit simplement de renseigner sa clé dans la balise de chargement du fichier JavaScript contenant l'extension, de la manière suivante :
 
 ``` html
-<script src="GpOl3.js" data-key="CLEAPI"></script>
+<script src="GpPluginOl3.js" data-key="CLEAPI"></script>
 ```
 
 De cette manière, la configuration sera récupérée via le service d'auto-configuration des API du Géoportail.
 L'utilisateur peut aussi spécifier une URL vers un fichier d'auto-configuration (chemin relatif vers un fichier en local par exemple) :
 
 ``` html
-<script src="GpOl3.js" data-url="AutoConf.json"></script>
+<script src="GpPluginOl3.js" data-url="AutoConf.json"></script>
 ```
 
 Les paramètres possibles sont les suivants :
@@ -56,7 +56,7 @@ Récupération de la configuration au chargement de la page, en passant par le s
         <link rel="stylesheet" href="ol.css" />
         <script src="ol.js"></script>
         <!-- Extension Géoportail pour OL3 -->
-        <script src="GpOl3.js" data-key="CLEAPI" data-timeout="10000"></script>
+        <script src="GpPluginOl3.js" data-key="CLEAPI" data-timeout="10000"></script>
     </head>
     <body>
         <script>
@@ -77,7 +77,7 @@ Récupération de la configuration au chargement de la page, à partir d'un fich
         <link rel="stylesheet" href="ol.css" />
         <script src="ol.js"></script>
         <!-- Extension Géoportail pour OL3 -->
-        <script src="GpOl3.js" data-url="AutoConf.xml"></script>
+        <script src="GpPluginOl3.js" data-url="AutoConf.xml"></script>
     </head>
     <body>
         <script>
@@ -118,7 +118,7 @@ Utilisation simple de la fonction *Gp.Services.getConfig* :
         <link rel="stylesheet" href="ol.css" />
         <script src="ol.js"></script>
         <!-- Extension Géoportail pour OL3 -->
-        <script src="GpOl3.js"></script>
+        <script src="GpPluginOl3.js"></script>
     </head>
     <body>
         <script>
