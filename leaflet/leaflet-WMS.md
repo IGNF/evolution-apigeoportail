@@ -21,10 +21,10 @@ Il peut aussi spécifier lui même des paramètres WMS (version, style, etc.), o
 
 L’utilisation de cette fonctionnalité est conditionnée au [chargement préalable de la configuration associée à se clef de contrat](./leaflet-autoconf.html).
 
-L'utilisation se fera par la création d'une nouvelle instance de la classe L.GeoportalLayer.WMS, de la manière suivante :
+L'utilisation se fera par la création d'une nouvelle instance de la classe L.geoportalLayer.WMS, de la manière suivante :
 
 ``` javascript
-L.GeoportalLayer.WMS(options, [leafletParams]);
+L.geoportalLayer.WMS(options, [leafletParams]);
 ```
 
 Cette fonction retourne un objet [L.TileLayer.WMS](http://leafletjs.com/reference.html#tilelayer-wms).
@@ -46,7 +46,7 @@ leafletParams     | Object  | Optionnel   | Autres options possibles pour la cr�
 Création d'une source Géoportail, pour les orthos-images. (Utilisation simple de la fonction)
 
 ``` javascript
-var layer = L.GeoportalLayer.WMS({
+var layer = L.geoportalLayer.WMS({
   layer:  "ORTHOIMAGERY.ORTHOPHOTOS"
 });
 ```
@@ -57,7 +57,7 @@ Affichage simple des cartes IGN du Géoportail : création d'une *layer* Géopor
 
 ``` javascript
 var map = L.Map('divmap', {center: [2.38, 45.23] , zoom: 13}) ;
-var lyr = L.GeoportalLayer.WMS({
+var lyr = L.geoportalLayer.WMS({
     layer  : "GEOGRAPHICALGRIDSYSTEMS.MAPS"
 }, {
     opacity : 1
@@ -73,9 +73,9 @@ Affichage simple de la BDOrtho du Géoportail en Lambert 93 : création d'une *l
 
 ``` javascript
 var map = L.Map('divmap', {
-    crs : L.GeoportalCRS.EPSG2154(),
+    crs : L.geoportalCRS.EPSG2154(),
 }).setView();
-var lyr = L.GeoportalLayer.WMS({
+var lyr = L.geoportalLayer.WMS({
     layer  : "ORTHOIMAGERY.ORTHOPHOTOS.BDORTHO",
     apiKey : "KEY-API"
 });

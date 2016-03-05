@@ -32,10 +32,10 @@ Dans tous les cas, toutes les couches composant la carte seront affichées dans 
 
 ### Mise en oeuvre
 
-L'utilisation se fera par la création d'un nouveau contrôle : L.GeoportalControl.LayerSwitcher, que l'on peut ajouter à la carte comme [les autres contrôles de Leaflet](http://leafletjs.com/reference.html#map-stuff-methods), par exemple de la manière suivante :
+L'utilisation se fera par la création d'un nouveau contrôle : L.geoportalControl.LayerSwitcher, que l'on peut ajouter à la carte comme [les autres contrôles de Leaflet](http://leafletjs.com/reference.html#map-stuff-methods), par exemple de la manière suivante :
 
 ``` javascript
-var layerSwitcher = L.GeoportalControl.LayerSwitcher(opts);
+var layerSwitcher = L.geoportalControl.LayerSwitcher(opts);
 map.addControl(layerSwitcher);
 ```
 
@@ -53,7 +53,7 @@ La récupération de ces informations n'est pas la même selon la manière dont 
 
 Le widget peut prendre en paramètre un objet **opts**, permettant de renseigner des informations de couches à afficher dans le gestionnaire de couches, ou de paramétrer le widget.
 
-Cet objet peut prendre 2 propriétés, toutes deux facultatives : 
+Cet objet peut prendre 2 propriétés, toutes deux facultatives :
 
 * un objet **options** pour les options spécifiques au widget.
 * un tableau **layers**
@@ -95,13 +95,13 @@ Ajout du widget de gestion de l'empilement des couches, à partir d'une couche G
 
 ``` javascript
 var map = L.Map('divmap', {center: [2.38, 45.23] , zoom: 13});
-var lyr = L.GeoportalLayer.WMTS({
+var lyr = L.geoportalLayer.WMTS({
     layer  : "ORTHOIMAGERY.ORTHOPHOTOS",
 });
 
 lyr.addTo(map); // ou map.addLayer(lyr);
 map.addControl(
-    L.GeoportalControl.LayerSwitcher()
+    L.geoportalControl.LayerSwitcher()
 );
 ```
 
@@ -111,7 +111,7 @@ Au moins une des couches de la carte n'a pas été ajoutée via l'extension Géo
 
 ``` javascript
 map.addControl(
-    L.GeoportalControl.LayerSwitcher({
+    L.geoportalControl.LayerSwitcher({
         layers : [{
             layer : myLayer,
             config : {
