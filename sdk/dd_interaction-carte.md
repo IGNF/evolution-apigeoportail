@@ -37,7 +37,7 @@ getLayersOptions(layerIds:Array(String)/null) | Array([LayerOptions](dd_initiali
 getControlsOptions(controlIds:Array(String)/ null) | Array([ControlOptions](dd_initialisation-carte.html#controlOptions)) | Retourne les options du contrôle si un nom est passé en entrée de la fonction. Sinon, retourne les options de toutes les contrôles de la carte.
 getLibMap() | Objet | Retourne l'objet "carte" de la bibliothèque cartographique sous-jacente.
 setProjection(projection:String) |  - | Définit la projection de la carte. Si certaines couches ne sont pas compatibles avec la nouvelle projection, elles ne seront pas affichées.
-setCenter(center: {x:Float,y:Float}/location:String/geolocate:Boolean) | - | Définit le centre de la carte. 
+setCenter(center: {x:Float,y:Float,projection:String,location:String,locationType:Array(String),geolocate:Boolean) | - | Définit le centre de la carte. 
 setTilt(tilt:Float) | - | Définit l'inclinaison de la caméra en degrés (uniquement en 3d).
 setAzimut(azimuth:Float) | - | Définit l'azimuth de la carte en degrés.
 setZoom(zoom : Integer) | - | Définit le niveau de zoom de la carte.

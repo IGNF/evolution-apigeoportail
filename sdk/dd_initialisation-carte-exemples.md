@@ -16,7 +16,11 @@ Affichage d'une carte utilisant les fonds associés à la clé CLE_API et centr�
 Gp.Map.load(
     apiKey:"CLE_API",
     'geoportalMap',
-    {location : "rue pasteur, Saint-Mandé"}
+    {
+        center : {
+            location : "rue pasteur, Saint-Mandé"
+        }
+    }
 ) ;
 ```
 
@@ -46,11 +50,11 @@ Affichage d'une carte centrée en fonction de l'IP et zoomée au niveau 10. Si l
 ```
 var mapOptions = {
     center:{
-        x:'2°43\'53.49"E',
-        y:'45°49\'59.9874"N'
+        x : '2°43\'53.49"E',
+        y : '45°49\'59.9874"N',
+        geolocate : true,
     },
-    geolocate:true,
-    zoom:10
+    zoom : 10
 } ;
 
 Gp.Map.load(
@@ -68,11 +72,8 @@ Affichage d'une carte centrée sur une adresse et zoomée au niveau 10 avec une 
 
 ```
 var mapOptions = {
-    location : {
-        number:"6",
-        street:"rue du temple",
-        postalCode:"13200",
-        city:"arles"
+    center : {
+        location : "6 rue du temple 13200 arles"
     },
     zoom:10,
     markerOptions : {
