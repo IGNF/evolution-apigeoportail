@@ -5,7 +5,6 @@
   font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
   font-size: 13px;
   color: #333;
-  overflow: hidden;
 }
 
 .GPwidget input[type='text'],
@@ -57,11 +56,6 @@
 
 /* Showing/hiding advanced panels */
 
-#GPadvancedToolsPanel {
-  position: absolute;
-  top: 100px;
-}
-
 .GPshowAdvancedToolPicto {
   position: relative;
   box-sizing: border-box;
@@ -72,16 +66,6 @@
   position: absolute;
   display: block;
   box-sizing: border-box;
-}
-
-.GPadvancedToolsPanelVisible,
-.GPadvancedToolVisible {
-  display: block;
-}
-
-.GPadvancedToolsPanelHidden,
-.GPadvancedToolHidden {
-  display: none;
 }
 
 /* Flex inputs */

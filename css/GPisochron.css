@@ -1,9 +1,34 @@
 /* ISOCHRON */
 
+#GPisochron {
+  top: 140px;
+}
+
+/* Showing/hiding mouse position panel */
+
+#GPshowIsochronPicto {
+  display: inline-block;
+}
+
+#GPshowIsochron + label {
+  display: block;
+}
+
+#GPshowIsochron:checked + label {
+  display: none;
+}
+
+#GPshowIsochron + label + div {
+  display: none;
+}
+
+#GPshowIsochron:checked + label + div {
+  display: block;
+}
+
 /* General panels */
 
 #GPisochronPanel {
-  top: 100px;
   width: 280px;
 }
 
@@ -15,6 +40,7 @@
 
 .GPisochronFormMini {
   max-height: 58px;
+  overflow: hidden;
 }
 
 .GPisochronOriginVisible {

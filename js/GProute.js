@@ -4,26 +4,17 @@
 if (document.getElementById('GProutePanel')) {
 	
 	/*
-     * Close results details by default*
+     * Close results details by default
      * Default exclusions picto position
      */
 	document.getElementById('GProuteResultsShowDetails').checked = false;
     document.getElementById('GPshowRouteExclusionsPicto').style.top = '185px';
 	
 	/*
-     * Open route panel
-     */
-	document.getElementById('GPshowRoutePicto').addEventListener('click', function() {
-	    document.getElementById('GPadvancedToolsPanel').className = 'GPadvancedToolsPanelHidden';
-	    document.getElementById('GProutePanel').className = 'GPwidget GPpanel GPadvancedToolVisible';
-	});
-	
-	/*
-     * Close route panel
+     * Link panel close / visibility checkbox
      */
 	document.getElementById('GProutePanelClose').addEventListener('click', function() {
-	    document.getElementById('GProutePanel').className = 'GPwidget GPpanel GPadvancedToolHidden';
-	    document.getElementById('GPadvancedToolsPanel').className = 'GPadvancedToolsPanelVisible';
+	   document.getElementById('GPshowRoutePicto').click();
 	});
 	
 	/*
@@ -131,7 +122,7 @@ if (document.getElementById('GProutePanel')) {
 	            document.getElementById('GProuteOrigin'+i).className = 'GProuteOriginVisible';
 	            document.getElementById('GProuteOriginCoords'+i).value = '';
 	            document.getElementById('GProuteOriginCoords'+i).className = 'GProuteOriginHidden';
-	            document.getElementById('GProuteStageAdd').style.display = 'flex';
+	            document.getElementById('GProuteStageAdd').style.display = '';
                 // Moving up exclusions picto
                 var exclusionsPictoTop = document.getElementById('GPshowRouteExclusionsPicto').style.top;
                 document.getElementById('GPshowRouteExclusionsPicto').style.top = (parseInt(exclusionsPictoTop)-33).toString()+'px';

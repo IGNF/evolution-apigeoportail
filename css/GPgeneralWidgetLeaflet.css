@@ -8,6 +8,8 @@
 .GPpanelHeader {
   height: 32px;
   background-color: #FFF;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .GPpanelTitle {

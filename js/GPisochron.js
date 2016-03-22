@@ -3,22 +3,13 @@
  */
 if (document.getElementById('GPisochronPanel')) {
 	
-	/*
-     * Open isochron panel
-     */
-	document.getElementById('GPshowIsochronPicto').addEventListener('click', function() {
-	    document.getElementById('GPadvancedToolsPanel').className = 'GPadvancedToolsPanelHidden';
-	    document.getElementById('GPisochronPanel').className = 'GPwidget GPpanel GPadvancedToolVisible';
-	});
-	
-	/*
-     * Close isochron panel
+    /*
+     * Link panel close / visibility checkbox
      */
 	document.getElementById('GPisochronPanelClose').addEventListener('click', function() {
-	    document.getElementById('GPisochronPanel').className = 'GPwidget GPpanel GPadvancedToolHidden';
-	    document.getElementById('GPadvancedToolsPanel').className = 'GPadvancedToolsPanelVisible';
+	   document.getElementById('GPshowIsochronPicto').click();
 	});
-	
+    
 	/*
      * Manage autocomplete list appearance when filling the address input
      */

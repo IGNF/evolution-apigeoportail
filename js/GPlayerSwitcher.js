@@ -92,6 +92,7 @@ if (document.getElementById('GPlayerSwitcher')) {
 	var layersList = document.getElementById('GPlayersList');
 	Sortable.create(layersList,{
 	    handle: '.GPlayerName',
+	    draggable: '.draggable-layer',
 	    ghostClass: 'GPghostLayer',
 	    animation: 200,
 	    onEnd: function() {

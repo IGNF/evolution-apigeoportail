@@ -43,97 +43,100 @@ A venir...
                 <button class="ol-zoom-out" type="button" title="Zoom out">−</button>
             </div>
             
-            <!-- ADVANCED TOOLS PANEL -->
+            <!-- ISOCHRON -->
             
-            <div id="GPadvancedToolsPanel" class="GPadvancedToolsPanelVisible">
-                <div id="GPshowIsochronPicto" class="GPshowAdvancedToolPicto" title="Ouvrir le calcul d'isochrones">
+            <div id="GPisochron" class="GPwidget">
+                
+                <!-- Hidden checkbox for minimizing/maximizing -->
+                <input type="checkbox" id="GPshowIsochron" />
+                <label for="GPshowIsochron" id="GPshowIsochronPicto" class="GPshowAdvancedToolPicto" title="Calculer une isochrone">
                     <span id="GPshowIsochronOpen" class="GPshowAdvancedToolOpen"></span>
-                </div>
-            </div>
-            
-            <!-- ADVANCED TOOLS : ISOCHRON -->
-            
-            <div id="GPisochronPanel" class="GPwidget GPpanel GPadvancedToolHidden">
-            
-                <div class="GPpanelHeader">
-                    <div class="GPpanelTitle">Calcul d'isochrone</div>
-                    <div id="GPisochronPanelClose" class="GPpanelClose" title="Fermer le panneau"></div>
-                </div>
+                </label>
                 
-                <form id="GPisochronForm">
-                    
-                    <!-- Origin input -->
-                    <div class="GPflexInput">
-                        <label id="GPisochronOriginLabel" for="GPisochronOrigin">Départ</label>
-                        <input id="GPisochronOrigin" class="GPisochronOriginVisible" type="text" placeholder="Saisir une adresse" />
-                        <input id="GPisochronOriginCoords" class="GPisochronOriginHidden" type="text" disabled />
-                        <input id="GPisochronOriginPointer" type="checkbox" />
-                        <label class="GPisochronOriginPointerImg" for="GPisochronOriginPointer" title="Pointer un lieu sur la carte"></label>
-                    </div>
-                    
-                    <!-- Autocomplete list -->
-                    <div id="GPisochronAutoCompleteList" class="GPadvancedAutoCompleteList">
-                        <!-- Proposals are dynamically filled in Javascript by autocomplete service -->
-                        <div class="GPautoCompleteProposal">17000 La Rochelle</div>
-                        <div class="GPautoCompleteProposal">94165 Saint Mandé</div>
-                        <div class="GPautoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
-                        <div class="GPautoCompleteProposal">What else ?</div>
-                        <div class="GPautoCompleteProposal">Last and surely least</div>
-                    </div>
-                    
-                    <!-- Choice isochron / isodistance -->
-                    <div id="GPisochronChoice">
-                        <div class="GPisochronChoiceAlt">
-                            <input type="radio" id="GPisochronChoiceAltChron" name="GPisochronChoiceMode" value="isochron" checked>
-                            <label class="GPisochronChoiceAltImg" for="GPisochronChoiceAltChron"></label>
-                            <span id="GPisochronChoiceAltChronTxt">isochrone</span>
-                        </div>
-                        <div class="GPisochronChoiceAlt">
-                            <input type="radio" id="GPisochronChoiceAltDist" name="GPisochronChoiceMode" value="isodistance">
-                            <label class="GPisochronChoiceAltImg" for="GPisochronChoiceAltDist"></label>
-                            <span id="GPisochronChoiceAltDistTxt">isodistance</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Isochron input values -->
-                    <div id="GPisochronValueChron" class="GPflexInput">
-                        <label id="GPisochronValueChronLabel" for="GPisochronValueChronInput">Temps</label>
-                        <input id="GPisochronValueChronInput1" type="number" value="0" min="0" step="1"/>
-                        <label>h</label>
-                        <input id="GPisochronValueChronInput2" type="number" value="0" min="0" max="59" step="1"/>
-                        <label>min</label>
-                    </div>
-                    
-                    <!-- Isodistance input values -->
-                    <div id="GPisochronValueDist" class="GPisochronValueHidden">
-                        <label id="GPisochronValueDistLabel" for="GPisochronValueDistInput">Distance</label>
-                        <input id="GPisochronValueDistInput" type="number" value="0" min="0" step="any" />
-                        <label>km</label>
-                    </div>
-                    
-                    <!-- Computation modes -->
-                    <div id="GPisochronModeChoice">
-                        <div id="GPisochronTransportChoice">
-                            <span class="GPisochronModeLabel">Mode de transport</span>
-                            <input type="radio" id="GPisochronTransportCar" name="GPisochronTransport" value="car" checked>
-                            <label class="GPisochronTransportImg" for="GPisochronTransportCar" title="Voiture"></label>
-                            <input type="radio" id="GPisochronTransportPedestrian" name="GPisochronTransport" value="pedestrian">
-                            <label class="GPisochronTransportImg" for="GPisochronTransportPedestrian" title="Piéton"></label>
-                        </div>
-                        <div id="GPisochronDirectionChoice">
-                            <span class="GPisochronModeLabel">Sens de parcours</span>
-                            <select id="GPisochronDirectionSelect" class="GPinputSelect">
-                                <option>Départ</option>
-                                <option>Arrivée</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <!-- Input button -->
-                    <input type="submit" id="GPisochronSubmit" class="GPinputSubmit" value="Calculer" />
-                    
-                </form>
+                <!-- Isochron panel -->
+                <div id="GPisochronPanel" class="GPpanel">
                 
+                    <div class="GPpanelHeader">
+                        <div class="GPpanelTitle">Calcul d'isochrone</div>
+                        <div id="GPisochronPanelClose" class="GPpanelClose" title="Fermer le panneau"></div>
+                    </div>
+                    
+                    <form id="GPisochronForm">
+                        
+                        <!-- Origin input -->
+                        <div class="GPflexInput">
+                            <label id="GPisochronOriginLabel" for="GPisochronOrigin">Départ</label>
+                            <input id="GPisochronOrigin" class="GPisochronOriginVisible" type="text" placeholder="Saisir une adresse" />
+                            <input id="GPisochronOriginCoords" class="GPisochronOriginHidden" type="text" disabled />
+                            <input id="GPisochronOriginPointer" type="checkbox" />
+                            <label class="GPisochronOriginPointerImg" for="GPisochronOriginPointer" title="Pointer un lieu sur la carte"></label>
+                        </div>
+                        
+                        <!-- Autocomplete list -->
+                        <div id="GPisochronAutoCompleteList" class="GPadvancedAutoCompleteList">
+                            <!-- Proposals are dynamically filled in Javascript by autocomplete service -->
+                            <div class="GPautoCompleteProposal">17000 La Rochelle</div>
+                            <div class="GPautoCompleteProposal">94165 Saint Mandé</div>
+                            <div class="GPautoCompleteProposal">Une proposition super longue exprès pour voir ce que ça fait si ça déborde</div>
+                            <div class="GPautoCompleteProposal">What else ?</div>
+                            <div class="GPautoCompleteProposal">Last and surely least</div>
+                        </div>
+                        
+                        <!-- Choice isochron / isodistance -->
+                        <div id="GPisochronChoice">
+                            <div class="GPisochronChoiceAlt">
+                                <input type="radio" id="GPisochronChoiceAltChron" name="GPisochronChoiceMode" value="isochron" checked>
+                                <label class="GPisochronChoiceAltImg" for="GPisochronChoiceAltChron"></label>
+                                <span id="GPisochronChoiceAltChronTxt">isochrone</span>
+                            </div>
+                            <div class="GPisochronChoiceAlt">
+                                <input type="radio" id="GPisochronChoiceAltDist" name="GPisochronChoiceMode" value="isodistance">
+                                <label class="GPisochronChoiceAltImg" for="GPisochronChoiceAltDist"></label>
+                                <span id="GPisochronChoiceAltDistTxt">isodistance</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Isochron input values -->
+                        <div id="GPisochronValueChron" class="GPflexInput">
+                            <label id="GPisochronValueChronLabel" for="GPisochronValueChronInput">Temps</label>
+                            <input id="GPisochronValueChronInput1" type="number" value="0" min="0" step="1"/>
+                            <label>h</label>
+                            <input id="GPisochronValueChronInput2" type="number" value="0" min="0" max="59" step="1"/>
+                            <label>min</label>
+                        </div>
+                        
+                        <!-- Isodistance input values -->
+                        <div id="GPisochronValueDist" class="GPisochronValueHidden">
+                            <label id="GPisochronValueDistLabel" for="GPisochronValueDistInput">Distance</label>
+                            <input id="GPisochronValueDistInput" type="number" value="0" min="0" step="any" />
+                            <label>km</label>
+                        </div>
+                        
+                        <!-- Computation modes -->
+                        <div id="GPisochronModeChoice">
+                            <div id="GPisochronTransportChoice">
+                                <span class="GPisochronModeLabel">Mode de transport</span>
+                                <input type="radio" id="GPisochronTransportCar" name="GPisochronTransport" value="car" checked>
+                                <label class="GPisochronTransportImg" for="GPisochronTransportCar" title="Voiture"></label>
+                                <input type="radio" id="GPisochronTransportPedestrian" name="GPisochronTransport" value="pedestrian">
+                                <label class="GPisochronTransportImg" for="GPisochronTransportPedestrian" title="Piéton"></label>
+                            </div>
+                            <div id="GPisochronDirectionChoice">
+                                <span class="GPisochronModeLabel">Sens de parcours</span>
+                                <select id="GPisochronDirectionSelect" class="GPinputSelect">
+                                    <option>Départ</option>
+                                    <option>Arrivée</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Input button -->
+                        <input type="submit" id="GPisochronSubmit" class="GPinputSubmit" value="Calculer" />
+                        
+                    </form>
+                    
+                </div>
+            
             </div>
             
 </div>

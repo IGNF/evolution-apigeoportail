@@ -1,14 +1,10 @@
 /* ISOCHRON */
 
-#GPadvancedToolsPanel {
+#GPisochron {
   left: 10px;
 }
 
 /* Showing/hiding isochron panel */
-
-#GPshowIsochronPicto {
-  margin-bottom: 10px;
-}
 
 #GPshowIsochronOpen {
   background-image: url("../leaflet/img/GPisochronOpen.png");

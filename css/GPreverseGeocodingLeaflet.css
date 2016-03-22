@@ -1,14 +1,10 @@
 /* REVERSE GEOCODING */
 
-#GPadvancedToolsPanel {
+#GPreverseGeocoding {
   left: 10px;
 }
 
 /* Showing/hiding reverse geocoding panel */
-
-#GPshowReverseGeocodingPicto {
-  margin-bottom: 10px;
-}
 
 #GPshowReverseGeocodingOpen {
   background-image: url("../leaflet/img/GPreverseGeocodingOpen.png");

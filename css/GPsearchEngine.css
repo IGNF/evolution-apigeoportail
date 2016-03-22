@@ -1,9 +1,5 @@
 /* SEARCH ENGINE */
 
-#GPsearchEngine {
-  overflow: visible;
-}
-
 #GPshowSearchEngine + label + #GPsearchInput {
   max-width: 0px;
 }

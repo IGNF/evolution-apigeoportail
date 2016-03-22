@@ -25,7 +25,7 @@
 /* General panels */
 
 #GPmousePositionPanel {
-  width: 200px;
+  width: 240px;
   overflow: hidden;
 }
 
@@ -47,14 +47,19 @@
 }
 
 .GPmousePositionCoords {
-  width: 80px;
+  width: 110px;
 }
 
 /* Showing settings */
 
 .GPshowMousePositionSettingsPicto {
-  top: 79px;
+  bottom: 5px;
   right: 0;
+  transition: transform 0.5s ease-out 0s, bottom 0.5s ease-out 0s;
+}
+
+#GPmousePosition input[type="checkbox"]:checked + .GPshowMousePositionSettingsPicto {
+  bottom: 100px;
 }
 
 #GPmousePositionSettings {
@@ -82,10 +87,11 @@
   margin: auto;
   text-align: center;
   font-weight: bold;
+  line-height: 16px;
 }
 
 .GPmousePositionSettingsSelect {
-  width: 160px;
+  width: 180px;
   margin-top: 5px;
 }
 

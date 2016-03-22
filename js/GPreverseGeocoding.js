@@ -3,22 +3,13 @@
  */
 if (document.getElementById('GPreverseGeocodingPanel')) {
 	
-	/*
-     * Open reverse geocoding panel
-     */
-	document.getElementById('GPshowReverseGeocodingPicto').addEventListener('click', function() {
-	    document.getElementById('GPadvancedToolsPanel').className = 'GPadvancedToolsPanelHidden';
-	    document.getElementById('GPreverseGeocodingPanel').className = 'GPwidget GPpanel GPadvancedToolVisible';
-	});
-	
-	/*
-     * Close reverse geocoding panel
+    /*
+     * Link panel close / visibility checkbox
      */
 	document.getElementById('GPreverseGeocodingPanelClose').addEventListener('click', function() {
-	    document.getElementById('GPreverseGeocodingPanel').className = 'GPwidget GPPanel GPadvancedToolHidden';
-	    document.getElementById('GPadvancedToolsPanel').className = 'GPadvancedToolsPanelVisible';
+	   document.getElementById('GPshowReverseGeocodingPicto').click();
 	});
-	
+    
 	/*
      * Submit the reverse geocoding search
      * TODO à remplir

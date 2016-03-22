@@ -1,11 +1,35 @@
 /* ROUTE */
 
+#GProute {
+  top: 100px;
+}
+
+/* Showing/hiding mouse position panel */
+
+#GPshowRoutePicto {
+  display: inline-block;
+}
+
+#GPshowRoute + label {
+  display: block;
+}
+
+#GPshowRoute:checked + label {
+  display: none;
+}
+
+#GPshowRoute + label + div {
+  display: none;
+}
+
+#GPshowRoute:checked + label + div {
+  display: block;
+}
+
 /* General panels */
 
 #GProutePanel {
-  top: 100px;
   width: 320px;
-  overflow: visible;
 }
 
 .GProuteComponentHidden {
@@ -179,6 +203,7 @@ input[id*="GProuteOriginPointer"]:checked + .GProuteOriginPointerImg {
   text-align: center;
   margin-bottom: 10px;
   font-weight: bold;
+  line-height: 16px;
 }
 
 .GProuteExclusionsOptions {

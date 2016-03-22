@@ -1,14 +1,10 @@
-/* ISOCHRON */
+/* ROUTE */
 
-#GPadvancedToolsPanel {
+#GProute {
   left: 10px;
 }
 
 /* Showing/hiding route panel */
-
-#GPshowRoutePicto {
-  margin-bottom: 10px;
-}
 
 #GPshowRouteOpen {
   background-image: url("../leaflet/img/GProuteOpen.png");
