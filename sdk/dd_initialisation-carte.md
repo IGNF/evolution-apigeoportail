@@ -33,8 +33,7 @@ Nom de l'outil | Description | Utilisation
 **elevationPath** | Bouton de l'outil de mesure de profil d'altitude. Si le bouton est enfoncé, les clics sur la carte permettent de dessiner une polyligne. A la fin de la saisie, le profil altimétrique est calculé. | Le développeur peut paramétrer le nombres de points qui constituent le profil altimétrique.
 **search** | Bouton de l'outil de recherche (géocodage). Si le bouton est enfoncé, une fenêtre contenant le formulaire de géocodage s'ouvre. | Le développeur peut indiquer sur quelles ressources le géocodage sera lancé, le nombre maximal de réponses souhaité. Il peut aussi choisir d'utiliser ou non le service d'autocomplétion pour aider l'internaute dans la saisie. Enfin, il peut configurer l'affichage de puces sur les positions résultantes de la recherche.
 **reverseSearch** | Bouton de l'outil de recherche inverse. Si le bouton est enfoncé, une fenêtre contenant le formulaire de recherche inverse s'ouvre. | Le développeur peut indiquer sur quelles ressources le géocodage sera lancé, le nombre maximal de réponses souhaité. Il peut aussi choisir d'utiliser ou non le service d'autocomplétion pour aider l'internaute dans la saisie. Enfin, il peut configurer l'affichage de puces sur les positions résultantes de la recherche.
-**serviceLayerImport** | Bouton de l'outil d'ajout de couches en provenance d'un service. Si le bouton est enfoncé, une fenêtre contenant le formulaire d'import s'ouvre. Une fois complété et validé, la couche WMS, WMTS, WFS, OSM ou GeoRSS est ajoutée à la carte. | Le développeur peut indiquer la liste des formats importables.
-**staticLayerImport** | Bouton de l'outil d'ajout de couches en provenance d'un service. Si le bouton est enfoncé, une fenêtre contenant le formulaire d'import s'ouvre. Une fois complété et validé, la couche KML, GPX, GeoJSON ou de dessin est ajoutée à la carte. | Le développeur peut indiquer la liste des formats importables.
+**layerImport** | ajout de couches | Le développeur peut indiquer la liste des formats importables.
 **drawing** | Barre d'outils pour les couches de dessin. Elle contient l'outil de dessin d'une géométrie (drawFeature), l'outil de déplacement d'une géométrie dessinée (dragFeature), l'outil d'édition d'une géométrie dessinée (modifyFeature), l'outil de suppression d'une géométrie dessinée (deleteFeature), l'outil d'ajout d'attributs (attributesFeature), l'outil de modification du style de la couche (stylesFeature), l'outil d'export (saveFeatures). | Le développeur peut configurer les outils constituants la barre d'outil de dessin et indiquer les couches de données éditables.
 **graphicScale** | Barre d'échelle. La longueur de la barre et la distance qu'elle représente dans la réalité renseignment l'internaute sur l'échelle courante de la carte. | Le développeur peut paramétrer la longueur minimale et l'unité de la barre d'échelle.
 **mousePosition** | Coordonnées de la souris. Le texte renseigne l'internaute sur les coordonnées courantes de la souris avec obtention de l'altitude via le service d'altimetrie du Géoportail. | Le développeur peut indiquer la projection d'affichage des coordonnées de la souris.
@@ -137,7 +136,6 @@ Propriété | Type | Opt. | Valeur
 -|-|-|-|
 **format** | String | **conditionnel** | Format de la couche. Cette propriété peut prendre les valeurs suivantes : 'kml', 'gpx', 'georss', 'geojson', 'wms', 'wfs', 'wmts','osm' ou 'drawing'. Ce paramètre est optionnel pour les couches Géoportail mais obligatoire pour les couches métiers.
 opacity | Float | optionnel | Opacité (entre 0 et 1) de la couche. Par défaut, 1 pour les couches métiers et dépend de l'autoconfiguration pour les couches Géoportail.
-displayInLayerSwitcher | Boolean | optionnel | Indique si la couche est listée dans l'outil LayerSwitcher. Par défaut, true.
 description | String | optionnel | Texte de description de la couche. Par défaut, null.
 legendURL | String | optionnel | URL vers l'image de légende de la couche. Par défaut, null.
 metadataURL | String | optionnel | URL vers les métadonnées de la couche. Par défaut, null.
@@ -206,7 +204,7 @@ draggable | Boolean | optionnel | Active/Désactive l'outil de déplacement à l
 keyboard | Boolean | optionnel | Active/Désactive la gestion de la navigation avec le clavier. Par défaut, true.
 scrollwheel | Boolean | optionnel | Active/Désactive le zoom molette. Par défaut, true.
 selectable | Boolean | optionnel | Active/Désactive l'outil de sélection d'une géométrie à la souris. Par défaut, true.
-[_nom d'un contrôle_] | Boolean \| Object | optionnel | Couple clé/valeur pour l'ajout d'un contrôle à la carte. La clé est le nom du contrôle : 'pan','zoomBox', 'zoomBar', 'orientation', 'camera', 'layerswitcher', 'lenght', area', azimuth', 'elevationPath', 'geocoding', 'reverseGeocoding', 'serviceLayerImport', 'staticLayerImport', 'drawing', 'graphicScale', 'mousePosition', 'overview', 'fullScreen', 'graticule', 'logo'. Si le developpeur demande l'ajout d'un outil exploitant un service Géoportail non accessible avec sa clé API alors l'outil n'est pas ajouté à la carte. La valeur est :<br/>- soit 'null' si l'on souhaite désactiver l'outil. 'Logo' ne peut être désactivé (de même que les conditions d'utilisation).<br/>- soit un objet ControlOptions. Les propriétés possibles pour cet objet sont décrites cidessous. 
+[_nom d'un contrôle_] | Boolean \| Object | optionnel | Couple clé/valeur pour l'ajout d'un contrôle à la carte. La clé est le nom du contrôle : 'pan','zoomBox', 'zoomBar', 'orientation', 'camera', 'layerswitcher', 'lenght', area', azimuth', 'elevationPath', 'geocoding', 'reverseGeocoding', 'layerImport', 'drawing', 'graphicScale', 'mousePosition', 'overview', 'fullScreen', 'graticule', 'logo'. Si le developpeur demande l'ajout d'un outil exploitant un service Géoportail non accessible avec sa clé API alors l'outil n'est pas ajouté à la carte. La valeur est :<br/>- soit 'null' si l'on souhaite désactiver l'outil. 'Logo' ne peut être désactivé (de même que les conditions d'utilisation).<br/>- soit un objet ControlOptions. Les propriétés possibles pour cet objet sont décrites cidessous. 
 
 <a name="controlOptions"></a>
 
@@ -237,10 +235,8 @@ type | Array(String) | optionnel | Type de l'objet qui est recherché par le ser
 maxResponses | Integer | optionnel | Nombre de réponses maximum à afficher dans les outils. Par défaut, 25. 
 autocomplete | Boolean | optionnel | Active ou non l'autocomplétion dans l'outil de recherche. Par défaut, true.
 drawLocation | Boolean | optionnel | Affiche une puce sur les positions résultantes de la recherche. Par défaut, true.
-**Propriétés de l'outil ServiceLayerImport** | | |
-format | Array(String) | optionnel | Tableau des formats qui seront proposés par l'outil d'ajout de couches fournies par des services web. Si format=[], l'outil ne sera pas ajouté à la carte. Par défaut, tous les formats seront proposés : 'wms', 'wmts', 'wfs', 'osm' et 'georss'. 
-**Propriétés de l'outil StaticLayerImport** | | | 
-format | Array(String) | optionnel | Tableau des formats qui seront proposés par l'outil d'ajout de couches à partir de fichiers statiques. Si format=[], l'outil ne sera pas ajouté à la carte. 'kml', 'gpx', 'geojson' et 'drawing'. 
+**Propriétés de l'outil layerImport** | | |
+format | Array(String) | optionnel | Tableau des formats qui seront proposés par l'outil d'ajout de couches. Par défaut, tous les formats seront proposés : 'wms', 'wmts', 'wfs', 'osm' et 'georss', 'kml', 'gpx', 'geojson'. 
 **Propriétés de l'outil Drawing** | | |
 **layers** | Array(String) | **obligatoire** | Liste des identifiants des couches éditables. 
 drawFeature | Boolean | optionnel | Affiche ou non l'outil de dessin d'une géométrie. Par défaut, true.
