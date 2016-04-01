@@ -23,8 +23,8 @@ Nom de l'outil | Description | Utilisation
 ------------ | ------------- | -------------
  **pan** | Ensemble de 4 boutons de déplacement vers l'est, le nord, l'ouest ou le sud. | Le développeur peut paramétrer le décalage en pixels résultant d'un clic sur un des boutons.
 **zoomBox** | Bouton de l'outil de zoom sur une emprise. Si le bouton est enfoncé, le cliquerglisser sur la carte permet à l'internaute de dessiner une emprise. | A la fin du clic, la carte est repositionnée (zoom et centre) sur l'emprise dessinée.
-**zoomBar** | Barre de zoom qui présente tous les niveaux de zoom de la carte sous la forme d'un slider. | L'internaute s'en sert pour zoomer ou dézoomer la carte.
-**orientation** | Outil d'orientation de la carte. | L'internaute, avec une combinaison clavier, peut faire tourner la carte. Le développeur peut paramétrer la disparition du bouton lorsque la carte est parfaitement orienté au nord.
+**zoom** | Outil permettant de zoomer / dezoomer sur la carte |
+**orientation** | Widget indiquant l'orientation de la carte. | 
 **camera** | Outil de gestion de la caméra (uniquement 3D). | L'internaute s'en sert pour orienter la caméra.
 **layerSwitcher** | Outil de gestion des couches. Cette fenêtre permet de gérer l'opacité, l'ordre, la visibilité des couches. Mais aussi de consulter la description, la légende et les métadonnées de chaque couche. | Par défaut, l'outil est ouvert au chargement de la carte.
 **length** | Bouton de l'outil de mesure de distances. Si le bouton est enfoncé, les clics sur la carte permettent de dessiner une polyligne. A la fin de la saisie, la longueur totale est affichée. | Le développeur peut paramétrer l'unité et la précision du résultat. Il peut aussi indiquer vouloir un résultat qui prend en compte la courbure du géoïde.
@@ -35,7 +35,7 @@ Nom de l'outil | Description | Utilisation
 **reverseSearch** | Bouton de l'outil de recherche inverse. Si le bouton est enfoncé, une fenêtre contenant le formulaire de recherche inverse s'ouvre. | Le développeur peut indiquer sur quelles ressources le géocodage sera lancé, le nombre maximal de réponses souhaité. Il peut aussi choisir d'utiliser ou non le service d'autocomplétion pour aider l'internaute dans la saisie. Enfin, il peut configurer l'affichage de puces sur les positions résultantes de la recherche.
 **layerImport** | ajout de couches | Le développeur peut indiquer la liste des formats importables.
 **drawing** | Barre d'outils pour les couches de dessin. Elle contient l'outil de dessin d'une géométrie (drawFeature), l'outil de déplacement d'une géométrie dessinée (dragFeature), l'outil d'édition d'une géométrie dessinée (modifyFeature), l'outil de suppression d'une géométrie dessinée (deleteFeature), l'outil d'ajout d'attributs (attributesFeature), l'outil de modification du style de la couche (stylesFeature), l'outil d'export (saveFeatures). | Le développeur peut configurer les outils constituants la barre d'outil de dessin et indiquer les couches de données éditables.
-**graphicScale** | Barre d'échelle. La longueur de la barre et la distance qu'elle représente dans la réalité renseignment l'internaute sur l'échelle courante de la carte. | Le développeur peut paramétrer la longueur minimale et l'unité de la barre d'échelle.
+**graphicScale** | Barre d'échelle. | Le développeur peut paramétrer la longueur minimale et l'unité de la barre d'échelle.
 **mousePosition** | Coordonnées de la souris. Le texte renseigne l'internaute sur les coordonnées courantes de la souris avec obtention de l'altitude via le service d'altimetrie du Géoportail. | Le développeur peut indiquer la projection d'affichage des coordonnées de la souris.
 **overview** | Carte d'ensemble. Cette mini-carte permet à l'internaute de se situer plus facilement. | Le développeur peut configurerla liste des couches constituant la mini-carte et les informations de zooms de celles-ci.
 **fullScreen** | Bouton de l'outil de plein écran. Au clic sur le bouton, la fenêtre cartographique passe en mode plein écran.
@@ -204,7 +204,7 @@ draggable | Boolean | optionnel | Active/Désactive l'outil de déplacement à l
 keyboard | Boolean | optionnel | Active/Désactive la gestion de la navigation avec le clavier. Par défaut, true.
 scrollwheel | Boolean | optionnel | Active/Désactive le zoom molette. Par défaut, true.
 selectable | Boolean | optionnel | Active/Désactive l'outil de sélection d'une géométrie à la souris. Par défaut, true.
-[_nom d'un contrôle_] | Boolean \| Object | optionnel | Couple clé/valeur pour l'ajout d'un contrôle à la carte. La clé est le nom du contrôle : 'pan','zoomBox', 'zoomBar', 'orientation', 'camera', 'layerswitcher', 'lenght', area', azimuth', 'elevationPath', 'geocoding', 'reverseGeocoding', 'layerImport', 'drawing', 'graphicScale', 'mousePosition', 'overview', 'fullScreen', 'graticule', 'logo'. Si le developpeur demande l'ajout d'un outil exploitant un service Géoportail non accessible avec sa clé API alors l'outil n'est pas ajouté à la carte. La valeur est :<br/>- soit 'null' si l'on souhaite désactiver l'outil. 'Logo' ne peut être désactivé (de même que les conditions d'utilisation).<br/>- soit un objet ControlOptions. Les propriétés possibles pour cet objet sont décrites cidessous. 
+[_nom d'un contrôle_] | Boolean \| Object | optionnel | Couple clé/valeur pour l'ajout d'un contrôle à la carte. La clé est le nom du contrôle : 'pan','zoomBox', 'zoom', 'orientation', 'camera', 'layerswitcher', 'lenght', area', azimuth', 'elevationPath', 'geocoding', 'reverseGeocoding', 'layerImport', 'drawing', 'graphicScale', 'mousePosition', 'overview', 'fullScreen', 'graticule', 'logo'. Si le developpeur demande l'ajout d'un outil exploitant un service Géoportail non accessible avec sa clé API alors l'outil n'est pas ajouté à la carte. La valeur est :<br/>- soit 'null' si l'on souhaite désactiver l'outil. 'Logo' ne peut être désactivé (de même que les conditions d'utilisation).<br/>- soit un objet ControlOptions. Les propriétés possibles pour cet objet sont décrites cidessous. 
 
 <a name="controlOptions"></a>
 
@@ -220,7 +220,6 @@ maximised | Boolean | optionnel | Propre à certains contrôles : indique s'il e
 **Propriétés de l'outil Pan** | | |
 slideFactor | Integer | optionnel | Nombre de pixels du déplacement de la carte à chaque clic sur les boutons de déplacement. Par défaut, 50. 
 **Propriétés de l'outil Orientation** | | |
-autoHide | Boolean | optionnel | Indique si le bouton permettant de réinitialiser l'azimuth de la carte doit être caché lorsque la l'orientation est nulle. Par défaut, true.
 **Propriétés de l'outil Length et Area** | | |
 geodesic | Boolean | optionnel | Si geodesic = true, le calcul des longueurs est geodésique au lieu de planaire. Par défaut, false.
 unit | String | optionnel | Unité de la mesure. Les valeurs possibles sont : 'm' (mètres), 'ft' (feet), 'km' (kilomètres, 'mi' (miles) et 'inches'. Par défaut, 'km'.
