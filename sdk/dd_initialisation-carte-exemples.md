@@ -182,9 +182,8 @@ var mapOptions = {
             maxZoom:19,
             originators:[
                 {
-                    logoUrl:'img/logoRP.jpg'
-                    url:'www.randopassion.fr',
-                    title:''
+                    logo:'img/logoRP.jpg'
+                    url:'www.randopassion.fr'
                 }
             ],
             extractAttributes:false
