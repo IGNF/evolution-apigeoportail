@@ -137,16 +137,17 @@ Propriété | Type | Opt. | Valeur
 **format** | String | **conditionnel** | Format de la couche. Cette propriété peut prendre les valeurs suivantes : 'kml', 'gpx', 'georss', 'geojson', 'wms', 'wfs', 'wmts','osm' ou 'drawing'. Ce paramètre est optionnel pour les couches Géoportail mais obligatoire pour les couches métiers.
 opacity | Float | optionnel | Opacité (entre 0 et 1) de la couche. Par défaut, 1 pour les couches métiers et dépend de l'autoconfiguration pour les couches Géoportail.
 description | String | optionnel | Texte de description de la couche. Par défaut, null.
-legendURL | String | optionnel | URL vers l'image de légende de la couche. Par défaut, null.
-metadataURL | String | optionnel | URL vers les métadonnées de la couche. Par défaut, null.
+quicklookUrl | String | optionnel | URL vers une image illustrant la couche. Par défaut, null.
+legends | Array([Gp.Services.Config.Legend](http://depot.ign.fr/geoportail/bibacces/develop/doc/Gp.Services.Config.Legend.html)) | optionnel | liens vers les légendes associées à la couche. Par défaut, null.
+metadata | Array([Gp.Services.Config.Metadata](http://depot.ign.fr/geoportail/bibacces/develop/doc/Gp.Services.Config.Metadata.html)) | optionnel | URL vers les métadonnées de la couche. Par défaut, null.
 visibility | Boolean | optionnel | Indique si la couche est visible. Par défaut true pour les couches métiers et dépend de l'autoconfiguration pour les couches Géoportail.
 minZoom | Integer | optionnel | Si le zoom courant est inférieur à cet entier, la couche n'est pas affichée. Par défaut, on utilisera le zoomMinimal de la couche s'il s'agit d'une couche Géoportail ; sinon, celui de la carte.
 maxZoom | Integer | optionnel | Si le zoom courant est supérieur à cet entier, la couche n'est pas affichée. Par défaut, on utilisera le zoomMaximal de la couche s'il s'agit d'une couche Géoportail ; sinon, celui de la carte.
 [layerEventOptions](#layerEventOptions) | Object | optionnel | Intéraction avec les couches. Les propriétés possibles pour cet objet sont décrites ci-dessous. 
 **Propriétés propres aux couches non Géoportail** | | |
-name | String | optionnel | Nom de la couche dans le LayerSwitcher. Par défaut, "".
+title | String | optionnel | Nom de la couche dans le LayerSwitcher.
 **url** | String | **obligatoire** | Url du fichier ou du service pour accéder à la ressource originators Array(Object) optionnel Logos des fournisseurs de données qui s'affichent lorsque la couche est visible et que l'outil 'logo'" est ajouté à la carte. Les propriétés possibles de cet objet sont décrites ci-dessous. 
-[originators](#originators) | Array(Object) | optionnel | Logos des fournisseurs de données qui s'affichent lorsque la couche est visible et que l'outil 'logo'" est ajouté à la carte. Les propriétés possibles de cet objet sont décrites ci-dessous. 
+originators | Array([Gp.Services.Config.Originator](http://depot.ign.fr/geoportail/bibacces/develop/doc/Gp.Services.Config.Originator.html)) | optionnel | Logos des fournisseurs de données qui s'affichent lorsque la couche est visible et que l'outil 'logo'" est ajouté à la carte.
 **Propriétés propres aux couches KML** | | |
 extractStyles | Boolean | optionnel | Indique si les styles sont récupérés (en plus de la géométrie). Par défaut, true. 
 **Propriétés propres aux couches WMS** | | | 
@@ -172,23 +173,10 @@ outputFormat | String | optionnel | Formats de sortie. Cette propriété peut pr
 maxFeatures | Integer | optionnel | Nombre maximal de géométries à ajouter à la carte. Par défaut, 'null' (la valeur est fixée par la librairie cartographique).
 sld | String | optionnel | Fichier sld (uniquement pour WMS et WFS)
 
-<a name="originators"></a>
-
-### Propriétés de l'objet Originator:
-
-
-Propriété | Type | Opt. | Valeur
--|-|-|-|
-logoUrl | String | optionnel | Url du logo du fournisseur de données. Par défaut, une image sera affectée si le paramètre originators est utilisé.
-url | String | optionnel | Url vers laquelle l'internaute sera redirigé lorsqu'il clique sur le logo.
-label | String | optionnel | Texte qui apparaît lorsque l'internaute survole le logo.
-
-
 
 <a name="layerEventOptions"></a>
 
 ### Propriétés de l'objet LayerEventOptions :
-
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
