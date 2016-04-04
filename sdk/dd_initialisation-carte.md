@@ -40,7 +40,7 @@ Nom de l'outil | Description | Utilisation
 **overview** | Carte d'ensemble. Cette mini-carte permet à l'internaute de se situer plus facilement. | Le développeur peut configurerla liste des couches constituant la mini-carte et les informations de zooms de celles-ci.
 **fullScreen** | Bouton de l'outil de plein écran. Au clic sur le bouton, la fenêtre cartographique passe en mode plein écran.
 **graticule** | Grille des méridiens et parallèles s'affichant au dessus des couches de la carte pour aider l'internaute à se situer. | Le développeur peut indiquer les intervalles de la grille en degrés.
-**logo** | Logo des fournisseurs des couches visibles de la carte. Le survol des images affiche un texte. Le clic sur l'image permet d'être dirigé vers le site internet du fournisseur de données. Cet outil est toujours actif. | Le développeur peut modifier la taille par défaut des images.
+**attributions** | Logo des fournisseurs des couches visibles de la carte. Le survol des images affiche un texte. Le clic sur l'image permet d'être dirigé vers le site internet du fournisseur de données. Cet outil est toujours actif. | Le développeur peut modifier la taille par défaut des images.
         
 Ces outils ne sont pas implémentés par le SDK mais par la bibliothèque sous jacente. Si la bibliothèque ne propose pas les outils, ils ne sont pas intégrés.
 
@@ -146,8 +146,8 @@ maxZoom | Integer | optionnel | Si le zoom courant est supérieur à cet entier,
 [layerEventOptions](#layerEventOptions) | Object | optionnel | Intéraction avec les couches. Les propriétés possibles pour cet objet sont décrites ci-dessous. 
 **Propriétés propres aux couches non Géoportail** | | |
 title | String | optionnel | Nom de la couche dans le LayerSwitcher.
-**url** | String | **obligatoire** | Url du fichier ou du service pour accéder à la ressource originators Array(Object) optionnel Logos des fournisseurs de données qui s'affichent lorsque la couche est visible et que l'outil 'logo'" est ajouté à la carte. Les propriétés possibles de cet objet sont décrites ci-dessous. 
-originators | Array([Gp.Services.Config.Originator](http://depot.ign.fr/geoportail/bibacces/develop/doc/Gp.Services.Config.Originator.html)) | optionnel | Logos des fournisseurs de données qui s'affichent lorsque la couche est visible et que l'outil 'logo'" est ajouté à la carte.
+**url** | String | **obligatoire** | Url du fichier ou du service pour accéder à la ressource originators Array(Object) optionnel Logos des fournisseurs de données qui s'affichent lorsque la couche est visible et que l'outil 'attributions' est ajouté à la carte. Les propriétés possibles de cet objet sont décrites ci-dessous. 
+originators | Array([Gp.Services.Config.Originator](http://depot.ign.fr/geoportail/bibacces/develop/doc/Gp.Services.Config.Originator.html)) | optionnel | Logos des fournisseurs de données qui s'affichent lorsque la couche est visible et que l'outil 'attributions' est ajouté à la carte.
 **Propriétés propres aux couches KML** | | |
 extractStyles | Boolean | optionnel | Indique si les styles sont récupérés (en plus de la géométrie). Par défaut, true. 
 **Propriétés propres aux couches WMS** | | | 
@@ -192,7 +192,7 @@ draggable | Boolean | optionnel | Active/Désactive l'outil de déplacement à l
 keyboard | Boolean | optionnel | Active/Désactive la gestion de la navigation avec le clavier. Par défaut, true.
 scrollwheel | Boolean | optionnel | Active/Désactive le zoom molette. Par défaut, true.
 selectable | Boolean | optionnel | Active/Désactive l'outil de sélection d'une géométrie à la souris. Par défaut, true.
-[_nom d'un contrôle_] | Boolean \| Object | optionnel | Couple clé/valeur pour l'ajout d'un contrôle à la carte. La clé est le nom du contrôle : 'pan','zoomBox', 'zoom', 'orientation', 'camera', 'layerswitcher', 'lenght', area', azimuth', 'elevationPath', 'geocoding', 'reverseGeocoding', 'layerImport', 'drawing', 'graphicScale', 'mousePosition', 'overview', 'fullScreen', 'graticule', 'logo'. Si le developpeur demande l'ajout d'un outil exploitant un service Géoportail non accessible avec sa clé API alors l'outil n'est pas ajouté à la carte. La valeur est :<br/>- soit 'null' si l'on souhaite désactiver l'outil. 'Logo' ne peut être désactivé (de même que les conditions d'utilisation).<br/>- soit un objet ControlOptions. Les propriétés possibles pour cet objet sont décrites cidessous. 
+[_nom d'un contrôle_] | Boolean \| Object | optionnel | Couple clé/valeur pour l'ajout d'un contrôle à la carte. La clé est le nom du contrôle : 'pan','zoomBox', 'zoom', 'orientation', 'camera', 'layerswitcher', 'lenght', area', azimuth', 'elevationPath', 'geocoding', 'reverseGeocoding', 'layerImport', 'drawing', 'graphicScale', 'mousePosition', 'overview', 'fullScreen', 'graticule', 'attributions'. Si le developpeur demande l'ajout d'un outil exploitant un service Géoportail non accessible avec sa clé API alors l'outil n'est pas ajouté à la carte. La valeur est :<br/>- soit 'null' si l'on souhaite désactiver l'outil. 'Logo' ne peut être désactivé (de même que les conditions d'utilisation).<br/>- soit un objet ControlOptions. Les propriétés possibles pour cet objet sont décrites cidessous. 
 
 <a name="controlOptions"></a>
 
@@ -201,8 +201,8 @@ selectable | Boolean | optionnel | Active/Désactive l'outil de sélection d'une
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
-div | String / DOMElement | optionnel | Elément HTML dans lequel le contrôle sera intégré. Par défaut, le contrôle est positionné sur la carte. La div du contrôle 'logo' ne peut être modifiée.
-active | Boolean | optionnel | Indique si le contrôle est activé lorsqu'il est rajouté à la carte. Par défaut, les seuls controles activés lorsqu'ils sont ajoutés à la carte sont : 'layerSwitcher', 'graphicScale', 'mousePosition', 'graticule' et 'logo'. Le contrôle 'logo' ne peut être désactivé. 
+div | String / DOMElement | optionnel | Elément HTML dans lequel le contrôle sera intégré. Par défaut, le contrôle est positionné sur la carte.
+active | Boolean | optionnel | Indique si le contrôle est activé lorsqu'il est rajouté à la carte. Par défaut, les seuls controles activés lorsqu'ils sont ajoutés à la carte sont : 'layerSwitcher', 'graphicScale', 'mousePosition', 'graticule' et 'attributions'.
 maximised | Boolean | optionnel | Propre à certains contrôles : indique s'il est ouvert au chargement de la carte. Par défaut, les contrôles sont repliés (maximised='false').
 [controlEventOptions](#controlEventOptions) | Object | optionnel | Intéraction avec le contrôle. Les propriétés possibles pour cet objet sont décrites ci-dessous. 
 **Propriétés de l'outil Pan** | | |
@@ -245,8 +245,6 @@ maxZoom | Integer | optionnel | Si le zoom courant de la mini-carte est supérie
 deltaZoom | Integer | optionnel | Différence entre le zoom de la carte et le niveau de zoom de la mini-carte.
 **Propriétés de l'outil Graticule** | | |
 intervals | Array(Float) | optionnel | Liste des intervalles de la grille en degrés.
-**Propriétés de l'outil Logo** | | |
-logoSize | Integer | optionnel | Taille (hauteur et largeur) en pixels des logos. La taille ne peut-être inférieure à 30. Par défaut, 50.
 
 <a name="controlEventOptions"></a>
 
