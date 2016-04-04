@@ -14,7 +14,7 @@ Le Kit de développement proposé par l'IGN est une librairie JavaScript mise à
 
 ## Présentation
 
-Le Kit de développement est une intégration tout-en-un d'une bibliothèque cartographique OpenLayers 3 et de son extension Géoportail avec une interface de programmation légère permettant d'ajouter simplement une carte utilisant les ressources du Géoportail dans un site web et de réagir aux interactions des internautes.
+Le Kit de développement est une intégration tout-en-un d'une bibliothèque cartographique (OpenLayers 3) et de son extension Géoportail avec une interface de programmation légère permettant d'ajouter simplement une carte utilisant les ressources du Géoportail dans un site web et de réagir aux interactions des internautes.
 
 Elle s'adresse à des gestionnaires de site internet non initiés à l'utilisation de bibliothèques cartographiques et désireux de proposer rapidement une cartographie dynamique utilisant les fonds IGN sur leur site et faisant appel à des fonctionnalités simples :
 
@@ -41,8 +41,13 @@ L'intégration des balises suivantes dans une page HTML permet d'afficher une ca
 
 
 ```
+<!-- chargement Kit de développement : css et javascript -->
+<link rel="stylesheet" href="chemin/vers/GpOl3.css" type="text/css"/>
+<script type="text/javascript" src="chemin/vers/GpOl3.js" />
+
+<!-- ... -->
+
 <div id="mapDiv"></div>
-<script type="text/javascript" src=" http://api.ign.fr/geoportail/api/Gp.js" />
 <script type="text/javascript">
 var gpMap = null;
 window.onload = function(){
