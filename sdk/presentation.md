@@ -53,13 +53,15 @@ var gpMap = null;
 window.onload = function(){
     //initialisation de la carte
     gpMap = Gp.Map.load(
-        // clef d'accès aux géoservices du Géoportail
-        "CLEF_API",
         // positionnement de la carte dans la page HTML
         "mapDiv",
         {
+            // clef d'accès aux géoservices du Géoportail
+            apiKey : "CLEF_API",
             // positionnement de la carte
-            location : "73 avenue de Paris, Saint-Mandé",
+            center : {
+                location : "73 avenue de Paris, Saint-Mandé"
+            },
             zoom : 10,
             // utilisation de la couche "Photographies aériennes"
             layersOptions : {

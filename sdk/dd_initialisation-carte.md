@@ -63,7 +63,7 @@ L'API peut rendre compte de l'état de chargement de la fenêtre cartographique.
 L'utilisation se fait par l'appel d'une fonction statique.
 
 ``` javascript
-Gp.Map.load(apiKey:String, div:String, MapOptions:Object) ;
+Gp.Map.load(div:String, MapOptions:Object) ;
 ```
 
 Cette fonction initialise une fenêtre cartographique au sein d'un élément HTML.
@@ -75,7 +75,6 @@ Dans le cas où l'option n'a aucun sens pour la bibliothèque choisie, le SDK ig
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
-**apiKey** | String or Array({St ring}) | obligatoire | La ou les clés API permettant l'accès aux différents services.
 **div** | String / DOMElement | obligatoire | Identifiant de l'élément HTML ou directement l'élement HTMLdans lequel la fenêtre cartographique sera chargée.
 [mapOptions](#mapOptions)| Object | optionnel | Cet objet permet de paramétrer la carte. Les propriétés possibles sont décrites ci-après.
 
@@ -88,6 +87,7 @@ La fonction Gp.Map.load() retourne un objet de type [Gp.Map]().
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
+apiKey | String or Array({String}) | obligatoire | La ou les clés API permettant l'accès aux différents services.
 projection | String | optionnel | Projection (code EPSG ou registre IGNF) dans laquelle sont représentées les couches de la carte et exprimées les coordonnées de paramétrage. Par défaut, la projection est la projection mondiale WebMercator (EPSG:3857). Ce paramètre doit être en accord avec les informations de centrage. Si ce n'est pas le cas, la projection sera forcée à la projection mondiale.
 center | Object({x:Float,y:Float,projection:String, location:String,locationType:Array(String), geolocate:Boolean}) | optionnel | Information de centrage de la carte : par coordonnées (via x,y et projection) ; par géocodage (via location et locationType) ou par geolocalisation (via geolocate)
 tilt | Number | optionnel | Inclinaison de la caméra en degrés (uniquement 3d). Tilt= 0 correspond à une vision complètement tournée vers le bas. Tilt=90 correspond à une vision horizontale. Par défaut, l'inclinaison de la caméra est nulle.

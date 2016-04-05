@@ -14,9 +14,9 @@ Affichage d'une carte utilisant les fonds associés à la clé CLE_API et centr�
 
 ```
 Gp.Map.load(
-    apiKey:"CLE_API",
     'geoportalMap',
     {
+        apiKey:"CLE_API",
         center : {
             location : "rue pasteur, Saint-Mandé"
         }
@@ -30,9 +30,9 @@ Affichage d'une carte utilisant les fonds associés à la clé CLE_API et centr�
 
 ```
 Gp.Map.load(
-    apiKey:"CLE_API",
     'geoportalMap',
     {
+        apiKey:"CLE_API",
         center : {
             x:2.731525,
             y:45,83333
@@ -49,6 +49,7 @@ Affichage d'une carte centrée en fonction de l'IP et zoomée au niveau 10. Si l
 
 ```
 var mapOptions = {
+    apiKey:"CLE_API",
     center:{
         x : '2°43\'53.49"E',
         y : '45°49\'59.9874"N',
@@ -58,7 +59,6 @@ var mapOptions = {
 } ;
 
 Gp.Map.load(
-    apiKey:"CLE_API",
     'geoportalMap',
     mapOptions
 ) ;
@@ -72,6 +72,7 @@ Affichage d'une carte centrée sur une adresse et zoomée au niveau 10 avec une 
 
 ```
 var mapOptions = {
+    apiKey:"CLE_API",
     center : {
         location : "6 rue du temple 13200 arles"
     },
@@ -86,7 +87,6 @@ var mapOptions = {
 } ;
 
 Gp.Map.load(
-    apiKey:"CLE_API",
     'geoportalMap',
     mapOptions
 ) ;
@@ -100,9 +100,9 @@ Evénement lié à la géolocalisation.
 
 ```
 Gp.Map.load(
-    apiKey:"CLE_API",
     'geoportalMap',
     {
+        apiKey:"CLE_API",
         mapEventOptions:{
             'mapGeolocated':function(){alert('Centre trouvé!')},
         }
@@ -118,9 +118,9 @@ Affichage d'une carte avec seulement la couche "Photographies aériennes" du Gé
 
 ```
 Gp.Map.load(
-    apiKey:"CLE_API",
     'geoportalMap',
     { 
+        apiKey:"CLE_API",
         layersOptions:{
             'ORTHOIMAGERY.ORTHOPHOTOS': {}
         }
@@ -138,6 +138,7 @@ Affichage d'un flux WMS superposé à la couche "Photographies aériennes" du G�
 
 ```
 var mapOptions = {
+    apiKey:"CLE_API",
     layersOptions:{
         'ORTHOIMAGERY.ORTHOPHOTOS':{
     },
@@ -154,7 +155,6 @@ var mapOptions = {
 } ;
 
 Gp.Map.load({
-    apiKey:"CLE_API",
     'geoportalMap',
     mapOptions
 }) ;
@@ -166,6 +166,7 @@ Affichage d'une couche GPX et utilisation des paramètres relatifs aux échelles
 
 ```
 var mapOptions = {
+    apiKey:"CLE_API",
     layersOptions:{
         'ORTHOIMAGERY.ORTHOPHOTOS':{
             opacity:1,
@@ -192,7 +193,6 @@ var mapOptions = {
 }
 
 Gp.Map.load({
-    apiKey:"CLE_API",
     'geoportalMap',
     mapOptions
 })
@@ -205,6 +205,7 @@ Affichage d'un fichier KML. Utilisation de paramètres relatifs au chargement de
 
 ```
 var mapOptions = {
+    apiKey:"CLE_API",
     layersOptions:{
         'GEOGRAPHICALGRIDSYSTEMS.MAPS ':{
             opacity:1
@@ -224,7 +225,6 @@ var mapOptions = {
 }
 
 Gp.Map.load(
-    apiKey:"CLE_API",
     'geoportalMap',
     mapOptions
 ) ;
@@ -236,9 +236,9 @@ Gestion de l'affichage du LayerSwitcher dans une div différente.
 
 ```
 Gp.Map.load(
-    apiKey:"CLE_API",
     'geoportalMap',
     {
+        apiKey:"CLE_API",
         center : {
             x:2.731525,
             y:45,83333
@@ -259,6 +259,7 @@ Utilisation des outils de croquis et association à une couche de dessin.
 
 ```
 var mapOptions = {
+    apiKey:"CLE_API",
     layersOptions:{
         'GEOGRAPHICALGRIDSYSTEMS.MAPS ':{
             opacity:1
@@ -276,7 +277,6 @@ var mapOptions = {
 }
 
 Gp.Map.load({
-    apiKey:"CLE_API",
     'geoportalMap',
     mapOptions
 })
