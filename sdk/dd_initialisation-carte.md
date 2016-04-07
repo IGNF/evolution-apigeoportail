@@ -48,7 +48,7 @@ Le paramétrage proposé par le SDK est un paramétrage minimal. S'il n'est pas 
 
 Le développeur peut paramétrer, pour chacun de ces outils, leur position, leur aspect et leur activation/desactivation au chargement de la carte.
 
-Enfin, d'autres outils, invisibles, peuvent aussi être configurés. Le développeur peut activer/désactiver la navigation et/pi la sélection à la souris et/ou au clavier.
+Enfin, d'autres outils, invisibles, peuvent aussi être configurés. Le développeur peut activer/désactiver la navigation et/ou la sélection à la souris et/ou au clavier.
 
 ## Cas d'utilisation
 
@@ -188,10 +188,9 @@ Propriété | Type | Opt. | Valeur
 
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
-draggable | Boolean | optionnel | Active/Désactive l'outil de déplacement à la souris. Par défaut, true.
+draggable | Boolean | optionnel | Active/Désactive la navigation à la souris ou par pointage. Par défaut, true.
 keyboard | Boolean | optionnel | Active/Désactive la gestion de la navigation avec le clavier. Par défaut, true.
-scrollwheel | Boolean | optionnel | Active/Désactive le zoom molette. Par défaut, true.
-selectable | Boolean | optionnel | Active/Désactive l'outil de sélection d'une géométrie à la souris. Par défaut, true.
+selectable | Boolean | optionnel | Active/Désactive l'outil de sélection d'une géométrie à la souris. Par défaut, false.
 [_nom d'un contrôle_] | Boolean \| Object | optionnel | Couple clé/valeur pour l'ajout d'un contrôle à la carte. La clé est le nom du contrôle : 'pan','zoomBox', 'zoom', 'orientation', 'camera', 'layerswitcher', 'lenght', area', azimuth', 'elevationPath', 'geocoding', 'reverseGeocoding', 'layerImport', 'drawing', 'graphicScale', 'mousePosition', 'overview', 'fullScreen', 'graticule', 'attributions'. Si le developpeur demande l'ajout d'un outil exploitant un service Géoportail non accessible avec sa clé API alors l'outil n'est pas ajouté à la carte. La valeur est :<br/>- soit 'null' si l'on souhaite désactiver l'outil. 'Logo' ne peut être désactivé (de même que les conditions d'utilisation).<br/>- soit un objet ControlOptions. Les propriétés possibles pour cet objet sont décrites cidessous. 
 
 <a name="controlOptions"></a>
@@ -202,7 +201,6 @@ selectable | Boolean | optionnel | Active/Désactive l'outil de sélection d'une
 Propriété | Type | Opt. | Valeur
 -|-|-|-|
 div | String / DOMElement | optionnel | Elément HTML dans lequel le contrôle sera intégré. Par défaut, le contrôle est positionné sur la carte.
-active | Boolean | optionnel | Indique si le contrôle est activé lorsqu'il est rajouté à la carte. Par défaut, les seuls controles activés lorsqu'ils sont ajoutés à la carte sont : 'layerSwitcher', 'graphicScale', 'mousePosition', 'graticule' et 'attributions'.
 maximised | Boolean | optionnel | Propre à certains contrôles : indique s'il est ouvert au chargement de la carte. Par défaut, les contrôles sont repliés (maximised='false').
 [controlEventOptions](#controlEventOptions) | Object | optionnel | Intéraction avec le contrôle. Les propriétés possibles pour cet objet sont décrites ci-dessous. 
 **Propriétés de l'outil Pan** | | |
