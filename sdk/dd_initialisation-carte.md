@@ -39,7 +39,7 @@ Nom de l'outil | Description | Utilisation
 **mousePosition** | Coordonnées de la souris. Le texte renseigne l'internaute sur les coordonnées courantes de la souris avec obtention de l'altitude via le service d'altimetrie du Géoportail. | Le développeur peut indiquer la projection d'affichage des coordonnées de la souris.
 **overview** | Carte d'ensemble. Cette mini-carte permet à l'internaute de se situer plus facilement. | Le développeur peut configurerla liste des couches constituant la mini-carte et les informations de zooms de celles-ci.
 **fullScreen** | Bouton de l'outil de plein écran. Au clic sur le bouton, la fenêtre cartographique passe en mode plein écran.
-**graticule** | Grille des méridiens et parallèles s'affichant au dessus des couches de la carte pour aider l'internaute à se situer. | Le développeur peut indiquer les intervalles de la grille en degrés.
+**graticule** | Grille des méridiens et parallèles s'affichant au dessus des couches de la carte pour aider l'internaute à se situer. | Le développeur peut modifier le style des traits.
 **attributions** | Logo des fournisseurs des couches visibles de la carte. Le survol des images affiche un texte. Le clic sur l'image permet d'être dirigé vers le site internet du fournisseur de données. Cet outil est toujours actif. | Le développeur peut modifier la taille par défaut des images.
         
 Ces outils ne sont pas implémentés par le SDK mais par la bibliothèque sous jacente. Si la bibliothèque ne propose pas les outils, ils ne sont pas intégrés.
@@ -242,7 +242,9 @@ minZoom | Integer | optionnel | Si le zoom courant de la mini-carte est inférie
 maxZoom | Integer | optionnel | Si le zoom courant de la mini-carte est supérieur à cet entier, la mini carte reste à ce niveau de zoom. Par défaut, on utilisera le minZoom de la carte.
 deltaZoom | Integer | optionnel | Différence entre le zoom de la carte et le niveau de zoom de la mini-carte.
 **Propriétés de l'outil Graticule** | | |
-intervals | Array(Float) | optionnel | Liste des intervalles de la grille en degrés.
+strokeColor | String | optionnel | Couleur des traits exprimée en code hexadécimal (defaut : #000000).
+strokeWidth | Integer | optionnel | Epaisseur des traits en pixels (defaut : 1).
+strokeOpacity | Float | optionnel | Opacité des traits entre 0 et 1  (defaut : 0.2).
 
 <a name="controlEventOptions"></a>
 
