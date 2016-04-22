@@ -31,7 +31,7 @@ La fonction prend en paramètre d'entrée un objet dont les propriétés peuvent
 Paramètre | Type | Opt. | Valeur
 - |-|-|-|
 outputFormat | string | Conditionnel | Le format de la réponse du service alti : 'xml' ou 'json'. Ce paramètre déterminera l'extension '.xml' ou '.json' du service dans le cas de l'API REST, ou la valeur du paramètre 'format' dans le cas de la norme WPS. Nécessaire si serverUrl est renseigné, et qu'on souhaite passer par l'API REST, pour connaître le format dans lequel sera fournie la réponse (pour son traitement). Non nécessaire pour la norme WPS. Par défaut, ce paramètre vaut 'xml'.
-positions | Array({x,y}) | Obligatoire | Tableau contenant les coordonnées des points (CRS:84) dont on veut connaître les altitudes (ou à partir desquelles on va calculer le profil). Minimum 2 éléments si on souhaite calculer un profil altimétrique (ElevationLine). Maximum 50 éléments.
+positions | Array({lon,lat}) | Obligatoire | Tableau contenant les coordonnées des points (CRS:84) dont on veut connaître les altitudes (ou à partir desquelles on va calculer le profil). Minimum 2 éléments si on souhaite calculer un profil altimétrique (ElevationLine). Maximum 50 éléments.
 sampling | Integer | Optionnel | Nombre de points à utiliser pour déterminer le tracé d'un profil altimétrique, compris entre 2 et 5000. A spécifier lorsqu'on souhaite accéder à cette fonctionnalité. Dans ce cas, les points fournis en entrée (au minimum de deux) servent à déterminer l'axe planimétrique le long duquel le profil doit être calculé. Si le paramètre sampling n'est pas spécifié, c'est le service Elevation qui sera interrogé (altitudes simples calculées pour les points fournis).
 api | string | Optionnel | Manière d'accéder au service : 'REST' (via l'API REST) ou 'WPS' (via la norme WPS). Par défaut, on utilise l'API REST.
 zonly | boolean | Optionnel | Permet de ne récupérer que les altitudes en sortie s'il vaut 'true'. Vaut 'false' par défaut. Non pris en compte dans le cas d'un calcul de profil altimétrique.
@@ -76,7 +76,7 @@ Récupération de l'altitude d'un point à partir de ses coordonnées, et utilis
 Gp.Services.getAltitude({
 	apiKey: 'CLE_API',
 	positions:[
-		{x:0.2367,y:48.0551}
+		{lon:0.2367,lat:48.0551}
 	],
 	onSuccess: function(elevations){
 		// affiche les informations du point fourni
@@ -96,8 +96,8 @@ Récupération des altitudes seulement d'une série de points.
 Gp.Services.getAltitude({
 	apiKey: 'CLE_API',
 	positions:[
-		{x:0.2367,y:48.0551}, {x:1.2099,y:47.3354},
-		{x:2.157,y:46.607}, {x:3.3003,y:45.2644}, {x:4.3907,y:43.91}
+		{lon:0.2367,lat:48.0551}, {lon:1.2099,lat:47.3354},
+		{lon:2.157,lat:46.607}, {lon:3.3003,lat:45.2644}, {lon:4.3907,lat:43.91}
 	],
 	zonly:true,
 	onSuccess: function(elevations){
@@ -114,8 +114,8 @@ Récupération d'un profil altimétrique de 20 points, à partir de 5 points en 
 Gp.Services.getAltitude({
 	apiKey: 'CLE_API',
 	positions:[
-		{x:0.2367,y:48.0551}, {x:1.2099,y:47.3354},
-		{x:2.157,y:46.607}, {x:3.3003,y:45.2644}, {x:4.3907,y:43.91}
+		{lon:0.2367,lat:48.0551}, {lon:1.2099,lat:47.3354},
+		{lon:2.157,lat:46.607}, {lon:3.3003,lat:45.2644}, {lon:4.3907,lat:43.91}
 	],
 	sampling:20,
 	onSuccess: function(elevations){
@@ -133,8 +133,8 @@ Accès au service en POST, via la norme WPS, et spécification d'un proxy.
 Gp.Services.getAltitude({
 	apiKey: 'CLE_API',
 	positions:[
-		{x:0.2367,y:48.0551}, {x:1.2099,y:47.3354},
-		{x:2.157,y:46.607}, {x:3.3003,y:45.2644}, {x:4.3907,y:43.91},
+		{lon:0.2367,lat:48.0551}, {lon:1.2099,lat:47.3354},
+		{lon:2.157,lat:46.607}, {lon:3.3003,lat:45.2644}, {lon:4.3907,lat:43.91},
 		(...)
 	],
 	api:'WPS',
@@ -155,7 +155,7 @@ Utilisation d'une autre URL de serveur, en WPS
 Gp.Services.getAltitude({
 	serverUrl:'http://wxs.ign.fr/CLE_ALTI/alti/wps?service=WPS&version=1.0.0',
 	positions:[
-		{x:0.2367,y:48.0551}
+		{lon:0.2367,lat:48.0551}
 	],
 	api:'WPS',
 	onSuccess: function(elevations){
@@ -173,7 +173,7 @@ Gp.Services.getAltitude({
 	serverUrl: 'http://wxs.ign.fr/CLE_API/alti/rest/Elevation.xml',
 	outputFormat:'xml',
 	positions:[
-		{x:0.2367,y:48.0551}
+		{lon:0.2367,lat:48.0551}
 	],
 	api:'REST',
 	onSuccess: function(elevations){
