@@ -135,6 +135,10 @@ A venir...
                         
                     </form>
                     
+                    <div id="GPisochronCalcWaitingContainer" class="GPisochronCalcWaitingContainerHidden">
+                        <p class="GPisochronCalcWaiting">Calcul en cours...</p>
+                    </div>
+                    
                 </div>
             
             </div>

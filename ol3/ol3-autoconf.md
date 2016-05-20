@@ -22,6 +22,8 @@ C'est la méthode que nous vous conseillons, car elle est plus simple à mettre 
 
 ### Mise en oeuvre
 
+#### Interrogation du service d'auto-configuration
+
 L'extension OL3 propose de récupérer, lors du chargement de la page, la configuration associée à la clé de contrat de l'utilisateur. Pour cela, il lui suffit simplement de renseigner sa clé dans la balise de chargement du fichier JavaScript contenant l'extension, de la manière suivante :
 
 ``` html
@@ -29,16 +31,21 @@ L'extension OL3 propose de récupérer, lors du chargement de la page, la config
 ```
 
 De cette manière, la configuration sera récupérée via le service d'auto-configuration des API du Géoportail.
+
+#### Récupération d'un fichier d'auto-configuration local
+
 L'utilisateur peut aussi spécifier une URL vers un fichier d'auto-configuration (chemin relatif vers un fichier en local par exemple) :
 
 ``` html
-<script src="GpPluginOl3.js" data-url="AutoConf.json"></script>
+<script src="GpPluginOl3.js" data-url="config.js"></script>
 ```
 
-Les paramètres possibles sont les suivants :
+Remarque : Le contenu du fichier doit être le contenu de la réponse à une requête du service d'auto-configuration, en JSONP et encapsulée dans une fonction *callback*, du type : "http://wxs.ign.fr/CLE/autoconf?output=json&callback=callback", le format peut être .js ou .json.
+
+#### Paramètres possibles de la balise script :
 
 Paramètre | Type | Opt. | Valeur
-- |-|-|-|
+ -|-|-|-|
 data-key  | String  | Optionnel   | Clé d'accès à la plateforme Géoportail (prise sur [professionnels.ign.fr](http://professionnels.ign.fr/api-web) )
 data-url  | String  | Optionnel     | URL d'accès au service d'autoconfiguration (contenant la clé de contrat), ou chemin relatif vers un fichier d'auto-configuration stocké en local.
 data-timeout | Object | Optionnel   | Délai d’attente maximal (en ms) de la réponse du service d'auto-configuration (à partir de l’envoi de la requête). Par défaut, aucun timeOut n’est pris en compte (timeOut= 0).
@@ -92,11 +99,11 @@ Récupération de la configuration au chargement de la page, à partir d'un fich
 
 ## Méthode 2 : Appel au service d'auto-configuration via la bibliothèque d'accès
 
-Cette méthode est une alternative à la précédente : vous utilisez une fonction proposée par la bibliothèque d'accès pour appeler le service d'auto-configuration du Géoportail. 
+Cette méthode est une alternative à la précédente : vous utilisez une fonction proposée par la bibliothèque d'accès pour appeler le service d'auto-configuration du Géoportail.
 
 ### Mise en oeuvre
 
-La [Bibliothèque d'accès](./../bibacces/presentation.html) aux services de la plateforme du Géoportail, embarquée dans l'Extension OL3, propose une fonction d'accès au service d'autoconfiguration du Géoportail : 
+La [Bibliothèque d'accès](./../bibacces/presentation.html) aux services de la plateforme du Géoportail, embarquée dans l'Extension OL3, propose une fonction d'accès au service d'autoconfiguration du Géoportail :
 
 ``` javascript
 Gp.Services.getConfig(options)

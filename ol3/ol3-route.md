@@ -1,9 +1,9 @@
 ---
-layout: leaflet
+layout: ol3
 title: Calcul d'itinéraire
 level: 2
 order: 000700
-api: leaflet
+api: ol3
 ---
 
 # Widget de calcul d'itinéraire à l'aide du Géoportail
@@ -34,38 +34,136 @@ Le développeur peut agir sur l'état (maximisé / minimisé) du widget
 
 ## Spécification détaillée
 
-A venir...
+### Utilisation
+
+Ce widget se comporte comme un contrôle d'OpenLayers (ol.control.Control), il faut donc instancier un objet ol.control.Route puis l'ajouter à sa carte OpenLayers.
+
+``` javascript
+var routeControl = ol.control.Route(opts);
+map.addControl(routeControl);
+```
+
+### Options
+
+Le paramètre **opts** est un objet, dont les propriétés peuvent prendre les valeurs suivantes (en plus des [options du contrôle OpenLayers](http://openlayers.org/en/v3.14.2/apidoc/ol.control.Control.html)) :
+
+Paramètre     |  Type    |    Opt.   | Valeur
+-|-|-|-|
+apiKey              | String  | Conditionnel | Clef API utilisée pour l’utilisation des services d'autocomplétion et de calcul d'itinéraire du Géoportail. Nécessaire si l'autoconfiguration n'a pas été chargée au préalable.
+collapsed           | Boolean | Optionnel | Permet de spécifier si le widget doit être déplié au démarrage de l'application (collapsed = false), ou replié (collapsed = true). Plié par défault (true).
+exclusions          | Object  | Optionnel | Liste des exclusions à afficher dans le panneau de calcul d'itinéraire, avec leurs status par défaut :  true signifie que l'exclusion sera initialement sélectionnée (passage non autorisé), false signifie qu'elle ne sera pas sélectionnée (passage autorisé)
+graphs               | Array   | Optionnel | Liste des modes de transport à proposer pour le calcul d'itinéraire : "Voiture" ou "Pieton". Le premier élément de la liste est celui qui sera sélectionné par défaut. Par défaut : ["Voiture", "Pieton"]
+routeOptions        | Object  | Optionnel | Options du service de calcul d'itinéraire, tel que paramétrable via la bibliothèque d'accès (Gp.Services.route). Voir http://horus.ign.fr/specs-apiv3/bibacces/dd_services_itineraire.html pour connaître l'ensemble des options.
+autocompleteOptions | Object  | Optionnel | Options du service d'autocomplétion, tel que paramétrable via la bibliothèque d'accès (Gp.Services.autoComplete). Voir http://horus.ign.fr/specs-apiv3/bibacces/dd_services_autocompletion.html pour connaître l'ensemble des options.
+
+
+### Exemples de paramétrages possibles
+
+#### Mode de transport : option **graphs**
+
+Le développeur peut choisir d'afficher ou non les différentes options du calcul d'itinéraire. Par exemple, le graphe (= mode de transport) sur lequel se base le calcul d'itinéraire.
+Par défaut, les modes "Voiture" et "Pieton" sont proposés, et c'est le mode "Voiture" qui est sélectionné :
+
+!["Rendu par défaut : "](./img/GProuteGraphOptions2.png)
+
+Si le développeur ne souhaite afficher que le mode de transport "Voiture" :
+
+``` javascript
+opts.graphs = ["Voiture"];
+```
+!["Rendu voiture : "](./img/GProuteGraphOptions3.png)
+
+Ou s'il souhaite que le mode "Pieton" soit sélectionné par défaut :
+
+``` javascript
+opts.graphs = ["Pieton", "Voiture"];
+```
+Ce qui donnera :
+
+!["Rendu piéton : "](./img/GProuteGraphOptions.png)
+
+#### Passages non autorisés : option **exclusions**
+
+Le développeur peut aussi choisir les exclusions (= passages non autorisés) que l'utilisateur pourra sélectionner.
+Par défaut, les exclusions "Tunnel", "Péages" et "Ponts" sont proposés, et sont tous les trois sélectionnés, c'est-à-dire que ces passages sont autorisés (exclusions non prises en compte).
+
+Code équivalent au comportement par défaut :
+
+``` javascript
+opts.exclusions = {
+    tunnel : false,
+    toll : false,
+    bridge : false
+};
+```
+
+Le rendu sera alors le suivant :
+!["Rendu par défaut (options ci dessus) : "](./img/GProuteExclusions.png)
+
+Si le développeur souhaite proposer uniquement les exclusions "Tunnel", autorisée par défaut, et "Péages", exclue par défaut :
+
+``` javascript
+opts.exclusions = {
+    tunnel : false,
+    toll : true
+};
+```
+
+Le rendu sera alors le suivant :
+!["Rendu par défaut (options ci dessus) : "](./img/GProuteExclusions2.png)
+
+#### Configuration des services
+
+Pour calculer l'itinéraire, le widget se base sur le service de calcul d'itinéraires du Géoportail. L'appel à ce service est paramétrable (protocol, serverUrl), avec les mêmes options que le service de calcul d'itinéraire proposé dans la bibliothèque d'accès : [Gp.Services.route](./../bibacces/dd_services_itineraire.html).
+Attention : de nombreux paramètres spécifiques au calcul d'itinéraire sont surchargés par le widget pour son bon fonctionnement, et ne seront donc pas pris en compte : startPoint, endPoint, routePreference, viaPoints, graph, exclusions, geometryInInstructions, provideBbox, distanceUnit, onSuccess, onFailure).
+
+``` javascript
+opts.routeOptions = {
+    // options de Gp.Services.route()
+};
+```
+
+De même, le widget se base sur le service d'autocomplétion du Géoportail lors de la recherche d'un lieu. Ce service est lui aussi paramétrable, avec les mêmes options que le service d'autocomplétion proposé dans la bibliothèque d'accès : [Gp.Services.autocomplete](./../bibacces/dd_services_autocompletion.html).
+
+``` javascript
+opts.autocompleteOptions = {
+    // options de Gp.Services.autocomplete()
+};
+```
+Remarque :
+
+* lorsque la propriété **apiKey** est renseignée dans les options de l'un des deux services, elle surcharge systématiquement celle du contrôle. On peut donc spécifier deux clés différentes, une pour chaque service.
 
 ## Ergonomie
-    
+
 
 <div id="viewerDiv">
-            
-            <div class="leaflet-control-zoom">
-                <a class="leaflet-control-zoom-in" href="#" title="Zoom in">+</a>
-                <a class="leaflet-control-zoom-out" href="#" title="Zoom out">-</a>
+
+            <div class="ol-zoom">
+                <button class="ol-zoom-in" type="button" title="Zoom in">+</button>
+                <button class="ol-zoom-out" type="button" title="Zoom out">−</button>
             </div>
-            
+
             <!-- ROUTE -->
-            
+
             <div id="GProute" class="GPwidget">
-                
+
                 <!-- Hidden checkbox for minimizing/maximizing -->
                 <input type="checkbox" id="GPshowRoute" />
                 <label for="GPshowRoute" id="GPshowRoutePicto" class="GPshowAdvancedToolPicto" title="Afficher un itinéraire">
                     <span id="GPshowRouteOpen" class="GPshowAdvancedToolOpen"></span>
                 </label>
-                
+
                 <!-- Route panel -->
                 <div id="GProutePanel" class="GPpanel">
-                    
+
                     <div class="GPpanelHeader">
                         <div class="GPpanelTitle">Calcul d'itinéraire</div>
                         <div id="GProutePanelClose" class="GPpanelClose" title="Fermer le panneau"></div>
                     </div>
-                    
+
                     <form id="GProuteForm">
-                        
+
                         <!-- Start input -->
                         <div id="GProutePoint1" class="GPflexInput GProuteStageFlexInput">
                             <label id="GProuteOriginLabel1" for="GProuteOrigin1">Départ</label>
@@ -83,7 +181,7 @@ A venir...
                             <div class="GPautoCompleteProposal">What else ?</div>
                             <div class="GPautoCompleteProposal">Last and surely least</div>
                         </div>
-                        
+
                         <!-- Stage input -->
                         <div id="GProutePoint2" class="GPflexInput GProuteStageFlexInputHidden">
                             <label id="GProuteOriginLabel2" for="GProuteOrigin2">Etape</label>
@@ -102,7 +200,7 @@ A venir...
                             <div class="GPautoCompleteProposal">What else ?</div>
                             <div class="GPautoCompleteProposal">Last and surely least</div>
                         </div>
-                        
+
                         <!-- Stage input -->
                         <div id="GProutePoint3" class="GPflexInput GProuteStageFlexInputHidden">
                             <label id="GProuteOriginLabel3" for="GProuteOrigin3">Etape</label>
@@ -121,7 +219,7 @@ A venir...
                             <div class="GPautoCompleteProposal">What else ?</div>
                             <div class="GPautoCompleteProposal">Last and surely least</div>
                         </div>
-                        
+
                         <!-- Stage input -->
                         <div id="GProutePoint4" class="GPflexInput GProuteStageFlexInputHidden">
                             <label id="GProuteOriginLabel4" for="GProuteOrigin4">Etape</label>
@@ -140,7 +238,7 @@ A venir...
                             <div class="GPautoCompleteProposal">What else ?</div>
                             <div class="GPautoCompleteProposal">Last and surely least</div>
                         </div>
-                        
+
                         <!-- Stage input -->
                         <div id="GProutePoint5" class="GPflexInput GProuteStageFlexInputHidden">
                             <label id="GProuteOriginLabel5" for="GProuteOrigin5">Etape</label>
@@ -159,7 +257,7 @@ A venir...
                             <div class="GPautoCompleteProposal">What else ?</div>
                             <div class="GPautoCompleteProposal">Last and surely least</div>
                         </div>
-                        
+
                         <!-- Stage input -->
                         <div id="GProutePoint6" class="GPflexInput GProuteStageFlexInputHidden">
                             <label id="GProuteOriginLabel6" for="GProuteOrigin6">Etape</label>
@@ -178,7 +276,7 @@ A venir...
                             <div class="GPautoCompleteProposal">What else ?</div>
                             <div class="GPautoCompleteProposal">Last and surely least</div>
                         </div>
-                        
+
                         <!-- Arrival input -->
                         <div id="GProutePoint7" class="GPflexInput GProuteStageFlexInput">
                             <label id="GProuteOriginLabel7" for="GProuteOrigin7">Arrivée</label>
@@ -197,7 +295,7 @@ A venir...
                             <div class="GPautoCompleteProposal">What else ?</div>
                             <div class="GPautoCompleteProposal">Last and surely least</div>
                         </div>
-                        
+
                         <!-- Computation modes -->
                         <div id="GProuteModeChoice">
                             <div id="GProuteTransportChoice">
@@ -215,7 +313,7 @@ A venir...
                                 </select>
                             </div>
                         </div>
-                        
+
                         <!-- Hidden checkbox + label for showing exclusions -->
                         <input type="checkbox" id="GPshowRouteExclusions" />
                         <label for="GPshowRouteExclusions" id="GPshowRouteExclusionsPicto" class="GPshowMoreOptions GPshowRouteExclusionsPicto" title="Exclusions"></label>
@@ -231,18 +329,22 @@ A venir...
                                 <label for="GProuteExclusionsBridge" class="GProuteExclusionsOption">Ponts</label>
                             </div>
                         </div>
-                        
+
                         <!-- Input button -->
                         <input type="submit" id="GProuteSubmit" class="GPinputSubmit" value="Calculer" />
-                        
+
                     </form>
-                    
+
+                    <div id="GProuteCalcWaitingContainer" class="GProuteCalcWaitingContainerHidden">
+                        <p class="GProuteCalcWaiting">Calcul en cours...</p>
+                    </div>
+
                     <!-- Fenêtre de résultats -->
                     <div id="GProuteResultsPanel" class="GProuteComponentHidden">
-                        
+
                         <!-- Route stages are dynamically filled in Javascript from computation panel -->
                         <div id="GProuteResultsStages"></div>
-                        
+
                         <!-- Results -->
                         <div id="GProuteResults">
                             <div id="GProuteResultsValues">
@@ -264,14 +366,14 @@ A venir...
                             </div>
                             <div id="GProuteResultsNew" title="Modifier le calcul"></div>
                         </div>
-                        
+
                         <!-- Details header -->
                         <div class="GPfakeBorder GPfakeBorderLeft"></div>
                         <input type="checkbox" id="GProuteResultsShowDetails"></input>
                         <label for="GProuteResultsShowDetails">Afficher le détail</label>
                         <label for="GProuteResultsShowDetails">Masquer le détail</label>
                         <div class="GPfakeBorder"></div>
-                        
+
                         <!-- Details -->
                         <div id="GProuteResultsDetails">
                             <!-- Route results details are dynamically filled in Javascript by route service -->
@@ -326,12 +428,11 @@ A venir...
                             <div class="GProuteResultsDetailsNumber">25.</div>
                             <div class="GProuteResultsDetailsInstruction">Tournez à droite</div>
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
-                
+
             </div>
-        
+
 </div>
-        

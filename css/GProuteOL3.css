@@ -20,6 +20,13 @@
   background-image: url("../ol3/img/GProuteOpen.png");
 }
 
+/* Calc waiting */
+
+.GProuteCalcWaitingContainerVisible,
+.GProuteCalcWaitingContainerHidden {
+  border-radius: 4px;
+}
+
 /* Route form */
 
 .GProuteOriginPointerImg,

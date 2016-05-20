@@ -44,6 +44,7 @@ body {
 }
 
 #nav-header .header-content {
+  display: -webkit-flex;
   display: flex;
 }
 
@@ -126,7 +127,9 @@ header {
 }
 
 header .header-content {
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
 }
 
@@ -144,6 +147,7 @@ header .header-content {
 }
 
 header h1 {
+  -webkit-flex: 1;
   flex: 1;
   font-family: OpenSansLight, Arial, sans-serif;
   font-size: 25px;
@@ -296,6 +300,7 @@ header h1 {
 
 .page {
   position: relative;
+  display: -webkit-flex;
   display: flex;
   max-width: 1200px;
   min-width: 0;
@@ -317,9 +322,13 @@ header h1 {
 .ctaWrapper {
   position: relative;
   min-height: calc(100vh - 120px);
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-justify-content: flex-start;
   justify-content: flex-start;
+  -webkit-align-items: center;
   align-items: center;
   margin-top: -10px;
   margin-bottom: 10px;
@@ -363,8 +372,11 @@ header h1 {
 }
 
 .ctaButtonsWrapper {
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-justify-content: center;
   justify-content: center;
   margin-bottom: 10px;
 }
@@ -503,7 +515,7 @@ header h1 {
   background-color: #FFF;
   width: 250px;
   overflow-y: auto;
-  transition: transform 0.5s ease;
+  transition: all 0.5s ease;
   padding: 20px;
   margin: 10px;
   border: 20px solid #EFEDE4;
@@ -586,6 +598,7 @@ header h1 {
 .content,
 .contentMaxi {
   position: relative;
+  -webkit-flex: 1;
   flex: 1;
   background-color: #FFF;
   padding: 20px 40px;
@@ -762,10 +775,12 @@ td {
 }
 
 #showLeftMenu + .menu-left {
+  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
 #showLeftMenu:checked + .menu-left {
+  -webkit-transform: translateX(-300px);
   transform: translateX(-300px);
 }
 
@@ -782,6 +797,7 @@ td {
 }
 
 .openLeftMenu {
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
@@ -806,6 +822,7 @@ td {
   }
   
   #showLeftMenu:checked + .menu-left {
+    -webkit-transform: translateX(0);
     transform: translateX(0);
   }
   

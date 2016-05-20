@@ -20,6 +20,13 @@
   background-image: url("../ol3/img/GPisochronOpen.png");
 }
 
+/* Calc waiting */
+
+.GPisochronCalcWaitingContainerVisible,
+.GPisochronCalcWaitingContainerHidden {
+  border-radius: 4px;
+}
+
 /* Isochron form */
 
 .GPisochronChoiceAlt input:checked + label + span {

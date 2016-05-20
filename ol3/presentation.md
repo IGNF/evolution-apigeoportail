@@ -6,7 +6,7 @@ order: 000000
 api: ol3
 ---
 
-# Extension Géoportail pour OpenLayers 3 
+# Extension Géoportail pour OpenLayers 3
 
 ## Présentation
 
@@ -32,24 +32,24 @@ Intégrez à une carte OpenLayers 3 un widget permettant à l'internaute d'organ
 
 ### Barre de recherche utilisant le service de Géocodage IGN
 
-Intégrez à une carte OpenLayers 3 une barre de recherche par adresses, toponymes ou identifiant de parcelle cadastrale permettant de se positionner à l'endroit recherché à l'aide du service de Géocodage et des données de référence de l'IGN. [En savoir plus sur le widget](./searchEngine.html).
+Intégrez à une carte OpenLayers 3 une barre de recherche par adresses, toponymes ou identifiant de parcelle cadastrale permettant de se positionner à l'endroit recherché à l'aide du service de Géocodage et des données de référence de l'IGN. [En savoir plus sur le widget](./ol3-searchEngine.html).
 
 ### Géocodage inverse sur une carte OpenLayers 3
 
-Ajoutez à une carte OpenLayers 3 un composant permettant à un internaute d'afficher les toponymes, adresses ou parcelles cadastrales présentes à proximité d'un endroit choisi sur la carte. [En savoir plus sur le widget](./reverseGeocode.html).
+Ajoutez à une carte OpenLayers 3 un composant permettant à un internaute d'afficher les toponymes, adresses ou parcelles cadastrales présentes à proximité d'un endroit choisi sur la carte. [En savoir plus sur le widget](./ol3-reverseGeocode.html).
 
 ### Calcul d'itinéraires sur une carte OpenLayers 3
 
-Ajoutez à une carte OpenLayers 3 un formulaire permettant faire des recherche d'itinéraires à partir du service proposé par la plateforme Géoportail et de les visualiser avec les instructions de navigation associées. [En savoir plus sur le widget](./route.html).
+Ajoutez à une carte OpenLayers 3 un formulaire permettant faire des recherche d'itinéraires à partir du service proposé par la plateforme Géoportail et de les visualiser avec les instructions de navigation associées. [En savoir plus sur le widget](./ol3-route.html).
 
 
 ### Calcul d'isochrones / isodistances sur une carte OpenLayers 3
 
-Utilisez le service de calcul d'isochrones / isodistances proposé par la plateforme Géoportail pour visualiser sur une carte OpenLayers 3 les zones que vous pouvez atteindre en voiture ou à pieds à partir d'un point donné en un temps (ou sur une distance) voulu(e). [En savoir plus sur le widget](./isochron.html).
+Utilisez le service de calcul d'isochrones / isodistances proposé par la plateforme Géoportail pour visualiser sur une carte OpenLayers 3 les zones que vous pouvez atteindre en voiture ou à pieds à partir d'un point donné en un temps (ou sur une distance) voulu(e). [En savoir plus sur le widget](./ol3-isocurve.html).
 
 ### Affichage de l'altitude en un point
 
-En plus des coordonnées x et y de la souris sur une carte OpenLayers 3, obtenez l'altitude à l'aide du service altimétrique proposé par la plateforme Géoportail. [En savoir plus sur le widget](./mousePosition.html).
+En plus des coordonnées x et y de la souris sur une carte OpenLayers 3, obtenez l'altitude à l'aide du service altimétrique proposé par la plateforme Géoportail. [En savoir plus sur le widget](./ol3-mousePosition.html).
 
 ### Affichage des logos associés à une couche Géoportail
 
@@ -64,10 +64,3 @@ Rajoutez l'affichage de flux GeoRSS sur une carte OpenLayers 3
 
 Permettez aux internautes de covisualiser les données de son choix dans les standards géographiques du web (WMTS, WMS, KML, GeoJSON, ...) à l'aide d'un widget d'ajout de couches externes.
 -->
-
-
-
-
-
-
- 

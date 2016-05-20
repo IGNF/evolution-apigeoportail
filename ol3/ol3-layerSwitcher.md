@@ -52,7 +52,7 @@ La récupération de ces informations n'est pas la même selon la manière dont 
 
 Le widget peut prendre en paramètre un objet **opts**, permettant de renseigner des informations de couches à afficher dans le gestionnaire de couches, ou de paramétrer le widget.
 
-Cet objet peut prendre 2 propriétés, toutes deux facultatives : 
+Cet objet peut prendre 2 propriétés, toutes deux facultatives :
 
 * un objet **options** pour les options spécifiques au widget.
 * un tableau **layers**

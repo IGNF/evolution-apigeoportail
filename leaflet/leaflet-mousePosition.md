@@ -22,7 +22,100 @@ Il doit être paramétrable de façon à pouvoir indiquer :
 
 ## Spécification détaillée
 
-A venir...
+### Usage
+
+``` javascript
+var mousePoistion = L.geoportalControl.MousePosition(opts);
+map.addControl(mousePoistion);
+```
+
+### Options
+
+Les propriétés possibles de l'objet **options** sont les suivantes 
+(en plus des [options communes aux contrôles Leaflet](http://leafletjs.com/reference.html#control) ) :
+
+Option      |  Type   |    Opt.   | Defaut    | Valeur
+-|-|-|-|-|
+collapsed   | Boolean | Optionnel | false     | Permet de replier le widget au chargement de la carte (collapsed = true). Par défaut, il est déplié (collapsed = false)
+position    | String  | Optionnel | 'bottomleft' | Position initiale du contrôle sur la carte ([cf. options de positionnement Leaflet](http://leafletjs.com/reference.html#control-positions))
+apiKey      | String  | Optionnel | null      | Clef API utilisée pour l'utilisation des services.
+altitudeOptions | Object | Optionnel | {}     | Options du service de calcul d'altitude.
+noaltitude  | Boolean | Optionnel | false     | active ou desactive le calcul d'altitude.
+
+#### Configuration du service
+
+Le service de calcul d'altitude est configurable :
+
+``` javascript
+altitudeOptions : {
+    protocol : XHR,
+    httpMethod : "GET",
+    apiKey : "fjfz8rg7r89t45t4er8t7g84er56g486t",
+    api : 'REST'
+}
+```
+
+Pour plus de détails, consulter la page de description :
+- [altitude](./../bibacces/dd_services_altimetrie.html)
+
+Le controle recupère une altitude. 
+Donc par defaut, l'option 'zonly' est toujours configurée.
+
+On peut voir que la propriété 'apiKey' se trouve aussi au niveau des options du service.
+Il faut savoir que la clef du service surcharge toujours celle du contrôle. 
+Il en va de même avec l'autoconfiguration.
+
+### Exemples
+
+#### simple
+
+L'autoconfiguration est chargée.
+La vérification des droits sur les ressources est realisée.
+
+On change la position du contrôle, et on le souhaite deplié.
+
+``` javascript
+var mousePoistion  = L.geoportalControl.MousePosition({
+    position : 'bottomright',
+    collapsed : true
+});
+```
+
+#### avancé
+
+L'autoconfiguration n'est pas chargée !
+Aucune vérification des droits n'est possible.
+La responsabilité revient à l'utilisateur de gérer ses droits sur la ressource.
+
+Une clef API est renseignée au niveau du contrôle :
+
+``` javascript
+var mousePosition = L.geoportalControl.MousePosition({
+    apiKey : "far4ze5t4z56t4z65t4ert465zr6z"
+});
+```
+
+Il est possible aussi de renseigner la clef API via la configuration des services.
+
+``` javascript
+var mousePosition = L.geoportalControl.MousePosition({
+    altitudeOptions : {
+        apiKey : "far4ze5t4z56t4z65t4ert465zr6z"
+    }
+});
+```
+
+#### quelques cas particuliers
+
+L'autoconfiguration est chargée.
+La vérification des droits sur les ressources est realisée.
+Si l'utilisateur renseigne une clef, on verifie la coherence entre l'autoconfiguration 
+et la clef. Si des incoherences apparaissent, on previent simplement l'utilisateur.
+
+L'autoconfiguration n'est pas chargée !
+Aucune vérification des droits n'est possible.
+La responsabilité revient à l'utilisateur de gérer ses droits sur la ressource.
+
 
 ## Ergonomie
     

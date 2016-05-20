@@ -28,11 +28,11 @@ A partir du simple nom de la couche (par exemple : ORTHOIMAGERY.ORTHOPHOTOS) et 
 
 ### Widget de gestion de l'empilement des couches
 
-Intégrez à une carte leaflet un widget permettant à l'internaute d'organiser l'empilement des couches de données qu'il visualise, de jouer sur l'opacité d'affichage et d'accéder aux légendes et autres informations qui peuvent y être attachées. [En savoir plus sur le widget](./leaflet-LayerSwitcher.html).
+Intégrez à une carte leaflet un widget permettant à l'internaute d'organiser l'empilement des couches de données qu'il visualise, de jouer sur l'opacité d'affichage et d'accéder aux légendes et autres informations qui peuvent y être attachées. [En savoir plus sur le widget](./leaflet-layerSwitcher.html).
 
 ### Barre de recherche utilisant le service de Géocodage IGN
 
-Intégrez à une carte leaflet une barre de recherche par adresses, toponymes ou identifiant de parcelle cadastrale permettant de se positionner à l'endroit recherché à l'aide du service de Géocodage et des données de référence de l'IGN. [En savoir plus sur le widget](./searchEngine.html).
+Intégrez à une carte leaflet une barre de recherche par adresses, toponymes ou identifiant de parcelle cadastrale permettant de se positionner à l'endroit recherché à l'aide du service de Géocodage et des données de référence de l'IGN. [En savoir plus sur le widget](./leaflet-searchEngine.html).
 
 ### Géocodage inverse sur une carte leaflet
 
@@ -40,21 +40,13 @@ Ajoutez à une carte leaflet un composant permettant à un internaute d'afficher
 
 ### Calcul d'itinéraire sur une carte leaflet
 
-Ajoutez à une carte leaflet un formulaire permettant faire des recherche d'itinéraires à partir du service proposé par la plateforme Géoportail et de les visualiser avec les instructions de navigation associées. [En savoir plus sur le widget](./route.html).
+Ajoutez à une carte leaflet un formulaire permettant faire des recherche d'itinéraires à partir du service proposé par la plateforme Géoportail et de les visualiser avec les instructions de navigation associées. [En savoir plus sur le widget](./leaflet-route.html).
 
 
 ### Calcul d'isochrones / isodistances sur une carte leaflet
 
-Utilisez le service de calcul d'isochrones / isodistances proposé par la plateforme Géoportail pour visualiser sur une carte leaflet les zones que vous pouvez atteindre en voiture ou à pieds à partir d'un point donné en un temps (ou sur une distance) voulu(e). [En savoir plus sur le widget](./isochron.html).
+Utilisez le service de calcul d'isochrones / isodistances proposé par la plateforme Géoportail pour visualiser sur une carte leaflet les zones que vous pouvez atteindre en voiture ou à pieds à partir d'un point donné en un temps (ou sur une distance) voulu(e). [En savoir plus sur le widget](./leaflet-isocurve.html).
 
 ### Affichage de l'altitude en un point
 
-En plus des coordonnées x et y de la souris sur une carte leaflet, obtenez l'altitude à l'aide du service altimétrique proposé par la plateforme Géoportail. [En savoir plus sur le widget](./mousePosition.html).
-
-
-
-
-
-
-
- 
+En plus des coordonnées x et y de la souris sur une carte leaflet, obtenez l'altitude à l'aide du service altimétrique proposé par la plateforme Géoportail. [En savoir plus sur le widget](./leaflet-mousePosition.html).

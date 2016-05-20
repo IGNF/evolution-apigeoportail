@@ -32,6 +32,34 @@
   width: 280px;
 }
 
+/* Calc waiting */
+
+.GPisochronCalcWaitingContainerVisible,
+.GPisochronCalcWaitingContainerHidden {
+  position: absolute;
+  top: 32px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255,255,255,0.9);
+  font-size: 1.5em;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.GPisochronCalcWaitingContainerVisible {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.GPisochronCalcWaitingContainerHidden {
+  display: none;
+}
+
+.GPisochronCalcWaiting {
+  margin: auto;
+}
+
 /* Isochron form */
 
 #GPisochronForm {
@@ -72,8 +100,10 @@ input#GPisochronSubmit {
 /* Alternative choice */
 
 #GPisochronChoice {
+  display: -webkit-flex;
   display: flex;
   width: 160px;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   margin: auto;
   margin-top: 15px;
@@ -127,7 +157,9 @@ input#GPisochronSubmit {
 /* Mode choice */
 
 #GPisochronModeChoice {
+  display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   margin: 15px 0;
 }
