@@ -111,7 +111,7 @@ Gp.Services.getConfig(options)
 
 Vous pouvez choisir d'utiliser directement cette fonction dans votre script, avant d'utiliser les fonctionnalités de l'extension (ajout de couche simplifié, etc.) qui seront alors conditionnées à l'exécution de la fonction de rappel onSuccess passée en paramètres de Gp.Services.getConfig().
 
-Pour plus de détails, consulter la [page de description de cette fonctionnalité](./../bibacces/dd_services_autoconf.html).
+Pour plus de détails, consulter la [page de description de cette fonctionnalité](./../bibacces/dd_services_autoconf.html), ou [la documentation technique des paramètres du service](http://ignf.github.io/geoportal-access-lib/v1.0.0-beta.1/jsdoc/module-Services.html#~getConfig).
 
 
 ### Exemple d'utilisation

@@ -43,8 +43,8 @@ collapsed             | Boolean | Optionnel | Permet de spécifier si le widget 
 resources             | Object  | Optionnel | Liste des ressources de géocodage ou d'autocomplétion qui seront utilsés pour ces services respectifs (voir ci-dessous)
 displayAdvancedSearch | Boolean | Optionnel | Permet de ne pas afficher les outils de recherche avancée (displayAdvancedSearch = false). Affichés par défaut (true).
 advancedSearch        | Object  | Optionnel | Options de recherche avancée pour le géocodage (filtres). Voir ci-dessous pour plus d'informations.
-geocodeOptions        | Object  | Optionnel | Options du service de géocodage, tel que paramétrable via la bibliothèque d'accès (Gp.Services.geocode). Voir http://horus.ign.fr/specs-apiv3/bibacces/dd_geocodage-direct.html pour connaître l'ensemble des options.
-autocompleteOptions   | Object  | Optionnel | Options du service d'autocomplétion, tel que paramétrable via la bibliothèque d'accès (Gp.Services.autoComplete). Voir http://horus.ign.fr/specs-apiv3/bibacces/dd_services_autocompletion.html pour connaître l'ensemble des options.
+geocodeOptions        | Object  | Optionnel | Options du service de géocodage, tel que paramétrable via la bibliothèque d'accès (Gp.Services.geocode). Voir [la documentation technique des paramètres du service](http://ignf.github.io/geoportal-access-lib/v1.0.0-beta.1/jsdoc/module-Services.html#~geocode) pour connaître l'ensemble des options.
+autocompleteOptions   | Object  | Optionnel | Options du service d'autocomplétion, tel que paramétrable via la bibliothèque d'accès (Gp.Services.autoComplete). Voir [la documentation technique des paramètres du service](http://ignf.github.io/geoportal-access-lib/v1.0.0-beta.1/jsdoc/module-Services.html#~autoComplete) pour connaître l'ensemble des options.
 
 ### Exemples de paramétrages possibles
 

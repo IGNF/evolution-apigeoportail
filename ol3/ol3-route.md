@@ -53,9 +53,8 @@ apiKey              | String  | Conditionnel | Clef API utilisée pour l’utili
 collapsed           | Boolean | Optionnel | Permet de spécifier si le widget doit être déplié au démarrage de l'application (collapsed = false), ou replié (collapsed = true). Plié par défault (true).
 exclusions          | Object  | Optionnel | Liste des exclusions à afficher dans le panneau de calcul d'itinéraire, avec leurs status par défaut :  true signifie que l'exclusion sera initialement sélectionnée (passage non autorisé), false signifie qu'elle ne sera pas sélectionnée (passage autorisé)
 graphs               | Array   | Optionnel | Liste des modes de transport à proposer pour le calcul d'itinéraire : "Voiture" ou "Pieton". Le premier élément de la liste est celui qui sera sélectionné par défaut. Par défaut : ["Voiture", "Pieton"]
-routeOptions        | Object  | Optionnel | Options du service de calcul d'itinéraire, tel que paramétrable via la bibliothèque d'accès (Gp.Services.route). Voir http://horus.ign.fr/specs-apiv3/bibacces/dd_services_itineraire.html pour connaître l'ensemble des options.
-autocompleteOptions | Object  | Optionnel | Options du service d'autocomplétion, tel que paramétrable via la bibliothèque d'accès (Gp.Services.autoComplete). Voir http://horus.ign.fr/specs-apiv3/bibacces/dd_services_autocompletion.html pour connaître l'ensemble des options.
-
+routeOptions        | Object  | Optionnel | Options du service de calcul d'itinéraire, tel que paramétrable via la bibliothèque d'accès (Gp.Services.route). Voir la [documentation technique des paramètres du service](http://ignf.github.io/geoportal-access-lib/v1.0.0-beta.1/jsdoc/module-Services.html#~autoComplete) pour connaître l'ensemble des options.
+autocompleteOptions | Object  | Optionnel | Options du service d'autocomplétion, tel que paramétrable via la bibliothèque d'accès (Gp.Services.autoComplete). Voir la [documentation technique des paramètres du service](http://ignf.github.io/geoportal-access-lib/v1.0.0-beta.1/jsdoc/module-Services.html#~route) pour connaître l'ensemble des options.
 
 ### Exemples de paramétrages possibles
 
