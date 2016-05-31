@@ -26,10 +26,10 @@ En terme de mise en oeuvre par le développeur, la création du widget doit perm
 
 ### Utilisation
 
-Ce widget se comporte comme un contrôle d'OpenLayers (ol.control.Control), il faut donc instancier un objet ol.control.ReverseGeocoding puis l'ajouter à sa carte OpenLayers.
+Ce widget se comporte comme un contrôle d'OpenLayers (ol.control.Control), il faut donc instancier un objet ol.control.ReverseGeocode puis l'ajouter à sa carte OpenLayers.
 
 ``` javascript
-var reverseControl = ol.control.ReverseGeocoding(opts);
+var reverseControl = ol.control.ReverseGeocode(opts);
 map.addControl(reverseControl);
 ```
 
