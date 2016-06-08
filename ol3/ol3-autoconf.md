@@ -16,6 +16,10 @@ Pour cela, deux méthodes se présentent à l'utilisateur :
 1. Récupération automatique de la configuration au chargement de la page, par le biais de la balise \<*script*\> de chargement de l'extension OL3.
 2. Appel au service d'auto-configuration via la bibliothèque d'accès (embarquée dans l'Extension OL3)
 
+## Mise en oeuvre
+
+La mise en oeuvre de cette fonctionnalité est effective et est <a href="https://github.com/IGNF/geoportal-extensions/blob/master/README-ol3.md#configuration-de-lacc%C3%A8s-%C3%A0-la-plateforme-g%C3%A9oportail" target="_blank">décrite ici</a>.
+
 ## Méthode 1 : Récupération de la configuration au chargement de la page par l'Extension OL3
 
 C'est la méthode que nous vous conseillons, car elle est plus simple à mettre en oeuvre.

@@ -12,15 +12,15 @@ api: ol3
 
 L'extension Géoportail pour OpenLayers 3 définit des classes et composants à utiliser avec OpenLayers 3 permettant de faciliter l'accès aux ressources délivrées par le Géoportail avec cette bibliothèque.
 
+**Elle est désormais disponible**. Rendez-vous <a href="https://github.com/IGNF/geoportal-extensions/blob/master/README-ol3.md" target="_blank">ici</a> pour l'utiliser.
+
 ## Fonctionnalités proposées
 
 Les fonctionnalités proposées par cette extension sont les suivantes :
 
-<!--
 ### Chargement de la configuration associée à votre clé de contrat
 
 Insérez simplement votre clé de contrat API (prise sur [professionnels.ign.fr](http://professionnels.ign.fr/api-web) ) dans la balise de chargement de l'extension OL3, pour charger la configuration associée. [En savoir plus sur cette fonctionnalité](./ol3-autoconf.html)
--->
 
 ### Affichage simple des couches WMTS et WMS Géoportail
 

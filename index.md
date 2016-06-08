@@ -39,7 +39,7 @@ Chaque extension facilite l’intégration des ressources du Géoportail à l’
 
 L’API continuera à fonctionner tant que les navigateurs resteront compatibles avec les technologies utilisées.
 
-* Le support de l’API Flash sera arrêté **fin mars 2016**.
+* Le support de l’API Flash n'est plus effectif depuis **fin mars 2016**.
 
 
 Au-delà de ces dates, vos sites **devront être mis à jour** pour que leur accès aux ressources du Géoportail soit garanti.
@@ -52,12 +52,13 @@ L’IGN assurera un support pour vous aider dans cette transition.
 
 * **Premier trimestre 2016** : 
 
-    - Mise à disposition de la **bibliothèque d'accès**.
+    - La bibliothèque d'accès est disponible <a href="https://github.com/IGNF/geoportal-access-lib/" target="_blank">ici</a> depuis le 08/02/2016.
     - *Arrêt du support de l'API Flash*
 
 * **Deuxième trimestre 2016** : 
 
-    - Mise à disposition des **extensions** et du **kit de développement**. 
+    - Les **extensions** pour Leaflet et OpenLayers 3 sont disponibles <a href="https://github.com/IGNF/geoportal-extensions" target="_blank">ici</a> depuis le 08/06/2016.
+    - Mise à disposition du **kit de développement**.
 
 * **Troisième trimestre 2017** : 
 
