@@ -10,6 +10,8 @@ api: services
 
 On traite ici de la couche logicielle qui gère l'accès aux services de la plateforme Géoportail qui rentent dans la couverture fonctionnelle de ce document.
 
+La mise en oeuvre de cette couche logicielle est effective et son utilisation est <a href="https://github.com/IGNF/geoportal-access-lib" target="_blank">décrite ici</a>.
+
 ## Principe Général
 
 La Bibliothèque d'accès aux ressources du Géoportail offre pour chaque service une ou plusieurs fonctions qui permettent d'émettre des réquêtes, de réceptionner les réponses afin de pouvoir les exploiter.
