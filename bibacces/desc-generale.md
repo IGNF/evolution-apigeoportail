@@ -64,6 +64,7 @@ Les services d'altimétrie et de calcul de profil de la plateforme Géoportail s
 
 La Bibliothèque d'accès doit permettre de formaliser et d'envoyer les requêtes à ces services puis d'en analyser les réponses de façon à en restituer le contenu de façon simple, intuitive et exploitable.
 
+<!--
 ### Transformations de coordonnées en utilisant le service et les registres IGN
 
 Un développeur souhaite transformer des lots de coordonnées pour son application en s'appuyant sur le registre de système de coordonnées IGN (« IGNF ») et sans utiliser de bibliothèque logicielle tierce.
@@ -71,6 +72,6 @@ Un développeur souhaite transformer des lots de coordonnées pour son applicati
 Le service WCTS de la plateforme Géoportail est sollicité.
 
 La Bibliothèque d'accès doit permettre de formaliser et d'envoyer les requêtes de transformation à ce service puis de récupérer les coordonnées transformées, de façon simple, intuitive et exploitable.
-
+-->
 
 
