@@ -58,7 +58,7 @@ L’IGN assurera un support pour vous aider dans cette transition.
 * **Deuxième trimestre 2016** : 
 
     - Les **extensions** pour Leaflet et OpenLayers 3 sont disponibles <a href="https://github.com/IGNF/geoportal-extensions" target="_blank">ici</a> depuis le 08/06/2016.
-    - Mise à disposition du **kit de développement**.
+    - Le **kit de développement** a pris du retard. Il arrivera **avant la fin de l'année 2016**.
 
 * **Troisième trimestre 2017** : 
 

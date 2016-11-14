@@ -25,11 +25,11 @@ api: faq
 
 ### Quand arriveront les nouveaux éléments promis ?
 
-La bibliothèque d'accès arrivera au **premier trimestre 2016**.
+La bibliothèque d'accès est disponible [**ici**](https://github.com/IGNF/geoportal-access-lib/).
 
-Les extensions pour Leaflet et OpenLayers 3 arriveront au **deuxième trimestre 2016**.
+Les extensions pour Leaflet et OpenLayers 3 sont disponibles [**ici**](https://github.com/IGNF/geoportal-extensions).
 
-Le kit de développement arrivera au **deuxième trimestre 2016**.
+Le kit de développement est en cours de finalisation et sera publié **avant la fin de l'année 2016**.
 
 ### Comment serai-je averti de l'arrivée des nouveaux éléments ?
 
