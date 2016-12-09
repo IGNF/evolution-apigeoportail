@@ -10,6 +10,8 @@ api: ahn
 
 Le Kit de développement (ou "SDK" dans ce document) permet de créer une carte interactive aux fonctionnalités de base indépendamment de la bibliothèque cartographique sous-jacente.
 
+**Toutes ces fonctions sont désormais effectives**. Retrouvez-les sur [la page de documentation du SDK](https://github.com/IGNF/geoportal-sdk#readme)
+
 ## Centrage, orientation et zoom
 
 Le Kit de développement permet de positionner le centre de la carte par différents moyens : 

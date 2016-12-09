@@ -21,4 +21,8 @@ Un développeur souhaite présenter dans son site web des données métier géor
 Un développeur souhaite proposer un formulaire HTML permettant d'interagir avec une fenêtre cartographique : l'internaute sélectionne un lieu parmi une liste proposée par le développeur et la carte se centre en fonction du choix fait par l'internaute.  Le Kit de développement permet, de façon simple et intuitive, d'interagir avec la carte au sein du formulaire.
 
 
+## Implémentation
+
+Découvrez l'implémentation de ces cas d'utilisations dans [les exemples de mise en oeuvre du SDK](https://github.com/IGNF/geoportal-sdk#readme).
+
 

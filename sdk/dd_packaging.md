@@ -6,6 +6,7 @@ order: 020100
 api: ahn
 ---
 
+
 # Packaging
 
 Le Kit de développement (ou SDK) est disponible sous la forme d'un fichier JavaScript accompagné de ressources de styles (fichier CSS + images).
@@ -17,7 +18,7 @@ Il embarque les codes :
 * de l'extension Géoportail OpenLayers 3
 * de toutes les fonctionnalités de l'API mise en oeuvre par le SDK et décrite dans ce document.
 
-
+**Le Kit de développement est désormais disponible**. Rendez-vous [ici](https://github.com/IGNF/geoportal-sdk#mise-en-oeuvre) pour l'utiliser.
 
 ## Utilisation
 

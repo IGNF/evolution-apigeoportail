@@ -29,7 +29,8 @@ La bibliothèque d'accès est disponible [**ici**](https://github.com/IGNF/geopo
 
 Les extensions pour Leaflet et OpenLayers 3 sont disponibles [**ici**](https://github.com/IGNF/geoportal-extensions).
 
-Le kit de développement est en cours de finalisation et sera publié **avant la fin de l'année 2016**.
+Le kit de développement est disponible [**ici**](https://github.com/IGNF/geoportal-sdk).
+
 
 ### Comment serai-je averti de l'arrivée des nouveaux éléments ?
 
