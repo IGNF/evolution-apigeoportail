@@ -70,6 +70,13 @@ Si vous n'êtes familiers avec aucune bibliothèque cartographique et que vous s
 Les extensions évolueront si nécessaire de façon à être compatibles avec les nouvelles versions mineures de ces bibliothèques tout en gardant une compatibilité avec les anciennes versions.
 
 
+### Mais où est l'API v3 ?
+
+Il n'y a pas d'API v3 à proprement parler. C'est un terme générique qui se définit uniquement par opposition à l'API v2 et qui désigne tous les nouveaux éléments proposés dans le cadre de l'évolution des API Géoportail : bibliothèques d'accès, extensions Géoportail et Kit de développement.
+
+Chacun de ces éléments a sa propre logique de numérotation qui a recommencé à zéro et qu'il va suivre plus ou moins indépendamment des autres.
+
+
 
 <a id="APIv2-deprecated"/>
 
